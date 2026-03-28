@@ -6,130 +6,160 @@
 @section('content')
 
 {{-- PAGE HEADER --}}
-<section class="w-full border-b border-slate-200 dark:border-slate-800 bg-white dark:bg-slate-900 px-6 py-14">
-    <div class="mx-auto max-w-7xl text-center">
-        <span class="material-symbols-outlined mb-4 text-6xl text-primary">newspaper</span>
-        <h1 class="text-4xl font-bold text-slate-900 dark:text-slate-100 tracking-tight mb-3" data-i18n="news_title">Go Green School News</h1>
-        <p class="text-lg text-slate-600 dark:text-slate-400 max-w-2xl mx-auto" data-i18n="news_tagline">Update kegiatan, program, dan pencapaian sekolah ramah lingkungan kami ♻️🌱</p>
+<section class="max-w-4xl mx-auto text-center px-6 mb-20 pt-8">
+    <div class="inline-flex items-center justify-center p-3 bg-primary/10 rounded-full mb-6">
+        <span class="material-symbols-outlined text-primary text-4xl">newspaper</span>
     </div>
+    <h1 class="text-4xl md:text-6xl font-bold tracking-tight text-slate-900 dark:text-slate-100 mb-6 leading-tight" data-i18n="news_title">
+        Go Green School News
+    </h1>
+    <p class="text-lg md:text-xl text-slate-600 dark:text-slate-400 max-w-2xl mx-auto" data-i18n="news_tagline">
+        Update kegiatan, program, dan pencapaian sekolah ramah lingkungan kami ♻️🌱
+    </p>
 </section>
 
 {{-- NEWS GRID --}}
-<section class="mx-auto w-full max-w-7xl px-6 py-16 lg:px-10">
-    <div class="grid gap-8 md:grid-cols-2 lg:grid-cols-3">
+<section class="max-w-7xl mx-auto px-6 lg:px-10">
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
 
-        {{-- Berita 1 --}}
-        <article id="berita-1" class="rounded-xl border border-slate-200 dark:border-slate-800 bg-white dark:bg-slate-900 shadow-sm flex flex-col overflow-hidden transition-all hover:shadow-md hover:border-primary/50">
-            <img src="https://images.unsplash.com/photo-1516979187457-637abb4f9353?auto=format&fit=crop&w=800&q=80" alt="Waste Calculator" class="w-full h-56 object-cover">
-            <div class="p-6 flex flex-col flex-grow">
-                <div class="flex items-center gap-3 mb-3">
-                    <div class="flex items-center gap-1 text-slate-400">
-                        <span class="material-symbols-outlined text-sm">calendar_month</span>
-                        <span class="text-xs font-medium">9 Maret 2026</span>
-                    </div>
-                    <span class="text-xs font-bold text-primary bg-primary/10 px-2 py-0.5 rounded-full" data-i18n="news_cat_student">Student Activities</span>
+        {{-- News Item 1 --}}
+        <article class="group bg-white dark:bg-slate-900 rounded-xl overflow-hidden hover:shadow-xl transition-all duration-300 border border-slate-200 dark:border-slate-800 hover:border-primary/20">
+            <div class="relative h-56 overflow-hidden">
+                <img src="https://images.unsplash.com/photo-1516979187457-637abb4f9353?auto=format&fit=crop&w=800&q=80" alt="Waste Calculator" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105">
+                <span class="absolute top-4 left-4 bg-primary/90 backdrop-blur-sm text-slate-900 px-3 py-1 rounded-full text-xs font-bold uppercase tracking-wider" data-i18n="news_cat_student">Student Activities</span>
+            </div>
+            <div class="p-6">
+                <div class="flex items-center gap-2 text-slate-500 text-sm mb-3">
+                    <span class="material-symbols-outlined text-sm">calendar_today</span>
+                    <span>9 Maret 2026</span>
                 </div>
-                <h3 class="text-lg font-bold text-slate-900 dark:text-slate-100 mb-3" data-i18n="news1_title">Siswa XI RPL Luncurkan Kalkulator Sampah Kelas!</h3>
-                <p class="text-sm text-slate-600 dark:text-slate-400 leading-relaxed flex-grow" data-i18n="news1_full">Siswa kelas XI RPL berhasil mengembangkan aplikasi kalkulator sampah digital yang membantu setiap kelas memantau dan mengurangi produksi sampah harian mereka. Aplikasi ini memungkinkan siswa memasukkan jenis dan berat sampah yang dihasilkan setiap hari, kemudian memberikan analisis mingguan dan tips praktis untuk mengurangi sampah. Inisiatif ini bermula dari proyek kelas dan kini telah diterapkan di seluruh sekolah. Kalkulator ini telah membantu mengurangi rata-rata sampah kelas sebesar 25% hanya dalam bulan pertama penggunaan.</p>
+                <h3 class="text-xl font-bold text-slate-900 dark:text-slate-100 mb-3 leading-snug group-hover:text-primary transition-colors" data-i18n="news1_title">Siswa XI RPL Luncurkan Kalkulator Sampah Kelas!</h3>
+                <p class="text-slate-600 dark:text-slate-400 text-sm line-clamp-2 mb-4 leading-relaxed" data-i18n="news1_summary">Sebuah inovasi digital ramah lingkungan hasil kolaborasi siswa RPL untuk membantu tracking jejak karbon harian di area kelas.</p>
+                <a class="inline-flex items-center gap-1 text-primary font-bold hover:underline underline-offset-4 transition-all" href="{{ route('news.show', 'calculator-sampah') }}">
+                    <span data-i18n="news_read_more">Read More</span>
+                    <span class="material-symbols-outlined text-sm">arrow_forward</span>
+                </a>
             </div>
         </article>
 
-        {{-- Berita 2 --}}
-        <article id="berita-2" class="rounded-xl border border-slate-200 dark:border-slate-800 bg-white dark:bg-slate-900 shadow-sm flex flex-col overflow-hidden transition-all hover:shadow-md hover:border-primary/50">
-            <img src="https://images.unsplash.com/photo-1542601098-8fc9e5bac1f5?auto=format&fit=crop&w=800&q=80" alt="Tree Planting" class="w-full h-56 object-cover">
-            <div class="p-6 flex flex-col flex-grow">
-                <div class="flex items-center gap-3 mb-3">
-                    <div class="flex items-center gap-1 text-slate-400">
-                        <span class="material-symbols-outlined text-sm">calendar_month</span>
-                        <span class="text-xs font-medium">5 Maret 2026</span>
-                    </div>
-                    <span class="text-xs font-bold text-primary bg-primary/10 px-2 py-0.5 rounded-full" data-i18n="news_cat_program">Go Green Program</span>
+        {{-- News Item 2 --}}
+        <article class="group bg-white dark:bg-slate-900 rounded-xl overflow-hidden hover:shadow-xl transition-all duration-300 border border-slate-200 dark:border-slate-800 hover:border-primary/20">
+            <div class="relative h-56 overflow-hidden">
+                <img src="https://lh3.googleusercontent.com/aida-public/AB6AXuB8QF5FpDOnYcjRP12PLLTDAq5NBXlpJN9thTpv6AXppVwwjzCJvQ4Ta73Wd2LKy6Ps397Z5dQ3Hp4xJbUHT-nO6ZCCqPEZBbH9lO49V3XkKeReOF0psI0Y0wTxSlVdYoTfOwZ9xYV84vUcP_D-EvMEHSo1O-5iF_SHxihNtbX9-cq-08USLk6V6O0oF8zn9O6w0QZ28zyyWA2Nv8XzPHdnDTGiVrfS7My2bqunqcvFTWtsa1aftYAUp-k8y7HO-UdWS-Cc28j90Uuw" alt="Tree Planting" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105">
+                <span class="absolute top-4 left-4 bg-primary/90 backdrop-blur-sm text-slate-900 px-3 py-1 rounded-full text-xs font-bold uppercase tracking-wider" data-i18n="news_cat_program">Go Green Program</span>
+            </div>
+            <div class="p-6">
+                <div class="flex items-center gap-2 text-slate-500 text-sm mb-3">
+                    <span class="material-symbols-outlined text-sm">calendar_today</span>
+                    <span>5 Maret 2026</span>
                 </div>
-                <h3 class="text-lg font-bold text-slate-900 dark:text-slate-100 mb-3" data-i18n="news2_title">Penanaman 100 Pohon di Pekarangan Sekolah</h3>
-                <p class="text-sm text-slate-600 dark:text-slate-400 leading-relaxed flex-grow" data-i18n="news2_full">Dalam upaya kolaboratif besar-besaran, siswa, guru, dan orang tua bergabung untuk menanam 100 pohon buah dan peneduh di seluruh area sekolah. Acara penanaman pohon ini menjadi puncak dari pekan lingkungan Go Green School. Setiap kelas diberi area untuk menanam dan merawat pohon mereka. Inisiatif ini bertujuan untuk menciptakan lebih banyak ruang hijau, mengurangi emisi karbon di kampus, dan menyediakan panen buah untuk kantin sekolah di masa depan. Acara ini didukung oleh dinas kehutanan setempat yang menyumbangkan bibit dan memberikan panduan penanaman.</p>
+                <h3 class="text-xl font-bold text-slate-900 dark:text-slate-100 mb-3 leading-snug group-hover:text-primary transition-colors" data-i18n="news2_title">Penanaman 100 Pohon di Pekarangan Sekolah</h3>
+                <p class="text-slate-600 dark:text-slate-400 text-sm line-clamp-2 mb-4 leading-relaxed" data-i18n="news2_summary">Mewujudkan paru-paru sekolah yang lebih sehat dengan aksi nyata penanaman pohon endemik oleh seluruh warga sekolah.</p>
+                <a class="inline-flex items-center gap-1 text-primary font-bold hover:underline underline-offset-4 transition-all" href="{{ route('news.show', 'penanaman-pohon') }}">
+                    <span data-i18n="news_read_more">Read More</span>
+                    <span class="material-symbols-outlined text-sm">arrow_forward</span>
+                </a>
             </div>
         </article>
 
-        {{-- Berita 3 --}}
-        <article id="berita-3" class="rounded-xl border border-slate-200 dark:border-slate-800 bg-white dark:bg-slate-900 shadow-sm flex flex-col overflow-hidden transition-all hover:shadow-md hover:border-primary/50">
-            <img src="https://images.unsplash.com/photo-1532996122724-e3c354a0b15b?auto=format&fit=crop&w=800&q=80" alt="Anti Plastic Campaign" class="w-full h-56 object-cover">
-            <div class="p-6 flex flex-col flex-grow">
-                <div class="flex items-center gap-3 mb-3">
-                    <div class="flex items-center gap-1 text-slate-400">
-                        <span class="material-symbols-outlined text-sm">calendar_month</span>
-                        <span class="text-xs font-medium">28 Februari 2026</span>
-                    </div>
-                    <span class="text-xs font-bold text-primary bg-primary/10 px-2 py-0.5 rounded-full" data-i18n="news_cat_program">Go Green Program</span>
+        {{-- News Item 3 --}}
+        <article class="group bg-white dark:bg-slate-900 rounded-xl overflow-hidden hover:shadow-xl transition-all duration-300 border border-slate-200 dark:border-slate-800 hover:border-primary/20">
+            <div class="relative h-56 overflow-hidden">
+                <img src="https://images.unsplash.com/photo-1532996122724-e3c354a0b15b?auto=format&fit=crop&w=800&q=80" alt="Anti Plastic Campaign" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105">
+                <span class="absolute top-4 left-4 bg-primary/90 backdrop-blur-sm text-slate-900 px-3 py-1 rounded-full text-xs font-bold uppercase tracking-wider" data-i18n="news_cat_program">Go Green Program</span>
+            </div>
+            <div class="p-6">
+                <div class="flex items-center gap-2 text-slate-500 text-sm mb-3">
+                    <span class="material-symbols-outlined text-sm">calendar_today</span>
+                    <span>28 Februari 2026</span>
                 </div>
-                <h3 class="text-lg font-bold text-slate-900 dark:text-slate-100 mb-3" data-i18n="news3_title">Kampanye Anti-Plastik: Sampah Berkurang 40%!</h3>
-                <p class="text-sm text-slate-600 dark:text-slate-400 leading-relaxed flex-grow" data-i18n="news3_full">Melalui kampanye intensif selama satu bulan, Go Green School mencapai pengurangan sampah plastik yang luar biasa sebesar 40%. Siswa berjanji untuk membawa wadah dan tumbler yang dapat digunakan ulang alih-alih plastik sekali pakai. Kantin sekolah juga beralih ke kemasan yang dapat terurai secara hayati. Poster motivasi yang dirancang oleh siswa seni dipasang di seluruh sekolah, dan penimbangan sampah plastik mingguan melacak kemajuan. Kampanye ini begitu sukses sehingga sekolah-sekolah tetangga telah meminta bimbingan untuk menjalankan program serupa.</p>
+                <h3 class="text-xl font-bold text-slate-900 dark:text-slate-100 mb-3 leading-snug group-hover:text-primary transition-colors" data-i18n="news3_title">Kampanye Anti-Plastik: Sampah Berkurang 40%!</h3>
+                <p class="text-slate-600 dark:text-slate-400 text-sm line-clamp-2 mb-4 leading-relaxed" data-i18n="news3_summary">Hasil evaluasi bulanan menunjukkan penurunan signifikan penggunaan plastik sekali pakai di area kantin dan koperasi sekolah.</p>
+                <a class="inline-flex items-center gap-1 text-primary font-bold hover:underline underline-offset-4 transition-all" href="{{ route('news.show', 'kampanye-anti-plastik') }}">
+                    <span data-i18n="news_read_more">Read More</span>
+                    <span class="material-symbols-outlined text-sm">arrow_forward</span>
+                </a>
             </div>
         </article>
 
-        {{-- Berita 4 --}}
-        <article id="berita-4" class="rounded-xl border border-slate-200 dark:border-slate-800 bg-white dark:bg-slate-900 shadow-sm flex flex-col overflow-hidden transition-all hover:shadow-md hover:border-primary/50">
-            <img src="https://images.unsplash.com/photo-1611284446314-60a58ac0deb9?auto=format&fit=crop&w=800&q=80" alt="B3 Workshop" class="w-full h-56 object-cover">
-            <div class="p-6 flex flex-col flex-grow">
-                <div class="flex items-center gap-3 mb-3">
-                    <div class="flex items-center gap-1 text-slate-400">
-                        <span class="material-symbols-outlined text-sm">calendar_month</span>
-                        <span class="text-xs font-medium">20 Februari 2026</span>
-                    </div>
-                    <span class="text-xs font-bold text-primary bg-primary/10 px-2 py-0.5 rounded-full" data-i18n="news_cat_workshop">Workshop</span>
+        {{-- News Item 4 --}}
+        <article class="group bg-white dark:bg-slate-900 rounded-xl overflow-hidden hover:shadow-xl transition-all duration-300 border border-slate-200 dark:border-slate-800 hover:border-primary/20">
+            <div class="relative h-56 overflow-hidden">
+                <img src="https://images.unsplash.com/photo-1611284446314-60a58ac0deb9?auto=format&fit=crop&w=800&q=80" alt="B3 Workshop" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105">
+                <span class="absolute top-4 left-4 bg-primary/90 backdrop-blur-sm text-slate-900 px-3 py-1 rounded-full text-xs font-bold uppercase tracking-wider" data-i18n="news_cat_workshop">Workshop</span>
+            </div>
+            <div class="p-6">
+                <div class="flex items-center gap-2 text-slate-500 text-sm mb-3">
+                    <span class="material-symbols-outlined text-sm">calendar_today</span>
+                    <span>20 Februari 2026</span>
                 </div>
-                <h3 class="text-lg font-bold text-slate-900 dark:text-slate-100 mb-3" data-i18n="news4_title">Workshop Pengelolaan Sampah B3 Sukses!</h3>
-                <p class="text-sm text-slate-600 dark:text-slate-400 leading-relaxed flex-grow" data-i18n="news4_full">Workshop interaktif tentang pengelolaan sampah B3 (bahan berbahaya dan beracun) diselenggarakan untuk semua tingkat kelas. Para ahli dari dinas lingkungan mendemonstrasikan cara mengidentifikasi sampah B3 umum yang ditemukan di sekolah, seperti baterai bekas, termometer pecah, dan limbah laboratorium kimia. Siswa berlatih teknik penanganan yang tepat menggunakan peralatan keselamatan dan belajar tentang bahaya lingkungan dan kesehatan dari pembuangan B3 yang tidak tepat. Workshop diakhiri dengan setiap kelas membuat titik pengumpulan sampah B3 dengan pelabelan dan instruksi keselamatan yang tepat.</p>
+                <h3 class="text-xl font-bold text-slate-900 dark:text-slate-100 mb-3 leading-snug group-hover:text-primary transition-colors" data-i18n="news4_title">Workshop Pengelolaan Sampah B3 Sukses!</h3>
+                <p class="text-slate-600 dark:text-slate-400 text-sm line-clamp-2 mb-4 leading-relaxed" data-i18n="news4_summary">Edukasi mendalam tentang penanganan sampah elektronik dan bahan berbahaya lainnya bagi staf dan siswa tingkat akhir.</p>
+                <a class="inline-flex items-center gap-1 text-primary font-bold hover:underline underline-offset-4 transition-all" href="{{ route('news.show', 'workshop-b3') }}">
+                    <span data-i18n="news_read_more">Read More</span>
+                    <span class="material-symbols-outlined text-sm">arrow_forward</span>
+                </a>
             </div>
         </article>
 
-        {{-- Berita 5 --}}
-        <article id="berita-5" class="rounded-xl border border-slate-200 dark:border-slate-800 bg-white dark:bg-slate-900 shadow-sm flex flex-col overflow-hidden transition-all hover:shadow-md hover:border-primary/50">
-            <img src="https://images.unsplash.com/photo-1569163139394-de4e4f43e4e3?auto=format&fit=crop&w=800&q=80" alt="Global Warming Workshop" class="w-full h-56 object-cover">
-            <div class="p-6 flex flex-col flex-grow">
-                <div class="flex items-center gap-3 mb-3">
-                    <div class="flex items-center gap-1 text-slate-400">
-                        <span class="material-symbols-outlined text-sm">calendar_month</span>
-                        <span class="text-xs font-medium">14 Februari 2026</span>
-                    </div>
-                    <span class="text-xs font-bold text-primary bg-primary/10 px-2 py-0.5 rounded-full" data-i18n="news_cat_workshop">Workshop</span>
+        {{-- News Item 5 --}}
+        <article class="group bg-white dark:bg-slate-900 rounded-xl overflow-hidden hover:shadow-xl transition-all duration-300 border border-slate-200 dark:border-slate-800 hover:border-primary/20">
+            <div class="relative h-56 overflow-hidden">
+                <img src="https://lh3.googleusercontent.com/aida-public/AB6AXuBK2hJXCRtNCXpaxIYucNhP4ropjNrGQko2AFlXYfKl0xnzI5bmXzkETLSxuduv4VqhqjYVG7qbQxd78xTK8Y2NcKlt1Aei3NW29fv5GZIkBpzzOTnIP0RtcM0__bZBd9b0LLR0AMvdtm4rrJY5AxdWYVEjsbr1d0vHjuroTdJrUuh8Xqkm35aOks2fyxHNv801ltKl3liyBe5pHIGzAg-lUzesN1fd4tbTwW_AEVwh0LORIoBzQI0i6maLkHbH48GPbszl4B1dxN_f" alt="Global Warming Workshop" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105">
+                <span class="absolute top-4 left-4 bg-primary/90 backdrop-blur-sm text-slate-900 px-3 py-1 rounded-full text-xs font-bold uppercase tracking-wider" data-i18n="news_cat_workshop">Workshop</span>
+            </div>
+            <div class="p-6">
+                <div class="flex items-center gap-2 text-slate-500 text-sm mb-3">
+                    <span class="material-symbols-outlined text-sm">calendar_today</span>
+                    <span>14 Februari 2026</span>
                 </div>
-                <h3 class="text-lg font-bold text-slate-900 dark:text-slate-100 mb-3" data-i18n="news5_title">Workshop Siswa tentang Pemanasan Global & Aksi Iklim</h3>
-                <p class="text-sm text-slate-600 dark:text-slate-400 leading-relaxed flex-grow" data-i18n="news5_full">Lebih dari 200 siswa berpartisipasi dalam workshop komprehensif dua hari tentang pemanasan global dan aksi iklim praktis. Hari pertama menampilkan presentasi tentang ilmu iklim, gas rumah kaca, dan dampak aktivitas manusia terhadap lingkungan. Hari kedua bersifat praktis, dengan siswa menghitung jejak karbon pribadi mereka dan mencari solusi untuk mengurangi emisi di seluruh sekolah. Pembicara tamu dari LSM lingkungan berbagi kisah inspiratif tentang inisiatif iklim yang dipimpin pemuda di seluruh dunia. Workshop menghasilkan "Ikrar Aksi Iklim" yang ditandatangani oleh semua peserta.</p>
+                <h3 class="text-xl font-bold text-slate-900 dark:text-slate-100 mb-3 leading-snug group-hover:text-primary transition-colors" data-i18n="news5_title">Workshop Siswa tentang Pemanasan Global & Aksi Iklim</h3>
+                <p class="text-slate-600 dark:text-slate-400 text-sm line-clamp-2 mb-4 leading-relaxed" data-i18n="news5_summary">Membekali generasi muda dengan pengetahuan dan langkah taktis menghadapi krisis iklim melalui diskusi interaktif.</p>
+                <a class="inline-flex items-center gap-1 text-primary font-bold hover:underline underline-offset-4 transition-all" href="{{ route('news.show', 'pemanasan-global') }}">
+                    <span data-i18n="news_read_more">Read More</span>
+                    <span class="material-symbols-outlined text-sm">arrow_forward</span>
+                </a>
             </div>
         </article>
 
-        {{-- Berita 6 --}}
-        <article id="berita-6" class="rounded-xl border border-slate-200 dark:border-slate-800 bg-white dark:bg-slate-900 shadow-sm flex flex-col overflow-hidden transition-all hover:shadow-md hover:border-primary/50">
-            <img src="https://images.unsplash.com/photo-1509062522246-3755977927d7?auto=format&fit=crop&w=800&q=80" alt="RPL x Math Collaboration" class="w-full h-56 object-cover">
-            <div class="p-6 flex flex-col flex-grow">
-                <div class="flex items-center gap-3 mb-3">
-                    <div class="flex items-center gap-1 text-slate-400">
-                        <span class="material-symbols-outlined text-sm">calendar_month</span>
-                        <span class="text-xs font-medium">7 Februari 2026</span>
-                    </div>
-                    <span class="text-xs font-bold text-primary bg-primary/10 px-2 py-0.5 rounded-full" data-i18n="news_cat_collab">Collaboration</span>
+        {{-- News Item 6 --}}
+        <article class="group bg-white dark:bg-slate-900 rounded-xl overflow-hidden hover:shadow-xl transition-all duration-300 border border-slate-200 dark:border-slate-800 hover:border-primary/20">
+            <div class="relative h-56 overflow-hidden">
+                <img src="https://images.unsplash.com/photo-1509062522246-3755977927d7?auto=format&fit=crop&w=800&q=80" alt="RPL x Math Collaboration" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105">
+                <span class="absolute top-4 left-4 bg-primary/90 backdrop-blur-sm text-slate-900 px-3 py-1 rounded-full text-xs font-bold uppercase tracking-wider" data-i18n="news_cat_collab">Collaboration</span>
+            </div>
+            <div class="p-6">
+                <div class="flex items-center gap-2 text-slate-500 text-sm mb-3">
+                    <span class="material-symbols-outlined text-sm">calendar_today</span>
+                    <span>7 Februari 2026</span>
                 </div>
-                <h3 class="text-lg font-bold text-slate-900 dark:text-slate-100 mb-3" data-i18n="news6_title">Kolaborasi RPL × Matematika Hasilkan Tools Edukasi</h3>
-                <p class="text-sm text-slate-600 dark:text-slate-400 leading-relaxed flex-grow" data-i18n="news6_full">Dalam proyek interdisipliner yang menarik, siswa dari kelas RPL (Rekayasa Perangkat Lunak) dan Matematika berkolaborasi untuk membuat alat pendidikan berbasis web yang interaktif. Alat-alat ini mencakup kalkulator jejak karbon, grafik interaktif yang menunjukkan kemajuan pengurangan sampah, dan permainan kuis tentang fakta lingkungan. Siswa Matematika menyediakan model statistik dan rumus, sementara siswa RPL menangani pemrograman dan desain antarmuka pengguna. Alat-alat ini kini tersedia di situs web sekolah dan telah dipuji oleh guru karena membuat pendidikan lingkungan lebih menarik dan berbasis data.</p>
+                <h3 class="text-xl font-bold text-slate-900 dark:text-slate-100 mb-3 leading-snug group-hover:text-primary transition-colors" data-i18n="news6_title">Kolaborasi RPL × Matematika Hasilkan Tools Edukasi</h3>
+                <p class="text-slate-600 dark:text-slate-400 text-sm line-clamp-2 mb-4 leading-relaxed" data-i18n="news6_summary">Integrasi kurikulum yang menghasilkan aplikasi pembelajaran statistik lingkungan yang inovatif dan mudah digunakan.</p>
+                <a class="inline-flex items-center gap-1 text-primary font-bold hover:underline underline-offset-4 transition-all" href="{{ route('news.show', 'kolaborasi-rpl') }}">
+                    <span data-i18n="news_read_more">Read More</span>
+                    <span class="material-symbols-outlined text-sm">arrow_forward</span>
+                </a>
             </div>
         </article>
-
     </div>
+</section>
 
-    {{-- CLOSING MESSAGE --}}
-    <div class="mt-16 rounded-2xl bg-background-dark px-8 py-10 text-center text-white">
-        <span class="material-symbols-outlined text-5xl mb-3 text-primary">eco</span>
-        <p class="text-lg font-semibold leading-relaxed" data-i18n="news_follow">Ikuti terus berita kami untuk inspirasi hidup lebih hijau! 🌍</p>
-    </div>
-
-    {{-- BACK / CTA --}}
-    <div class="mt-10 flex flex-col sm:flex-row gap-4 justify-center">
-        <a href="{{ route('home') }}" class="inline-flex items-center justify-center rounded-lg h-11 px-8 border border-slate-300 dark:border-slate-700 text-slate-700 dark:text-slate-300 hover:bg-slate-100 dark:hover:bg-slate-800 transition-colors font-semibold text-sm text-center" data-i18n="nav_home">
-            ← Home
-        </a>
-        <a href="{{ route('join') }}" class="inline-flex items-center justify-center rounded-lg h-11 px-8 bg-primary hover:bg-green-500 transition-colors text-slate-900 font-bold text-sm text-center" data-i18n="home_cta_btn">
-            Join Now →
-        </a>
+{{-- CTA SECTION --}}
+<section class="max-w-7xl mx-auto px-6 lg:px-10 mt-24 mb-32">
+    <div class="bg-primary/5 rounded-3xl p-12 lg:p-20 text-center relative overflow-hidden border border-primary/10">
+        <div class="absolute -top-10 -right-10 w-40 h-40 bg-primary/10 rounded-full blur-3xl"></div>
+        <div class="absolute -bottom-10 -left-10 w-40 h-40 bg-primary/10 rounded-full blur-3xl"></div>
+        <h2 class="text-3xl md:text-4xl font-bold text-slate-900 dark:text-slate-100 mb-6 relative z-10" data-i18n="news_follow">
+            Ikuti terus berita kami untuk inspirasi hidup lebih hijau! 🌍
+        </h2>
+        <div class="flex flex-col sm:flex-row gap-4 justify-center relative z-10">
+            <a href="{{ route('home') }}" class="inline-flex items-center justify-center h-11 px-8 bg-white border-2 border-primary text-primary rounded-lg font-bold hover:bg-primary/5 transition-colors">
+                ← Home
+            </a>
+            <a href="{{ route('join') }}" class="inline-flex items-center justify-center h-11 px-8 bg-primary text-slate-900 rounded-lg font-bold shadow-lg shadow-green-500/25 hover:bg-green-500 transition-all">
+                Join Now →
+            </a>
+        </div>
     </div>
 </section>
 

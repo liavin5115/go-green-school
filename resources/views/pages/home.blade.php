@@ -12,7 +12,7 @@
         <div class="flex flex-col gap-5 text-center max-w-[820px] z-10">
             <div class="inline-flex items-center justify-center gap-2 px-3 py-1 rounded-full bg-white/20 backdrop-blur-sm border border-white/30 text-white text-xs font-medium uppercase tracking-wider w-fit mx-auto">
                 <span class="w-2 h-2 rounded-full bg-primary animate-pulse"></span>
-                Admissions Open for 2026
+                <span data-i18n="hero_admission">Admissions Open for 2026</span>
             </div>
             <h1 class="text-white text-4xl font-black leading-tight tracking-tight md:text-5xl lg:text-6xl drop-shadow-sm">
                 Go Green School:<br/>
@@ -33,7 +33,7 @@
 <section class="mx-auto w-full max-w-7xl px-6 py-16 lg:px-10">
     <div class="flex flex-col md:flex-row md:items-end justify-between gap-4 border-b border-slate-200 dark:border-slate-800 pb-6 mb-10">
         <div class="flex flex-col gap-2">
-            <h4 class="text-primary font-bold uppercase tracking-widest text-sm">Our Mission</h4>
+            <h4 class="text-primary font-bold uppercase tracking-widest text-sm" data-i18n="home_mission_label">Our Mission</h4>
             <h2 class="text-slate-900 dark:text-slate-100 tracking-tight text-3xl font-bold leading-tight md:text-4xl max-w-[720px]" data-i18n="home_mission_title">What is Go Green School?</h2>
         </div>
         <p class="text-slate-600 dark:text-slate-400 text-base leading-normal max-w-[400px]" data-i18n="home_mission_text">
@@ -50,7 +50,7 @@
                 <h3 class="text-slate-900 dark:text-slate-100 text-lg font-bold leading-tight" data-i18n="home_card1_title">About Go Green</h3>
                 <p class="text-slate-600 dark:text-slate-400 text-sm leading-relaxed" data-i18n="home_card1_desc">Learn what Go Green School is and why it matters for our future.</p>
             </div>
-            <span class="text-primary text-sm font-bold flex items-center gap-1 mt-auto group-hover:gap-2 transition-all">Learn More <span class="material-symbols-outlined text-sm">arrow_forward</span></span>
+            <span class="text-primary text-sm font-bold flex items-center gap-1 mt-auto group-hover:gap-2 transition-all" data-i18n="home_card1_cta">Learn More <span class="material-symbols-outlined text-sm">arrow_forward</span></span>
         </a>
         {{-- Card 2 --}}
         <a href="{{ route('programs') }}" class="group flex flex-col gap-4 rounded-xl border border-slate-200 dark:border-slate-800 bg-white dark:bg-slate-900 p-6 shadow-sm hover:shadow-md transition-all hover:border-primary/50">
@@ -61,7 +61,7 @@
                 <h3 class="text-slate-900 dark:text-slate-100 text-lg font-bold leading-tight" data-i18n="home_card2_title">Waste Sorting Guide</h3>
                 <p class="text-slate-600 dark:text-slate-400 text-sm leading-relaxed" data-i18n="home_card2_desc">Step-by-step guide to properly sort organic, inorganic &amp; B3 waste.</p>
             </div>
-            <span class="text-primary text-sm font-bold flex items-center gap-1 mt-auto group-hover:gap-2 transition-all">Discover <span class="material-symbols-outlined text-sm">arrow_forward</span></span>
+            <span class="text-primary text-sm font-bold flex items-center gap-1 mt-auto group-hover:gap-2 transition-all" data-i18n="home_card2_cta">Discover <span class="material-symbols-outlined text-sm">arrow_forward</span></span>
         </a>
         {{-- Card 3 --}}
         <a href="{{ route('learn') }}" class="group flex flex-col gap-4 rounded-xl border border-slate-200 dark:border-slate-800 bg-white dark:bg-slate-900 p-6 shadow-sm hover:shadow-md transition-all hover:border-primary/50">
@@ -72,7 +72,7 @@
                 <h3 class="text-slate-900 dark:text-slate-100 text-lg font-bold leading-tight" data-i18n="home_card3_title">Go Green &amp; Climate</h3>
                 <p class="text-slate-600 dark:text-slate-400 text-sm leading-relaxed" data-i18n="home_card3_desc">Understand the link between Go Green practices and global warming.</p>
             </div>
-            <span class="text-primary text-sm font-bold flex items-center gap-1 mt-auto group-hover:gap-2 transition-all">View Projects <span class="material-symbols-outlined text-sm">arrow_forward</span></span>
+            <span class="text-primary text-sm font-bold flex items-center gap-1 mt-auto group-hover:gap-2 transition-all" data-i18n="home_card3_cta">View Projects <span class="material-symbols-outlined text-sm">arrow_forward</span></span>
         </a>
     </div>
 </section>
@@ -81,27 +81,27 @@
 <section class="w-full bg-white dark:bg-slate-900 border-y border-slate-200 dark:border-slate-800">
     <div class="mx-auto max-w-7xl px-6 py-12 lg:px-10 flex flex-col md:flex-row gap-8 items-center">
         <div class="flex-1 space-y-4">
-            <h3 class="text-2xl md:text-3xl font-bold text-slate-900 dark:text-slate-100">Make an Impact Today</h3>
+            <h3 class="text-2xl md:text-3xl font-bold text-slate-900 dark:text-slate-100" data-i18n="home_stats_title">Make an Impact Today</h3>
             <p class="text-slate-600 dark:text-slate-400 leading-relaxed" data-i18n="home_cta_text">Join hundreds of schools across Indonesia in the Go Green School movement.</p>
             <div class="flex gap-6 pt-2">
                 <div class="flex flex-col">
                     <span class="text-3xl font-bold text-primary">50+</span>
-                    <span class="text-xs text-slate-500 uppercase tracking-wider">Green Projects</span>
+                    <span class="text-xs text-slate-500 uppercase tracking-wider" data-i18n="home_stat1_label">Green Projects</span>
                 </div>
                 <div class="w-px h-12 bg-slate-200 dark:bg-slate-700"></div>
                 <div class="flex flex-col">
                     <span class="text-3xl font-bold text-primary">12k</span>
-                    <span class="text-xs text-slate-500 uppercase tracking-wider">Trees Planted</span>
+                    <span class="text-xs text-slate-500 uppercase tracking-wider" data-i18n="home_stat2_label">Trees Planted</span>
                 </div>
                 <div class="w-px h-12 bg-slate-200 dark:bg-slate-700"></div>
                 <div class="flex flex-col">
                     <span class="text-3xl font-bold text-primary">500+</span>
-                    <span class="text-xs text-slate-500 uppercase tracking-wider">Schools</span>
+                    <span class="text-xs text-slate-500 uppercase tracking-wider" data-i18n="home_stat3_label">Schools</span>
                 </div>
             </div>
         </div>
         <div class="flex-1 w-full h-64 rounded-xl overflow-hidden">
-            <img class="w-full h-full object-cover hover:scale-105 transition-transform duration-500" src="https://images.unsplash.com/photo-1542601098-8fc9e5bac1f5?auto=format&fit=crop&w=800&q=80" alt="Students planting trees">
+            <img class="w-full h-full object-cover hover:scale-105 transition-transform duration-500" src="https://lh3.googleusercontent.com/aida-public/AB6AXuB8QF5FpDOnYcjRP12PLLTDAq5NBXlpJN9thTpv6AXppVwwjzCJvQ4Ta73Wd2LKy6Ps397Z5dQ3Hp4xJbUHT-nO6ZCCqPEZBbH9lO49V3XkKeReOF0psI0Y0wTxSlVdYoTfOwZ9xYV84vUcP_D-EvMEHSo1O-5iF_SHxihNtbX9-cq-08USLk6V6O0oF8zn9O6w0QZ28zyyWA2Nv8XzPHdnDTGiVrfS7My2bqunqcvFTWtsa1aftYAUp-k8y7HO-UdWS-Cc28j90Uuw" alt="Students planting trees">
         </div>
     </div>
 </section>
@@ -110,7 +110,7 @@
 <section class="mx-auto w-full max-w-7xl px-6 py-16 lg:px-10">
     <div class="flex flex-col md:flex-row md:items-end justify-between gap-4 mb-10">
         <div>
-            <h4 class="text-primary font-bold uppercase tracking-widest text-sm mb-2">Updates</h4>
+            <h4 class="text-primary font-bold uppercase tracking-widest text-sm mb-2" data-i18n="home_updates_label">Updates</h4>
             <h2 class="text-3xl font-bold text-slate-900 dark:text-slate-100 tracking-tight" data-i18n="news_latest">Latest News</h2>
             <p class="mt-1 text-slate-600 dark:text-slate-400" data-i18n="news_latest_sub">Recent updates from Go Green School activities</p>
         </div>
@@ -119,7 +119,7 @@
         </a>
     </div>
     <div class="grid gap-6 md:grid-cols-2 lg:grid-cols-4">
-        <a href="{{ route('news') }}#berita-1" class="group flex flex-col rounded-xl border border-slate-200 dark:border-slate-800 bg-white dark:bg-slate-900 overflow-hidden shadow-sm hover:shadow-md transition-all hover:border-primary/50">
+        <a href="{{ route('news.show', 'calculator-sampah') }}" class="group flex flex-col rounded-xl border border-slate-200 dark:border-slate-800 bg-white dark:bg-slate-900 overflow-hidden shadow-sm hover:shadow-md transition-all hover:border-primary/50">
             <img src="https://images.unsplash.com/photo-1516979187457-637abb4f9353?auto=format&fit=crop&w=800&q=80" alt="Waste Calculator" class="w-full h-44 object-cover">
             <div class="p-5 flex flex-col flex-grow">
                 <div class="flex items-center gap-2 mb-2">
@@ -131,8 +131,8 @@
                 <span class="mt-3 text-primary font-bold text-xs flex items-center gap-1" data-i18n="news_read_more">Read More <span class="material-symbols-outlined text-xs">arrow_forward</span></span>
             </div>
         </a>
-        <a href="{{ route('news') }}#berita-2" class="group flex flex-col rounded-xl border border-slate-200 dark:border-slate-800 bg-white dark:bg-slate-900 overflow-hidden shadow-sm hover:shadow-md transition-all hover:border-primary/50">
-            <img src="https://images.unsplash.com/photo-1542601098-8fc9e5bac1f5?auto=format&fit=crop&w=800&q=80" alt="Tree Planting" class="w-full h-44 object-cover">
+        <a href="{{ route('news.show', 'penanaman-pohon') }}" class="group flex flex-col rounded-xl border border-slate-200 dark:border-slate-800 bg-white dark:bg-slate-900 overflow-hidden shadow-sm hover:shadow-md transition-all hover:border-primary/50">
+            <img src="https://lh3.googleusercontent.com/aida-public/AB6AXuB8QF5FpDOnYcjRP12PLLTDAq5NBXlpJN9thTpv6AXppVwwjzCJvQ4Ta73Wd2LKy6Ps397Z5dQ3Hp4xJbUHT-nO6ZCCqPEZBbH9lO49V3XkKeReOF0psI0Y0wTxSlVdYoTfOwZ9xYV84vUcP_D-EvMEHSo1O-5iF_SHxihNtbX9-cq-08USLk6V6O0oF8zn9O6w0QZ28zyyWA2Nv8XzPHdnDTGiVrfS7My2bqunqcvFTWtsa1aftYAUp-k8y7HO-UdWS-Cc28j90Uuw" alt="Tree Planting" class="w-full h-44 object-cover">
             <div class="p-5 flex flex-col flex-grow">
                 <div class="flex items-center gap-2 mb-2">
                     <span class="material-symbols-outlined text-sm text-slate-400">calendar_month</span>
@@ -143,7 +143,7 @@
                 <span class="mt-3 text-primary font-bold text-xs flex items-center gap-1" data-i18n="news_read_more">Read More <span class="material-symbols-outlined text-xs">arrow_forward</span></span>
             </div>
         </a>
-        <a href="{{ route('news') }}#berita-3" class="group flex flex-col rounded-xl border border-slate-200 dark:border-slate-800 bg-white dark:bg-slate-900 overflow-hidden shadow-sm hover:shadow-md transition-all hover:border-primary/50">
+        <a href="{{ route('news.show', 'kampanye-anti-plastik') }}" class="group flex flex-col rounded-xl border border-slate-200 dark:border-slate-800 bg-white dark:bg-slate-900 overflow-hidden shadow-sm hover:shadow-md transition-all hover:border-primary/50">
             <img src="https://images.unsplash.com/photo-1532996122724-e3c354a0b15b?auto=format&fit=crop&w=800&q=80" alt="Anti-Plastic Campaign" class="w-full h-44 object-cover">
             <div class="p-5 flex flex-col flex-grow">
                 <div class="flex items-center gap-2 mb-2">
@@ -155,7 +155,7 @@
                 <span class="mt-3 text-primary font-bold text-xs flex items-center gap-1" data-i18n="news_read_more">Read More <span class="material-symbols-outlined text-xs">arrow_forward</span></span>
             </div>
         </a>
-        <a href="{{ route('news') }}#berita-4" class="group flex flex-col rounded-xl border border-slate-200 dark:border-slate-800 bg-white dark:bg-slate-900 overflow-hidden shadow-sm hover:shadow-md transition-all hover:border-primary/50">
+        <a href="{{ route('news.show', 'workshop-b3') }}" class="group flex flex-col rounded-xl border border-slate-200 dark:border-slate-800 bg-white dark:bg-slate-900 overflow-hidden shadow-sm hover:shadow-md transition-all hover:border-primary/50">
             <img src="https://images.unsplash.com/photo-1611284446314-60a58ac0deb9?auto=format&fit=crop&w=800&q=80" alt="B3 Workshop" class="w-full h-44 object-cover">
             <div class="p-5 flex flex-col flex-grow">
                 <div class="flex items-center gap-2 mb-2">

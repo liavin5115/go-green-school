@@ -21,7 +21,7 @@
     <div class="rounded-xl border border-slate-200 dark:border-slate-800 bg-primary/5 dark:bg-primary/10 p-8 shadow-sm mb-8">
         <h2 class="text-xl font-bold text-slate-900 dark:text-slate-100 mb-3 flex items-center gap-2">
             <span class="material-symbols-outlined text-primary">lightbulb</span>
-            <span data-i18n="expl_intro_title">Purpose (Introduction)</span>
+            <span data-i18n="expl_intro_title">Purpose</span>
         </h2>
         <p class="text-slate-600 dark:text-slate-400 leading-relaxed" data-i18n="expl_intro_text">
             This explanation text aims to provide a clear understanding of the "Go Green" concept and its connection to global warming. It is designed for students, teachers, and school staff to grasp why adopting eco-friendly practices is crucial in our daily lives, especially within the Go Green School program.
@@ -29,7 +29,7 @@
     </div>
 
     {{-- KEY CONCEPTS --}}
-    <h2 class="text-xl font-bold text-slate-900 dark:text-slate-100 mb-6" data-i18n="expl_keys_title">Key Concepts (Explanation)</h2>
+    <h2 class="text-xl font-bold text-slate-900 dark:text-slate-100 mb-6" data-i18n="expl_keys_title">Key Concepts</h2>
 
     <div class="grid gap-6 md:grid-cols-2 mb-8">
         {{-- What is Go Green? --}}
@@ -70,7 +70,7 @@
     <div class="rounded-xl bg-background-dark dark:bg-slate-950 p-8 text-white">
         <h3 class="text-xl font-bold mb-3 flex items-center gap-2">
             <span class="material-symbols-outlined text-primary">stars</span>
-            <span data-i18n="expl_conclusion_title">Reaffirmation (Conclusion)</span>
+            <span data-i18n="expl_conclusion_title">Reaffirmation</span>
         </h3>
         <p class="text-slate-300 leading-relaxed" data-i18n="expl_conclusion_text">
             Understanding Go Green and the realities of global warming empowers us to make positive changes. By embracing sustainable habits, we not only mitigate environmental damage but also build a healthier, more resilient world. Let's commit to the Go Green School initiative today—every small action counts toward a greener tomorrow! 🌍✨
