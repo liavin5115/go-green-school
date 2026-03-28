@@ -77,7 +77,7 @@
             </div>
 
             {{-- Dark Mode Toggle --}}
-            <button onclick="document.documentElement.classList.toggle('dark')" class="flex h-8 w-8 items-center justify-center rounded-full border border-slate-200 dark:border-slate-700 text-slate-600 dark:text-slate-300 hover:border-primary hover:text-primary transition-colors">
+            <button onclick="toggleDarkMode()" class="flex h-8 w-8 items-center justify-center rounded-full border border-slate-200 dark:border-slate-700 text-slate-600 dark:text-slate-300 hover:border-primary hover:text-primary transition-colors">
                 <span class="material-symbols-outlined text-lg">dark_mode</span>
             </button>
         </nav>
@@ -88,7 +88,7 @@
                 <button onclick="switchLang('en')" id="btn-en-m" class="lang-btn active px-2 py-1 text-xs font-bold border-r border-slate-200 dark:border-slate-700">EN</button>
                 <button onclick="switchLang('id')" id="btn-id-m" class="lang-btn px-2 py-1 text-xs font-bold text-slate-600 dark:text-slate-400">ID</button>
             </div>
-            <button onclick="document.documentElement.classList.toggle('dark')" class="flex h-8 w-8 items-center justify-center rounded-full border border-slate-200 dark:border-slate-700 text-slate-600 dark:text-slate-300">
+            <button onclick="toggleDarkMode()" class="flex h-8 w-8 items-center justify-center rounded-full border border-slate-200 dark:border-slate-700 text-slate-600 dark:text-slate-300">
                 <span class="material-symbols-outlined text-lg">dark_mode</span>
             </button>
             <button onclick="document.getElementById('mobile-menu').classList.toggle('open')" class="text-slate-700 dark:text-slate-300">
@@ -191,6 +191,14 @@
 
 {{-- TRANSLATIONS & LANGUAGE SWITCHER --}}
 <script>
+// Initialize dark mode as early as possible to prevent flash
+(function() {
+    const isDarkMode = localStorage.getItem('ggs_dark_mode') === 'true';
+    if (isDarkMode) {
+        document.documentElement.classList.add('dark');
+    }
+})();
+
 const translations = {
     en: {
         nav_home: "Home", nav_about: "About", nav_programs: "Programs", nav_learn: "Learn",
@@ -452,6 +460,23 @@ const translations = {
 
 let currentLang = localStorage.getItem('ggs_lang') || 'en';
 
+// Dark mode toggle function with localStorage persistence
+function toggleDarkMode() {
+    document.documentElement.classList.toggle('dark');
+    const isDark = document.documentElement.classList.contains('dark');
+    localStorage.setItem('ggs_dark_mode', isDark ? 'true' : 'false');
+}
+
+// Restore dark mode preference on page load
+function initializeDarkMode() {
+    const isDarkMode = localStorage.getItem('ggs_dark_mode') === 'true';
+    if (isDarkMode) {
+        document.documentElement.classList.add('dark');
+    } else {
+        document.documentElement.classList.remove('dark');
+    }
+}
+
 function switchLang(lang) {
     currentLang = lang;
     localStorage.setItem('ggs_lang', lang);
@@ -479,7 +504,10 @@ function switchLang(lang) {
     });
 }
 
-document.addEventListener('DOMContentLoaded', () => { switchLang(currentLang); });
+document.addEventListener('DOMContentLoaded', () => {
+    initializeDarkMode();
+    switchLang(currentLang);
+});
 </script>
 
 </body>

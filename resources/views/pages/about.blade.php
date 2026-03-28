@@ -60,7 +60,7 @@
         <div class="flex flex-col gap-4 rounded-xl border border-slate-200 dark:border-slate-800 bg-white dark:bg-slate-900 p-8 shadow-sm h-full">
             <div class="flex items-center gap-3 pb-3 border-b border-slate-100 dark:border-slate-800">
                 <div class="w-10 h-10 rounded-full bg-primary/10 flex items-center justify-center text-primary">
-                    <span class="material-symbols-outlined text-xl">sticker_2</span>
+                    <span class="material-symbols-outlined text-xl">label</span>
                 </div>
                 <h2 class="text-xl font-bold text-slate-900 dark:text-slate-100" data-i18n="desc_decal_title">What is a Go Green Decal?</h2>
             </div>
