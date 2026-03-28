@@ -10,10 +10,6 @@
     <div class="flex min-h-[580px] flex-col gap-6 bg-cover bg-center bg-no-repeat items-center justify-center p-4 relative"
          style='background-image: linear-gradient(rgba(16, 34, 21, 0.65) 0%, rgba(16, 34, 21, 0.75) 100%), url("https://lh3.googleusercontent.com/aida-public/AB6AXuBfgB3QbHrFJtcXwaR8SFg9_DD_-QFpTET-ZLOEDh9_ZUZnDZaPpfJoEQTjmk6JRP7StQTZgJENTY5y3vPLknIjLT0wl8DX8dwiNso5CN1GLMNEM5D7Vyr5Lgwrz4iXypreuxVxvhKYWNoa0dDzksHMV8kkV5Df_U1mdgnjK3S4driXHkgRdcYOnBySmmpI-RNCnGXGF5y3_cNWa0YSYZAzxpntkaXX0OShq5v25GMS0R2jv3MHfF2tFXRaXKgCpq2Ht3bMBSEYiumA");'>
         <div class="flex flex-col gap-5 text-center max-w-[820px] z-10">
-            <div class="inline-flex items-center justify-center gap-2 px-3 py-1 rounded-full bg-white/20 backdrop-blur-sm border border-white/30 text-white text-xs font-medium uppercase tracking-wider w-fit mx-auto">
-                <span class="w-2 h-2 rounded-full bg-primary animate-pulse"></span>
-                <span data-i18n="hero_admission">Admissions Open for 2026</span>
-            </div>
             <h1 class="text-white text-4xl font-black leading-tight tracking-tight md:text-5xl lg:text-6xl drop-shadow-sm">
                 Go Green School:<br/>
                 <span data-i18n="hero_tagline">Building an Environmentally Conscious Generation</span>
@@ -22,7 +18,7 @@
                 A school program that promotes environmental awareness, sustainability, and eco-friendly practices in everyday learning and activities.
             </p>
             <div class="flex flex-col sm:flex-row gap-3 justify-center mt-2">
-                <a href="{{ route('join') }}" class="flex items-center justify-center rounded-lg h-12 px-8 bg-primary hover:bg-green-500 transition-all text-slate-900 text-base font-bold shadow-lg" data-i18n="hero_cta_join">Join Now</a>
+                <a href="https://wa.me/6281255585688" target="_blank" class="flex items-center justify-center rounded-lg h-12 px-8 bg-primary hover:bg-green-500 transition-all text-slate-900 text-base font-bold shadow-lg" data-i18n="hero_cta_join">Contact Us</a>
                 <a href="{{ route('about') }}" class="flex items-center justify-center rounded-lg h-12 px-8 bg-white/10 hover:bg-white/20 backdrop-blur-sm border border-white/30 transition-all text-white text-base font-medium" data-i18n="hero_cta_learn">Learn More</a>
             </div>
         </div>
@@ -174,9 +170,9 @@
 <section class="w-full bg-background-dark dark:bg-slate-950 px-6 py-16">
     <div class="mx-auto max-w-4xl text-center text-white">
         <h2 class="text-3xl font-bold mb-4 tracking-tight" data-i18n="home_cta_title">Ready to make your school greener?</h2>
-        <p class="text-lg mb-8 text-slate-300 leading-relaxed" data-i18n="home_cta_text">Join hundreds of schools across Indonesia in the Go Green School movement.</p>
-        <a href="{{ route('join') }}" class="inline-flex items-center justify-center rounded-lg h-12 px-10 bg-primary hover:bg-green-500 transition-colors text-slate-900 text-base font-bold shadow-lg" data-i18n="home_cta_btn">
-            Join Now
+        <p class="text-lg mb-8 text-slate-300 leading-relaxed" data-i18n="home_cta_text">Have questions or want to learn more about Go Green School? Contact us now!</p>
+        <a href="https://wa.me/6281255585688" target="_blank" class="inline-flex items-center justify-center rounded-lg h-12 px-10 bg-primary hover:bg-green-500 transition-colors text-slate-900 text-base font-bold shadow-lg" data-i18n="home_cta_btn">
+            Contact Us
         </a>
     </div>
 </section>

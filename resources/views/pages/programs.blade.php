@@ -76,8 +76,8 @@
     </div>
 
     <div class="mt-10 flex justify-center">
-        <a href="{{ route('join') }}" class="flex items-center justify-center rounded-lg h-12 px-10 bg-primary hover:bg-green-500 transition-colors text-slate-900 text-base font-bold shadow-sm" data-i18n="procedure_cta">
-            Let's Start Sorting!
+        <a href="https://wa.me/6281255585688" target="_blank" class="flex items-center justify-center rounded-lg h-12 px-10 bg-primary hover:bg-green-500 transition-colors text-slate-900 text-base font-bold shadow-sm">
+            Contact Us for More Info
         </a>
     </div>
 </section>

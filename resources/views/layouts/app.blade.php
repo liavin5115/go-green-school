@@ -68,7 +68,7 @@
             <a class="text-sm font-medium {{ request()->routeIs('gallery') ? 'text-primary' : 'text-slate-700 dark:text-slate-300 hover:text-primary dark:hover:text-primary' }} transition-colors" href="{{ route('gallery') }}" data-i18n="nav_gallery">Gallery</a>
             <a class="text-sm font-medium {{ request()->routeIs('news') ? 'text-primary' : 'text-slate-700 dark:text-slate-300 hover:text-primary dark:hover:text-primary' }} transition-colors" href="{{ route('news') }}" data-i18n="nav_news">News</a>
             <a class="text-sm font-medium {{ request()->routeIs('calculator') ? 'text-primary' : 'text-slate-700 dark:text-slate-300 hover:text-primary dark:hover:text-primary' }} transition-colors" href="{{ route('calculator') }}" data-i18n="nav_calculator">Calculator</a>
-            <a class="flex items-center justify-center rounded-lg h-9 px-5 bg-primary hover:bg-green-500 transition-colors text-slate-900 text-sm font-bold shadow-sm" href="{{ route('join') }}" data-i18n="nav_join">Join</a>
+            <a class="flex items-center justify-center rounded-lg h-9 px-5 bg-primary hover:bg-green-500 transition-colors text-slate-900 text-sm font-bold shadow-sm" href="https://wa.me/6281255585688" target="_blank" data-i18n="nav_join">Contact Us</a>
 
             {{-- Language Switcher --}}
             <div class="flex items-center border border-slate-200 dark:border-slate-700 rounded-full overflow-hidden ml-1">
@@ -106,7 +106,7 @@
         <a class="block py-3 text-sm font-medium text-slate-700 dark:text-slate-300 border-b border-slate-100 dark:border-slate-800" href="{{ route('gallery') }}" data-i18n="nav_gallery">Gallery</a>
         <a class="block py-3 text-sm font-medium text-slate-700 dark:text-slate-300 border-b border-slate-100 dark:border-slate-800" href="{{ route('news') }}" data-i18n="nav_news">News</a>
         <a class="block py-3 text-sm font-medium text-slate-700 dark:text-slate-300 border-b border-slate-100 dark:border-slate-800" href="{{ route('calculator') }}" data-i18n="nav_calculator">Calculator</a>
-        <a class="block mt-4 flex items-center justify-center rounded-lg h-10 bg-primary text-slate-900 text-sm font-bold shadow-sm" href="{{ route('join') }}" data-i18n="nav_join">Join</a>
+        <a class="block mt-4 flex items-center justify-center rounded-lg h-10 bg-primary text-slate-900 text-sm font-bold shadow-sm" href="https://wa.me/6281255585688" target="_blank" data-i18n="nav_join">Contact Us</a>
     </div>
 </header>
 
@@ -194,11 +194,10 @@
 const translations = {
     en: {
         nav_home: "Home", nav_about: "About", nav_programs: "Programs", nav_learn: "Learn",
-        nav_gallery: "Gallery", nav_news: "News", nav_calculator: "Calculator", nav_contact: "Contact", nav_join: "Join",
+        nav_gallery: "Gallery", nav_news: "News", nav_calculator: "Trash Calculator", nav_contact: "Contact", nav_join: "Contact Us",
         hero_subtitle: "Eco-Friendly School",
         hero_tagline: "Building an Environmentally Conscious Generation",
-        hero_admission: "Admissions Open for 2026",
-        hero_cta_join: "Join Now", hero_cta_learn: "Learn More",
+        hero_cta_join: "Contact Us", hero_cta_learn: "Learn More",
         home_mission_label: "Our Mission",
         home_mission_title: "What is Go Green School?",
         home_mission_text: "A school program that promotes environmental awareness, sustainability, and eco-friendly practices in everyday learning and activities.",
@@ -206,8 +205,8 @@ const translations = {
         home_card2_title: "Waste Sorting Guide", home_card2_desc: "Step-by-step guide to properly sort organic, inorganic & B3 waste.", home_card2_cta: "Discover",
         home_card3_title: "Go Green & Climate", home_card3_desc: "Understand the link between Go Green practices and global warming.", home_card3_cta: "View Projects",
         home_cta_title: "Ready to make your school greener?",
-        home_cta_text: "Join hundreds of schools across Indonesia in the Go Green School movement.",
-        home_cta_btn: "Join Now",
+        home_cta_text: "Have questions or want to learn more about Go Green School? Contact us now!",
+        home_cta_btn: "Contact Us",
         desc_intro: "A Go Green School is a school that promotes environmental awareness, sustainability, and eco-friendly practices in everyday learning and activities. The main goal of a Go Green School is to protect the environment and teach students how to live responsibly and sustainably.",
         desc_campaign_title: "What is a Go Green Campaign?",
         desc_campaign_intro: "A Go Green campaign in school is a program that encourages students, teachers, and staff to:",
@@ -280,14 +279,19 @@ const translations = {
         gallery_coming: "Coming Soon! We are collecting photos from participating schools.",
         contact_title: "Contact Us", contact_subtitle: "Have questions? Reach out to us.",
         contact_name: "Your Name", contact_email: "Email", contact_msg: "Message", contact_send: "Send Message",
-        calc_title: "Class Waste Calculator", calc_tagline: "Monitor & Calculate Your Class Waste for Go Green School! \u267b\ufe0f",
+        calc_title: "Class Waste Calculator", calc_tagline: "Monitor & Calculate Your Class Waste for Go Green School! ♻️",
+        calc_hero_title: "Class Waste", calc_hero_title_highlight: "Calculator", calc_hero_desc: "Track, analyze, and optimize your classroom\'s environmental footprint. Measure your impact to create a more sustainable learning environment for everyone.",
         calc_class: "Class Name", calc_days: "Observation Days", calc_organic: "Organic Waste (kg)", calc_inorganic: "Inorganic Waste (kg)", calc_plastic: "Plastic Waste (kg)",
-        calc_btn: "Calculate", calc_result_title: "CLASS WASTE CALCULATOR",
+        calc_btn: "Calculate", calc_btn_save: "Save Data", calc_btn_clear: "Clear All", calc_btn_export: "Export CSV", calc_result_title: "CLASS WASTE CALCULATOR",
+        calc_input_title: "Input Data", calc_results_title: "Calculation Results", calc_accumulated: "Accumulated during observation", calc_estimated: "Estimated monthly footprint",
+        calc_saved_title: "Saved Calculations", calc_saved_empty: "No saved data yet. Calculate and save to see entries here!",
+        calc_distribution: "Waste Distribution", calc_waste_type: "Waste Type", calc_table_no: "No.", calc_table_class: "Class", calc_table_composition: "Waste Composition",
+        calc_table_total_weight: "Total Weight", calc_table_date: "Date", calc_table_action: "Action", calc_delete_btn: "Delete",
         calc_label_class: "Class Name", calc_label_days: "Observation Days", calc_label_organic: "Organic Waste", calc_label_inorganic: "Inorganic Waste", calc_label_plastic: "Plastic Waste",
         calc_total: "Total Waste", calc_avg: "Average per Day", calc_pct_organic: "% Organic", calc_pct_inorganic: "% Inorganic", calc_pct_plastic: "% Plastic", calc_predict: "30-Day Prediction",
         calc_formula_title: "Formulas Used", calc_chart_pie: "Waste Composition", calc_chart_bar: "Waste Statistics",
         calc_bar_total: "Total", calc_bar_avg: "Daily Avg", calc_bar_predict: "30-Day Prediction",
-        calc_motivation: "By sorting & measuring waste, we create a greener school! \ud83c\udf0d Let\u2019s support Go Green!",
+        calc_motivation: "By sorting & measuring waste, we create a greener school! 🌍 Let's support Go Green!",
         calc_validation_empty: "All fields must be filled!", calc_validation_negative: "Values cannot be negative!", calc_validation_days: "Minimum observation days is 5!",
         news_title: "Go Green School News", news_tagline: "Updates on activities, programs, and achievements of our eco-friendly school \u267b\ufe0f\ud83c\udf31",
         news_latest: "Latest News", news_latest_sub: "Recent updates from Go Green School activities",
@@ -315,11 +319,10 @@ const translations = {
     },
     id: {
         nav_home: "Beranda", nav_about: "Tentang", nav_programs: "Program", nav_learn: "Edukasi",
-        nav_gallery: "Galeri", nav_news: "Berita", nav_calculator: "Kalkulator Sampah", nav_contact: "Kontak", nav_join: "Bergabung",
+        nav_gallery: "Galeri", nav_news: "Berita", nav_calculator: "Kalkulator Sampah", nav_contact: "Kontak", nav_join: "Hubungi Kami",
         hero_subtitle: "Sekolah Ramah Lingkungan",
         hero_tagline: "Membangun Generasi Peduli Lingkungan",
-        hero_admission: "Penerimaan Dibuka untuk 2026",
-        hero_cta_join: "Bergabung Sekarang", hero_cta_learn: "Pelajari Lebih Lanjut",
+        hero_cta_join: "Hubungi Kami", hero_cta_learn: "Pelajari Lebih Lanjut",
         home_mission_title: "Apa itu Go Green School?",
         home_mission_text: "Program sekolah yang mempromosikan kesadaran lingkungan, keberlanjutan, dan praktik ramah lingkungan dalam pembelajaran dan aktivitas sehari-hari.",
         home_mission_label: "Misi Kami",
@@ -332,8 +335,8 @@ const translations = {
         home_stat3_label: "Sekolah",
         home_updates_label: "Berita Terbaru",
         home_cta_title: "Siap membuat sekolahmu lebih hijau?",
-        home_cta_text: "Bergabunglah dengan ratusan sekolah di seluruh Indonesia dalam gerakan Go Green School.",
-        home_cta_btn: "Bergabung Sekarang",
+        home_cta_text: "Ada pertanyaan atau ingin tahu lebih lanjut tentang Go Green School? Hubungi kami sekarang!",
+        home_cta_btn: "Hubungi Kami",
         desc_intro: "Go Green School adalah sekolah yang mempromosikan kesadaran lingkungan, keberlanjutan, dan praktik ramah lingkungan dalam pembelajaran dan aktivitas sehari-hari. Tujuan utama Go Green School adalah melindungi lingkungan dan mengajarkan siswa cara hidup bertanggung jawab dan berkelanjutan.",
         desc_campaign_title: "Apa itu Kampanye Go Green?",
         desc_campaign_intro: "Kampanye Go Green di sekolah adalah program yang mendorong siswa, guru, dan staf untuk:",
@@ -407,14 +410,19 @@ const translations = {
         contact_title: "Hubungi Kami", contact_subtitle: "Punya pertanyaan? Hubungi kami.",
         contact_name: "Nama Anda", contact_email: "Email", contact_msg: "Pesan", contact_send: "Kirim Pesan",
         footer_tagline: "Memberdayakan generasi berikutnya untuk membangun dunia yang berkelanjutan melalui pendidikan dan aksi.",
-        calc_title: "Kalkulator Sampah Kelas", calc_tagline: "Pantau & Hitung Sampah Kelasmu untuk Go Green School! \u267b\ufe0f",
+        calc_title: "Kalkulator Sampah Kelas", calc_tagline: "Pantau & Hitung Sampah Kelasmu untuk Go Green School! ♻️",
+        calc_hero_title: "Sampah Kelas", calc_hero_title_highlight: "Kalkulator", calc_hero_desc: "Pantau, analisis, dan optimalkan jejak lingkungan kelasmu. Ukur dampakmu untuk menciptakan lingkungan belajar yang lebih berkelanjutan bagi semua.",
         calc_class: "Nama Kelas", calc_days: "Jumlah Hari Pengamatan", calc_organic: "Sampah Organik (kg)", calc_inorganic: "Sampah Anorganik (kg)", calc_plastic: "Sampah Plastik (kg)",
-        calc_btn: "Hitung", calc_result_title: "KALKULATOR SAMPAH KELAS",
+        calc_btn: "Hitung", calc_btn_save: "Simpan Data", calc_btn_clear: "Hapus Semua", calc_btn_export: "Ekspor CSV", calc_result_title: "KALKULATOR SAMPAH KELAS",
+        calc_input_title: "Input Data", calc_results_title: "Hasil Perhitungan", calc_accumulated: "Terakumulasi selama pengamatan", calc_estimated: "Perkiraan jejak bulanan",
+        calc_saved_title: "Perhitungan Tersimpan", calc_saved_empty: "Belum ada data tersimpan. Hitung dan simpan untuk melihat entri di sini!",
+        calc_distribution: "Distribusi Sampah", calc_waste_type: "Jenis Sampah", calc_table_no: "No.", calc_table_class: "Kelas", calc_table_composition: "Komposisi Sampah",
+        calc_table_total_weight: "Total Berat", calc_table_date: "Tanggal", calc_table_action: "Aksi", calc_delete_btn: "Hapus",
         calc_label_class: "Nama Kelas", calc_label_days: "Jumlah Hari", calc_label_organic: "Sampah Organik", calc_label_inorganic: "Sampah Anorganik", calc_label_plastic: "Sampah Plastik",
         calc_total: "Total Sampah", calc_avg: "Rata-rata per Hari", calc_pct_organic: "% Organik", calc_pct_inorganic: "% Anorganik", calc_pct_plastic: "% Plastik", calc_predict: "Prediksi 30 Hari",
         calc_formula_title: "Rumus yang Digunakan", calc_chart_pie: "Komposisi Sampah", calc_chart_bar: "Statistik Sampah",
         calc_bar_total: "Total", calc_bar_avg: "Rata-rata Harian", calc_bar_predict: "Prediksi 30 Hari",
-        calc_motivation: "Dengan memilah & mengukur sampah, kita ciptakan sekolah lebih hijau! \ud83c\udf0d Mari dukung Go Green!",
+        calc_motivation: "Dengan memilah & mengukur sampah, kita ciptakan sekolah lebih hijau! 🌍 Mari dukung Go Green!",
         calc_validation_empty: "Semua field harus diisi!", calc_validation_negative: "Nilai tidak boleh negatif!", calc_validation_days: "Minimal jumlah hari pengamatan adalah 5!",
         news_title: "Berita Go Green School", news_tagline: "Update kegiatan, program, dan pencapaian sekolah ramah lingkungan kami \u267b\ufe0f\ud83c\udf31",
         news_latest: "Berita Terbaru", news_latest_sub: "Info terkini dari kegiatan Go Green School",

@@ -5,239 +5,415 @@
 
 @section('content')
 
-{{-- HERO --}}
-<section class="w-full border-b border-slate-200 dark:border-slate-800 bg-white dark:bg-slate-900 px-6 py-12">
-    <div class="mx-auto max-w-7xl text-center">
-        <span class="material-symbols-outlined mb-4 text-6xl text-primary">recycling</span>
-        <h1 class="text-4xl font-bold text-slate-900 dark:text-slate-100 tracking-tight mb-3" data-i18n="calc_title">Class Waste Calculator</h1>
-        <p class="text-lg text-slate-600 dark:text-slate-400 max-w-2xl mx-auto" data-i18n="calc_tagline">Monitor &amp; Calculate Your Class Waste for Go Green School! ♻️</p>
-        <p class="mt-2 text-sm text-slate-400 font-semibold uppercase tracking-wide">RPL × Matematika Collaboration Project</p>
+<style>
+    @keyframes slideScale {
+        from {
+            opacity: 0;
+            transform: scale(0.9);
+        }
+        to {
+            opacity: 1;
+            transform: scale(1);
+        }
+    }
+
+    .animate-result {
+        animation: slideScale 0.5s ease-out;
+    }
+</style>
+
+{{-- HERO SECTION --}}
+<header class="pt-32 pb-12 px-6 md:px-10 lg:px-20">
+    <div class="mx-auto max-w-7xl">
+        <div class="mb-8 text-center md:text-left">
+            <div class="inline-flex items-center justify-center w-16 h-16 rounded-full bg-primary/10 text-primary mb-6">
+                <span class="material-symbols-outlined text-4xl">recycling</span>
+            </div>
+            <h1 class="text-5xl md:text-6xl font-black tracking-tight text-slate-900 dark:text-slate-100 leading-tight mb-4">
+                <span data-i18n="calc_hero_title">Class Waste</span> <span class="text-primary" data-i18n="calc_hero_title_highlight">Calculator</span>
+            </h1>
+            <p class="text-slate-600 dark:text-slate-400 text-lg max-w-2xl font-light" data-i18n="calc_hero_desc">
+                Track, analyze, and optimize your classroom's environmental footprint. Measure your impact to create a more sustainable learning environment for everyone.
+            </p>
+        </div>
     </div>
-</section>
+</header>
 
-{{-- MAIN SECTION --}}
-<section class="mx-auto w-full max-w-7xl px-6 py-16 lg:px-10">
-    <div class="grid gap-10 lg:grid-cols-5">
+{{-- MAIN CONTENT --}}
+<section class="px-6 md:px-10 lg:px-20 pb-20">
+    <div class="mx-auto max-w-7xl">
+        <div class="grid grid-cols-1 lg:grid-cols-12 gap-10 mb-20">
 
-        {{-- FORM (left, 2 cols) --}}
-        <div class="lg:col-span-2">
-            <div class="rounded-2xl border border-slate-200 dark:border-slate-800 bg-white dark:bg-slate-900 p-8 shadow-sm sticky top-28">
-                <h2 class="text-xl font-bold text-slate-900 dark:text-slate-100 mb-6 flex items-center gap-2">
-                    <span class="material-symbols-outlined text-primary">edit_note</span>
-                    <span data-i18n="calc_title">Class Waste Calculator</span>
-                </h2>
+            {{-- LEFT: INPUT FORM --}}
+            <div class="lg:col-span-5">
+                <div class="rounded-2xl border border-slate-200 dark:border-slate-800 bg-white dark:bg-slate-900 p-8 shadow-sm sticky top-28">
+                    <h2 class="text-2xl font-bold text-slate-900 dark:text-slate-100 mb-8 flex items-center gap-2">
+                        <span class="material-symbols-outlined text-primary">edit_note</span>
+                        <span data-i18n="calc_input_title">Input Data</span>
+                    </h2>
 
-                <div class="space-y-5">
-                    {{-- Class Name --}}
-                    <div>
-                        <label class="block text-sm font-bold text-slate-700 dark:text-slate-300 mb-1.5" data-i18n="calc_class">Class Name</label>
-                        <select id="calc-class">
-                            <option value="XI RPL 1" selected>XI RPL 1</option>
-                            <option value="XI RPL 2">XI RPL 2</option>
-                            <option value="XI RPL 3">XI RPL 3</option>
-                            <option value="X Hotel 1">X Hotel 1</option>
-                            <option value="XII Hotel 3">XII Hotel 3</option>
-                            <option value="XI TSM 1">XI TSM 1</option>
-                            <option value="XI TSM 2">XI TSM 2</option>
-                            <option value="XI TSM 3">XI TSM 3</option>
-                        </select>
+                    <form class="space-y-6">
+                        {{-- Class Name --}}
+                        <div>
+                            <label class="block text-sm font-bold text-slate-700 dark:text-slate-300 mb-2 uppercase tracking-wider" data-i18n="calc_label_class">Class Name</label>
+                            <select id="calc-class" class="w-full bg-slate-50 dark:bg-slate-800 border border-slate-200 dark:border-slate-700 rounded-lg focus:ring-2 focus:ring-primary focus:border-transparent py-3 px-4 text-slate-900 dark:text-slate-100">
+                                <option value="XI RPL 1" selected>XI RPL 1</option>
+                                <option value="XI RPL 2">XI RPL 2</option>
+                                <option value="XI RPL 3">XI RPL 3</option>
+                                <option value="X Hotel 1">X Hotel 1</option>
+                                <option value="XII Hotel 3">XII Hotel 3</option>
+                                <option value="XI TSM 1">XI TSM 1</option>
+                                <option value="XI TSM 2">XI TSM 2</option>
+                                <option value="XI TSM 3">XI TSM 3</option>
+                            </select>
+                        </div>
+
+                        {{-- Observation Days --}}
+                        <div>
+                            <label class="block text-sm font-bold text-slate-700 dark:text-slate-300 mb-2 uppercase tracking-wider" data-i18n="calc_label_days">Observation Days</label>
+                            <input type="number" id="calc-days" value="5" min="5" class="w-full bg-slate-50 dark:bg-slate-800 border border-slate-200 dark:border-slate-700 rounded-lg focus:ring-2 focus:ring-primary focus:border-transparent py-3 px-4 text-slate-900 dark:text-slate-100">
+                        </div>
+
+                        {{-- Waste Types --}}
+                        <div class="space-y-4">
+                            {{-- Organic --}}
+                            <div>
+                                <label class="block text-sm font-bold text-slate-700 dark:text-slate-300 mb-2 uppercase tracking-wider flex items-center gap-2">
+                                    <span class="w-3 h-3 rounded-full bg-green-500"></span>
+                                    <span data-i18n="calc_label_organic">Organic Waste (kg)</span>
+                                </label>
+                                <input type="number" id="calc-organic" value="12" min="0" step="0.1" class="w-full bg-slate-50 dark:bg-slate-800 border border-slate-200 dark:border-slate-700 rounded-lg focus:ring-2 focus:ring-primary focus:border-transparent py-3 px-4 text-slate-900 dark:text-slate-100">
+                            </div>
+
+                            {{-- Inorganic --}}
+                            <div>
+                                <label class="block text-sm font-bold text-slate-700 dark:text-slate-300 mb-2 uppercase tracking-wider flex items-center gap-2">
+                                    <span class="w-3 h-3 rounded-full bg-blue-500"></span>
+                                    <span data-i18n="calc_label_inorganic">Inorganic Waste (kg)</span>
+                                </label>
+                                <input type="number" id="calc-inorganic" value="8" min="0" step="0.1" class="w-full bg-slate-50 dark:bg-slate-800 border border-slate-200 dark:border-slate-700 rounded-lg focus:ring-2 focus:ring-primary focus:border-transparent py-3 px-4 text-slate-900 dark:text-slate-100">
+                            </div>
+
+                            {{-- Plastic --}}
+                            <div>
+                                <label class="block text-sm font-bold text-slate-700 dark:text-slate-300 mb-2 uppercase tracking-wider flex items-center gap-2">
+                                    <span class="w-3 h-3 rounded-full bg-amber-500"></span>
+                                    <span data-i18n="calc_label_plastic">Plastic Waste (kg)</span>
+                                </label>
+                                <input type="number" id="calc-plastic" value="5" min="0" step="0.1" class="w-full bg-slate-50 dark:bg-slate-800 border border-slate-200 dark:border-slate-700 rounded-lg focus:ring-2 focus:ring-primary focus:border-transparent py-3 px-4 text-slate-900 dark:text-slate-100">
+                            </div>
+                        </div>
+
+                        {{-- Buttons --}}
+                        <div class="flex flex-col gap-3 pt-4">
+                            <button type="button" onclick="calculateWaste()" class="w-full bg-primary hover:bg-green-500 transition-all text-slate-900 font-bold py-3 rounded-lg shadow-lg shadow-green-500/20" data-i18n="calc_btn">Calculate</button>
+                            <button type="button" onclick="saveCalculation()" class="w-full bg-green-600 hover:bg-green-700 transition-colors text-white font-bold py-2 rounded-lg flex items-center justify-center gap-2">
+                                <span class="material-symbols-outlined text-lg">save</span>
+                                <span data-i18n="calc_btn_save">Save Data</span>
+                            </button>
+                            <button type="button" onclick="clearAllData()" class="w-full bg-slate-300 dark:bg-slate-700 hover:bg-slate-400 dark:hover:bg-slate-600 transition-colors text-slate-900 dark:text-white font-bold py-2 rounded-lg flex items-center justify-center gap-2">
+                                <span class="material-symbols-outlined text-lg">delete_sweep</span>
+                                <span data-i18n="calc_btn_clear">Clear All</span>
+                            </button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+
+            {{-- RIGHT: RESULTS & VISUALIZATION --}}
+            <div class="lg:col-span-7 space-y-8">
+                {{-- Summary Cards --}}
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                    <div class="bg-primary/10 dark:bg-primary/5 border border-primary/20 p-6 rounded-2xl">
+                        <p class="text-sm font-bold uppercase tracking-widest text-slate-600 dark:text-slate-400 mb-2" data-i18n="calc_total">Total Waste</p>
+                        <div class="text-4xl font-black text-primary" id="res-total">25 <span class="text-xl font-normal">kg</span></div>
+                        <p class="text-xs mt-2 text-slate-600 dark:text-slate-400" data-i18n="calc_accumulated">Accumulated during observation</p>
                     </div>
-
-                    {{-- Observation Days --}}
-                    <div>
-                        <label class="block text-sm font-bold text-slate-700 dark:text-slate-300 mb-1.5" data-i18n="calc_days">Observation Days</label>
-                        <input type="number" id="calc-days" value="5" min="5">
+                    <div class="bg-slate-100 dark:bg-slate-800 border border-slate-200 dark:border-slate-700 p-6 rounded-2xl">
+                        <p class="text-sm font-bold uppercase tracking-widest text-slate-600 dark:text-slate-400 mb-2" data-i18n="calc_predict">30-Day Prediction</p>
+                        <div class="text-4xl font-black text-slate-900 dark:text-slate-100" id="res-predict">150 <span class="text-xl font-normal">kg</span></div>
+                        <p class="text-xs mt-2 text-slate-600 dark:text-slate-400" data-i18n="calc_estimated">Estimated monthly footprint</p>
                     </div>
+                </div>
 
-                    {{-- Organic --}}
-                    <div>
-                        <label class="block text-sm font-bold text-slate-700 dark:text-slate-300 mb-1.5 flex items-center gap-2">
-                            <span class="inline-block w-3 h-3 rounded-full bg-green-500"></span>
-                            <span data-i18n="calc_organic">Organic Waste (kg)</span>
-                        </label>
-                        <input type="number" id="calc-organic" value="12" min="0" step="0.1">
+                {{-- Visualization --}}
+                <div class="bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 p-8 rounded-2xl shadow-sm">
+                    <div class="flex items-center justify-between mb-8">
+                        <h3 class="font-bold text-xl text-slate-900 dark:text-slate-100" data-i18n="calc_distribution">Waste Distribution</h3>
                     </div>
-
-                    {{-- Inorganic --}}
-                    <div>
-                        <label class="block text-sm font-bold text-slate-700 dark:text-slate-300 mb-1.5 flex items-center gap-2">
-                            <span class="inline-block w-3 h-3 rounded-full bg-yellow-500"></span>
-                            <span data-i18n="calc_inorganic">Inorganic Waste (kg)</span>
-                        </label>
-                        <input type="number" id="calc-inorganic" value="8" min="0" step="0.1">
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-10">
+                        {{-- Pie Chart --}}
+                        <div class="flex justify-center">
+                            <div class="w-64 h-64">
+                                <canvas id="chart-pie"></canvas>
+                            </div>
+                        </div>
+                        {{-- Bar Chart --}}
+                        <div class="flex flex-col space-y-6">
+                            <div>
+                                <div class="flex justify-between text-sm font-bold text-slate-600 dark:text-slate-400 mb-2">
+                                    <span class="flex items-center gap-2"><span class="w-2 h-2 rounded-full bg-green-500"></span>Organic</span>
+                                    <span id="res-pct-organic">48%</span>
+                                </div>
+                                <div class="h-3 w-full bg-slate-200 dark:bg-slate-700 rounded-full overflow-hidden">
+                                    <div class="h-full bg-green-500 rounded-full" style="width: 48%;" id="bar-organic"></div>
+                                </div>
+                            </div>
+                            <div>
+                                <div class="flex justify-between text-sm font-bold text-slate-600 dark:text-slate-400 mb-2">
+                                    <span class="flex items-center gap-2"><span class="w-2 h-2 rounded-full bg-blue-500"></span>Inorganic</span>
+                                    <span id="res-pct-inorganic">32%</span>
+                                </div>
+                                <div class="h-3 w-full bg-slate-200 dark:bg-slate-700 rounded-full overflow-hidden">
+                                    <div class="h-full bg-blue-500 rounded-full" style="width: 32%;" id="bar-inorganic"></div>
+                                </div>
+                            </div>
+                            <div>
+                                <div class="flex justify-between text-sm font-bold text-slate-600 dark:text-slate-400 mb-2">
+                                    <span class="flex items-center gap-2"><span class="w-2 h-2 rounded-full bg-amber-500"></span>Plastic</span>
+                                    <span id="res-pct-plastic">20%</span>
+                                </div>
+                                <div class="h-3 w-full bg-slate-200 dark:bg-slate-700 rounded-full overflow-hidden">
+                                    <div class="h-full bg-amber-500 rounded-full" style="width: 20%;" id="bar-plastic"></div>
+                                </div>
+                            </div>
+                        </div>
                     </div>
-
-                    {{-- Plastic --}}
-                    <div>
-                        <label class="block text-sm font-bold text-slate-700 dark:text-slate-300 mb-1.5 flex items-center gap-2">
-                            <span class="inline-block w-3 h-3 rounded-full bg-pink-500"></span>
-                            <span data-i18n="calc_plastic">Plastic Waste (kg)</span>
-                        </label>
-                        <input type="number" id="calc-plastic" value="5" min="0" step="0.1">
-                    </div>
-
-                    {{-- Button --}}
-                    <button onclick="calculateWaste()" class="w-full flex items-center justify-center rounded-lg h-12 bg-primary hover:bg-green-500 transition-colors text-slate-900 font-bold text-base" data-i18n="calc_btn">
-                        Calculate
-                    </button>
                 </div>
             </div>
         </div>
+    </div>
+</section>
 
-        {{-- RESULTS (right, 3 cols) --}}
-        <div class="lg:col-span-3 space-y-8">
-
-            {{-- Result Card --}}
-            <div class="rounded-2xl border border-slate-200 dark:border-slate-800 bg-white dark:bg-slate-900 p-8 shadow-sm">
-                <h2 class="text-xl font-bold text-slate-900 dark:text-slate-100 mb-6 flex items-center gap-2 border-b border-slate-200 dark:border-slate-800 pb-3">
-                    <span class="material-symbols-outlined text-primary">assessment</span>
-                    <span data-i18n="calc_result_title">CLASS WASTE CALCULATOR</span>
-                </h2>
-
-                <div class="grid gap-4 sm:grid-cols-2">
-                    {{-- Info rows --}}
-                    <div class="flex justify-between items-center py-2 border-b border-dashed border-slate-200 dark:border-slate-700">
-                        <span class="text-sm font-semibold text-slate-500" data-i18n="calc_label_class">Class Name</span>
-                        <span class="text-sm font-bold text-primary" id="res-class">XI RPL 1</span>
-                    </div>
-                    <div class="flex justify-between items-center py-2 border-b border-dashed border-slate-200 dark:border-slate-700">
-                        <span class="text-sm font-semibold text-slate-500" data-i18n="calc_label_days">Observation Days</span>
-                        <span class="text-sm font-bold text-primary" id="res-days">5</span>
-                    </div>
-                    <div class="flex justify-between items-center py-2 border-b border-dashed border-slate-200 dark:border-slate-700">
-                        <span class="text-sm font-semibold text-slate-500 flex items-center gap-1"><span class="inline-block w-2 h-2 rounded-full bg-green-500"></span> <span data-i18n="calc_label_organic">Organic Waste</span></span>
-                        <span class="text-sm font-bold text-primary" id="res-organic">12 kg</span>
-                    </div>
-                    <div class="flex justify-between items-center py-2 border-b border-dashed border-slate-200 dark:border-slate-700">
-                        <span class="text-sm font-semibold text-slate-500 flex items-center gap-1"><span class="inline-block w-2 h-2 rounded-full bg-yellow-500"></span> <span data-i18n="calc_label_inorganic">Inorganic Waste</span></span>
-                        <span class="text-sm font-bold text-primary" id="res-inorganic">8 kg</span>
-                    </div>
-                    <div class="flex justify-between items-center py-2 border-b border-dashed border-slate-200 dark:border-slate-700">
-                        <span class="text-sm font-semibold text-slate-500 flex items-center gap-1"><span class="inline-block w-2 h-2 rounded-full bg-pink-500"></span> <span data-i18n="calc_label_plastic">Plastic Waste</span></span>
-                        <span class="text-sm font-bold text-primary" id="res-plastic">5 kg</span>
-                    </div>
-                </div>
-
-                {{-- Divider --}}
-                <div class="my-6 border-t border-slate-200 dark:border-slate-800"></div>
-
-                {{-- Computed values --}}
-                <div class="grid gap-3 sm:grid-cols-2 lg:grid-cols-3">
-                    <div class="rounded-xl border border-slate-200 dark:border-slate-800 bg-white dark:bg-slate-900 p-4 text-center">
-                        <p class="text-xs font-bold text-slate-500 uppercase mb-1" data-i18n="calc_total">Total Waste</p>
-                        <p class="text-2xl font-bold text-primary" id="res-total">25 kg</p>
-                    </div>
-                    <div class="rounded-xl border border-slate-200 dark:border-slate-800 bg-white dark:bg-slate-900 p-4 text-center">
-                        <p class="text-xs font-bold text-slate-500 uppercase mb-1" data-i18n="calc_avg">Average per Day</p>
-                        <p class="text-2xl font-bold text-primary" id="res-avg">5.00 kg</p>
-                    </div>
-                    <div class="rounded-xl border border-slate-200 dark:border-slate-800 bg-white dark:bg-slate-900 p-4 text-center">
-                        <p class="text-xs font-bold text-slate-500 uppercase mb-1" data-i18n="calc_predict">30-Day Prediction</p>
-                        <p class="text-2xl font-bold text-red-500" id="res-predict">150.00 kg</p>
-                    </div>
-                    <div class="rounded-xl border border-green-200 dark:border-green-900 bg-green-50 dark:bg-green-950 p-4 text-center">
-                        <p class="text-xs font-bold text-slate-500 uppercase mb-1" data-i18n="calc_pct_organic">% Organic</p>
-                        <p class="text-xl font-bold text-green-600" id="res-pct-organic">48.00%</p>
-                    </div>
-                    <div class="rounded-xl border border-yellow-200 dark:border-yellow-900 bg-yellow-50 dark:bg-yellow-950 p-4 text-center">
-                        <p class="text-xs font-bold text-slate-500 uppercase mb-1" data-i18n="calc_pct_inorganic">% Inorganic</p>
-                        <p class="text-xl font-bold text-yellow-600" id="res-pct-inorganic">32.00%</p>
-                    </div>
-                    <div class="rounded-xl border border-pink-200 dark:border-pink-900 bg-pink-50 dark:bg-pink-950 p-4 text-center">
-                        <p class="text-xs font-bold text-slate-500 uppercase mb-1" data-i18n="calc_pct_plastic">% Plastic</p>
-                        <p class="text-xl font-bold text-pink-600" id="res-pct-plastic">20.00%</p>
-                    </div>
-                </div>
+{{-- SAVED CALCULATIONS TABLE --}}
+<section class="px-6 md:px-10 lg:px-20 pb-20">
+    <div class="mx-auto max-w-7xl">
+        <div class="flex items-center justify-between mb-8">
+            <div class="flex items-center gap-3">
+                <h2 class="text-3xl font-black tracking-tight text-slate-900 dark:text-slate-100" data-i18n="calc_saved_title">Saved Calculations</h2>
+                <span class="text-sm font-normal text-slate-500 dark:text-slate-400" id="saved-count">(0 entries)</span>
             </div>
+            <button onclick="exportCSV()" class="flex items-center gap-2 text-primary font-bold hover:text-green-600 transition-colors">
+                <span class="material-symbols-outlined">download</span>
+                <span data-i18n="calc_btn_export">Export CSV</span>
+            </button>
+        </div>
 
-            {{-- CHARTS --}}
-            <div class="grid gap-8 md:grid-cols-2">
-                {{-- Pie Chart --}}
-                <div class="rounded-2xl border border-slate-200 dark:border-slate-800 bg-white dark:bg-slate-900 p-6 shadow-sm">
-                    <h3 class="text-base font-bold text-slate-900 dark:text-slate-100 mb-4 flex items-center gap-2">
-                        <span class="material-symbols-outlined text-primary">pie_chart</span>
-                        <span data-i18n="calc_chart_pie">Waste Composition</span>
-                    </h3>
-                    <div class="relative" style="max-height: 280px;">
-                        <canvas id="chart-pie"></canvas>
-                    </div>
-                </div>
-                {{-- Bar Chart --}}
-                <div class="rounded-2xl border border-slate-200 dark:border-slate-800 bg-white dark:bg-slate-900 p-6 shadow-sm">
-                    <h3 class="text-base font-bold text-slate-900 dark:text-slate-100 mb-4 flex items-center gap-2">
-                        <span class="material-symbols-outlined text-primary">bar_chart</span>
-                        <span data-i18n="calc_chart_bar">Waste Statistics</span>
-                    </h3>
-                    <div class="relative" style="max-height: 280px;">
-                        <canvas id="chart-bar"></canvas>
-                    </div>
-                </div>
+        {{-- Table --}}
+        <div class="overflow-hidden rounded-2xl shadow-lg bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800">
+            <div class="overflow-x-auto">
+                <table class="w-full text-left">
+                    <thead>
+                        <tr class="bg-slate-100 dark:bg-slate-800 border-b border-slate-200 dark:border-slate-700">
+                            <th class="px-8 py-5 text-sm font-bold text-slate-700 dark:text-slate-300 uppercase tracking-wider" data-i18n="calc_table_no">#</th>
+                            <th class="px-6 py-5 text-sm font-bold text-slate-700 dark:text-slate-300 uppercase tracking-wider" data-i18n="calc_table_class">Class</th>
+                            <th class="px-6 py-5 text-sm font-bold text-slate-700 dark:text-slate-300 uppercase tracking-wider text-center" data-i18n="calc_waste_type_days">Days</th>
+                            <th class="px-6 py-5 text-sm font-bold text-slate-700 dark:text-slate-300 uppercase tracking-wider" data-i18n="calc_table_composition">Composition</th>
+                            <th class="px-6 py-5 text-sm font-bold text-slate-700 dark:text-slate-300 uppercase tracking-wider text-right" data-i18n="calc_table_total_weight">Total</th>
+                            <th class="px-6 py-5 text-sm font-bold text-slate-700 dark:text-slate-300 uppercase tracking-wider text-right" data-i18n="calc_table_date">Date</th>
+                            <th class="px-8 py-5 text-sm font-bold text-slate-700 dark:text-slate-300 uppercase tracking-wider text-right" data-i18n="calc_table_action">Action</th>
+                        </tr>
+                    </thead>
+                    <tbody id="table-body" class="divide-y divide-slate-200 dark:divide-slate-700">
+                        <tr class="text-center text-slate-500 h-16" id="empty-row">
+                            <td colspan="7" class="py-8" data-i18n="calc_saved_empty">No saved data yet. Calculate and save to see entries here!</td>
+                        </tr>
+                    </tbody>
+                </table>
             </div>
-
-            {{-- FORMULAS --}}
-            <div class="rounded-2xl border border-slate-200 dark:border-slate-800 bg-white dark:bg-slate-900 p-8 shadow-sm">
-                <h3 class="text-lg font-bold text-slate-900 dark:text-slate-100 mb-4 flex items-center gap-2 border-b border-slate-200 dark:border-slate-800 pb-2">
-                    <span class="material-symbols-outlined text-primary">functions</span>
-                    <span data-i18n="calc_formula_title">Formulas Used</span>
-                </h3>
-                <div class="grid gap-3 sm:grid-cols-2 font-mono text-sm text-slate-700 dark:text-slate-300">
-                    <div class="bg-slate-50 dark:bg-slate-800 p-3 rounded-lg">
-                        <span class="font-bold text-primary">total</span> = organik + anorganik + plastik
-                    </div>
-                    <div class="bg-slate-50 dark:bg-slate-800 p-3 rounded-lg">
-                        <span class="font-bold text-primary">rata-rata</span> = total / jumlah_hari
-                    </div>
-                    <div class="bg-green-50 dark:bg-green-950 p-3 rounded-lg">
-                        <span class="font-bold text-green-700">% organik</span> = (organik / total) × 100
-                    </div>
-                    <div class="bg-yellow-50 dark:bg-yellow-950 p-3 rounded-lg">
-                        <span class="font-bold text-yellow-700">% anorganik</span> = (anorganik / total) × 100
-                    </div>
-                    <div class="bg-pink-50 dark:bg-pink-950 p-3 rounded-lg">
-                        <span class="font-bold text-pink-700">% plastik</span> = (plastik / total) × 100
-                    </div>
-                    <div class="bg-slate-50 dark:bg-slate-800 p-3 rounded-lg">
-                        <span class="font-bold text-red-600">prediksi 30 hari</span> = rata-rata × 30
-                    </div>
-                </div>
-            </div>
-
         </div>
     </div>
 
-    {{-- MOTIVATION --}}
-    <div class="mt-16 rounded-2xl bg-background-dark px-8 py-10 text-center text-white">
-        <span class="material-symbols-outlined text-5xl mb-3 text-primary">eco</span>
-        <p class="text-lg font-semibold leading-relaxed" data-i18n="calc_motivation">Dengan memilah &amp; mengukur sampah, kita ciptakan sekolah lebih hijau! 🌍 Mari dukung Go Green!</p>
-    </div>
-
-    {{-- BACK --}}
-    <div class="mt-10 flex flex-col sm:flex-row gap-4 justify-center">
-        <a href="{{ route('programs') }}" class="inline-flex items-center justify-center rounded-lg h-11 px-8 border border-slate-300 dark:border-slate-700 text-slate-700 dark:text-slate-300 hover:bg-slate-100 dark:hover:bg-slate-800 transition-colors font-semibold text-sm text-center" data-i18n="nav_programs">
-            ← Programs
-        </a>
-        <a href="{{ route('news') }}" class="inline-flex items-center justify-center rounded-lg h-11 px-8 bg-primary hover:bg-green-500 transition-colors text-slate-900 font-bold text-sm text-center" data-i18n="nav_news">
-            News →
-        </a>
-    </div>
-</section>
 
 {{-- Chart.js CDN --}}
 <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 
 <script>
-let pieChart, barChart;
+let pieChart;
+const STORAGE_KEY = 'ggSchoolCalcData';
+
+// Initialize data from localStorage
+function loadSavedData() {
+    const saved = localStorage.getItem(STORAGE_KEY);
+    return saved ? JSON.parse(saved) : [];
+}
+
+// Save new calculation to localStorage
+function saveCalculation() {
+    const days = parseFloat(document.getElementById('calc-days').value);
+    const organic = parseFloat(document.getElementById('calc-organic').value);
+    const inorganic = parseFloat(document.getElementById('calc-inorganic').value);
+    const plastic = parseFloat(document.getElementById('calc-plastic').value);
+    const className = document.getElementById('calc-class').value;
+
+    if (isNaN(days) || isNaN(organic) || isNaN(inorganic) || isNaN(plastic)) {
+        alert('Please calculate first!');
+        return;
+    }
+
+    const total = organic + inorganic + plastic;
+    const avg = total / days;
+
+    const newEntry = {
+        id: Date.now(),
+        class: className,
+        days: days,
+        organic: organic,
+        inorganic: inorganic,
+        plastic: plastic,
+        total: total,
+        avg: avg,
+        date: new Date().toLocaleDateString('id-ID', { year: 'numeric', month: 'short', day: 'numeric', hour: '2-digit', minute: '2-digit' })
+    };
+
+    const data = loadSavedData();
+    data.push(newEntry);
+    localStorage.setItem(STORAGE_KEY, JSON.stringify(data));
+
+    renderTable();
+    alert('Data saved successfully! ✓');
+}
+
+// Load entry values back into calculator form
+function loadEntry(id) {
+    const data = loadSavedData();
+    const entry = data.find(e => e.id === id);
+
+    if (entry) {
+        document.getElementById('calc-class').value = entry.class;
+        document.getElementById('calc-days').value = entry.days;
+        document.getElementById('calc-organic').value = entry.organic;
+        document.getElementById('calc-inorganic').value = entry.inorganic;
+        document.getElementById('calc-plastic').value = entry.plastic;
+
+        // Run calculation to update results
+        calculateWaste();
+
+        // Scroll to top of form
+        window.scrollTo({ top: 0, behavior: 'smooth' });
+    }
+}
+
+// Delete entry from localStorage
+function deleteEntry(id) {
+    if (confirm('Are you sure you want to delete this entry?')) {
+        let data = loadSavedData();
+        data = data.filter(entry => entry.id !== id);
+        localStorage.setItem(STORAGE_KEY, JSON.stringify(data));
+        renderTable();
+    }
+}
+
+// Clear all data from localStorage
+function clearAllData() {
+    if (confirm('⚠️ This will delete ALL saved calculations. Are you sure?')) {
+        localStorage.removeItem(STORAGE_KEY);
+        renderTable();
+        alert('All data cleared!');
+    }
+}
+
+// Render table with saved data
+function renderTable() {
+    const data = loadSavedData();
+    const tbody = document.getElementById('table-body');
+    const countSpan = document.getElementById('saved-count');
+    const emptyRow = document.getElementById('empty-row');
+
+    // Update count if element exists
+    if (countSpan) {
+        countSpan.textContent = `(${data.length} ${data.length === 1 ? 'entry' : 'entries'})`;
+    }
+
+    if (data.length === 0) {
+        if (emptyRow) {
+            emptyRow.classList.remove('hidden');
+        }
+        tbody.innerHTML = '<tr class="text-center text-slate-500 h-16" id="empty-row"><td colspan="7" class="py-8">No saved data yet. Calculate and save to see entries here!</td></tr>';
+        return;
+    }
+
+    // Clear and render data rows
+    tbody.innerHTML = data.map((entry, index) => `
+        <tr class="hover:bg-slate-50 dark:hover:bg-slate-800 transition-colors border-b border-slate-200 dark:border-slate-700 animate-result">
+            <td class="px-8 py-4 font-semibold text-slate-700 dark:text-slate-300">${index + 1}</td>
+            <td class="px-6 py-4 font-bold text-slate-900 dark:text-slate-100">${entry.class}</td>
+            <td class="px-6 py-4 text-center text-slate-700 dark:text-slate-300">${entry.days}</td>
+            <td class="px-6 py-4">
+                <div class="flex items-center gap-4">
+                    <div class="flex items-center gap-1.5">
+                        <div class="w-2 h-2 rounded-full bg-green-500"></div>
+                        <span class="text-xs font-semibold text-slate-700 dark:text-slate-300">${entry.organic.toFixed(1)}kg</span>
+                    </div>
+                    <div class="flex items-center gap-1.5">
+                        <div class="w-2 h-2 rounded-full bg-blue-500"></div>
+                        <span class="text-xs font-semibold text-slate-700 dark:text-slate-300">${entry.inorganic.toFixed(1)}kg</span>
+                    </div>
+                    <div class="flex items-center gap-1.5">
+                        <div class="w-2 h-2 rounded-full bg-amber-500"></div>
+                        <span class="text-xs font-semibold text-slate-700 dark:text-slate-300">${entry.plastic.toFixed(1)}kg</span>
+                    </div>
+                </div>
+            </td>
+            <td class="px-6 py-4 text-right font-black text-primary text-lg">${entry.total.toFixed(1)}</td>
+            <td class="px-6 py-4 text-right text-xs text-slate-500">${entry.date}</td>
+            <td class="px-8 py-4 text-right">
+                <div class="flex items-center justify-end gap-2">
+                    <button onclick="loadEntry(${entry.id})" class="inline-flex items-center justify-center w-8 h-8 rounded-lg text-blue-600 hover:bg-blue-50 dark:hover:bg-blue-950 transition-colors" title="Load">
+                        <span class="material-symbols-outlined text-lg">upload</span>
+                    </button>
+                    <button onclick="deleteEntry(${entry.id})" class="inline-flex items-center justify-center w-8 h-8 rounded-lg text-red-600 hover:bg-red-50 dark:hover:bg-red-950 transition-colors" title="Delete">
+                        <span class="material-symbols-outlined text-lg">delete</span>
+                    </button>
+                </div>
+            </td>
+        </tr>
+    `).join('');
+}
+
+// Export data to CSV
+function exportCSV() {
+    const data = loadSavedData();
+    if (data.length === 0) {
+        alert('No data to export!');
+        return;
+    }
+
+    const headers = ['#', 'Class', 'Days', 'Organic (kg)', 'Inorganic (kg)', 'Plastic (kg)', 'Total (kg)', 'Avg/Day (kg)', 'Date'];
+    const rows = data.map((entry, index) => [
+        index + 1,
+        entry.class,
+        entry.days,
+        entry.organic.toFixed(2),
+        entry.inorganic.toFixed(2),
+        entry.plastic.toFixed(2),
+        entry.total.toFixed(2),
+        entry.avg.toFixed(2),
+        entry.date
+    ]);
+
+    let csv = headers.join(',') + '\n';
+    rows.forEach(row => {
+        csv += row.map(cell => `"${cell}"`).join(',') + '\n';
+    });
+
+    const blob = new Blob([csv], { type: 'text/csv;charset=utf-8;' });
+    const link = document.createElement('a');
+    link.href = URL.createObjectURL(blob);
+    link.download = `calculator-data-${new Date().toISOString().split('T')[0]}.csv`;
+    link.click();
+}
 
 function initCharts() {
     const pieCtx = document.getElementById('chart-pie').getContext('2d');
     pieChart = new Chart(pieCtx, {
         type: 'pie',
         data: {
-            labels: ['Organik', 'Anorganik', 'Plastik'],
+            labels: ['Organic', 'Inorganic', 'Plastic'],
             datasets: [{
                 data: [48, 32, 20],
-                backgroundColor: ['#22c55e', '#eab308', '#ec4899'],
-                borderColor: '#000',
+                backgroundColor: ['#22c55e', '#3b82f6', '#f59e0b'],
+                borderColor: '#fff',
                 borderWidth: 2,
             }]
         },
@@ -251,35 +427,6 @@ function initCharts() {
                 },
                 tooltip: {
                     callbacks: { label: ctx => ' ' + ctx.label + ': ' + ctx.parsed.toFixed(1) + '%' }
-                }
-            }
-        }
-    });
-
-    const barCtx = document.getElementById('chart-bar').getContext('2d');
-    barChart = new Chart(barCtx, {
-        type: 'bar',
-        data: {
-            labels: ['Total', 'Rata-rata Harian', 'Prediksi 30 Hari'],
-            datasets: [{
-                label: 'kg',
-                data: [25, 5, 150],
-                backgroundColor: ['#556B2F', '#8FA31E', '#ef4444'],
-                borderColor: '#000',
-                borderWidth: 2,
-            }]
-        },
-        options: {
-            responsive: true,
-            maintainAspectRatio: true,
-            scales: {
-                y: { beginAtZero: true, ticks: { font: { family: 'Lexend', weight: 'bold' } } },
-                x: { ticks: { font: { family: 'Lexend', weight: 'bold', size: 11 } } }
-            },
-            plugins: {
-                legend: { display: false },
-                tooltip: {
-                    callbacks: { label: ctx => ' ' + ctx.parsed.y.toFixed(2) + ' kg' }
                 }
             }
         }
@@ -317,35 +464,66 @@ function calculateWaste() {
     const pctPlastic = total > 0 ? (plastic / total) * 100 : 0;
     const predict = avg * 30;
 
-    // Update result display
-    document.getElementById('res-class').textContent = className;
-    document.getElementById('res-days').textContent = days;
-    document.getElementById('res-organic').textContent = organic + ' kg';
-    document.getElementById('res-inorganic').textContent = inorganic + ' kg';
-    document.getElementById('res-plastic').textContent = plastic + ' kg';
-    document.getElementById('res-total').textContent = total.toFixed(2) + ' kg';
-    document.getElementById('res-avg').textContent = avg.toFixed(2) + ' kg';
-    document.getElementById('res-predict').textContent = predict.toFixed(2) + ' kg';
-    document.getElementById('res-pct-organic').textContent = pctOrganic.toFixed(2) + '%';
-    document.getElementById('res-pct-inorganic').textContent = pctInorganic.toFixed(2) + '%';
-    document.getElementById('res-pct-plastic').textContent = pctPlastic.toFixed(2) + '%';
+    // Update result display with animation
+    const resTotalEl = document.getElementById('res-total');
+    const resPredictEl = document.getElementById('res-predict');
+
+    // Trigger animation on total card
+    if (resTotalEl) {
+        resTotalEl.classList.remove('animate-result');
+        void resTotalEl.offsetWidth; // Trigger reflow
+        resTotalEl.classList.add('animate-result');
+        resTotalEl.textContent = total.toFixed(2) + ' kg';
+    }
+
+    // Trigger animation on prediction card
+    if (resPredictEl) {
+        resPredictEl.classList.remove('animate-result');
+        void resPredictEl.offsetWidth; // Trigger reflow
+        resPredictEl.classList.add('animate-result');
+        resPredictEl.textContent = predict.toFixed(2) + ' kg';
+    }
+
+    // Update percentages with animation
+    const pctOrganicEl = document.getElementById('res-pct-organic');
+    const pctInorganicEl = document.getElementById('res-pct-inorganic');
+    const pctPlasticEl = document.getElementById('res-pct-plastic');
+
+    if (pctOrganicEl) {
+        pctOrganicEl.classList.remove('animate-result');
+        void pctOrganicEl.offsetWidth;
+        pctOrganicEl.classList.add('animate-result');
+        pctOrganicEl.textContent = pctOrganic.toFixed(0) + '%';
+    }
+    if (pctInorganicEl) {
+        pctInorganicEl.classList.remove('animate-result');
+        void pctInorganicEl.offsetWidth;
+        pctInorganicEl.classList.add('animate-result');
+        pctInorganicEl.textContent = pctInorganic.toFixed(0) + '%';
+    }
+    if (pctPlasticEl) {
+        pctPlasticEl.classList.remove('animate-result');
+        void pctPlasticEl.offsetWidth;
+        pctPlasticEl.classList.add('animate-result');
+        pctPlasticEl.textContent = pctPlastic.toFixed(0) + '%';
+    }
+
+    // Update bar chart visualization
+    document.getElementById('bar-organic').style.width = pctOrganic + '%';
+    document.getElementById('bar-inorganic').style.width = pctInorganic + '%';
+    document.getElementById('bar-plastic').style.width = pctPlastic + '%';
 
     // Update pie chart
-    pieChart.data.datasets[0].data = [pctOrganic, pctInorganic, pctPlastic];
-    pieChart.update();
-
-    // Update bar chart labels based on lang
-    barChart.data.labels = [
-        t.calc_bar_total || 'Total',
-        t.calc_bar_avg || 'Daily Avg',
-        t.calc_bar_predict || '30-Day Prediction'
-    ];
-    barChart.data.datasets[0].data = [total, avg, predict];
-    barChart.update();
+    if (pieChart) {
+        pieChart.data.datasets[0].data = [organic, inorganic, plastic];
+        pieChart.update();
+    }
 }
 
 document.addEventListener('DOMContentLoaded', () => {
     initCharts();
+    // Render saved data table
+    renderTable();
     // Run calculation with default values on load
     calculateWaste();
 });
