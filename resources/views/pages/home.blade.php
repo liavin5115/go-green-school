@@ -32,6 +32,7 @@
         overflow: hidden;
     }
     .home-floating-eco-bg {
+        --eco-tile-size: 320px;
         position: absolute;
         inset: 0;
         z-index: 0;
@@ -53,12 +54,12 @@
         content: "";
         position: absolute;
         top: 0;
-        left: -320px;
-        width: calc(100% + 640px);
+        left: calc(0px - var(--eco-tile-size));
+        width: calc(100% + (var(--eco-tile-size) * 2));
         height: 100%;
         background-image: url('/images/eco-doodle-tile.svg');
-        background-size: 320px 320px;
-        background-repeat: repeat-x;
+        background-size: var(--eco-tile-size) var(--eco-tile-size);
+        background-repeat: repeat;
         background-position: 0 0;
         transform: translate3d(0, 0, 0);
         animation: ecoRowLeft var(--row-duration, 22s) linear infinite;
@@ -70,10 +71,10 @@
     }
     @keyframes ecoRowLeft {
         from { transform: translate3d(0, 0, 0); }
-        to { transform: translate3d(-320px, 0, 0); }
+        to { transform: translate3d(calc(0px - var(--eco-tile-size)), 0, 0); }
     }
     @keyframes ecoRowRight {
-        from { transform: translate3d(-320px, 0, 0); }
+        from { transform: translate3d(calc(0px - var(--eco-tile-size)), 0, 0); }
         to { transform: translate3d(0, 0, 0); }
     }
     .dark .home-floating-eco-bg {
@@ -81,10 +82,8 @@
         filter: saturate(0.72) brightness(0.82);
     }
     @media (max-width: 768px) {
-        .home-floating-eco-row::before {
-            background-size: 250px 250px;
-            left: -250px;
-            width: calc(100% + 500px);
+        .home-floating-eco-bg {
+            --eco-tile-size: 200px;
         }
         .home-floating-eco-bg {
             opacity: 0.3;
