@@ -7,7 +7,7 @@
 
 {{-- HERO SECTION --}}
 <div class="w-full">
-    <div class="flex min-h-[580px] flex-col gap-6 bg-cover bg-center bg-no-repeat items-center justify-center p-4 relative"
+    <div class="flex min-h-[580px] flex-col gap-6 bg-cover bg-center bg-no-repeat items-center justify-center p-4 relative overflow-hidden"
          style='background-image: linear-gradient(rgba(16, 34, 21, 0.65) 0%, rgba(16, 34, 21, 0.75) 100%), url("https://lh3.googleusercontent.com/aida-public/AB6AXuBfgB3QbHrFJtcXwaR8SFg9_DD_-QFpTET-ZLOEDh9_ZUZnDZaPpfJoEQTjmk6JRP7StQTZgJENTY5y3vPLknIjLT0wl8DX8dwiNso5CN1GLMNEM5D7Vyr5Lgwrz4iXypreuxVxvhKYWNoa0dDzksHMV8kkV5Df_U1mdgnjK3S4driXHkgRdcYOnBySmmpI-RNCnGXGF5y3_cNWa0YSYZAzxpntkaXX0OShq5v25GMS0R2jv3MHfF2tFXRaXKgCpq2Ht3bMBSEYiumA");'>
         <div class="flex flex-col gap-5 text-center max-w-[820px] z-10">
             <h1 class="text-white text-4xl font-black leading-tight tracking-tight md:text-5xl lg:text-6xl drop-shadow-sm">
@@ -24,6 +24,92 @@
         </div>
     </div>
 </div>
+
+<style>
+    .home-floating-eco-area {
+        position: relative;
+        isolation: isolate;
+        overflow: hidden;
+    }
+    .home-floating-eco-bg {
+        position: absolute;
+        inset: 0;
+        z-index: 0;
+        pointer-events: none;
+        overflow: hidden;
+        background-color: #f8f3e8;
+        opacity: 0.4;
+        display: grid;
+        grid-template-rows: repeat(6, minmax(0, 1fr));
+    }
+    .home-floating-eco-row {
+        position: relative;
+        width: 100%;
+        height: 100%;
+        overflow: hidden;
+        opacity: 0.95;
+    }
+    .home-floating-eco-row::before {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: -320px;
+        width: calc(100% + 640px);
+        height: 100%;
+        background-image: url('/images/eco-doodle-tile.svg');
+        background-size: 320px 320px;
+        background-repeat: repeat-x;
+        background-position: 0 0;
+        transform: translate3d(0, 0, 0);
+        animation: ecoRowLeft var(--row-duration, 22s) linear infinite;
+        will-change: transform;
+        backface-visibility: hidden;
+    }
+    .home-floating-eco-row:nth-child(even)::before {
+        animation-name: ecoRowRight;
+    }
+    @keyframes ecoRowLeft {
+        from { transform: translate3d(0, 0, 0); }
+        to { transform: translate3d(-320px, 0, 0); }
+    }
+    @keyframes ecoRowRight {
+        from { transform: translate3d(-320px, 0, 0); }
+        to { transform: translate3d(0, 0, 0); }
+    }
+    .dark .home-floating-eco-bg {
+        opacity: 0.22;
+        filter: saturate(0.72) brightness(0.82);
+    }
+    @media (max-width: 768px) {
+        .home-floating-eco-row::before {
+            background-size: 250px 250px;
+            left: -250px;
+            width: calc(100% + 500px);
+        }
+        .home-floating-eco-bg {
+            opacity: 0.3;
+        }
+        .dark .home-floating-eco-bg {
+            opacity: 0.16;
+        }
+    }
+    @media (prefers-reduced-motion: reduce) {
+        .home-floating-eco-row::before {
+            animation-duration: 34s;
+        }
+    }
+</style>
+
+<div class="home-floating-eco-area">
+    <div class="home-floating-eco-bg" aria-hidden="true">
+        <div class="home-floating-eco-row" style="--row-duration: 16s;"></div>
+        <div class="home-floating-eco-row" style="--row-duration: 22s;"></div>
+        <div class="home-floating-eco-row" style="--row-duration: 18s;"></div>
+        <div class="home-floating-eco-row" style="--row-duration: 24s;"></div>
+        <div class="home-floating-eco-row" style="--row-duration: 20s;"></div>
+        <div class="home-floating-eco-row" style="--row-duration: 26s;"></div>
+    </div>
+    <div class="relative z-10">
 
 {{-- CORE PILLARS --}}
 <section class="mx-auto w-full max-w-7xl px-6 py-16 lg:px-10">
@@ -176,5 +262,8 @@
         </a>
     </div>
 </section>
+
+    </div>
+</div>
 
 @endsection

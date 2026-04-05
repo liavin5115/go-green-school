@@ -132,6 +132,35 @@
     </script>
 </head>
 <body class="bg-paper dark:bg-paper-dark bg-grid-paper dark:bg-grid-paper-dark bg-grid-sm font-sans text-gray-800 dark:text-slate-100 antialiased min-h-screen flex flex-col transition-colors duration-300">
+
+<!-- Floating Background Doodles -->
+<div class="fixed inset-0 pointer-events-none z-40 overflow-hidden opacity-70 dark:opacity-35 mix-blend-normal">
+    <div class="absolute top-[10%] left-[5%] animate-float" style="animation-duration: 8s;">
+        <span class="material-symbols-outlined text-6xl text-primary drop-shadow-lg">eco</span>
+    </div>
+    <div class="absolute top-[25%] right-[10%] animate-float" style="animation-duration: 10s; animation-delay: 2s;">
+        <span class="material-symbols-outlined text-7xl text-secondary drop-shadow-lg">compost</span>
+    </div>
+    <div class="absolute top-[45%] left-[15%] animate-float" style="animation-duration: 12s; animation-delay: 1s;">
+        <span class="material-symbols-outlined text-8xl text-accent drop-shadow-lg">public</span>
+    </div>
+    <div class="absolute top-[65%] right-[20%] animate-float" style="animation-duration: 9s; animation-delay: 3s;">
+        <span class="material-symbols-outlined text-6xl text-primary drop-shadow-lg">recycling</span>
+    </div>
+    <div class="absolute top-[85%] left-[25%] animate-float" style="animation-duration: 11s; animation-delay: 0.5s;">
+        <span class="material-symbols-outlined text-7xl text-secondary drop-shadow-lg">energy_savings_leaf</span>
+    </div>
+    <div class="absolute top-[5%] left-[50%] animate-float" style="animation-duration: 7s; animation-delay: 1.5s;">
+        <span class="material-symbols-outlined text-5xl text-primary drop-shadow-lg">nature</span>
+    </div>
+    <div class="absolute top-[35%] right-[40%] animate-float" style="animation-duration: 8.5s; animation-delay: 2.5s;">
+        <span class="material-symbols-outlined text-6xl text-accent drop-shadow-lg">spa</span>
+    </div>
+    <div class="absolute top-[75%] left-[60%] animate-float" style="animation-duration: 10.5s; animation-delay: 4s;">
+        <span class="material-symbols-outlined text-7xl text-secondary drop-shadow-lg">solar_power</span>
+    </div>
+</div>
+
 <header class="sticky top-0 z-50 w-full border-b-2 border-black dark:border-slate-500 bg-white/95 dark:bg-slate-900/95 backdrop-blur-md">
 <div class="mx-auto flex h-20 max-w-7xl items-center justify-between px-6 lg:px-12">
 <a href="{{ route('home') }}" class="flex items-center gap-3">

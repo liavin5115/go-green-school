@@ -137,9 +137,83 @@
     .hero-title { animation: slideInUp 0.8s ease-out; }
     .hero-subtitle { animation: slideInUp 0.8s ease-out 0.2s both; }
     .hero-cta { animation: scaleIn 0.6s ease-out 0.4s both; }
+
+    /* Animated Eco Pattern For Non-Home Pages */
+    .site-floating-eco-area {
+        position: relative;
+        isolation: isolate;
+        overflow: hidden;
+    }
+    .site-floating-eco-bg {
+        position: absolute;
+        inset: 0;
+        z-index: 0;
+        pointer-events: none;
+        overflow: hidden;
+        background-color: #f8f3e8;
+        opacity: 0.3;
+        display: grid;
+        grid-template-rows: repeat(6, minmax(0, 1fr));
+    }
+    .site-floating-eco-row {
+        position: relative;
+        width: 100%;
+        height: 100%;
+        overflow: hidden;
+        opacity: 0.95;
+    }
+    .site-floating-eco-row::before {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: -320px;
+        width: calc(100% + 640px);
+        height: 100%;
+        background-image: url('/images/eco-doodle-tile.svg');
+        background-size: 320px 320px;
+        background-repeat: repeat-x;
+        background-position: 0 0;
+        transform: translate3d(0, 0, 0);
+        animation: siteEcoRowLeft var(--row-duration, 24s) linear infinite;
+        will-change: transform;
+        backface-visibility: hidden;
+    }
+    .site-floating-eco-row:nth-child(even)::before {
+        animation-name: siteEcoRowRight;
+    }
+    @keyframes siteEcoRowLeft {
+        from { transform: translate3d(0, 0, 0); }
+        to { transform: translate3d(-320px, 0, 0); }
+    }
+    @keyframes siteEcoRowRight {
+        from { transform: translate3d(-320px, 0, 0); }
+        to { transform: translate3d(0, 0, 0); }
+    }
+    .dark .site-floating-eco-bg {
+        opacity: 0.18;
+        filter: saturate(0.72) brightness(0.82);
+    }
+    @media (max-width: 768px) {
+        .site-floating-eco-row::before {
+            background-size: 250px 250px;
+            left: -250px;
+            width: calc(100% + 500px);
+        }
+        .site-floating-eco-bg {
+            opacity: 0.22;
+        }
+        .dark .site-floating-eco-bg {
+            opacity: 0.14;
+        }
+    }
+    @media (prefers-reduced-motion: reduce) {
+        .site-floating-eco-row::before {
+            animation-duration: 36s;
+        }
+    }
 </style>
 </head>
-<body class="bg-background-light dark:bg-background-dark font-sans text-slate-900 dark:text-slate-100 antialiased min-h-screen flex flex-col">
+<body class="bg-background-light dark:bg-background-dark font-sans text-slate-900 dark:text-slate-100 antialiased min-h-screen flex flex-col relative overflow-x-hidden">
 
 {{-- HEADER --}}
 <header class="sticky top-0 z-50 w-full border-b border-slate-200 dark:border-slate-800 bg-background-light/95 dark:bg-background-dark/95 backdrop-blur-md">
@@ -204,7 +278,23 @@
 
 {{-- MAIN CONTENT --}}
 <main class="flex-grow">
-    @yield('content')
+    @if (request()->routeIs('home'))
+        @yield('content')
+    @else
+        <div class="site-floating-eco-area">
+            <div class="site-floating-eco-bg" aria-hidden="true">
+                <div class="site-floating-eco-row" style="--row-duration: 16s;"></div>
+                <div class="site-floating-eco-row" style="--row-duration: 22s;"></div>
+                <div class="site-floating-eco-row" style="--row-duration: 18s;"></div>
+                <div class="site-floating-eco-row" style="--row-duration: 24s;"></div>
+                <div class="site-floating-eco-row" style="--row-duration: 20s;"></div>
+                <div class="site-floating-eco-row" style="--row-duration: 26s;"></div>
+            </div>
+            <div class="relative z-10">
+                @yield('content')
+            </div>
+        </div>
+    @endif
 </main>
 
 {{-- FOOTER --}}
