@@ -437,14 +437,16 @@
             <div class="flex flex-col gap-4">
                 <h4 class="text-slate-900 dark:text-slate-100 font-bold text-sm uppercase tracking-wider">Follow Us</h4>
                 <div class="flex gap-3">
-                    <a class="w-9 h-9 rounded-full border border-slate-200 dark:border-slate-700 flex items-center justify-center text-slate-500 dark:text-slate-400 hover:bg-primary hover:text-slate-900 hover:border-primary transition-all" href="#" aria-label="Visit Website">
+                    <a class="w-9 h-9 rounded-full border border-slate-200 dark:border-slate-700 flex items-center justify-center text-slate-500 dark:text-slate-400 hover:bg-primary hover:text-slate-900 hover:border-primary transition-all" href="https://go-green-school-main-en87ct.free.laravel.cloud/" target="_blank" rel="noopener noreferrer" aria-label="Visit Website">
                         <span class="material-symbols-outlined text-lg">public</span>
                     </a>
-                    <a class="w-9 h-9 rounded-full border border-slate-200 dark:border-slate-700 flex items-center justify-center text-slate-500 dark:text-slate-400 hover:bg-primary hover:text-slate-900 hover:border-primary transition-all" href="#" aria-label="Send Email">
+                    <a class="w-9 h-9 rounded-full border border-slate-200 dark:border-slate-700 flex items-center justify-center text-slate-500 dark:text-slate-400 hover:bg-primary hover:text-slate-900 hover:border-primary transition-all" href="mailto:googreenschool@gmail.com" aria-label="Send Email">
                         <span class="material-symbols-outlined text-lg">alternate_email</span>
                     </a>
-                    <a class="w-9 h-9 rounded-full border border-slate-200 dark:border-slate-700 flex items-center justify-center text-slate-500 dark:text-slate-400 hover:bg-primary hover:text-slate-900 hover:border-primary transition-all" href="#" aria-label="Follow us on Instagram">
-                        <span class="material-symbols-outlined text-lg">photo_camera</span>
+                    <a class="w-9 h-9 rounded-full border border-slate-200 dark:border-slate-700 flex items-center justify-center text-slate-500 dark:text-slate-400 hover:bg-primary hover:text-slate-900 hover:border-primary transition-all" href="https://www.tiktok.com/@googreen_schoolfour4?_r=1&amp;_t=ZS-95HnxddUVBF" target="_blank" rel="noopener noreferrer" aria-label="Follow us on TikTok">
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16" class="h-4 w-4 fill-current" aria-hidden="true">
+                            <path d="M9.995 0h2.717c.164 1.514 1.01 2.74 2.288 2.913v2.464a4.887 4.887 0 0 1-2.279-.548v4.623A5.44 5.44 0 1 1 7.3 4.01v2.57a2.87 2.87 0 1 0 2.694 2.869V0Z"/>
+                        </svg>
                     </a>
                     <a class="w-9 h-9 rounded-full border border-slate-200 dark:border-slate-700 flex items-center justify-center text-slate-500 dark:text-slate-400 hover:bg-primary hover:text-slate-900 hover:border-primary transition-all" href="#" aria-label="Watch our Videos">
                         <span class="material-symbols-outlined text-lg">smart_display</span>
