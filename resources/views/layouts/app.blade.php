@@ -169,7 +169,7 @@
             </div>
 
             {{-- Dark Mode Toggle --}}
-            <button onclick="toggleDarkMode()" class="flex h-8 w-8 items-center justify-center rounded-full border border-slate-200 dark:border-slate-700 text-slate-600 dark:text-slate-300 hover:border-primary hover:text-primary transition-colors">
+            <button onclick="toggleDarkMode()" aria-label="Toggle Dark Mode" class="flex h-8 w-8 items-center justify-center rounded-full border border-slate-200 dark:border-slate-700 text-slate-600 dark:text-slate-300 hover:border-primary hover:text-primary transition-colors">
                 <span class="material-symbols-outlined text-lg">dark_mode</span>
             </button>
         </nav>
@@ -180,10 +180,10 @@
                 <button onclick="switchLang('en')" id="btn-en-m" class="lang-btn active px-2 py-1 text-xs font-bold border-r border-slate-200 dark:border-slate-700">EN</button>
                 <button onclick="switchLang('id')" id="btn-id-m" class="lang-btn px-2 py-1 text-xs font-bold text-slate-600 dark:text-slate-400">ID</button>
             </div>
-            <button onclick="toggleDarkMode()" class="flex h-8 w-8 items-center justify-center rounded-full border border-slate-200 dark:border-slate-700 text-slate-600 dark:text-slate-300">
+            <button onclick="toggleDarkMode()" aria-label="Toggle Dark Mode" class="flex h-8 w-8 items-center justify-center rounded-full border border-slate-200 dark:border-slate-700 text-slate-600 dark:text-slate-300">
                 <span class="material-symbols-outlined text-lg">dark_mode</span>
             </button>
-            <button onclick="document.getElementById('mobile-menu').classList.toggle('open')" class="text-slate-700 dark:text-slate-300">
+            <button onclick="document.getElementById('mobile-menu').classList.toggle('open')" aria-expanded="false" aria-label="Toggle Mobile Menu" class="text-slate-700 dark:text-slate-300">
                 <span class="material-symbols-outlined text-3xl">menu</span>
             </button>
         </div>
@@ -256,16 +256,16 @@
             <div class="flex flex-col gap-4">
                 <h4 class="text-slate-900 dark:text-slate-100 font-bold text-sm uppercase tracking-wider">Follow Us</h4>
                 <div class="flex gap-3">
-                    <a class="w-9 h-9 rounded-full border border-slate-200 dark:border-slate-700 flex items-center justify-center text-slate-500 dark:text-slate-400 hover:bg-primary hover:text-slate-900 hover:border-primary transition-all" href="#">
+                    <a class="w-9 h-9 rounded-full border border-slate-200 dark:border-slate-700 flex items-center justify-center text-slate-500 dark:text-slate-400 hover:bg-primary hover:text-slate-900 hover:border-primary transition-all" href="#" aria-label="Visit Website">
                         <span class="material-symbols-outlined text-lg">public</span>
                     </a>
-                    <a class="w-9 h-9 rounded-full border border-slate-200 dark:border-slate-700 flex items-center justify-center text-slate-500 dark:text-slate-400 hover:bg-primary hover:text-slate-900 hover:border-primary transition-all" href="#">
+                    <a class="w-9 h-9 rounded-full border border-slate-200 dark:border-slate-700 flex items-center justify-center text-slate-500 dark:text-slate-400 hover:bg-primary hover:text-slate-900 hover:border-primary transition-all" href="#" aria-label="Send Email">
                         <span class="material-symbols-outlined text-lg">alternate_email</span>
                     </a>
-                    <a class="w-9 h-9 rounded-full border border-slate-200 dark:border-slate-700 flex items-center justify-center text-slate-500 dark:text-slate-400 hover:bg-primary hover:text-slate-900 hover:border-primary transition-all" href="#">
+                    <a class="w-9 h-9 rounded-full border border-slate-200 dark:border-slate-700 flex items-center justify-center text-slate-500 dark:text-slate-400 hover:bg-primary hover:text-slate-900 hover:border-primary transition-all" href="#" aria-label="Follow us on Instagram">
                         <span class="material-symbols-outlined text-lg">photo_camera</span>
                     </a>
-                    <a class="w-9 h-9 rounded-full border border-slate-200 dark:border-slate-700 flex items-center justify-center text-slate-500 dark:text-slate-400 hover:bg-primary hover:text-slate-900 hover:border-primary transition-all" href="#">
+                    <a class="w-9 h-9 rounded-full border border-slate-200 dark:border-slate-700 flex items-center justify-center text-slate-500 dark:text-slate-400 hover:bg-primary hover:text-slate-900 hover:border-primary transition-all" href="#" aria-label="Watch our Videos">
                         <span class="material-symbols-outlined text-lg">smart_display</span>
                     </a>
                 </div>

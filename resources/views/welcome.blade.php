@@ -8,6 +8,7 @@
 <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
 <script>
         tailwind.config = {
+            darkMode: "class",
             theme: {
                 extend: {
                     colors: {
@@ -16,12 +17,15 @@
                         accent: "#C6D870",
                         highlight: "#EFF5D2",
                         paper: "#fdfdfd",
+                        "paper-dark": "#0f172a",
+                        "grid-dark": "#334155",
                     },
                     fontFamily: {
                         sans: ["Montserrat", "sans-serif"],
                     },
                     backgroundImage: {
                         'grid-paper': "linear-gradient(#e5e5e5 1px, transparent 1px), linear-gradient(90deg, #e5e5e5 1px, transparent 1px)",
+                        'grid-paper-dark': "linear-gradient(#334155 1px, transparent 1px), linear-gradient(90deg, #334155 1px, transparent 1px)",
                     },
                     backgroundSize: {
                         'grid-sm': '20px 20px',
@@ -29,15 +33,44 @@
                     boxShadow: {
                         'sketch': '2px 2px 0px 0px #000000',
                         'sketch-hover': '4px 4px 0px 0px #000000',
+                        'sketch-dark': '2px 2px 0px 0px #94a3b8',
+                        'sketch-hover-dark': '4px 4px 0px 0px #94a3b8',
                     }
                 },
             },
         }
     </script>
+<script>
+    // Early Dark Mode Check
+    (function() {
+        const isDarkMode = localStorage.getItem('ggs_dark_mode') === 'true';
+        if (isDarkMode) {
+            document.documentElement.classList.add('dark');
+        }
+    })();
+</script>
 <style>
         .wireframe-border {
             border: 2px solid #000000;
             border-radius: 2px 2px 4px 2px;
+        }
+        .dark .wireframe-border, .dark .border-black {
+            border-color: #94a3b8;
+        }
+        .dark .bg-white {
+            background-color: #1e293b;
+        }
+        .dark .shadow-sketch {
+            box-shadow: 2px 2px 0px 0px #94a3b8;
+        }
+        .dark .hover\:shadow-sketch-hover:hover {
+            box-shadow: 4px 4px 0px 0px #94a3b8;
+        }
+        .dark .text-gray-800, .dark .text-black {
+            color: #f1f5f9;
+        }
+        .dark .text-gray-700 {
+            color: #cbd5e1;
         }
         .wireframe-input {
             border: 2px solid #000000;
@@ -54,55 +87,113 @@
             color: #fff;
             border-color: #8FA31E;
         }
+        .dark .bg-highlight { background-color: #3f6212; }
+        .dark .bg-highlight\/30 { background-color: rgba(63, 98, 18, 0.3); }
+        .dark .bg-accent\/20 { background-color: rgba(77, 124, 15, 0.2); }
+
+        /* Scroll Reveal Animations */
+        .reveal {
+            opacity: 0;
+            transform: translateY(30px);
+            transition: all 0.8s ease-out;
+        }
+        .reveal.active {
+            opacity: 1;
+            transform: translateY(0);
+        }
+        .reveal-delay-1 { transition-delay: 0.1s; }
+        .reveal-delay-2 { transition-delay: 0.2s; }
+        .reveal-delay-3 { transition-delay: 0.3s; }
+
+        @keyframes float {
+            0% { transform: translateY(0px); }
+            50% { transform: translateY(-10px); }
+            100% { transform: translateY(0px); }
+        }
+        .animate-float {
+            animation: float 4s ease-in-out infinite;
+        }
     </style>
+    <script>
+        // Reveal Animations on Scroll
+        function reveal() {
+            var reveals = document.querySelectorAll(".reveal");
+            for (var i = 0; i < reveals.length; i++) {
+                var windowHeight = window.innerHeight;
+                var elementTop = reveals[i].getBoundingClientRect().top;
+                var elementVisible = 50;
+                if (elementTop < windowHeight - elementVisible) {
+                    reveals[i].classList.add("active");
+                }
+            }
+        }
+        window.addEventListener("scroll", reveal);
+        document.addEventListener("DOMContentLoaded", reveal);
+    </script>
 </head>
-<body class="bg-paper bg-grid-paper bg-grid-sm font-sans text-gray-800 antialiased min-h-screen flex flex-col">
-<header class="sticky top-0 z-50 w-full border-b-2 border-black bg-white/95 backdrop-blur-md">
+<body class="bg-paper dark:bg-paper-dark bg-grid-paper dark:bg-grid-paper-dark bg-grid-sm font-sans text-gray-800 dark:text-slate-100 antialiased min-h-screen flex flex-col transition-colors duration-300">
+<header class="sticky top-0 z-50 w-full border-b-2 border-black dark:border-slate-500 bg-white/95 dark:bg-slate-900/95 backdrop-blur-md">
 <div class="mx-auto flex h-20 max-w-7xl items-center justify-between px-6 lg:px-12">
-<div class="flex items-center gap-3">
+<a href="{{ route('home') }}" class="flex items-center gap-3">
 <div class="flex h-10 w-10 items-center justify-center rounded-full border-2 border-primary bg-highlight text-primary">
 <span class="material-symbols-outlined text-2xl">eco</span>
 </div>
 <h1 class="text-2xl font-bold text-primary tracking-tight">Go Green School</h1>
-</div>
+</a>
 <nav class="hidden md:flex items-center gap-8">
-<a class="text-base font-bold text-primary hover:text-secondary hover:underline decoration-secondary decoration-2 underline-offset-4 transition-colors" href="#" data-i18n="nav_home">Home</a>
-<a class="text-base font-bold text-primary hover:text-secondary hover:underline decoration-secondary decoration-2 underline-offset-4 transition-colors" href="#" data-i18n="nav_about">About</a>
-<a class="text-base font-bold text-primary hover:text-secondary hover:underline decoration-secondary decoration-2 underline-offset-4 transition-colors" href="#" data-i18n="nav_programs">Programs</a>
-<a class="text-base font-bold text-primary hover:text-secondary hover:underline decoration-secondary decoration-2 underline-offset-4 transition-colors" href="#" data-i18n="nav_gallery">Gallery</a>
-<a class="text-base font-bold text-primary hover:text-secondary hover:underline decoration-secondary decoration-2 underline-offset-4 transition-colors" href="#" data-i18n="nav_contact">Contact</a>
+<a class="text-base font-bold text-primary hover:text-secondary hover:underline decoration-secondary decoration-2 underline-offset-4 transition-colors" href="{{ route('home') }}" data-i18n="nav_home">Home</a>
+<a class="text-base font-bold text-primary hover:text-secondary hover:underline decoration-secondary decoration-2 underline-offset-4 transition-colors" href="{{ route('about') }}" data-i18n="nav_about">About</a>
+<a class="text-base font-bold text-primary hover:text-secondary hover:underline decoration-secondary decoration-2 underline-offset-4 transition-colors" href="{{ route('programs') }}" data-i18n="nav_programs">Programs</a>
+<a class="text-base font-bold text-primary hover:text-secondary hover:underline decoration-secondary decoration-2 underline-offset-4 transition-colors" href="{{ route('gallery') }}" data-i18n="nav_gallery">Gallery</a>
+<a class="text-base font-bold text-primary hover:text-secondary hover:underline decoration-secondary decoration-2 underline-offset-4 transition-colors" href="{{ route('contact') }}" data-i18n="nav_contact">Contact</a>
 <!-- Language Switcher -->
-<div class="flex items-center border-2 border-primary rounded-full overflow-hidden ml-2">
+<div class="flex items-center border-2 border-primary rounded-full overflow-hidden ml-2 shadow-sketch mr-2">
 <button onclick="switchLang('en')" id="btn-en" class="lang-btn active px-3 py-1 text-xs font-bold border-r-2 border-primary">EN</button>
 <button onclick="switchLang('id')" id="btn-id" class="lang-btn px-3 py-1 text-xs font-bold text-primary">ID</button>
 </div>
+<!-- Dark Mode Toggle -->
+<button onclick="toggleDarkMode()" aria-label="Toggle Dark Mode" class="flex h-8 w-8 items-center justify-center rounded-full border-2 border-primary text-primary hover:bg-primary hover:text-white transition-colors shadow-sketch">
+<span class="material-symbols-outlined text-lg">dark_mode</span>
+</button>
 </nav>
 <div class="flex items-center gap-2 md:hidden">
 <!-- Mobile Language Switcher -->
-<div class="flex items-center border-2 border-primary rounded-full overflow-hidden">
+<div class="flex items-center border-2 border-primary rounded-full overflow-hidden shadow-sketch mr-1">
 <button onclick="switchLang('en')" id="btn-en-m" class="lang-btn active px-2 py-1 text-xs font-bold border-r-2 border-primary">EN</button>
 <button onclick="switchLang('id')" id="btn-id-m" class="lang-btn px-2 py-1 text-xs font-bold text-primary">ID</button>
 </div>
-<button class="text-primary">
-<span class="material-symbols-outlined text-3xl">menu</span>
+<!-- Dark Mode Toggle -->
+<button onclick="toggleDarkMode()" aria-label="Toggle Dark Mode" class="flex h-8 w-8 items-center justify-center rounded-full border-2 border-primary text-primary hover:bg-primary shadow-sketch mr-1">
+<span class="material-symbols-outlined text-lg">dark_mode</span>
+</button>
+<button onclick="document.getElementById('welcome-mobile-menu').classList.toggle('hidden')" aria-expanded="false" aria-label="Toggle Mobile Menu" class="text-primary flex items-center justify-center border-2 border-primary shadow-sketch rounded-md p-1">
+<span class="material-symbols-outlined text-2xl">menu</span>
 </button>
 </div>
 </div>
+<!-- Mobile Menu Container -->
+<div id="welcome-mobile-menu" class="hidden border-t-2 border-black dark:border-slate-500 bg-white dark:bg-slate-900 px-6 py-4 flex-col gap-4 shadow-sketch absolute w-full md:hidden">
+    <a class="text-base font-bold text-primary hover:text-secondary transition-colors" href="{{ route('home') }}" data-i18n="nav_home">Home</a>
+    <a class="text-base font-bold text-primary hover:text-secondary transition-colors" href="{{ route('about') }}" data-i18n="nav_about">About</a>
+    <a class="text-base font-bold text-primary hover:text-secondary transition-colors" href="{{ route('programs') }}" data-i18n="nav_programs">Programs</a>
+    <a class="text-base font-bold text-primary hover:text-secondary transition-colors" href="{{ route('gallery') }}" data-i18n="nav_gallery">Gallery</a>
+    <a class="text-base font-bold text-primary hover:text-secondary transition-colors" href="{{ route('contact') }}" data-i18n="nav_contact">Contact</a>
+</div>
 </header>
 <main class="flex-grow">
-<section class="relative w-full border-b-2 border-black bg-white">
-<div class="relative mx-auto flex min-h-[500px] max-w-7xl flex-col items-center justify-center px-6 py-16 text-center lg:px-12">
-<div class="absolute inset-0 z-0 opacity-20 bg-[url('https://lh3.googleusercontent.com/aida-public/AB6AXuD8LMSse0Q5norqllPzhuFjKPc9YB_rOv30EWSGQOdSn929jpZVZEEeELH6chtVb_43RVV0T-IQ3zPhU4oayKOdGWqpnuShNHPCE7JS4FkCGyx3p9aDlJGXtY7ljzGccFhhBZLUYMzY8TQj6Ho0c0b2aVrUbvqzLV7XUf99HtMyQCqAgZJG2iQbyngn2T369kpr37yXBGyc5XXSYAScbWafcV55JsEuJ6xyb9wEXepb7EiVCOAD2LSNPFfvU0_0jJqJ2VDeTvWrsV8')] bg-cover bg-center grayscale contrast-125"></div>
-<div class="relative z-10 max-w-4xl rounded-xl border-2 border-black bg-white/90 p-8 shadow-sketch backdrop-blur-sm animate-scale-in">
+<section class="relative w-full border-b-2 border-black dark:border-slate-500 bg-highlight/20 dark:bg-slate-800">
+<div class="relative mx-auto flex min-h-[500px] max-w-7xl flex-col items-center justify-center px-6 py-16 text-center lg:px-12 bg-grid-paper bg-grid-sm">
+<div class="absolute inset-0 z-0 opacity-10 bg-pattern-doodle"></div>
+<div class="relative z-10 max-w-4xl rounded-xl border-2 border-black dark:border-slate-500 bg-white/90 dark:bg-slate-900/90 p-8 shadow-sketch backdrop-blur-sm animate-scale-in reveal">
 <h2 class="mb-4 text-4xl font-extrabold text-primary md:text-6xl tracking-tight hero-title">
                         Go Green School:<br/><span class="text-3xl md:text-5xl font-bold text-primary" data-i18n="hero_subtitle">Eco-Friendly School</span>
 </h2>
 <p class="mb-8 text-xl font-bold text-secondary md:text-2xl tracking-wide hero-subtitle" data-i18n="hero_tagline">
                         Building an Environmentally Conscious Generation
                     </p>
-<button class="wireframe-border btn-animated transform bg-secondary px-8 py-4 text-lg font-bold text-white shadow-sketch transition-transform hover:-translate-y-1 hover:shadow-sketch-hover tracking-wide hero-cta" data-i18n="hero_cta">
+<a href="{{ route('join') }}" class="wireframe-border inline-block btn-animated transform bg-secondary px-8 py-4 text-lg font-bold text-white shadow-sketch transition-transform hover:-translate-y-1 hover:shadow-sketch-hover tracking-wide hero-cta" data-i18n="hero_cta">
                         Join Now
-                    </button>
+                    </a>
 </div>
 </div>
 </section>
@@ -119,7 +210,7 @@
 </p>
 </div>
 
-<div class="grid gap-8 md:grid-cols-2 lg:grid-cols-2 mb-12 animate-stagger">
+<div class="grid gap-8 md:grid-cols-2 lg:grid-cols-2 mb-12 animate-stagger reveal reveal-delay-1">
     <!-- What is a Go Green Campaign -->
     <div class="wireframe-border bg-highlight/30 p-8 shadow-sketch flex flex-col h-full hover-lift transition-smooth">
         <h4 class="text-2xl font-bold text-primary mb-4 border-b-2 border-secondary pb-2" data-i18n="desc_campaign_title">What is a Go Green Campaign?</h4>
@@ -258,14 +349,14 @@ By throwing waste according to its type, we help maintain the cleanliness and su
 </div>
 
 <div class="mt-10 flex justify-center">
-<button class="wireframe-border transform bg-secondary px-10 py-3 text-lg font-bold text-white shadow-sketch transition-transform hover:scale-105 tracking-wide" data-i18n="procedure_cta">
+<a href="{{ route('programs') }}" class="wireframe-border inline-block transform bg-secondary px-10 py-3 text-lg font-bold text-white shadow-sketch transition-transform hover:scale-105 tracking-wide" data-i18n="procedure_cta">
                     Let's Start Sorting!
-                </button>
+                </a>
 </div>
 </section>
 
 <!-- EXPLANATION SECTION -->
-<section class="w-full border-t-2 border-y-2 border-black bg-white px-6 py-20">
+<section class="w-full border-t-2 border-y-2 border-black dark:border-slate-500 bg-white dark:bg-slate-900 px-6 py-20">
     <div class="mx-auto max-w-7xl">
         <div class="mb-12 text-center max-w-4xl mx-auto">
             <span class="material-symbols-outlined mb-4 text-6xl text-secondary">explore</span>
@@ -283,7 +374,7 @@ By throwing waste according to its type, we help maintain the cleanliness and su
 
         <h4 class="text-2xl font-bold text-primary mb-6" data-i18n="expl_keys_title">Key Concepts (Explanation)</h4>
 
-        <div class="grid gap-8 md:grid-cols-2 mb-8">
+        <div class="grid gap-8 md:grid-cols-2 mb-8 reveal reveal-delay-1">
             <!-- What is Go Green? -->
             <div class="wireframe-border bg-white p-8 shadow-sketch flex flex-col h-full border-l-8 border-l-secondary">
                 <h5 class="text-xl font-bold text-primary mb-3 flex items-center gap-2">
@@ -367,23 +458,23 @@ By throwing waste according to its type, we help maintain the cleanliness and su
 </div>
 </section>
 </main>
-<footer class="border-t-2 border-black bg-white px-6 py-10">
+<footer class="border-t-2 border-black dark:border-slate-500 bg-white dark:bg-slate-900 px-6 py-10">
 <div class="mx-auto flex max-w-7xl flex-col items-center justify-between gap-6 md:flex-row">
 <div class="flex items-center gap-2">
 <span class="material-symbols-outlined text-2xl text-primary">copyright</span>
 <span class="text-lg font-bold text-primary tracking-tight">Go Green School</span>
 </div>
 <div class="flex gap-6">
-<a class="group flex h-10 w-10 items-center justify-center rounded-full border-2 border-primary text-primary transition-all hover:bg-primary hover:text-white hover:shadow-sketch" href="#">
+<a class="group flex h-10 w-10 items-center justify-center rounded-full border-2 border-primary text-primary transition-all hover:bg-primary hover:text-white hover:shadow-sketch" href="#" aria-label="View Leaderboard">
 <span class="material-symbols-outlined text-xl">social_leaderboard</span>
 </a>
-<a class="group flex h-10 w-10 items-center justify-center rounded-full border-2 border-primary text-primary transition-all hover:bg-primary hover:text-white hover:shadow-sketch" href="#">
+<a class="group flex h-10 w-10 items-center justify-center rounded-full border-2 border-primary text-primary transition-all hover:bg-primary hover:text-white hover:shadow-sketch" href="#" aria-label="Follow us on Instagram">
 <span class="material-symbols-outlined text-xl">photo_camera</span>
 </a>
-<a class="group flex h-10 w-10 items-center justify-center rounded-full border-2 border-primary text-primary transition-all hover:bg-primary hover:text-white hover:shadow-sketch" href="#">
+<a class="group flex h-10 w-10 items-center justify-center rounded-full border-2 border-primary text-primary transition-all hover:bg-primary hover:text-white hover:shadow-sketch" href="#" aria-label="Watch our Videos">
 <span class="material-symbols-outlined text-xl">smart_display</span>
 </a>
-<a class="group flex h-10 w-10 items-center justify-center rounded-full border-2 border-primary text-primary transition-all hover:bg-primary hover:text-white hover:shadow-sketch" href="#">
+<a class="group flex h-10 w-10 items-center justify-center rounded-full border-2 border-primary text-primary transition-all hover:bg-primary hover:text-white hover:shadow-sketch" href="#" aria-label="Send us an Email">
 <span class="material-symbols-outlined text-xl">alternate_email</span>
 </a>
 </div>
@@ -573,6 +664,19 @@ function switchLang(lang) {
         }
     });
 }
+
+// Dark Mode logic
+function toggleDarkMode() {
+    document.documentElement.classList.toggle('dark');
+    const isDark = document.documentElement.classList.contains('dark');
+    localStorage.setItem('ggs_dark_mode', isDark ? 'true' : 'false');
+}
+
+// On load
+document.addEventListener('DOMContentLoaded', () => {
+    // Sync language state
+    if (currentLang === 'id') switchLang('id');
+});
 </script>
 
 </body></html>
