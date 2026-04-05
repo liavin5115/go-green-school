@@ -328,7 +328,7 @@
             <div class="flex h-8 w-8 items-center justify-center text-primary">
                 <span class="material-symbols-outlined text-3xl">eco</span>
             </div>
-            <span class="hidden sm:inline text-lg font-bold text-slate-900 dark:text-slate-100 tracking-tight">Go Green School</span>
+            <span class="text-sm sm:text-lg font-bold text-slate-900 dark:text-slate-100 tracking-tight whitespace-nowrap">Go Green School</span>
         </a>
 
         {{-- Desktop Nav --}}
