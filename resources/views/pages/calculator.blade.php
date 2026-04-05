@@ -106,12 +106,12 @@
 
                         {{-- Buttons --}}
                         <div class="flex flex-col gap-3 pt-4">
-                            <button type="button" onclick="calculateWaste()" class="w-full bg-primary hover:bg-green-500 transition-all text-slate-900 font-bold py-3 rounded-lg shadow-lg shadow-green-500/20" data-i18n="calc_btn">Calculate</button>
-                            <button type="button" onclick="saveCalculation()" class="w-full bg-green-600 hover:bg-green-700 transition-colors text-white font-bold py-2 rounded-lg flex items-center justify-center gap-2">
+                            <button type="button" onclick="calculateWaste()" class="w-full bg-primary hover:bg-green-500 transition-all text-slate-900 font-bold py-3 rounded-lg shadow-lg shadow-green-500/20 btn-animated" data-i18n="calc_btn">Calculate</button>
+                            <button type="button" onclick="saveCalculation()" class="w-full bg-green-600 hover:bg-green-700 transition-colors text-white font-bold py-2 rounded-lg flex items-center justify-center gap-2 btn-animated">
                                 <span class="material-symbols-outlined text-lg">save</span>
                                 <span data-i18n="calc_btn_save">Save Data</span>
                             </button>
-                            <button type="button" onclick="clearAllData()" class="w-full bg-slate-300 dark:bg-slate-700 hover:bg-slate-400 dark:hover:bg-slate-600 transition-colors text-slate-900 dark:text-white font-bold py-2 rounded-lg flex items-center justify-center gap-2">
+                            <button type="button" onclick="clearAllData()" class="w-full bg-slate-300 dark:bg-slate-700 hover:bg-slate-400 dark:hover:bg-slate-600 transition-colors text-slate-900 dark:text-white font-bold py-2 rounded-lg flex items-center justify-center gap-2 btn-animated">
                                 <span class="material-symbols-outlined text-lg">delete_sweep</span>
                                 <span data-i18n="calc_btn_clear">Clear All</span>
                             </button>
@@ -123,13 +123,13 @@
             {{-- RIGHT: RESULTS & VISUALIZATION --}}
             <div class="lg:col-span-7 space-y-8">
                 {{-- Summary Cards --}}
-                <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
-                    <div class="bg-primary/10 dark:bg-primary/5 border border-primary/20 p-6 rounded-2xl">
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-4 animate-stagger">
+                    <div class="bg-primary/10 dark:bg-primary/5 border border-primary/20 p-6 rounded-2xl hover-lift transition-smooth">
                         <p class="text-sm font-bold uppercase tracking-widest text-slate-600 dark:text-slate-400 mb-2" data-i18n="calc_total">Total Waste</p>
                         <div class="text-4xl font-black text-primary" id="res-total">25 <span class="text-xl font-normal">kg</span></div>
                         <p class="text-xs mt-2 text-slate-600 dark:text-slate-400" data-i18n="calc_accumulated">Accumulated during observation</p>
                     </div>
-                    <div class="bg-slate-100 dark:bg-slate-800 border border-slate-200 dark:border-slate-700 p-6 rounded-2xl">
+                    <div class="bg-slate-100 dark:bg-slate-800 border border-slate-200 dark:border-slate-700 p-6 rounded-2xl hover-lift transition-smooth">
                         <p class="text-sm font-bold uppercase tracking-widest text-slate-600 dark:text-slate-400 mb-2" data-i18n="calc_predict">30-Day Prediction</p>
                         <div class="text-4xl font-black text-slate-900 dark:text-slate-100" id="res-predict">150 <span class="text-xl font-normal">kg</span></div>
                         <p class="text-xs mt-2 text-slate-600 dark:text-slate-400" data-i18n="calc_estimated">Estimated monthly footprint</p>

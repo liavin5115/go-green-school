@@ -93,14 +93,14 @@
 <section class="relative w-full border-b-2 border-black bg-white">
 <div class="relative mx-auto flex min-h-[500px] max-w-7xl flex-col items-center justify-center px-6 py-16 text-center lg:px-12">
 <div class="absolute inset-0 z-0 opacity-20 bg-[url('https://lh3.googleusercontent.com/aida-public/AB6AXuD8LMSse0Q5norqllPzhuFjKPc9YB_rOv30EWSGQOdSn929jpZVZEEeELH6chtVb_43RVV0T-IQ3zPhU4oayKOdGWqpnuShNHPCE7JS4FkCGyx3p9aDlJGXtY7ljzGccFhhBZLUYMzY8TQj6Ho0c0b2aVrUbvqzLV7XUf99HtMyQCqAgZJG2iQbyngn2T369kpr37yXBGyc5XXSYAScbWafcV55JsEuJ6xyb9wEXepb7EiVCOAD2LSNPFfvU0_0jJqJ2VDeTvWrsV8')] bg-cover bg-center grayscale contrast-125"></div>
-<div class="relative z-10 max-w-4xl rounded-xl border-2 border-black bg-white/90 p-8 shadow-sketch backdrop-blur-sm">
-<h2 class="mb-4 text-4xl font-extrabold text-primary md:text-6xl tracking-tight">
+<div class="relative z-10 max-w-4xl rounded-xl border-2 border-black bg-white/90 p-8 shadow-sketch backdrop-blur-sm animate-scale-in">
+<h2 class="mb-4 text-4xl font-extrabold text-primary md:text-6xl tracking-tight hero-title">
                         Go Green School:<br/><span class="text-3xl md:text-5xl font-bold text-primary" data-i18n="hero_subtitle">Eco-Friendly School</span>
 </h2>
-<p class="mb-8 text-xl font-bold text-secondary md:text-2xl tracking-wide" data-i18n="hero_tagline">
+<p class="mb-8 text-xl font-bold text-secondary md:text-2xl tracking-wide hero-subtitle" data-i18n="hero_tagline">
                         Building an Environmentally Conscious Generation
                     </p>
-<button class="wireframe-border transform bg-secondary px-8 py-4 text-lg font-bold text-white shadow-sketch transition-transform hover:-translate-y-1 hover:shadow-sketch-hover tracking-wide" data-i18n="hero_cta">
+<button class="wireframe-border btn-animated transform bg-secondary px-8 py-4 text-lg font-bold text-white shadow-sketch transition-transform hover:-translate-y-1 hover:shadow-sketch-hover tracking-wide hero-cta" data-i18n="hero_cta">
                         Join Now
                     </button>
 </div>
@@ -119,9 +119,9 @@
 </p>
 </div>
 
-<div class="grid gap-8 md:grid-cols-2 lg:grid-cols-2 mb-12">
+<div class="grid gap-8 md:grid-cols-2 lg:grid-cols-2 mb-12 animate-stagger">
     <!-- What is a Go Green Campaign -->
-    <div class="wireframe-border bg-highlight/30 p-8 shadow-sketch flex flex-col h-full">
+    <div class="wireframe-border bg-highlight/30 p-8 shadow-sketch flex flex-col h-full hover-lift transition-smooth">
         <h4 class="text-2xl font-bold text-primary mb-4 border-b-2 border-secondary pb-2" data-i18n="desc_campaign_title">What is a Go Green Campaign?</h4>
         <p class="mb-4 text-gray-700 font-medium" data-i18n="desc_campaign_intro">A Go Green campaign in school is a program that encourages students, teachers, and staff to:</p>
         <ul class="list-disc list-inside space-y-2 text-gray-700 font-medium mb-4 flex-grow">
@@ -136,7 +136,7 @@
     </div>
 
     <!-- What is Sustainability -->
-    <div class="wireframe-border bg-accent/20 p-8 shadow-sketch flex flex-col h-full">
+    <div class="wireframe-border bg-accent/20 p-8 shadow-sketch flex flex-col h-full hover-lift transition-smooth">
         <h4 class="text-2xl font-bold text-primary mb-4 border-b-2 border-secondary pb-2" data-i18n="desc_sus_title">What is Sustainability?</h4>
         <p class="mb-4 text-gray-700 font-medium" data-i18n="desc_sus_intro">Sustainability means using resources carefully so that future generations can also use them. In a Go Green School, sustainability includes:</p>
         <ul class="list-disc list-inside space-y-2 text-gray-700 font-medium flex-grow">
@@ -148,7 +148,7 @@
     </div>
 
     <!-- What is a Go Green Decal -->
-    <div class="wireframe-border bg-white p-8 shadow-sketch flex flex-col h-full">
+    <div class="wireframe-border bg-white p-8 shadow-sketch flex flex-col h-full hover-lift transition-smooth">
         <h4 class="text-2xl font-bold text-primary mb-4 border-b-2 border-secondary pb-2" data-i18n="desc_decal_title">What is a Go Green Decal?</h4>
         <p class="mb-4 text-gray-700 font-medium" data-i18n="desc_decal_intro1">A Go Green decal is a sticker or sign displayed around the school to remind people to care for the environment.</p>
         <p class="mb-2 text-gray-700 font-medium" data-i18n="desc_decal_intro2">Examples of messages on decals:</p>
@@ -162,7 +162,7 @@
     </div>
 
     <!-- Why is it Important -->
-    <div class="wireframe-border bg-white p-8 shadow-sketch flex flex-col h-full">
+    <div class="wireframe-border bg-white p-8 shadow-sketch flex flex-col h-full hover-lift transition-smooth">
         <h4 class="text-2xl font-bold text-primary mb-4 border-b-2 border-secondary pb-2" data-i18n="desc_why_title">Why is a Go Green School Important?</h4>
         <ul class="list-decimal list-inside space-y-4 text-gray-700 font-medium flex-grow">
             <li data-i18n="desc_why_li1">Teaches students responsibility</li>
@@ -173,7 +173,7 @@
     </div>
 </div>
 
-<div class="max-w-4xl mx-auto wireframe-border bg-secondary p-8 shadow-sketch text-white text-center">
+<div class="max-w-4xl mx-auto wireframe-border bg-secondary p-8 shadow-sketch text-white text-center animate-slide-up">
     <h4 class="text-2xl font-bold mb-4" data-i18n="desc_conclusion_title">Conclusion</h4>
     <p class="text-lg font-medium leading-relaxed" data-i18n="desc_conclusion_text">
         A Go Green School plays an important role in building a better future. By practicing eco-friendly habits, students learn to respect and protect the environment. Small actions like saving water, recycling, and planting trees can make a big difference.
@@ -282,7 +282,7 @@ By throwing waste according to its type, we help maintain the cleanliness and su
         </div>
 
         <h4 class="text-2xl font-bold text-primary mb-6" data-i18n="expl_keys_title">Key Concepts (Explanation)</h4>
-        
+
         <div class="grid gap-8 md:grid-cols-2 mb-8">
             <!-- What is Go Green? -->
             <div class="wireframe-border bg-white p-8 shadow-sketch flex flex-col h-full border-l-8 border-l-secondary">
@@ -575,4 +575,4 @@ function switchLang(lang) {
 }
 </script>
 
-</body></html> 
+</body></html>

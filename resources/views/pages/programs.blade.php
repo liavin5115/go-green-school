@@ -18,15 +18,15 @@
 
 <section class="mx-auto w-full max-w-7xl px-6 py-12 lg:px-10">
     {{-- INTRO & MATERIALS --}}
-    <div class="mb-10 grid gap-6 md:grid-cols-2">
-        <div class="rounded-xl border border-slate-200 dark:border-slate-800 bg-white dark:bg-slate-900 p-6 shadow-sm">
+    <div class="mb-10 grid gap-6 md:grid-cols-2 animate-stagger">
+        <div class="rounded-xl border border-slate-200 dark:border-slate-800 bg-white dark:bg-slate-900 p-6 shadow-sm hover-lift transition-smooth">
             <h2 class="text-lg font-bold text-slate-900 dark:text-slate-100 mb-3 flex items-center gap-2">
                 <span class="material-symbols-outlined text-primary">info</span>
                 <span data-i18n="procedure_intro_title">Introduction</span>
             </h2>
             <p class="text-slate-600 dark:text-slate-400 leading-relaxed" data-i18n="procedure_intro">This procedure text aims to guide students to sort and dispose of waste according to its type, namely organic (wet), inorganic (dry), and B3 (hazardous and toxic materials). By sorting waste properly, the school environment becomes cleaner, healthier, and supports the Go Green School program.</p>
         </div>
-        <div class="rounded-xl border border-slate-200 dark:border-slate-800 bg-primary/5 dark:bg-primary/10 p-6 shadow-sm">
+        <div class="rounded-xl border border-slate-200 dark:border-slate-800 bg-primary/5 dark:bg-primary/10 p-6 shadow-sm hover-lift transition-smooth">
             <h2 class="text-lg font-bold text-slate-900 dark:text-slate-100 mb-3 flex items-center gap-2">
                 <span class="material-symbols-outlined text-primary">inventory_2</span>
                 <span data-i18n="procedure_materials_title">Materials and Tools:</span>
@@ -44,7 +44,7 @@
         <span class="material-symbols-outlined text-primary">format_list_numbered</span>
         <span data-i18n="procedure_steps_title">Steps:</span>
     </h2>
-    <div class="grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
+    <div class="grid gap-4 sm:grid-cols-2 lg:grid-cols-4 animate-stagger">
         @php $steps = [
             ['icon' => 'label', 'key' => 'procedure_step1', 'color' => 'text-primary'],
             ['icon' => 'search', 'key' => 'procedure_step2', 'color' => 'text-primary'],
@@ -54,13 +54,13 @@
             ['icon' => 'check_circle', 'key' => 'procedure_step6', 'color' => 'text-primary'],
         ]; @endphp
         @foreach($steps as $i => $step)
-        <div class="group relative flex flex-col gap-3 rounded-xl border border-slate-200 dark:border-slate-800 bg-white dark:bg-slate-900 p-6 shadow-sm hover:shadow-md hover:border-primary/50 transition-all">
+        <div class="group relative flex flex-col gap-3 rounded-xl border border-slate-200 dark:border-slate-800 bg-white dark:bg-slate-900 p-6 shadow-sm hover:shadow-md hover:border-primary/50 transition-all hover-lift">
             <div class="absolute -left-3 -top-3 flex h-7 w-7 items-center justify-center rounded-full bg-primary text-slate-900 text-xs font-bold">{{ $i + 1 }}</div>
             <span class="material-symbols-outlined text-4xl {{ $step['color'] }}">{{ $step['icon'] }}</span>
             <p class="text-sm text-slate-600 dark:text-slate-400" data-i18n="{{ $step['key'] }}"></p>
         </div>
         @endforeach
-        <div class="group relative flex flex-col gap-3 rounded-xl border border-slate-200 dark:border-slate-800 bg-white dark:bg-slate-900 p-6 shadow-sm hover:shadow-md hover:border-primary/50 transition-all lg:col-span-2">
+        <div class="group relative flex flex-col gap-3 rounded-xl border border-slate-200 dark:border-slate-800 bg-white dark:bg-slate-900 p-6 shadow-sm hover:shadow-md hover:border-primary/50 transition-all hover-lift lg:col-span-2">
             <div class="absolute -left-3 -top-3 flex h-7 w-7 items-center justify-center rounded-full bg-primary text-slate-900 text-xs font-bold">7</div>
             <span class="material-symbols-outlined text-4xl text-primary">group</span>
             <p class="text-sm text-slate-600 dark:text-slate-400" data-i18n="procedure_step7">Make it a habit to sort waste every day and invite friends to do the same.</p>

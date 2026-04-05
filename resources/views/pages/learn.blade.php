@@ -18,7 +18,7 @@
 <section class="mx-auto w-full max-w-7xl px-6 py-12 lg:px-10">
 
     {{-- PURPOSE / INTRODUCTION --}}
-    <div class="rounded-xl border border-slate-200 dark:border-slate-800 bg-primary/5 dark:bg-primary/10 p-8 shadow-sm mb-8">
+    <div class="rounded-xl border border-slate-200 dark:border-slate-800 bg-primary/5 dark:bg-primary/10 p-8 shadow-sm mb-8 animate-slide-up">
         <h2 class="text-xl font-bold text-slate-900 dark:text-slate-100 mb-3 flex items-center gap-2">
             <span class="material-symbols-outlined text-primary">lightbulb</span>
             <span data-i18n="expl_intro_title">Purpose</span>
@@ -31,9 +31,9 @@
     {{-- KEY CONCEPTS --}}
     <h2 class="text-xl font-bold text-slate-900 dark:text-slate-100 mb-6" data-i18n="expl_keys_title">Key Concepts</h2>
 
-    <div class="grid gap-6 md:grid-cols-2 mb-8">
+    <div class="grid gap-6 md:grid-cols-2 mb-8 animate-stagger">
         {{-- What is Go Green? --}}
-        <div class="rounded-xl border border-slate-200 dark:border-slate-800 bg-white dark:bg-slate-900 p-8 shadow-sm flex flex-col h-full border-l-4 border-l-primary">
+        <div class="rounded-xl border border-slate-200 dark:border-slate-800 bg-white dark:bg-slate-900 p-8 shadow-sm flex flex-col h-full border-l-4 border-l-primary hover-lift transition-smooth">
             <h3 class="text-lg font-bold text-slate-900 dark:text-slate-100 mb-3 flex items-center gap-2">
                 <span class="material-symbols-outlined text-primary">eco</span>
                 <span data-i18n="expl_gogreen_title">What is Go Green?</span>
@@ -44,7 +44,7 @@
         </div>
 
         {{-- What is Global Warming? --}}
-        <div class="rounded-xl border border-slate-200 dark:border-slate-800 bg-white dark:bg-slate-900 p-8 shadow-sm flex flex-col h-full border-l-4 border-l-red-500">
+        <div class="rounded-xl border border-slate-200 dark:border-slate-800 bg-white dark:bg-slate-900 p-8 shadow-sm flex flex-col h-full border-l-4 border-l-red-500 hover-lift transition-smooth">
             <h3 class="text-lg font-bold text-slate-900 dark:text-slate-100 mb-3 flex items-center gap-2">
                 <span class="material-symbols-outlined text-red-500">thermostat</span>
                 <span data-i18n="expl_gw_title">What is Global Warming?</span>
@@ -56,7 +56,7 @@
     </div>
 
     {{-- THE LINK --}}
-    <div class="rounded-xl border border-slate-200 dark:border-slate-800 bg-white dark:bg-slate-900 p-8 shadow-sm mb-8">
+    <div class="rounded-xl border border-slate-200 dark:border-slate-800 bg-white dark:bg-slate-900 p-8 shadow-sm mb-8 animate-slide-up">
         <h3 class="text-lg font-bold text-slate-900 dark:text-slate-100 mb-3 flex items-center gap-2">
             <span class="material-symbols-outlined text-primary">link</span>
             <span data-i18n="expl_link_title">The Link Between Go Green and Global Warming</span>
@@ -67,7 +67,7 @@
     </div>
 
     {{-- CONCLUSION --}}
-    <div class="rounded-xl bg-background-dark dark:bg-slate-950 p-8 text-white">
+    <div class="rounded-xl bg-background-dark dark:bg-slate-950 p-8 text-white animate-slide-up">
         <h3 class="text-xl font-bold mb-3 flex items-center gap-2">
             <span class="material-symbols-outlined text-primary">stars</span>
             <span data-i18n="expl_conclusion_title">Reaffirmation</span>

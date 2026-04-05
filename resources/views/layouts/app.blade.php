@@ -26,10 +26,13 @@
     }
 </script>
 <style>
+    /* Language & Mobile Menu */
     .lang-btn { transition: all 0.2s; }
     .lang-btn.active { background-color: #11d442; color: #0d1117; border-color: #11d442; }
     .mobile-menu { display: none; }
     .mobile-menu.open { display: flex; }
+
+    /* Form Inputs */
     input, textarea, select {
         border: 1px solid #cbd5e1;
         border-radius: 0.5rem;
@@ -37,14 +40,103 @@
         padding: 0.65rem 1rem;
         width: 100%;
         outline: none;
-        transition: border-color 0.2s;
+        transition: border-color 0.2s, box-shadow 0.3s ease;
     }
-    input:focus, textarea:focus, select:focus { border-color: #11d442; }
+    input:focus, textarea:focus, select:focus {
+        border-color: #11d442;
+        box-shadow: 0 0 0 3px rgba(17, 212, 66, 0.1);
+    }
     .dark input, .dark textarea, .dark select {
         background: #1e293b;
         border-color: #334155;
         color: #f1f5f9;
     }
+
+    /* Global Animations */
+    @keyframes fadeIn {
+        from { opacity: 0; }
+        to { opacity: 1; }
+    }
+    @keyframes slideInUp {
+        from { transform: translateY(30px); opacity: 0; }
+        to { transform: translateY(0); opacity: 1; }
+    }
+    @keyframes slideInDown {
+        from { transform: translateY(-30px); opacity: 0; }
+        to { transform: translateY(0); opacity: 1; }
+    }
+    @keyframes slideInLeft {
+        from { transform: translateX(-40px); opacity: 0; }
+        to { transform: translateX(0); opacity: 1; }
+    }
+    @keyframes slideInRight {
+        from { transform: translateX(40px); opacity: 0; }
+        to { transform: translateX(0); opacity: 1; }
+    }
+    @keyframes scaleIn {
+        from { transform: scale(0.95); opacity: 0; }
+        to { transform: scale(1); opacity: 1; }
+    }
+    @keyframes bounce {
+        0%, 100% { transform: translateY(0); }
+        50% { transform: translateY(-12px); }
+    }
+    @keyframes pulse {
+        0%, 100% { opacity: 1; }
+        50% { opacity: 0.6; }
+    }
+    @keyframes shimmer {
+        0% { background-position: -1000px 0; }
+        100% { background-position: 1000px 0; }
+    }
+
+    /* Animation Utilities */
+    .animate-fade-in { animation: fadeIn 0.6s ease-out; }
+    .animate-slide-up { animation: slideInUp 0.6s ease-out; }
+    .animate-slide-down { animation: slideInDown 0.6s ease-out; }
+    .animate-slide-left { animation: slideInLeft 0.6s ease-out; }
+    .animate-slide-right { animation: slideInRight 0.6s ease-out; }
+    .animate-scale-in { animation: scaleIn 0.5s ease-out; }
+    .animate-bounce-slow { animation: bounce 2s ease-in-out infinite; }
+    .animate-pulse-slow { animation: pulse 3s ease-in-out infinite; }
+
+    /* Stagger Animation for Lists */
+    .animate-stagger > * { animation: slideInUp 0.6s ease-out backwards; }
+    .animate-stagger > *:nth-child(1) { animation-delay: 0.1s; }
+    .animate-stagger > *:nth-child(2) { animation-delay: 0.2s; }
+    .animate-stagger > *:nth-child(3) { animation-delay: 0.3s; }
+    .animate-stagger > *:nth-child(4) { animation-delay: 0.4s; }
+    .animate-stagger > *:nth-child(5) { animation-delay: 0.5s; }
+    .animate-stagger > *:nth-child(6) { animation-delay: 0.6s; }
+
+    /* Smooth Hover Effects */
+    .transition-smooth { transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1); }
+    .hover-lift:hover { transform: translateY(-4px); box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1); }
+    .hover-glow:hover { box-shadow: 0 0 20px rgba(17, 212, 66, 0.3); }
+    .hover-scale:hover { transform: scale(1.05); }
+
+    /* Button Animations */
+    .btn-animated {
+        position: relative;
+        overflow: hidden;
+        transition: all 0.3s ease;
+    }
+    .btn-animated:hover { transform: translateY(-2px); box-shadow: 0 10px 20px rgba(17, 212, 66, 0.2); }
+    .btn-animated:active { transform: translateY(0); }
+
+    /* Card Entrance Animations */
+    .card-entrance { animation: slideInUp 0.7s ease-out backwards; }
+    .card-entrance:nth-child(1) { animation-delay: 0.1s; }
+    .card-entrance:nth-child(2) { animation-delay: 0.2s; }
+    .card-entrance:nth-child(3) { animation-delay: 0.3s; }
+
+    /* Navigation Animation */
+    nav { animation: slideInDown 0.5s ease-out; }
+
+    /* Hero Section */
+    .hero-title { animation: slideInUp 0.8s ease-out; }
+    .hero-subtitle { animation: slideInUp 0.8s ease-out 0.2s both; }
+    .hero-cta { animation: scaleIn 0.6s ease-out 0.4s both; }
 </style>
 </head>
 <body class="bg-background-light dark:bg-background-dark font-sans text-slate-900 dark:text-slate-100 antialiased min-h-screen flex flex-col">

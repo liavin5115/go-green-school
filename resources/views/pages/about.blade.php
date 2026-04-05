@@ -18,9 +18,9 @@
 
 {{-- 4 INFO CARDS --}}
 <section class="mx-auto w-full max-w-7xl px-6 py-16 lg:px-10">
-    <div class="grid gap-6 md:grid-cols-2 mb-8">
+    <div class="grid gap-6 md:grid-cols-2 mb-8 animate-stagger">
         {{-- What is a Go Green Campaign --}}
-        <div class="flex flex-col gap-4 rounded-xl border border-slate-200 dark:border-slate-800 bg-white dark:bg-slate-900 p-8 shadow-sm h-full">
+        <div class="flex flex-col gap-4 rounded-xl border border-slate-200 dark:border-slate-800 bg-white dark:bg-slate-900 p-8 shadow-sm h-full hover-lift transition-smooth">
             <div class="flex items-center gap-3 pb-3 border-b border-slate-100 dark:border-slate-800">
                 <div class="w-10 h-10 rounded-full bg-primary/10 flex items-center justify-center text-primary">
                     <span class="material-symbols-outlined text-xl">campaign</span>
@@ -40,7 +40,7 @@
         </div>
 
         {{-- What is Sustainability --}}
-        <div class="flex flex-col gap-4 rounded-xl border border-slate-200 dark:border-slate-800 bg-white dark:bg-slate-900 p-8 shadow-sm h-full">
+        <div class="flex flex-col gap-4 rounded-xl border border-slate-200 dark:border-slate-800 bg-white dark:bg-slate-900 p-8 shadow-sm h-full hover-lift transition-smooth">
             <div class="flex items-center gap-3 pb-3 border-b border-slate-100 dark:border-slate-800">
                 <div class="w-10 h-10 rounded-full bg-primary/10 flex items-center justify-center text-primary">
                     <span class="material-symbols-outlined text-xl">recycling</span>
@@ -57,7 +57,7 @@
         </div>
 
         {{-- What is a Go Green Decal --}}
-        <div class="flex flex-col gap-4 rounded-xl border border-slate-200 dark:border-slate-800 bg-white dark:bg-slate-900 p-8 shadow-sm h-full">
+        <div class="flex flex-col gap-4 rounded-xl border border-slate-200 dark:border-slate-800 bg-white dark:bg-slate-900 p-8 shadow-sm h-full hover-lift transition-smooth">
             <div class="flex items-center gap-3 pb-3 border-b border-slate-100 dark:border-slate-800">
                 <div class="w-10 h-10 rounded-full bg-primary/10 flex items-center justify-center text-primary">
                     <span class="material-symbols-outlined text-xl">label</span>
@@ -76,7 +76,7 @@
         </div>
 
         {{-- Why is it Important --}}
-        <div class="flex flex-col gap-4 rounded-xl border border-slate-200 dark:border-slate-800 bg-white dark:bg-slate-900 p-8 shadow-sm h-full">
+        <div class="flex flex-col gap-4 rounded-xl border border-slate-200 dark:border-slate-800 bg-white dark:bg-slate-900 p-8 shadow-sm h-full hover-lift transition-smooth">
             <div class="flex items-center gap-3 pb-3 border-b border-slate-100 dark:border-slate-800">
                 <div class="w-10 h-10 rounded-full bg-primary/10 flex items-center justify-center text-primary">
                     <span class="material-symbols-outlined text-xl">help</span>

@@ -62,7 +62,7 @@ $article = $articles[$slug] ?? null;
     @section('content')
 
     {{-- HERO with Featured Image --}}
-    <div class="w-full h-96 bg-cover bg-center bg-no-repeat relative overflow-hidden">
+    <div class="w-full h-96 bg-cover bg-center bg-no-repeat relative overflow-hidden animate-fade-in">
         <img src="{{ $article['image'] }}" alt="Article Image" class="w-full h-full object-cover">
         <div class="absolute inset-0 bg-gradient-to-t from-black/80 to-transparent"></div>
 
@@ -79,7 +79,7 @@ $article = $articles[$slug] ?? null;
     </div>
 
     {{-- ARTICLE CONTENT --}}
-    <section class="max-w-4xl mx-auto px-6 py-16 lg:px-10">
+    <section class="max-w-4xl mx-auto px-6 py-16 lg:px-10 animate-slide-up">
         {{-- Summary --}}
         <div class="mb-10 pb-10 border-b border-slate-200 dark:border-slate-800">
             <p class="text-xl text-slate-600 dark:text-slate-400 leading-relaxed italic" data-i18n="{{ $article['summary'] }}">Article summary goes here</p>
@@ -93,7 +93,7 @@ $article = $articles[$slug] ?? null;
         </div>
 
         {{-- Related Links --}}
-        <div class="bg-primary/5 dark:bg-primary/10 rounded-xl border border-primary/20 p-8 mb-12">
+        <div class="bg-primary/5 dark:bg-primary/10 rounded-xl border border-primary/20 p-8 mb-12 animate-slide-up">
             <h3 class="text-lg font-bold text-slate-900 dark:text-slate-100 mb-4">📚 Baca Juga</h3>
             <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
                 <a href="{{ route('news') }}" class="flex items-center gap-3 group">
@@ -108,7 +108,7 @@ $article = $articles[$slug] ?? null;
         </div>
 
         {{-- CTA Section --}}
-        <div class="bg-background-dark dark:bg-slate-950 rounded-xl p-10 text-center text-white">
+        <div class="bg-background-dark dark:bg-slate-950 rounded-xl p-10 text-center text-white animate-slide-up">
             <h3 class="text-2xl font-bold mb-3">Tertarik untuk bergabung?</h3>
             <p class="text-slate-300 mb-6">Jadilah bagian dari gerakan Go Green School dan buat perbedaan untuk lingkungan kita.</p>
             <a href="https://wa.me/6281255585688" target="_blank" class="inline-flex items-center justify-center h-12 px-8 bg-primary hover:bg-green-500 transition-colors text-slate-900 font-bold rounded-lg shadow-lg" data-i18n="home_cta_btn">

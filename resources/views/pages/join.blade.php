@@ -16,7 +16,7 @@
 
 {{-- JOIN FORM --}}
 <section class="mx-auto w-full max-w-2xl px-6 py-16">
-    <div class="rounded-2xl border border-slate-200 dark:border-slate-800 bg-white dark:bg-slate-900 p-8 md:p-10 shadow-sm">
+    <div class="rounded-2xl border border-slate-200 dark:border-slate-800 bg-white dark:bg-slate-900 p-8 md:p-10 shadow-sm animate-slide-up">
         <form action="#" method="POST" class="space-y-5">
             @csrf
             <div>
@@ -45,7 +45,7 @@
                 <textarea name="message" rows="4" data-i18n="join_message"></textarea>
             </div>
             <div class="pt-2">
-                <button type="submit" class="w-full flex items-center justify-center rounded-lg h-12 bg-primary hover:bg-green-500 transition-colors text-slate-900 font-bold text-base" data-i18n="join_submit">
+                <button type="submit" class="w-full flex items-center justify-center rounded-lg h-12 bg-primary hover:bg-green-500 transition-colors text-slate-900 font-bold text-base btn-animated" data-i18n="join_submit">
                     Submit
                 </button>
             </div>
