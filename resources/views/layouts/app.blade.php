@@ -495,6 +495,12 @@ const translations = {
         home_card1_title: "About Go Green", home_card1_desc: "Learn what Go Green School is and why it matters for our future.", home_card1_cta: "Learn More",
         home_card2_title: "Waste Sorting Guide", home_card2_desc: "Step-by-step guide to properly sort organic, inorganic & B3 waste.", home_card2_cta: "Discover",
         home_card3_title: "Go Green & Climate", home_card3_desc: "Understand the link between Go Green practices and global warming.", home_card3_cta: "View Projects",
+        home_stats_title: "Make an Impact Today",
+        home_stats_text: "Join hundreds of schools across Indonesia in the Go Green School movement.",
+        home_stat1_label: "Green Projects",
+        home_stat2_label: "Trees Planted",
+        home_stat3_label: "Schools",
+        home_updates_label: "Updates",
         home_cta_title: "Ready to make your school greener?",
         home_cta_text: "Have questions or want to learn more about Go Green School? Contact us now!",
         home_cta_btn: "Contact Us",
@@ -647,6 +653,7 @@ const translations = {
         home_card2_title: "Panduan Pilah Sampah", home_card2_desc: "Panduan langkah demi langkah untuk memilah sampah organik, anorganik & B3.", home_card2_cta: "Jelajahi",
         home_card3_title: "Go Green & Iklim", home_card3_desc: "Pahami hubungan antara praktik Go Green dan pemanasan global.", home_card3_cta: "Lihat Proyek",
         home_stats_title: "Buat Dampak Hari Ini",
+        home_stats_text: "Bergabunglah dengan ratusan sekolah di Indonesia dalam gerakan Go Green School.",
         home_stat1_label: "Proyek Hijau",
         home_stat2_label: "Pohon Ditanam",
         home_stat3_label: "Sekolah",
@@ -794,6 +801,7 @@ const translations = {
 };
 
 let currentLang = localStorage.getItem('ggs_lang') || 'en';
+let i18nObserver = null;
 
 // Dark mode toggle function with localStorage persistence
 function toggleDarkMode() {
@@ -812,23 +820,73 @@ function initializeDarkMode() {
     }
 }
 
+function applyTranslations(root = document) {
+    const dict = translations[currentLang] || {};
+    const hasOwn = Object.prototype.hasOwnProperty;
+
+    const translateElement = (el) => {
+        const key = el.getAttribute('data-i18n');
+        if (!key || !hasOwn.call(dict, key)) {
+            return;
+        }
+        const translated = dict[key];
+        if (el.tagName === 'INPUT' || el.tagName === 'TEXTAREA') {
+            if (el.placeholder !== translated) {
+                el.placeholder = translated;
+            }
+        } else {
+            if (el.textContent !== translated) {
+                el.textContent = translated;
+            }
+        }
+    };
+
+    if (root.nodeType === 1 && root.matches('[data-i18n]')) {
+        translateElement(root);
+    }
+    root.querySelectorAll('[data-i18n]').forEach(translateElement);
+}
+
+function initializeI18nObserver() {
+    if (i18nObserver || !document.body) {
+        return;
+    }
+
+    i18nObserver = new MutationObserver((mutations) => {
+        for (const mutation of mutations) {
+            if (mutation.type === 'attributes') {
+                applyTranslations(mutation.target);
+                continue;
+            }
+
+            if (mutation.target && mutation.target.nodeType === 1 && mutation.target.matches('[data-i18n]')) {
+                applyTranslations(mutation.target);
+            }
+
+            for (const node of mutation.addedNodes) {
+                if (node.nodeType !== 1) {
+                    continue;
+                }
+                if (node.matches('[data-i18n]') || node.querySelector('[data-i18n]')) {
+                    applyTranslations(node);
+                }
+            }
+        }
+    });
+
+    i18nObserver.observe(document.body, {
+        childList: true,
+        subtree: true,
+        attributes: true,
+        attributeFilter: ['data-i18n']
+    });
+}
+
 function switchLang(lang) {
     currentLang = lang;
     localStorage.setItem('ggs_lang', lang);
     document.documentElement.lang = lang;
-    const dict = translations[lang];
-    document.querySelectorAll('[data-i18n]').forEach(el => {
-        const key = el.getAttribute('data-i18n');
-        if (dict[key]) {
-            if (el.tagName === 'INPUT' || el.tagName === 'TEXTAREA') {
-                el.placeholder = dict[key];
-            } else if (el.tagName === 'OPTION') {
-                el.textContent = dict[key];
-            } else {
-                el.textContent = dict[key];
-            }
-        }
-    });
+    applyTranslations();
     ['', '-m'].forEach(suffix => {
         const btnEn = document.getElementById('btn-en' + suffix);
         const btnId = document.getElementById('btn-id' + suffix);
@@ -841,6 +899,7 @@ function switchLang(lang) {
 
 document.addEventListener('DOMContentLoaded', () => {
     initializeDarkMode();
+    initializeI18nObserver();
     switchLang(currentLang);
 });
 </script>

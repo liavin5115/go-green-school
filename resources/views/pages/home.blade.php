@@ -207,7 +207,7 @@
     <div class="mx-auto max-w-7xl px-6 py-12 lg:px-10 flex flex-col md:flex-row gap-8 items-center">
         <div class="flex-1 space-y-4">
             <h3 class="text-2xl md:text-3xl font-bold text-slate-900 dark:text-slate-100" data-i18n="home_stats_title">Make an Impact Today</h3>
-            <p class="text-slate-600 dark:text-slate-400 leading-relaxed" data-i18n="home_cta_text">Join hundreds of schools across Indonesia in the Go Green School movement.</p>
+            <p class="text-slate-600 dark:text-slate-400 leading-relaxed" data-i18n="home_stats_text">Join hundreds of schools across Indonesia in the Go Green School movement.</p>
             <div class="flex gap-6 pt-2">
                 <div class="flex flex-col">
                     <span class="text-3xl font-bold text-primary">50+</span>
