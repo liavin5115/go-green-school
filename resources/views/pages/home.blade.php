@@ -7,9 +7,17 @@
 
 {{-- HERO SECTION --}}
 <div class="w-full">
-    <div class="flex min-h-[580px] flex-col gap-6 bg-cover bg-center bg-no-repeat items-center justify-center p-4 relative overflow-hidden"
-         style='background-image: linear-gradient(rgba(16, 34, 21, 0.65) 0%, rgba(16, 34, 21, 0.75) 100%), url("https://lh3.googleusercontent.com/aida-public/AB6AXuBfgB3QbHrFJtcXwaR8SFg9_DD_-QFpTET-ZLOEDh9_ZUZnDZaPpfJoEQTjmk6JRP7StQTZgJENTY5y3vPLknIjLT0wl8DX8dwiNso5CN1GLMNEM5D7Vyr5Lgwrz4iXypreuxVxvhKYWNoa0dDzksHMV8kkV5Df_U1mdgnjK3S4driXHkgRdcYOnBySmmpI-RNCnGXGF5y3_cNWa0YSYZAzxpntkaXX0OShq5v25GMS0R2jv3MHfF2tFXRaXKgCpq2Ht3bMBSEYiumA");'>
-        <div class="flex flex-col gap-5 text-center max-w-[820px] z-10">
+    <div class="hero-slider-wrap flex min-h-[580px] flex-col gap-6 items-center justify-center p-4 relative overflow-hidden">
+        <div class="hero-slideshow" aria-hidden="true">
+            <div class="hero-slide is-active" data-hero-slide style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuBfgB3QbHrFJtcXwaR8SFg9_DD_-QFpTET-ZLOEDh9_ZUZnDZaPpfJoEQTjmk6JRP7StQTZgJENTY5y3vPLknIjLT0wl8DX8dwiNso5CN1GLMNEM5D7Vyr5Lgwrz4iXypreuxVxvhKYWNoa0dDzksHMV8kkV5Df_U1mdgnjK3S4driXHkgRdcYOnBySmmpI-RNCnGXGF5y3_cNWa0YSYZAzxpntkaXX0OShq5v25GMS0R2jv3MHfF2tFXRaXKgCpq2Ht3bMBSEYiumA");'></div>
+            <div class="hero-slide" data-hero-slide style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuB8QF5FpDOnYcjRP12PLLTDAq5NBXlpJN9thTpv6AXppVwwjzCJvQ4Ta73Wd2LKy6Ps397Z5dQ3Hp4xJbUHT-nO6ZCCqPEZBbH9lO49V3XkKeReOF0psI0Y0wTxSlVdYoTfOwZ9xYV84vUcP_D-EvMEHSo1O-5iF_SHxihNtbX9-cq-08USLk6V6O0oF8zn9O6w0QZ28zyyWA2Nv8XzPHdnDTGiVrfS7My2bqunqcvFTWtsa1aftYAUp-k8y7HO-UdWS-Cc28j90Uuw");'></div>
+            <div class="hero-slide" data-hero-slide style='background-image: url("https://images.unsplash.com/photo-1516979187457-637abb4f9353?auto=format&fit=crop&w=1800&q=80");'></div>
+            <div class="hero-slide" data-hero-slide style='background-image: url("https://images.unsplash.com/photo-1532996122724-e3c354a0b15b?auto=format&fit=crop&w=1800&q=80");'></div>
+            <div class="hero-slide" data-hero-slide style='background-image: url("https://images.unsplash.com/photo-1611284446314-60a58ac0deb9?auto=format&fit=crop&w=1800&q=80");'></div>
+            <div class="hero-slide-overlay"></div>
+        </div>
+
+        <div class="flex flex-col gap-5 text-center max-w-[820px] z-10 relative">
             <h1 class="text-white text-4xl font-black leading-tight tracking-tight md:text-5xl lg:text-6xl drop-shadow-sm">
                 Go Green School:<br/>
                 <span data-i18n="hero_tagline">Building an Environmentally Conscious Generation</span>
@@ -26,6 +34,35 @@
 </div>
 
 <style>
+    .hero-slider-wrap {
+        isolation: isolate;
+    }
+    .hero-slideshow {
+        position: absolute;
+        inset: 0;
+        z-index: 0;
+    }
+    .hero-slide {
+        position: absolute;
+        inset: 0;
+        background-size: cover;
+        background-position: center;
+        opacity: 0;
+        transform: scale(1.06);
+        transition: opacity 1200ms ease-in-out, transform 7000ms ease-out;
+        will-change: opacity, transform;
+    }
+    .hero-slide.is-active {
+        opacity: 1;
+        transform: scale(1);
+    }
+    .hero-slide-overlay {
+        position: absolute;
+        inset: 0;
+        background: linear-gradient(rgba(16, 34, 21, 0.58) 0%, rgba(16, 34, 21, 0.78) 100%);
+        z-index: 1;
+    }
+
     .home-floating-eco-area {
         position: relative;
         isolation: isolate;
@@ -264,5 +301,21 @@
 
     </div>
 </div>
+
+<script>
+document.addEventListener('DOMContentLoaded', function () {
+    const slides = Array.from(document.querySelectorAll('[data-hero-slide]'));
+    if (slides.length < 2) {
+        return;
+    }
+
+    let currentIndex = 0;
+    setInterval(function () {
+        slides[currentIndex].classList.remove('is-active');
+        currentIndex = (currentIndex + 1) % slides.length;
+        slides[currentIndex].classList.add('is-active');
+    }, 5000);
+});
+</script>
 
 @endsection
