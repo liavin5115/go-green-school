@@ -425,11 +425,11 @@
                     </div>
                     <div class="flex items-center gap-3 text-slate-500 dark:text-slate-400 text-sm">
                         <span class="material-symbols-outlined text-lg">call</span>
-                        <span>+62 (21) 123-4567</span>
+                        <span>081255585688</span>
                     </div>
                     <div class="flex items-center gap-3 text-slate-500 dark:text-slate-400 text-sm">
                         <span class="material-symbols-outlined text-lg">mail</span>
-                        <span>hello@gogreenschool.id</span>
+                        <span>googreenschool@gmail.com</span>
                     </div>
                 </div>
             </div>
