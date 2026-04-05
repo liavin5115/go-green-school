@@ -4,6 +4,7 @@ use Illuminate\Support\Facades\Route;
 
 Route::get('/', fn () => view('pages.home'))->name('home');
 Route::get('/about', fn () => view('pages.about'))->name('about');
+Route::get('/developers', fn () => view('pages.developers'))->name('developers');
 Route::get('/programs', fn () => view('pages.programs'))->name('programs');
 Route::get('/learn', fn () => view('pages.learn'))->name('learn');
 Route::get('/gallery', fn () => view('pages.gallery'))->name('gallery');

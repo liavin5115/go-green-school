@@ -7,7 +7,7 @@
 
 {{-- HERO SECTION --}}
 <div class="w-full">
-    <div class="hero-slider-wrap flex min-h-[580px] flex-col gap-6 items-center justify-center p-4 relative overflow-hidden">
+    <div class="hero-slider-wrap flex flex-col gap-6 items-center justify-center p-4 relative overflow-hidden">
         <div class="hero-slideshow" aria-hidden="true">
             <div class="hero-slide is-active" data-hero-slide style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuBfgB3QbHrFJtcXwaR8SFg9_DD_-QFpTET-ZLOEDh9_ZUZnDZaPpfJoEQTjmk6JRP7StQTZgJENTY5y3vPLknIjLT0wl8DX8dwiNso5CN1GLMNEM5D7Vyr5Lgwrz4iXypreuxVxvhKYWNoa0dDzksHMV8kkV5Df_U1mdgnjK3S4driXHkgRdcYOnBySmmpI-RNCnGXGF5y3_cNWa0YSYZAzxpntkaXX0OShq5v25GMS0R2jv3MHfF2tFXRaXKgCpq2Ht3bMBSEYiumA");'></div>
             <div class="hero-slide" data-hero-slide style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuB8QF5FpDOnYcjRP12PLLTDAq5NBXlpJN9thTpv6AXppVwwjzCJvQ4Ta73Wd2LKy6Ps397Z5dQ3Hp4xJbUHT-nO6ZCCqPEZBbH9lO49V3XkKeReOF0psI0Y0wTxSlVdYoTfOwZ9xYV84vUcP_D-EvMEHSo1O-5iF_SHxihNtbX9-cq-08USLk6V6O0oF8zn9O6w0QZ28zyyWA2Nv8XzPHdnDTGiVrfS7My2bqunqcvFTWtsa1aftYAUp-k8y7HO-UdWS-Cc28j90Uuw");'></div>
@@ -18,16 +18,16 @@
         </div>
 
         <div class="flex flex-col gap-5 text-center max-w-[820px] z-10 relative">
-            <h1 class="text-white text-4xl font-black leading-tight tracking-tight md:text-5xl lg:text-6xl drop-shadow-sm">
+            <h1 class="text-white text-3xl font-black leading-tight tracking-tight sm:text-4xl md:text-5xl lg:text-6xl drop-shadow-sm">
                 Go Green School:<br/>
                 <span data-i18n="hero_tagline">Building an Environmentally Conscious Generation</span>
             </h1>
-            <p class="text-slate-200 text-base font-normal leading-relaxed md:text-lg max-w-[600px] mx-auto" data-i18n="home_mission_text">
+            <p class="text-slate-200 text-sm font-normal leading-relaxed sm:text-base md:text-lg max-w-[600px] mx-auto" data-i18n="home_mission_text">
                 A school program that promotes environmental awareness, sustainability, and eco-friendly practices in everyday learning and activities.
             </p>
             <div class="flex flex-col sm:flex-row gap-3 justify-center mt-2">
-                <a href="https://wa.me/6281255585688" target="_blank" class="flex items-center justify-center rounded-lg h-12 px-8 bg-primary hover:bg-green-500 transition-all text-slate-900 text-base font-bold shadow-lg" data-i18n="hero_cta_join">Contact Us</a>
-                <a href="{{ route('about') }}" class="flex items-center justify-center rounded-lg h-12 px-8 bg-white/10 hover:bg-white/20 backdrop-blur-sm border border-white/30 transition-all text-white text-base font-medium" data-i18n="hero_cta_learn">Learn More</a>
+                <a href="https://wa.me/6281255585688" target="_blank" class="flex items-center justify-center rounded-lg h-11 sm:h-12 px-8 bg-primary hover:bg-green-500 transition-all text-slate-900 text-sm sm:text-base font-bold shadow-lg" data-i18n="hero_cta_join">Contact Us</a>
+                <a href="{{ route('about') }}" class="flex items-center justify-center rounded-lg h-11 sm:h-12 px-8 bg-white/10 hover:bg-white/20 backdrop-blur-sm border border-white/30 transition-all text-white text-sm sm:text-base font-medium" data-i18n="hero_cta_learn">Learn More</a>
             </div>
         </div>
     </div>
@@ -36,6 +36,8 @@
 <style>
     .hero-slider-wrap {
         isolation: isolate;
+        min-height: clamp(420px, 68vh, 680px);
+        padding-inline: clamp(0.75rem, 2vw, 1.5rem);
     }
     .hero-slideshow {
         position: absolute;
@@ -132,6 +134,11 @@
     @media (prefers-reduced-motion: reduce) {
         .home-floating-eco-row::before {
             animation-duration: 34s;
+        }
+    }
+    @media (max-width: 640px) {
+        .hero-slider-wrap {
+            min-height: clamp(420px, 78vh, 560px);
         }
     }
 </style>
@@ -239,49 +246,49 @@
     <div class="grid gap-6 md:grid-cols-2 lg:grid-cols-4 animate-stagger">
         <a href="{{ route('news.show', 'calculator-sampah') }}" class="group flex flex-col rounded-xl border border-slate-200 dark:border-slate-800 bg-white dark:bg-slate-900 overflow-hidden shadow-sm hover:shadow-md transition-all hover:border-primary/50 hover-lift">
             <img src="https://images.unsplash.com/photo-1516979187457-637abb4f9353?auto=format&fit=crop&w=800&q=80" alt="Waste Calculator" class="w-full h-44 object-cover">
-            <div class="p-5 flex flex-col flex-grow">
+            <div class="p-5 flex flex-col grow">
                 <div class="flex items-center gap-2 mb-2">
                     <span class="material-symbols-outlined text-sm text-slate-400">calendar_month</span>
                     <span class="text-xs text-slate-500">9 Maret 2026</span>
                 </div>
                 <h4 class="text-sm font-bold text-slate-900 dark:text-slate-100 mb-2 group-hover:text-primary transition-colors" data-i18n="news1_title">XI RPL Students Launch Classroom Waste Calculator!</h4>
-                <p class="text-xs text-slate-600 dark:text-slate-400 leading-relaxed flex-grow" data-i18n="news1_summary">Students of class XI RPL successfully developed a digital waste calculator.</p>
+                <p class="text-xs text-slate-600 dark:text-slate-400 leading-relaxed grow" data-i18n="news1_summary">Students of class XI RPL successfully developed a digital waste calculator.</p>
                 <span class="mt-3 text-primary font-bold text-xs flex items-center gap-1" data-i18n="news_read_more">Read More <span class="material-symbols-outlined text-xs">arrow_forward</span></span>
             </div>
         </a>
         <a href="{{ route('news.show', 'penanaman-pohon') }}" class="group flex flex-col rounded-xl border border-slate-200 dark:border-slate-800 bg-white dark:bg-slate-900 overflow-hidden shadow-sm hover:shadow-md transition-all hover:border-primary/50 hover-lift">
             <img src="https://lh3.googleusercontent.com/aida-public/AB6AXuB8QF5FpDOnYcjRP12PLLTDAq5NBXlpJN9thTpv6AXppVwwjzCJvQ4Ta73Wd2LKy6Ps397Z5dQ3Hp4xJbUHT-nO6ZCCqPEZBbH9lO49V3XkKeReOF0psI0Y0wTxSlVdYoTfOwZ9xYV84vUcP_D-EvMEHSo1O-5iF_SHxihNtbX9-cq-08USLk6V6O0oF8zn9O6w0QZ28zyyWA2Nv8XzPHdnDTGiVrfS7My2bqunqcvFTWtsa1aftYAUp-k8y7HO-UdWS-Cc28j90Uuw" alt="Tree Planting" class="w-full h-44 object-cover">
-            <div class="p-5 flex flex-col flex-grow">
+            <div class="p-5 flex flex-col grow">
                 <div class="flex items-center gap-2 mb-2">
                     <span class="material-symbols-outlined text-sm text-slate-400">calendar_month</span>
                     <span class="text-xs text-slate-500">5 Maret 2026</span>
                 </div>
                 <h4 class="text-sm font-bold text-slate-900 dark:text-slate-100 mb-2 group-hover:text-primary transition-colors" data-i18n="news2_title">Planting 100 Trees in the School Yard</h4>
-                <p class="text-xs text-slate-600 dark:text-slate-400 leading-relaxed flex-grow" data-i18n="news2_summary">The school community planted 100 fruit and shade trees in a collaborative action.</p>
+                <p class="text-xs text-slate-600 dark:text-slate-400 leading-relaxed grow" data-i18n="news2_summary">The school community planted 100 fruit and shade trees in a collaborative action.</p>
                 <span class="mt-3 text-primary font-bold text-xs flex items-center gap-1" data-i18n="news_read_more">Read More <span class="material-symbols-outlined text-xs">arrow_forward</span></span>
             </div>
         </a>
         <a href="{{ route('news.show', 'kampanye-anti-plastik') }}" class="group flex flex-col rounded-xl border border-slate-200 dark:border-slate-800 bg-white dark:bg-slate-900 overflow-hidden shadow-sm hover:shadow-md transition-all hover:border-primary/50 hover-lift">
             <img src="https://images.unsplash.com/photo-1532996122724-e3c354a0b15b?auto=format&fit=crop&w=800&q=80" alt="Anti-Plastic Campaign" class="w-full h-44 object-cover">
-            <div class="p-5 flex flex-col flex-grow">
+            <div class="p-5 flex flex-col grow">
                 <div class="flex items-center gap-2 mb-2">
                     <span class="material-symbols-outlined text-sm text-slate-400">calendar_month</span>
                     <span class="text-xs text-slate-500">28 Februari 2026</span>
                 </div>
                 <h4 class="text-sm font-bold text-slate-900 dark:text-slate-100 mb-2 group-hover:text-primary transition-colors" data-i18n="news3_title">Anti-Plastic Campaign: Waste Reduced by 40%!</h4>
-                <p class="text-xs text-slate-600 dark:text-slate-400 leading-relaxed flex-grow" data-i18n="news3_summary">Through a month-long campaign, the school succeeded in reducing plastic waste by 40%.</p>
+                <p class="text-xs text-slate-600 dark:text-slate-400 leading-relaxed grow" data-i18n="news3_summary">Through a month-long campaign, the school succeeded in reducing plastic waste by 40%.</p>
                 <span class="mt-3 text-primary font-bold text-xs flex items-center gap-1" data-i18n="news_read_more">Read More <span class="material-symbols-outlined text-xs">arrow_forward</span></span>
             </div>
         </a>
         <a href="{{ route('news.show', 'workshop-b3') }}" class="group flex flex-col rounded-xl border border-slate-200 dark:border-slate-800 bg-white dark:bg-slate-900 overflow-hidden shadow-sm hover:shadow-md transition-all hover:border-primary/50 hover-lift">
             <img src="https://images.unsplash.com/photo-1611284446314-60a58ac0deb9?auto=format&fit=crop&w=800&q=80" alt="B3 Workshop" class="w-full h-44 object-cover">
-            <div class="p-5 flex flex-col flex-grow">
+            <div class="p-5 flex flex-col grow">
                 <div class="flex items-center gap-2 mb-2">
                     <span class="material-symbols-outlined text-sm text-slate-400">calendar_month</span>
                     <span class="text-xs text-slate-500">20 Februari 2026</span>
                 </div>
                 <h4 class="text-sm font-bold text-slate-900 dark:text-slate-100 mb-2 group-hover:text-primary transition-colors" data-i18n="news4_title">B3 Waste Management Workshop a Success!</h4>
-                <p class="text-xs text-slate-600 dark:text-slate-400 leading-relaxed flex-grow" data-i18n="news4_summary">Interactive workshop taught students how to safely handle hazardous waste (B3).</p>
+                <p class="text-xs text-slate-600 dark:text-slate-400 leading-relaxed grow" data-i18n="news4_summary">Interactive workshop taught students how to safely handle hazardous waste (B3).</p>
                 <span class="mt-3 text-primary font-bold text-xs flex items-center gap-1" data-i18n="news_read_more">Read More <span class="material-symbols-outlined text-xs">arrow_forward</span></span>
             </div>
         </a>

@@ -26,11 +26,118 @@
     }
 </script>
 <style>
+    /* Global Responsive Baseline */
+    :root {
+        --page-gutter: clamp(1rem, 3vw, 2.5rem);
+    }
+    *, *::before, *::after {
+        box-sizing: border-box;
+    }
+    html {
+        -webkit-text-size-adjust: 100%;
+        text-size-adjust: 100%;
+    }
+    body {
+        min-width: 320px;
+        overflow-x: clip;
+    }
+    main {
+        width: 100%;
+    }
+    :where(section, article, aside, header, footer, nav, div) {
+        min-width: 0;
+    }
+    :where(h1, h2, h3, h4, p, li, td, th) {
+        overflow-wrap: anywhere;
+    }
+    img, svg, video, canvas, iframe {
+        max-width: 100%;
+        height: auto;
+    }
+
     /* Language & Mobile Menu */
     .lang-btn { transition: all 0.2s; }
     .lang-btn.active { background-color: #11d442; color: #0d1117; border-color: #11d442; }
     .mobile-menu { display: none; }
     .mobile-menu.open { display: flex; }
+
+    /* Floating Quick Controls */
+    .floating-quick-controls {
+        position: fixed;
+        right: 1rem;
+        bottom: 1rem;
+        z-index: 70;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 0.55rem;
+        padding: 0.65rem;
+        border: 1px solid #cbd5e1;
+        border-radius: 1rem;
+        background: rgba(255, 255, 255, 0.92);
+        backdrop-filter: blur(8px);
+        box-shadow: 0 10px 25px rgba(15, 23, 42, 0.14);
+    }
+    .dark .floating-quick-controls {
+        border-color: #334155;
+        background: rgba(15, 23, 42, 0.9);
+        box-shadow: 0 12px 25px rgba(2, 6, 23, 0.45);
+    }
+    .floating-lang-switch {
+        display: flex;
+        align-items: center;
+        overflow: hidden;
+        border: 1px solid #cbd5e1;
+        border-radius: 9999px;
+        background: #ffffff;
+    }
+    .dark .floating-lang-switch {
+        border-color: #334155;
+        background: #0f172a;
+    }
+    .floating-dark-btn {
+        display: inline-flex;
+        height: 2.2rem;
+        width: 2.2rem;
+        align-items: center;
+        justify-content: center;
+        border: 1px solid #cbd5e1;
+        border-radius: 9999px;
+        background: #ffffff;
+        color: #475569;
+        transition: all 0.2s;
+    }
+    .floating-dark-btn:hover {
+        border-color: #11d442;
+        color: #14532d;
+        transform: translateY(-1px);
+    }
+    .dark .floating-dark-btn {
+        border-color: #334155;
+        background: #0f172a;
+        color: #cbd5e1;
+    }
+    .dark .floating-dark-btn:hover {
+        border-color: #11d442;
+        color: #bbf7d0;
+    }
+    @media (max-width: 640px) {
+        .floating-quick-controls {
+            right: 0.65rem;
+            bottom: 0.65rem;
+            gap: 0.4rem;
+            padding: 0.5rem;
+            border-radius: 0.85rem;
+        }
+        .floating-dark-btn {
+            width: 2rem;
+            height: 2rem;
+        }
+        .floating-lang-switch .lang-btn {
+            padding: 0.3rem 0.6rem;
+            font-size: 0.68rem;
+        }
+    }
 
     /* Form Inputs */
     input, textarea, select {
@@ -221,41 +328,24 @@
             <div class="flex h-8 w-8 items-center justify-center text-primary">
                 <span class="material-symbols-outlined text-3xl">eco</span>
             </div>
-            <span class="text-lg font-bold text-slate-900 dark:text-slate-100 tracking-tight">Go Green School</span>
+            <span class="hidden sm:inline text-lg font-bold text-slate-900 dark:text-slate-100 tracking-tight">Go Green School</span>
         </a>
 
         {{-- Desktop Nav --}}
-        <nav class="hidden md:flex items-center gap-6 lg:gap-8">
+        <nav class="hidden lg:flex items-center gap-6 xl:gap-8">
             <a class="text-sm font-medium {{ request()->routeIs('home') ? 'text-primary' : 'text-slate-700 dark:text-slate-300 hover:text-primary dark:hover:text-primary' }} transition-colors" href="{{ route('home') }}" data-i18n="nav_home">Home</a>
             <a class="text-sm font-medium {{ request()->routeIs('about') ? 'text-primary' : 'text-slate-700 dark:text-slate-300 hover:text-primary dark:hover:text-primary' }} transition-colors" href="{{ route('about') }}" data-i18n="nav_about">About</a>
+            <a class="text-sm font-medium {{ request()->routeIs('developers') ? 'text-primary' : 'text-slate-700 dark:text-slate-300 hover:text-primary dark:hover:text-primary' }} transition-colors" href="{{ route('developers') }}" data-i18n="nav_developers">Developers</a>
             <a class="text-sm font-medium {{ request()->routeIs('learn') ? 'text-primary' : 'text-slate-700 dark:text-slate-300 hover:text-primary dark:hover:text-primary' }} transition-colors" href="{{ route('learn') }}" data-i18n="nav_learn">Learn</a>
             <a class="text-sm font-medium {{ request()->routeIs('programs') ? 'text-primary' : 'text-slate-700 dark:text-slate-300 hover:text-primary dark:hover:text-primary' }} transition-colors" href="{{ route('programs') }}" data-i18n="nav_programs">Programs</a>
             <a class="text-sm font-medium {{ request()->routeIs('gallery') ? 'text-primary' : 'text-slate-700 dark:text-slate-300 hover:text-primary dark:hover:text-primary' }} transition-colors" href="{{ route('gallery') }}" data-i18n="nav_gallery">Gallery</a>
             <a class="text-sm font-medium {{ request()->routeIs('news') ? 'text-primary' : 'text-slate-700 dark:text-slate-300 hover:text-primary dark:hover:text-primary' }} transition-colors" href="{{ route('news') }}" data-i18n="nav_news">News</a>
             <a class="text-sm font-medium {{ request()->routeIs('calculator') ? 'text-primary' : 'text-slate-700 dark:text-slate-300 hover:text-primary dark:hover:text-primary' }} transition-colors" href="{{ route('calculator') }}" data-i18n="nav_calculator">Calculator</a>
             <a class="flex items-center justify-center rounded-lg h-9 px-5 bg-primary hover:bg-green-500 transition-colors text-slate-900 text-sm font-bold shadow-sm" href="https://wa.me/6281255585688" target="_blank" data-i18n="nav_join">Contact Us</a>
-
-            {{-- Language Switcher --}}
-            <div class="flex items-center border border-slate-200 dark:border-slate-700 rounded-full overflow-hidden ml-1">
-                <button onclick="switchLang('en')" id="btn-en" class="lang-btn active px-3 py-1 text-xs font-bold border-r border-slate-200 dark:border-slate-700">EN</button>
-                <button onclick="switchLang('id')" id="btn-id" class="lang-btn px-3 py-1 text-xs font-bold text-slate-600 dark:text-slate-400">ID</button>
-            </div>
-
-            {{-- Dark Mode Toggle --}}
-            <button onclick="toggleDarkMode()" aria-label="Toggle Dark Mode" class="flex h-8 w-8 items-center justify-center rounded-full border border-slate-200 dark:border-slate-700 text-slate-600 dark:text-slate-300 hover:border-primary hover:text-primary transition-colors">
-                <span class="material-symbols-outlined text-lg">dark_mode</span>
-            </button>
         </nav>
 
         {{-- Mobile Controls --}}
-        <div class="flex items-center gap-2 md:hidden">
-            <div class="flex items-center border border-slate-200 dark:border-slate-700 rounded-full overflow-hidden">
-                <button onclick="switchLang('en')" id="btn-en-m" class="lang-btn active px-2 py-1 text-xs font-bold border-r border-slate-200 dark:border-slate-700">EN</button>
-                <button onclick="switchLang('id')" id="btn-id-m" class="lang-btn px-2 py-1 text-xs font-bold text-slate-600 dark:text-slate-400">ID</button>
-            </div>
-            <button onclick="toggleDarkMode()" aria-label="Toggle Dark Mode" class="flex h-8 w-8 items-center justify-center rounded-full border border-slate-200 dark:border-slate-700 text-slate-600 dark:text-slate-300">
-                <span class="material-symbols-outlined text-lg">dark_mode</span>
-            </button>
+        <div class="flex items-center lg:hidden">
             <button onclick="document.getElementById('mobile-menu').classList.toggle('open')" aria-expanded="false" aria-label="Toggle Mobile Menu" class="text-slate-700 dark:text-slate-300">
                 <span class="material-symbols-outlined text-3xl">menu</span>
             </button>
@@ -263,20 +353,21 @@
     </div>
 
     {{-- Mobile Menu --}}
-    <div id="mobile-menu" class="mobile-menu flex-col border-t border-slate-200 dark:border-slate-800 bg-background-light dark:bg-background-dark px-6 py-4 md:hidden">
+    <div id="mobile-menu" class="mobile-menu flex-col border-t border-slate-200 dark:border-slate-800 bg-background-light dark:bg-background-dark px-6 py-4 lg:hidden">
         <a class="block py-3 text-sm font-medium text-slate-700 dark:text-slate-300 border-b border-slate-100 dark:border-slate-800" href="{{ route('home') }}" data-i18n="nav_home">Home</a>
         <a class="block py-3 text-sm font-medium text-slate-700 dark:text-slate-300 border-b border-slate-100 dark:border-slate-800" href="{{ route('about') }}" data-i18n="nav_about">About</a>
+        <a class="block py-3 text-sm font-medium text-slate-700 dark:text-slate-300 border-b border-slate-100 dark:border-slate-800" href="{{ route('developers') }}" data-i18n="nav_developers">Developers</a>
         <a class="block py-3 text-sm font-medium text-slate-700 dark:text-slate-300 border-b border-slate-100 dark:border-slate-800" href="{{ route('learn') }}" data-i18n="nav_learn">Learn</a>
         <a class="block py-3 text-sm font-medium text-slate-700 dark:text-slate-300 border-b border-slate-100 dark:border-slate-800" href="{{ route('programs') }}" data-i18n="nav_programs">Programs</a>
         <a class="block py-3 text-sm font-medium text-slate-700 dark:text-slate-300 border-b border-slate-100 dark:border-slate-800" href="{{ route('gallery') }}" data-i18n="nav_gallery">Gallery</a>
         <a class="block py-3 text-sm font-medium text-slate-700 dark:text-slate-300 border-b border-slate-100 dark:border-slate-800" href="{{ route('news') }}" data-i18n="nav_news">News</a>
         <a class="block py-3 text-sm font-medium text-slate-700 dark:text-slate-300 border-b border-slate-100 dark:border-slate-800" href="{{ route('calculator') }}" data-i18n="nav_calculator">Calculator</a>
-        <a class="block mt-4 flex items-center justify-center rounded-lg h-10 bg-primary text-slate-900 text-sm font-bold shadow-sm" href="https://wa.me/6281255585688" target="_blank" data-i18n="nav_join">Contact Us</a>
+        <a class="mt-4 flex items-center justify-center rounded-lg h-10 bg-primary text-slate-900 text-sm font-bold shadow-sm" href="https://wa.me/6281255585688" target="_blank" data-i18n="nav_join">Contact Us</a>
     </div>
 </header>
 
 {{-- MAIN CONTENT --}}
-<main class="flex-grow">
+    <main class="grow">
     @if (request()->routeIs('home'))
         @yield('content')
     @else
@@ -316,6 +407,7 @@
                 <nav class="flex flex-col gap-2">
                     <a href="{{ route('home') }}" class="text-slate-500 dark:text-slate-400 hover:text-primary dark:hover:text-primary text-sm transition-colors" data-i18n="nav_home">Home</a>
                     <a href="{{ route('about') }}" class="text-slate-500 dark:text-slate-400 hover:text-primary dark:hover:text-primary text-sm transition-colors" data-i18n="nav_about">About</a>
+                    <a href="{{ route('developers') }}" class="text-slate-500 dark:text-slate-400 hover:text-primary dark:hover:text-primary text-sm transition-colors" data-i18n="nav_developers">Developers</a>
                     <a href="{{ route('learn') }}" class="text-slate-500 dark:text-slate-400 hover:text-primary dark:hover:text-primary text-sm transition-colors" data-i18n="nav_learn">Learn</a>
                     <a href="{{ route('programs') }}" class="text-slate-500 dark:text-slate-400 hover:text-primary dark:hover:text-primary text-sm transition-colors" data-i18n="nav_programs">Programs</a>
                     <a href="{{ route('gallery') }}" class="text-slate-500 dark:text-slate-400 hover:text-primary dark:hover:text-primary text-sm transition-colors" data-i18n="nav_gallery">Gallery</a>
@@ -370,6 +462,16 @@
     </div>
 </footer>
 
+<div class="floating-quick-controls" aria-label="Quick Language and Theme Controls">
+    <div class="floating-lang-switch">
+        <button onclick="switchLang('en')" id="btn-en" class="lang-btn active px-3 py-1 text-xs font-bold border-r border-slate-200 dark:border-slate-700">EN</button>
+        <button onclick="switchLang('id')" id="btn-id" class="lang-btn px-3 py-1 text-xs font-bold text-slate-600 dark:text-slate-400">ID</button>
+    </div>
+    <button onclick="toggleDarkMode()" aria-label="Toggle Dark Mode" class="floating-dark-btn">
+        <span class="material-symbols-outlined text-lg">dark_mode</span>
+    </button>
+</div>
+
 {{-- TRANSLATIONS & LANGUAGE SWITCHER --}}
 <script>
 // Initialize dark mode as early as possible to prevent flash
@@ -382,7 +484,7 @@
 
 const translations = {
     en: {
-        nav_home: "Home", nav_about: "About", nav_programs: "Programs", nav_learn: "Learn",
+        nav_home: "Home", nav_about: "About", nav_developers: "Developers", nav_programs: "Programs", nav_learn: "Learn",
         nav_gallery: "Gallery", nav_news: "News", nav_calculator: "Trash Calculator", nav_contact: "Contact", nav_join: "Contact Us",
         hero_subtitle: "Eco-Friendly School",
         hero_tagline: "Building an Environmentally Conscious Generation",
@@ -505,9 +607,35 @@ const translations = {
         news6_title: "RPL \u00d7 Mathematics Collaboration Creates Educational Tools",
         news6_summary: "An interdisciplinary collaboration between RPL and Mathematics students produced interactive web-based tools for learning environmental statistics.",
         news6_full: "In an exciting interdisciplinary project, students from RPL (Software Engineering) and Mathematics classes collaborated to create interactive web-based educational tools. The tools include a carbon footprint calculator, an interactive graph showing waste reduction progress, and a quiz game about environmental facts. The Mathematics students provided the statistical models and formulas, while RPL students handled the programming and user interface design. These tools are now available on the school website and have been praised by teachers for making environmental education more engaging and data-driven.",
+        dev_badge: "Young Eco Heroes",
+        dev_title: "Meet Our Young Eco Web Developers",
+        dev_subtitle: "Students of SMK Karya Bangsa Sintang who created this Go Green School website with environmental spirit 🌱",
+        dev_raka_chip: "Front-end + UI",
+        dev_raka_meta: "XII RPL • 17 Years",
+        dev_raka_role: "Lead Front-end Developer & UI Designer",
+        dev_raka_bio: "Passionate about turning ideas into beautiful digital experiences. Loves coding and wants to create more eco-friendly apps in the future.",
+        dev_raka_quote: "\"Planting small trees today, building green websites tomorrow.\"",
+        dev_sinta_chip: "Research + Writing",
+        dev_sinta_meta: "XI RPL • 16 Years",
+        dev_sinta_role: "Content Writer & Researcher",
+        dev_sinta_bio: "Active in the school environmental club. Enjoys writing about sustainability and educating others through digital content.",
+        dev_sinta_quote: "\"Waste sorted today means a cleaner future tomorrow.\"",
+        dev_andi_chip: "Illustration + Visuals",
+        dev_andi_meta: "XII RPL • 17 Years",
+        dev_andi_role: "Illustrator & Graphic Designer",
+        dev_andi_bio: "Loves drawing nature and turning environmental messages into visual stories. Created many icons and illustrations for this website.",
+        dev_andi_quote: "\"Every line I draw is one small step for Earth.\"",
+        dev_nadia_chip: "Back-end + Data",
+        dev_nadia_meta: "XI RPL • 16 Years",
+        dev_nadia_role: "Back-end & Data Management",
+        dev_nadia_bio: "Quiet but detail-oriented. Ensures the website runs smoothly and all information about waste sorting and Go Green is accurate.",
+        dev_nadia_quote: "\"Technology should help, not harm the environment.\"",
+        dev_closing_title: "They are proof that students of SMK Karya Bangsa Sintang can build environmentally friendly technology.",
+        dev_closing_subtitle: "Created in 2026 as the final project of the Software Engineering class.",
+        dev_cta: "Want to join our team? Contact us!",
     },
     id: {
-        nav_home: "Beranda", nav_about: "Tentang", nav_programs: "Program", nav_learn: "Edukasi",
+        nav_home: "Beranda", nav_about: "Tentang", nav_developers: "Pengembang", nav_programs: "Program", nav_learn: "Edukasi",
         nav_gallery: "Galeri", nav_news: "Berita", nav_calculator: "Kalkulator Sampah", nav_contact: "Kontak", nav_join: "Hubungi Kami",
         hero_subtitle: "Sekolah Ramah Lingkungan",
         hero_tagline: "Membangun Generasi Peduli Lingkungan",
@@ -636,6 +764,32 @@ const translations = {
         news6_title: "Kolaborasi RPL \u00d7 Matematika Hasilkan Tools Edukasi",
         news6_summary: "Kolaborasi interdisipliner antara siswa RPL dan Matematika menghasilkan alat berbasis web interaktif untuk mempelajari statistik lingkungan.",
         news6_full: "Dalam proyek interdisipliner yang menarik, siswa dari kelas RPL (Rekayasa Perangkat Lunak) dan Matematika berkolaborasi untuk membuat alat pendidikan berbasis web yang interaktif. Alat-alat ini mencakup kalkulator jejak karbon, grafik interaktif yang menunjukkan kemajuan pengurangan sampah, dan permainan kuis tentang fakta lingkungan. Siswa Matematika menyediakan model statistik dan rumus, sementara siswa RPL menangani pemrograman dan desain antarmuka pengguna. Alat-alat ini kini tersedia di situs web sekolah dan telah dipuji oleh guru karena membuat pendidikan lingkungan lebih menarik dan berbasis data.",
+        dev_badge: "Pahlawan Eco Muda",
+        dev_title: "Kenali Tim Pengembang Web Eco Muda Kami",
+        dev_subtitle: "Siswa SMK Karya Bangsa Sintang yang menciptakan website Go Green School ini dengan penuh semangat lingkungan 🌱",
+        dev_raka_chip: "Front-end + UI",
+        dev_raka_meta: "XII RPL • 17 Tahun",
+        dev_raka_role: "Lead Front-end Developer & UI Designer",
+        dev_raka_bio: "Sangat bersemangat mengubah ide menjadi pengalaman digital yang indah. Suka coding dan ingin membuat lebih banyak aplikasi ramah lingkungan di masa depan.",
+        dev_raka_quote: "\"Kecil-kecil menanam pohon, besar-besar menanam website hijau.\"",
+        dev_sinta_chip: "Riset + Penulisan",
+        dev_sinta_meta: "XI RPL • 16 Tahun",
+        dev_sinta_role: "Content Writer & Researcher",
+        dev_sinta_bio: "Aktif di klub lingkungan sekolah. Senang menulis tentang keberlanjutan dan mengedukasi orang lain melalui konten digital.",
+        dev_sinta_quote: "\"Sampah yang dipilah hari ini adalah masa depan yang lebih bersih.\"",
+        dev_andi_chip: "Ilustrasi + Visual",
+        dev_andi_meta: "XII RPL • 17 Tahun",
+        dev_andi_role: "Illustrator & Graphic Designer",
+        dev_andi_bio: "Suka menggambar alam dan mengubah pesan lingkungan menjadi cerita visual. Membuat banyak ikon dan ilustrasi untuk website ini.",
+        dev_andi_quote: "\"Setiap garis yang saya gambar adalah langkah kecil untuk Bumi.\"",
+        dev_nadia_chip: "Back-end + Data",
+        dev_nadia_meta: "XI RPL • 16 Tahun",
+        dev_nadia_role: "Back-end & Data Management",
+        dev_nadia_bio: "Tenang namun sangat teliti. Memastikan website berjalan lancar dan semua informasi tentang pemilahan sampah dan Go Green tetap akurat.",
+        dev_nadia_quote: "\"Teknologi harus membantu, bukan merusak lingkungan.\"",
+        dev_closing_title: "Mereka adalah bukti bahwa siswa SMK Karya Bangsa Sintang mampu menciptakan teknologi ramah lingkungan.",
+        dev_closing_subtitle: "Dibuat pada tahun 2026 sebagai proyek akhir kelas RPL.",
+        dev_cta: "Ingin bergabung dengan tim kami? Hubungi kami!",
     }
 };
 

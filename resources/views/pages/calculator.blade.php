@@ -29,7 +29,7 @@
             <div class="inline-flex items-center justify-center w-16 h-16 rounded-full bg-primary/10 text-primary mb-6">
                 <span class="material-symbols-outlined text-4xl">recycling</span>
             </div>
-            <h1 class="text-5xl md:text-6xl font-black tracking-tight text-slate-900 dark:text-slate-100 leading-tight mb-4">
+            <h1 class="text-4xl sm:text-5xl lg:text-6xl font-black tracking-tight text-slate-900 dark:text-slate-100 leading-tight mb-4">
                 <span data-i18n="calc_hero_title">Class Waste</span> <span class="text-primary" data-i18n="calc_hero_title_highlight">Calculator</span>
             </h1>
             <p class="text-slate-600 dark:text-slate-400 text-lg max-w-2xl font-light" data-i18n="calc_hero_desc">
@@ -46,7 +46,7 @@
 
             {{-- LEFT: INPUT FORM --}}
             <div class="lg:col-span-5">
-                <div class="rounded-2xl border border-slate-200 dark:border-slate-800 bg-white dark:bg-slate-900 p-8 shadow-sm sticky top-28">
+                <div class="rounded-2xl border border-slate-200 dark:border-slate-800 bg-white dark:bg-slate-900 p-8 shadow-sm lg:sticky lg:top-28">
                     <h2 class="text-2xl font-bold text-slate-900 dark:text-slate-100 mb-8 flex items-center gap-2">
                         <span class="material-symbols-outlined text-primary">edit_note</span>
                         <span data-i18n="calc_input_title">Input Data</span>
@@ -78,7 +78,7 @@
                         <div class="space-y-4">
                             {{-- Organic --}}
                             <div>
-                                <label class="block text-sm font-bold text-slate-700 dark:text-slate-300 mb-2 uppercase tracking-wider flex items-center gap-2">
+                                <label class="text-sm font-bold text-slate-700 dark:text-slate-300 mb-2 uppercase tracking-wider flex items-center gap-2">
                                     <span class="w-3 h-3 rounded-full bg-green-500"></span>
                                     <span data-i18n="calc_label_organic">Organic Waste (kg)</span>
                                 </label>
@@ -87,7 +87,7 @@
 
                             {{-- Inorganic --}}
                             <div>
-                                <label class="block text-sm font-bold text-slate-700 dark:text-slate-300 mb-2 uppercase tracking-wider flex items-center gap-2">
+                                <label class="text-sm font-bold text-slate-700 dark:text-slate-300 mb-2 uppercase tracking-wider flex items-center gap-2">
                                     <span class="w-3 h-3 rounded-full bg-blue-500"></span>
                                     <span data-i18n="calc_label_inorganic">Inorganic Waste (kg)</span>
                                 </label>
@@ -96,7 +96,7 @@
 
                             {{-- Plastic --}}
                             <div>
-                                <label class="block text-sm font-bold text-slate-700 dark:text-slate-300 mb-2 uppercase tracking-wider flex items-center gap-2">
+                                <label class="text-sm font-bold text-slate-700 dark:text-slate-300 mb-2 uppercase tracking-wider flex items-center gap-2">
                                     <span class="w-3 h-3 rounded-full bg-amber-500"></span>
                                     <span data-i18n="calc_label_plastic">Plastic Waste (kg)</span>
                                 </label>
@@ -144,7 +144,7 @@
                     <div class="grid grid-cols-1 md:grid-cols-2 gap-10">
                         {{-- Pie Chart --}}
                         <div class="flex justify-center">
-                            <div class="w-64 h-64">
+                            <div class="w-full max-w-[16rem] aspect-square">
                                 <canvas id="chart-pie"></canvas>
                             </div>
                         </div>
@@ -188,12 +188,12 @@
 {{-- SAVED CALCULATIONS TABLE --}}
 <section class="px-6 md:px-10 lg:px-20 pb-20">
     <div class="mx-auto max-w-7xl">
-        <div class="flex items-center justify-between mb-8">
+        <div class="flex flex-col gap-3 sm:flex-row sm:items-center justify-between mb-8">
             <div class="flex items-center gap-3">
                 <h2 class="text-3xl font-black tracking-tight text-slate-900 dark:text-slate-100" data-i18n="calc_saved_title">Saved Calculations</h2>
                 <span class="text-sm font-normal text-slate-500 dark:text-slate-400" id="saved-count">(0 entries)</span>
             </div>
-            <button onclick="exportCSV()" class="flex items-center gap-2 text-primary font-bold hover:text-green-600 transition-colors">
+            <button onclick="exportCSV()" class="inline-flex items-center gap-2 text-primary font-bold hover:text-green-600 transition-colors">
                 <span class="material-symbols-outlined">download</span>
                 <span data-i18n="calc_btn_export">Export CSV</span>
             </button>
