@@ -26,7 +26,7 @@
                 A school program that promotes environmental awareness, sustainability, and eco-friendly practices in everyday learning and activities.
             </p>
             <div class="flex flex-col sm:flex-row gap-3 justify-center mt-2">
-                <a href="https://wa.me/6281255585688" target="_blank" class="flex items-center justify-center rounded-lg h-11 sm:h-12 px-8 bg-primary hover:bg-green-500 transition-all text-slate-900 text-sm sm:text-base font-bold shadow-lg" data-i18n="hero_cta_join">Contact Us</a>
+                <a href="{{ route('contact') }}" class="flex items-center justify-center rounded-lg h-11 sm:h-12 px-8 bg-primary hover:bg-green-500 transition-all text-slate-900 text-sm sm:text-base font-bold shadow-lg" data-i18n="hero_cta_join">Contact Us</a>
                 <a href="{{ route('about') }}" class="flex items-center justify-center rounded-lg h-11 sm:h-12 px-8 bg-white/10 hover:bg-white/20 backdrop-blur-sm border border-white/30 transition-all text-white text-sm sm:text-base font-medium" data-i18n="hero_cta_learn">Learn More</a>
             </div>
         </div>
@@ -300,7 +300,7 @@
     <div class="mx-auto max-w-4xl text-center text-white">
         <h2 class="text-3xl font-bold mb-4 tracking-tight" data-i18n="home_cta_title">Ready to make your school greener?</h2>
         <p class="text-lg mb-8 text-slate-300 leading-relaxed" data-i18n="home_cta_text">Have questions or want to learn more about Go Green School? Contact us now!</p>
-        <a href="https://wa.me/6281255585688" target="_blank" class="inline-flex items-center justify-center rounded-lg h-12 px-10 bg-primary hover:bg-green-500 transition-colors text-slate-900 text-base font-bold shadow-lg" data-i18n="home_cta_btn">
+        <a href="{{ route('contact') }}" class="inline-flex items-center justify-center rounded-lg h-12 px-10 bg-primary hover:bg-green-500 transition-colors text-slate-900 text-base font-bold shadow-lg" data-i18n="home_cta_btn">
             Contact Us
         </a>
     </div>

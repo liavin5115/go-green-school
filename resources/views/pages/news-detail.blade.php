@@ -111,7 +111,7 @@ $article = $articles[$slug] ?? null;
         <div class="bg-background-dark dark:bg-slate-950 rounded-xl p-10 text-center text-white animate-slide-up">
             <h3 class="text-2xl font-bold mb-3">Tertarik untuk bergabung?</h3>
             <p class="text-slate-300 mb-6">Jadilah bagian dari gerakan Go Green School dan buat perbedaan untuk lingkungan kita.</p>
-            <a href="https://wa.me/6281255585688" target="_blank" class="inline-flex items-center justify-center h-12 px-8 bg-primary hover:bg-green-500 transition-colors text-slate-900 font-bold rounded-lg shadow-lg" data-i18n="home_cta_btn">
+            <a href="{{ route('contact') }}" class="inline-flex items-center justify-center h-12 px-8 bg-primary hover:bg-green-500 transition-colors text-slate-900 font-bold rounded-lg shadow-lg" data-i18n="home_cta_btn">
                 Contact Us
             </a>
         </div>

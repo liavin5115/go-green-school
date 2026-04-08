@@ -219,7 +219,7 @@
         <a href="{{ route('programs') }}" class="flex items-center justify-center gap-2 rounded-lg h-11 px-8 border border-slate-200 dark:border-slate-700 text-slate-700 dark:text-slate-300 hover:border-primary hover:text-primary transition-colors font-medium">
             <span class="material-symbols-outlined text-base">arrow_back</span> Waste Sorting Guide
         </a>
-        <a href="https://wa.me/6281255585688" target="_blank" class="flex items-center justify-center rounded-lg h-11 px-8 bg-primary hover:bg-green-500 transition-colors text-slate-900 font-bold" data-i18n="home_cta_btn">
+        <a href="{{ route('contact') }}" class="flex items-center justify-center rounded-lg h-11 px-8 bg-primary hover:bg-green-500 transition-colors text-slate-900 font-bold" data-i18n="home_cta_btn">
             Contact Us
         </a>
     </div>

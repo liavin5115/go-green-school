@@ -156,7 +156,7 @@
             <a href="{{ route('home') }}" class="inline-flex items-center justify-center h-11 px-8 bg-white border-2 border-primary text-primary rounded-lg font-bold hover:bg-primary/5 transition-colors">
                 ← Home
             </a>
-            <a href="https://wa.me/6281255585688" target="_blank" class="inline-flex items-center justify-center h-11 px-8 bg-primary text-slate-900 rounded-lg font-bold shadow-lg shadow-green-500/25 hover:bg-green-500 transition-all">
+            <a href="{{ route('contact') }}" class="inline-flex items-center justify-center h-11 px-8 bg-primary text-slate-900 rounded-lg font-bold shadow-lg shadow-green-500/25 hover:bg-green-500 transition-all">
                 Contact Us →
             </a>
         </div>

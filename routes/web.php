@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\ContactController;
 use Illuminate\Support\Facades\Route;
 
 Route::get('/', fn () => view('pages.home'))->name('home');
@@ -13,3 +14,5 @@ Route::get('/news/{slug}', fn ($slug) => view('pages.news-detail', ['slug' => $s
 Route::get('/calculator', fn () => view('pages.calculator'))->name('calculator');
 Route::get('/join', fn () => view('pages.join'))->name('join');
 Route::get('/contact', fn () => view('pages.contact'))->name('contact');
+Route::post('/contact/email', [ContactController::class, 'sendEmail'])->name('contact.email');
+Route::post('/contact/whatsapp', [ContactController::class, 'sendWhatsApp'])->name('contact.whatsapp');

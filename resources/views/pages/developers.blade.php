@@ -272,7 +272,7 @@
                         <h2 class="text-sm font-bold text-slate-900 dark:text-slate-100 sm:text-base">Ilham</h2>
                         <span class="eco-badge"><span class="material-symbols-outlined text-base">database</span></span>
                     </div>
-                    <p class="text-xs font-semibold uppercase tracking-wide text-[#556B2F]" data-i18n="dev_nadia_meta">XII - 18 Years</p>
+                    <p class="text-xs font-semibold uppercase tracking-wide text-[#556B2F]" data-i18n="dev_nadia_meta">XII RPL - 18 Years</p>
                     <p class="mt-2 text-xs font-semibold text-[#8FA31E] sm:text-sm" data-i18n="dev_nadia_role">Poster Designer</p>
                     <p class="mt-3 text-xs leading-relaxed text-slate-700 dark:text-slate-300 sm:text-sm" data-i18n="dev_nadia_bio">
                         A passionate poster designer who blends programming skills with visual creativity. He creates beautiful posters that tell stories and touch the heart through composition, color, and typography without many words.

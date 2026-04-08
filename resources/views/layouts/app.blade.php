@@ -341,7 +341,7 @@
             <a class="text-sm font-medium {{ request()->routeIs('gallery') ? 'text-primary' : 'text-slate-700 dark:text-slate-300 hover:text-primary dark:hover:text-primary' }} transition-colors" href="{{ route('gallery') }}" data-i18n="nav_gallery">Gallery</a>
             <a class="text-sm font-medium {{ request()->routeIs('news') ? 'text-primary' : 'text-slate-700 dark:text-slate-300 hover:text-primary dark:hover:text-primary' }} transition-colors" href="{{ route('news') }}" data-i18n="nav_news">News</a>
             <a class="text-sm font-medium {{ request()->routeIs('calculator') ? 'text-primary' : 'text-slate-700 dark:text-slate-300 hover:text-primary dark:hover:text-primary' }} transition-colors" href="{{ route('calculator') }}" data-i18n="nav_calculator">Calculator</a>
-            <a class="flex items-center justify-center rounded-lg h-9 px-5 bg-primary hover:bg-green-500 transition-colors text-slate-900 text-sm font-bold shadow-sm" href="https://wa.me/6281255585688" target="_blank" data-i18n="nav_join">Contact Us</a>
+            <a class="flex items-center justify-center rounded-lg h-9 px-5 bg-primary hover:bg-green-500 transition-colors text-slate-900 text-sm font-bold shadow-sm" href="{{ route('contact') }}" data-i18n="nav_join">Contact Us</a>
         </nav>
 
         {{-- Mobile Controls --}}
@@ -362,7 +362,7 @@
         <a class="block py-3 text-sm font-medium text-slate-700 dark:text-slate-300 border-b border-slate-100 dark:border-slate-800" href="{{ route('gallery') }}" data-i18n="nav_gallery">Gallery</a>
         <a class="block py-3 text-sm font-medium text-slate-700 dark:text-slate-300 border-b border-slate-100 dark:border-slate-800" href="{{ route('news') }}" data-i18n="nav_news">News</a>
         <a class="block py-3 text-sm font-medium text-slate-700 dark:text-slate-300 border-b border-slate-100 dark:border-slate-800" href="{{ route('calculator') }}" data-i18n="nav_calculator">Calculator</a>
-        <a class="mt-4 flex items-center justify-center rounded-lg h-10 bg-primary text-slate-900 text-sm font-bold shadow-sm" href="https://wa.me/6281255585688" target="_blank" data-i18n="nav_join">Contact Us</a>
+        <a class="mt-4 flex items-center justify-center rounded-lg h-10 bg-primary text-slate-900 text-sm font-bold shadow-sm" href="{{ route('contact') }}" data-i18n="nav_join">Contact Us</a>
     </div>
 </header>
 
@@ -429,7 +429,7 @@
                     </div>
                     <div class="flex items-center gap-3 text-slate-500 dark:text-slate-400 text-sm">
                         <span class="material-symbols-outlined text-lg">mail</span>
-                        <span>googreenschool@gmail.com</span>
+                        <span>gogreenschoolk4@gmail.com</span>
                     </div>
                 </div>
             </div>
@@ -440,7 +440,7 @@
                     <a class="w-9 h-9 rounded-full border border-slate-200 dark:border-slate-700 flex items-center justify-center text-slate-500 dark:text-slate-400 hover:bg-primary hover:text-slate-900 hover:border-primary transition-all" href="https://go-green-school-main-en87ct.free.laravel.cloud/" target="_blank" rel="noopener noreferrer" aria-label="Visit Website">
                         <span class="material-symbols-outlined text-lg">public</span>
                     </a>
-                    <a class="w-9 h-9 rounded-full border border-slate-200 dark:border-slate-700 flex items-center justify-center text-slate-500 dark:text-slate-400 hover:bg-primary hover:text-slate-900 hover:border-primary transition-all" href="mailto:googreenschool@gmail.com" aria-label="Send Email">
+                    <a class="w-9 h-9 rounded-full border border-slate-200 dark:border-slate-700 flex items-center justify-center text-slate-500 dark:text-slate-400 hover:bg-primary hover:text-slate-900 hover:border-primary transition-all" href="mailto:gogreenschoolk4@gmail.com" aria-label="Send Email">
                         <span class="material-symbols-outlined text-lg">alternate_email</span>
                     </a>
                     <a class="w-9 h-9 rounded-full border border-slate-200 dark:border-slate-700 flex items-center justify-center text-slate-500 dark:text-slate-400 hover:bg-primary hover:text-slate-900 hover:border-primary transition-all" href="https://www.tiktok.com/@googreen_schoolfour4?_r=1&amp;_t=ZS-95HnxddUVBF" target="_blank" rel="noopener noreferrer" aria-label="Follow us on TikTok">
