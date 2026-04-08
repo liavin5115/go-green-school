@@ -201,84 +201,84 @@
         <div class="eco-dev-grid">
             <article class="eco-dev-card eco-stagger">
                 <div class="eco-dev-photo-wrap">
-                    <img src="https://images.unsplash.com/photo-1500648767791-00dcc994a43e?auto=format&fit=crop&w=900&q=80" alt="Raka Pratama portrait" class="eco-dev-photo" />
-                    <span class="eco-role-chip" data-i18n="dev_raka_chip">Front-end + UI</span>
+                    <img src="{{ asset('images/Rafa.jpg') }}" alt="Rafa Satria Isyo Pratama portrait" class="eco-dev-photo" />
+                    <span class="eco-role-chip" data-i18n="dev_raka_chip">Full-stack + System</span>
                 </div>
                 <div class="p-4 sm:p-5">
                     <div class="mb-2 flex items-start justify-between gap-3">
-                        <h2 class="text-sm font-bold text-slate-900 dark:text-slate-100 sm:text-base">Raka Pratama</h2>
+                        <h2 class="text-sm font-bold text-slate-900 dark:text-slate-100 sm:text-base">Rafa Satria Isyo Pratama</h2>
                         <span class="eco-badge"><span class="material-symbols-outlined text-base">code</span></span>
                     </div>
-                    <p class="text-xs font-semibold uppercase tracking-wide text-[#556B2F]" data-i18n="dev_raka_meta">XII RPL • 17 Tahun</p>
-                    <p class="mt-2 text-xs font-semibold text-[#8FA31E] sm:text-sm" data-i18n="dev_raka_role">Lead Front-end Developer &amp; UI Designer</p>
+                    <p class="text-xs font-semibold uppercase tracking-wide text-[#556B2F]" data-i18n="dev_raka_meta">XII RPL - 18 Years</p>
+                    <p class="mt-2 text-xs font-semibold text-[#8FA31E] sm:text-sm" data-i18n="dev_raka_role">Full Stack Developer</p>
                     <p class="mt-3 text-xs leading-relaxed text-slate-700 dark:text-slate-300 sm:text-sm" data-i18n="dev_raka_bio">
-                        Passionate about turning ideas into beautiful digital experiences. Loves coding and wants to create more eco-friendly apps in the future.
+                        Ensures the website runs smoothly and all information about waste sorting and Go Green is accurate.
                     </p>
                     <p class="eco-quote mt-3 text-xs sm:text-sm" data-i18n="dev_raka_quote">
-                        "Kecil-kecil menanam pohon, besar-besar menanam website hijau."
+                        "Teknologi harus membantu, bukan merusak lingkungan."
                     </p>
                 </div>
             </article>
 
             <article class="eco-dev-card eco-stagger">
                 <div class="eco-dev-photo-wrap">
-                    <img src="https://images.unsplash.com/photo-1524504388940-b1c1722653e1?auto=format&fit=crop&w=900&q=80" alt="Sinta Dewi Lestari portrait" class="eco-dev-photo" />
-                    <span class="eco-role-chip" data-i18n="dev_sinta_chip">Research + Writing</span>
+                    <img src="{{ asset('images/andre.jpeg') }}" alt="ANDREAN MILANO portrait" class="eco-dev-photo" />
+                    <span class="eco-role-chip" data-i18n="dev_sinta_chip">Motion Web Content</span>
                 </div>
                 <div class="p-4 sm:p-5">
                     <div class="mb-2 flex items-start justify-between gap-3">
-                        <h2 class="text-sm font-bold text-slate-900 dark:text-slate-100 sm:text-base">Sinta Dewi Lestari</h2>
+                        <h2 class="text-sm font-bold text-slate-900 dark:text-slate-100 sm:text-base">ANDREAN MILANO</h2>
                         <span class="eco-badge"><span class="material-symbols-outlined text-base">edit_note</span></span>
                     </div>
-                    <p class="text-xs font-semibold uppercase tracking-wide text-[#556B2F]" data-i18n="dev_sinta_meta">XI RPL • 16 Tahun</p>
-                    <p class="mt-2 text-xs font-semibold text-[#8FA31E] sm:text-sm" data-i18n="dev_sinta_role">Content Writer &amp; Researcher</p>
+                    <p class="text-xs font-semibold uppercase tracking-wide text-[#556B2F]" data-i18n="dev_sinta_meta">XII RPL - 18 Years</p>
+                    <p class="mt-2 text-xs font-semibold text-[#8FA31E] sm:text-sm" data-i18n="dev_sinta_role">Video Developer</p>
                     <p class="mt-3 text-xs leading-relaxed text-slate-700 dark:text-slate-300 sm:text-sm" data-i18n="dev_sinta_bio">
-                        Active in school environmental club. Enjoys writing about sustainability and educating others through digital content.
+                        A creative and passionate video developer with a strong interest in video editing and animation, focused on creating innovative and meaningful content.
                     </p>
                     <p class="eco-quote mt-3 text-xs sm:text-sm" data-i18n="dev_sinta_quote">
-                        "Sampah yang dipilah hari ini adalah masa depan yang lebih bersih."
+                        "teknologi hanya alat"
                     </p>
                 </div>
             </article>
 
             <article class="eco-dev-card eco-stagger">
                 <div class="eco-dev-photo-wrap">
-                    <img src="https://images.unsplash.com/photo-1519345182560-3f2917c472ef?auto=format&fit=crop&w=900&q=80" alt="Andi Saputra portrait" class="eco-dev-photo" />
-                    <span class="eco-role-chip" data-i18n="dev_andi_chip">Illustration + Visuals</span>
+                    <img src="{{ asset('images/rifa.jpeg') }}" alt="patrisia kristianti rifa portrait" class="eco-dev-photo" />
+                    <span class="eco-role-chip" data-i18n="dev_andi_chip">UI QA + Testing</span>
                 </div>
                 <div class="p-4 sm:p-5">
                     <div class="mb-2 flex items-start justify-between gap-3">
-                        <h2 class="text-sm font-bold text-slate-900 dark:text-slate-100 sm:text-base">Andi Saputra</h2>
+                        <h2 class="text-sm font-bold text-slate-900 dark:text-slate-100 sm:text-base">patrisia kristianti rifa</h2>
                         <span class="eco-badge"><span class="material-symbols-outlined text-base">palette</span></span>
                     </div>
-                    <p class="text-xs font-semibold uppercase tracking-wide text-[#556B2F]" data-i18n="dev_andi_meta">XII RPL • 17 Tahun</p>
-                    <p class="mt-2 text-xs font-semibold text-[#8FA31E] sm:text-sm" data-i18n="dev_andi_role">Illustrator &amp; Graphic Designer</p>
+                    <p class="text-xs font-semibold uppercase tracking-wide text-[#556B2F]" data-i18n="dev_andi_meta">XII RPL - 18 Years</p>
+                    <p class="mt-2 text-xs font-semibold text-[#8FA31E] sm:text-sm" data-i18n="dev_andi_role">Student Developer</p>
                     <p class="mt-3 text-xs leading-relaxed text-slate-700 dark:text-slate-300 sm:text-sm" data-i18n="dev_andi_bio">
-                        Loves drawing nature and turning environmental messages into visual stories. Created many icons and illustrations for this website.
+                        A passionate RPL student who enjoys learning coding and building simple web applications.
                     </p>
                     <p class="eco-quote mt-3 text-xs sm:text-sm" data-i18n="dev_andi_quote">
-                        "Setiap garis yang saya gambar adalah langkah kecil untuk Bumi."
+                        "Small progress every day leads to big success."
                     </p>
                 </div>
             </article>
 
             <article class="eco-dev-card eco-stagger">
                 <div class="eco-dev-photo-wrap">
-                    <img src="https://images.unsplash.com/photo-1544005313-94ddf0286df2?auto=format&fit=crop&w=900&q=80" alt="Nadia Putri portrait" class="eco-dev-photo" />
-                    <span class="eco-role-chip" data-i18n="dev_nadia_chip">Back-end + Data</span>
+                    <img src="{{ asset('images/Ilham.jpeg') }}" alt="Ilham portrait" class="eco-dev-photo" />
+                    <span class="eco-role-chip" data-i18n="dev_nadia_chip">Web Visual Assets</span>
                 </div>
                 <div class="p-4 sm:p-5">
                     <div class="mb-2 flex items-start justify-between gap-3">
-                        <h2 class="text-sm font-bold text-slate-900 dark:text-slate-100 sm:text-base">Nadia Putri</h2>
+                        <h2 class="text-sm font-bold text-slate-900 dark:text-slate-100 sm:text-base">Ilham</h2>
                         <span class="eco-badge"><span class="material-symbols-outlined text-base">database</span></span>
                     </div>
-                    <p class="text-xs font-semibold uppercase tracking-wide text-[#556B2F]" data-i18n="dev_nadia_meta">XI RPL • 16 Tahun</p>
-                    <p class="mt-2 text-xs font-semibold text-[#8FA31E] sm:text-sm" data-i18n="dev_nadia_role">Back-end &amp; Data Management</p>
+                    <p class="text-xs font-semibold uppercase tracking-wide text-[#556B2F]" data-i18n="dev_nadia_meta">XII - 18 Years</p>
+                    <p class="mt-2 text-xs font-semibold text-[#8FA31E] sm:text-sm" data-i18n="dev_nadia_role">Poster Designer</p>
                     <p class="mt-3 text-xs leading-relaxed text-slate-700 dark:text-slate-300 sm:text-sm" data-i18n="dev_nadia_bio">
-                        Quiet but detail-oriented. Ensures the website runs smoothly and all information about waste sorting and Go Green is accurate.
+                        A passionate poster designer who blends programming skills with visual creativity. He creates beautiful posters that tell stories and touch the heart through composition, color, and typography without many words.
                     </p>
                     <p class="eco-quote mt-3 text-xs sm:text-sm" data-i18n="dev_nadia_quote">
-                        "Teknologi harus membantu, bukan merusak lingkungan."
+                        "Teruslah optimistis dan berpikir positif dalam hidupmu".
                     </p>
                 </div>
             </article>
