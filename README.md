@@ -44,7 +44,6 @@ Kelompok 4 Go Green School (XII RPL - SMK Karya Bangsa Sintang)
 - /news -> News
 - /news/{slug} -> News Detail
 - /calculator -> Calculator
-- /join -> Join
 - /contact -> Contact
 
 ## Endpoint Form Contact

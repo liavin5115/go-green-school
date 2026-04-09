@@ -220,7 +220,7 @@
 <p class="mb-8 text-xl font-bold text-secondary md:text-2xl tracking-wide hero-subtitle" data-i18n="hero_tagline">
                         Building an Environmentally Conscious Generation
                     </p>
-<a href="{{ route('join') }}" class="wireframe-border inline-block btn-animated transform bg-secondary px-8 py-4 text-lg font-bold text-white shadow-sketch transition-transform hover:-translate-y-1 hover:shadow-sketch-hover tracking-wide hero-cta" data-i18n="hero_cta">
+<a href="{{ route('contact') }}" class="wireframe-border inline-block btn-animated transform bg-secondary px-8 py-4 text-lg font-bold text-white shadow-sketch transition-transform hover:-translate-y-1 hover:shadow-sketch-hover tracking-wide hero-cta" data-i18n="hero_cta">
                         Join Now
                     </a>
 </div>

@@ -12,7 +12,6 @@ Route::get('/gallery', fn () => view('pages.gallery'))->name('gallery');
 Route::get('/news', fn () => view('pages.news'))->name('news');
 Route::get('/news/{slug}', fn ($slug) => view('pages.news-detail', ['slug' => $slug]))->name('news.show');
 Route::get('/calculator', fn () => view('pages.calculator'))->name('calculator');
-Route::get('/join', fn () => view('pages.join'))->name('join');
 Route::get('/contact', fn () => view('pages.contact'))->name('contact');
 Route::post('/contact/email', [ContactController::class, 'sendEmail'])->name('contact.email');
 Route::post('/contact/whatsapp', [ContactController::class, 'sendWhatsApp'])->name('contact.whatsapp');
