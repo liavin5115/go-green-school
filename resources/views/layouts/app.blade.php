@@ -457,7 +457,7 @@
             </div>
         </div>
         <div class="flex flex-col md:flex-row items-center justify-between border-t border-slate-200 dark:border-slate-800 pt-8 gap-4">
-            <p class="text-slate-500 dark:text-slate-500 text-sm">Â© 2026 Go Green School. All rights reserved.</p>
+            <p class="text-slate-500 dark:text-slate-500 text-sm">&copy; 2026 Go Green School. All rights reserved.</p>
             <div class="flex gap-6">
                 <a class="text-slate-500 dark:text-slate-500 hover:text-primary text-sm transition-colors" href="#">Privacy Policy</a>
                 <a class="text-slate-500 dark:text-slate-500 hover:text-primary text-sm transition-colors" href="#">Terms of Service</a>
