@@ -488,6 +488,16 @@
 })();
 
 const translations = window.ggsTranslations || { en: {}, id: {} };
+const pageTranslations = window.ggsPageTranslations || {};
+
+['en', 'id'].forEach((locale) => {
+    if (!translations[locale]) {
+        translations[locale] = {};
+    }
+    if (pageTranslations[locale] && typeof pageTranslations[locale] === 'object') {
+        Object.assign(translations[locale], pageTranslations[locale]);
+    }
+});
 
 let currentLang = localStorage.getItem('ggs_lang') || 'en';
 let i18nObserver = null;

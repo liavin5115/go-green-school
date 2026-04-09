@@ -222,12 +222,12 @@
 
             <article class="eco-dev-card eco-stagger">
                 <div class="eco-dev-photo-wrap">
-                    <img src="{{ asset('images/andre.jpeg') }}" alt="ANDREAN MILANO portrait" class="eco-dev-photo" />
+                    <img src="{{ asset('images/andre.jpeg') }}" alt="Andrean Milano portrait" class="eco-dev-photo" />
                     <span class="eco-role-chip" data-i18n="dev_sinta_chip">Motion Web Content</span>
                 </div>
                 <div class="p-4 sm:p-5">
                     <div class="mb-2 flex items-start justify-between gap-3">
-                        <h2 class="text-sm font-bold text-slate-900 dark:text-slate-100 sm:text-base">ANDREAN MILANO</h2>
+                        <h2 class="text-sm font-bold text-slate-900 dark:text-slate-100 sm:text-base">Andrean Milano</h2>
                         <span class="eco-badge"><span class="material-symbols-outlined text-base">edit_note</span></span>
                     </div>
                     <p class="text-xs font-semibold uppercase tracking-wide text-[#556B2F]" data-i18n="dev_sinta_meta">XII RPL - 18 Years</p>
@@ -243,12 +243,12 @@
 
             <article class="eco-dev-card eco-stagger">
                 <div class="eco-dev-photo-wrap">
-                    <img src="{{ asset('images/rifa.jpeg') }}" alt="patrisia kristianti rifa portrait" class="eco-dev-photo" />
+                    <img src="{{ asset('images/rifa.jpeg') }}" alt="Patrisia Kristianti Rifa portrait" class="eco-dev-photo" />
                     <span class="eco-role-chip" data-i18n="dev_andi_chip">UI QA + Testing</span>
                 </div>
                 <div class="p-4 sm:p-5">
                     <div class="mb-2 flex items-start justify-between gap-3">
-                        <h2 class="text-sm font-bold text-slate-900 dark:text-slate-100 sm:text-base">patrisia kristianti rifa</h2>
+                        <h2 class="text-sm font-bold text-slate-900 dark:text-slate-100 sm:text-base">Patrisia Kristianti Rifa</h2>
                         <span class="eco-badge"><span class="material-symbols-outlined text-base">palette</span></span>
                     </div>
                     <p class="text-xs font-semibold uppercase tracking-wide text-[#556B2F]" data-i18n="dev_andi_meta">XII RPL - 18 Years</p>

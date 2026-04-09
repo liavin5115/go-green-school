@@ -57,14 +57,14 @@
                         <div>
                             <label class="block text-sm font-bold text-slate-700 dark:text-slate-300 mb-2 uppercase tracking-wider" data-i18n="calc_label_class">Class Name</label>
                             <select id="calc-class" class="w-full bg-slate-50 dark:bg-slate-800 border border-slate-200 dark:border-slate-700 rounded-lg focus:ring-2 focus:ring-primary focus:border-transparent py-3 px-4 text-slate-900 dark:text-slate-100">
-                                <option value="XI RPL 1" selected>XI RPL 1</option>
-                                <option value="XI RPL 2">XI RPL 2</option>
-                                <option value="XI RPL 3">XI RPL 3</option>
-                                <option value="X Hotel 1">X Hotel 1</option>
-                                <option value="XII Hotel 3">XII Hotel 3</option>
-                                <option value="XI TSM 1">XI TSM 1</option>
-                                <option value="XI TSM 2">XI TSM 2</option>
-                                <option value="XI TSM 3">XI TSM 3</option>
+                                <option value="XI RPL 1" selected>X RPL </option>
+                                <option value="XI RPL 2">XI RPL </option>
+                                <option value="XI RPL 3">XII RPL </option>
+                                <option value="X Hotel 1">X Hotel </option>
+                                <option value="XII Hotel 3">XII Hotel </option>
+                                <option value="XI TSM 1">X TSM </option>
+                                <option value="XI TSM 2">XI TSM </option>
+                                <option value="XI TSM 3">XII TSM </option>
                             </select>
                         </div>
 

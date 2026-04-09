@@ -125,8 +125,8 @@
             <h1 class="text-3xl font-extrabold tracking-tight text-slate-900 dark:text-slate-100 sm:text-4xl lg:text-5xl" data-i18n="procedure_heading">
                 How to Dispose of Waste by Type (Organic, Inorganic, and B3)
             </h1>
-            <p class="text-sm leading-relaxed text-slate-700 dark:text-slate-300 sm:text-base max-w-3xl mx-auto lg:mx-0" data-i18n="procedure_intro">
-                This procedure text aims to guide students to sort and dispose of waste according to its type, namely organic (wet), inorganic (dry), and B3 (hazardous and toxic materials). By sorting waste properly, the school environment becomes cleaner, healthier, and supports the Go Green School program.
+            <p class="text-sm leading-relaxed text-slate-700 dark:text-slate-300 sm:text-base max-w-3xl mx-auto lg:mx-0" data-i18n="procedure_intro_hero">
+                Guide students to sort and dispose of waste according to its type, namely organic (wet), inorganic (dry), and B3 (hazardous and toxic materials). By sorting waste properly, the school environment becomes cleaner, healthier, and supports the Go Green School program.
             </p>
             <div class="flex flex-wrap justify-center lg:justify-start gap-2">
                 <span class="program-pill"><span class="material-symbols-outlined text-sm">compost</span><span data-i18n="calc_label_organic">Organic Waste</span></span>
@@ -168,7 +168,7 @@
                 <span class="material-symbols-outlined text-primary">info</span>
                 <span data-i18n="procedure_intro_title">Introduction</span>
             </h2>
-            <p class="text-slate-600 dark:text-slate-400 leading-relaxed" data-i18n="procedure_intro">This procedure text aims to guide students to sort and dispose of waste according to its type, namely organic (wet), inorganic (dry), and B3 (hazardous and toxic materials). By sorting waste properly, the school environment becomes cleaner, healthier, and supports the Go Green School program.</p>
+            <p class="text-slate-600 dark:text-slate-400 leading-relaxed" data-i18n="procedure_intro">This procedure text aims to Guide students to sort and dispose of waste according to its type, namely organic (wet), inorganic (dry), and B3 (hazardous and toxic materials). By sorting waste properly, the school environment becomes cleaner, healthier, and supports the Go Green School program.</p>
         </div>
         <div class="rounded-xl border border-slate-200 dark:border-slate-800 bg-primary/5 dark:bg-primary/10 p-6 shadow-sm hover-lift transition-smooth">
             <h2 class="text-lg font-bold text-slate-900 dark:text-slate-100 mb-3 flex items-center gap-2">

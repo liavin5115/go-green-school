@@ -116,7 +116,7 @@
                 What is Go Green? An Explanation of Environmental Sustainability and Global Warming
             </h1>
             <p class="text-sm leading-relaxed text-slate-700 dark:text-slate-300 sm:text-base max-w-3xl mx-auto lg:mx-0" data-i18n="expl_intro_text">
-                This explanation text aims to provide a clear understanding of the "Go Green" concept and its connection to global warming. It is designed for students, teachers, and school staff to grasp why adopting eco-friendly practices is crucial in our daily lives, especially within the Go Green School program.
+                Provide a clear understanding of the "Go Green" concept and its connection to global warming, especially in the context of school programs. By learning about these topics, we can take informed actions to protect our planet and promote a sustainable future.
             </p>
             <div class="flex flex-wrap justify-center lg:justify-start gap-2">
                 <span class="learn-pill" data-i18n="expl_gogreen_title">What is Go Green?</span>
@@ -143,27 +143,12 @@
                     <span class="material-symbols-outlined text-blue-500">link</span>
                     <span class="text-sm font-semibold text-slate-800 dark:text-slate-200" data-i18n="expl_link_title">The Link Between Go Green and Global Warming</span>
                 </div>
-                <div class="mt-2 inline-flex items-center gap-2 text-xs font-semibold text-slate-600 dark:text-slate-300">
-                    <span class="learn-dot" aria-hidden="true"></span>
-                    <span data-i18n="expl_intro_title">Purpose</span>
-                </div>
             </div>
         </aside>
     </div>
 </section>
 
 <section class="mx-auto w-full max-w-7xl px-6 py-12 lg:px-10">
-
-    {{-- PURPOSE / INTRODUCTION --}}
-    <div class="rounded-xl border border-slate-200 dark:border-slate-800 bg-primary/5 dark:bg-primary/10 p-8 shadow-sm mb-8 animate-slide-up">
-        <h2 class="text-xl font-bold text-slate-900 dark:text-slate-100 mb-3 flex items-center gap-2">
-            <span class="material-symbols-outlined text-primary">lightbulb</span>
-            <span data-i18n="expl_intro_title">Purpose</span>
-        </h2>
-        <p class="text-slate-600 dark:text-slate-400 leading-relaxed" data-i18n="expl_intro_text">
-            This explanation text aims to provide a clear understanding of the "Go Green" concept and its connection to global warming. It is designed for students, teachers, and school staff to grasp why adopting eco-friendly practices is crucial in our daily lives, especially within the Go Green School program.
-        </p>
-    </div>
 
     {{-- KEY CONCEPTS --}}
     <h2 class="text-xl font-bold text-slate-900 dark:text-slate-100 mb-6" data-i18n="expl_keys_title">Key Concepts</h2>
@@ -176,7 +161,7 @@
                 <span data-i18n="expl_gogreen_title">What is Go Green?</span>
             </h3>
             <p class="text-slate-600 dark:text-slate-400 leading-relaxed" data-i18n="expl_gogreen_text">
-                Go Green refers to a global movement and lifestyle that encourages individuals, communities, and organizations to adopt environmentally friendly practices. In the context of schools, Go Green means integrating sustainability into education, such as recycling programs, energy-saving initiatives, and nature-based learning.
+                Go Green refers to a global movement and lifestyle that encourages individuals, communities, and organizations to adopt environmentally friendly practices. It involves reducing waste, conserving resources, and minimizing our ecological footprint. In schools, Go Green means integrating sustainability into education through recycling programs, energy-saving initiatives, and nature-based learning. The goal is to create a "green" environment where actions such as planting trees, using renewable energy, and reducing plastic use become everyday habits. These practices not only help preserve natural resources but also educate the younger generation to become responsible stewards of the Earth.
             </p>
         </div>
 
@@ -187,7 +172,7 @@
                 <span data-i18n="expl_gw_title">What is Global Warming?</span>
             </h3>
             <p class="text-slate-600 dark:text-slate-400 leading-relaxed" data-i18n="expl_gw_text">
-                Global warming is the long-term increase in Earth's average surface temperature due to human activities that release greenhouse gases like carbon dioxide (CO2), methane (CH4), and nitrous oxide (N2O) into the atmosphere. Effects of global warming are widespread: rising sea levels, extreme weather events, loss of biodiversity, and health risks.
+                Global warming is the long-term increase in Earth's average surface temperature due to human activities that release greenhouse gases such as carbon dioxide (CO2), methane (CH4), and nitrous oxide (N2O) into the atmosphere. These gases trap heat from the sun, creating a "greenhouse effect" that leads to climate change. The main causes include burning fossil fuels for energy, deforestation, industrial processes, and excessive production of waste. The effects of global warming are widespread: rising sea levels, extreme weather events (such as floods, droughts, and hurricanes), loss of biodiversity, and health risks like heat-related illnesses. For instance, melting polar ice caps threatens coastal communities, while warmer oceans disrupt marine ecosystems.
             </p>
         </div>
     </div>
@@ -199,7 +184,7 @@
             <span data-i18n="expl_link_title">The Link Between Go Green and Global Warming</span>
         </h3>
         <p class="text-slate-600 dark:text-slate-400 leading-relaxed" data-i18n="expl_link_text">
-            Adopting Go Green practices directly combats global warming by reducing greenhouse gas emissions. Simple school actions, like switching to LED lights, composting organic waste, or promoting cycling over car use, lower carbon footprints. Programs like Go Green School empower students to understand these issues through hands-on activities, fostering a sense of environmental responsibility.
+            Adopting Go Green practices directly combats global warming by reducing greenhouse gas emissions. Simple actions in schools, such as switching to LED lights, composting organic waste, or promoting cycling instead of car use, can lower carbon footprints. If more schools and communities adopt green practices, we can slow down climate change, preserve habitats, and ensure a livable planet for future generations. Programs like Go Green School help students understand these issues through hands-on activities and build environmental responsibility.
         </p>
     </div>
 
@@ -207,10 +192,10 @@
     <div class="rounded-xl bg-background-dark dark:bg-slate-950 p-8 text-white animate-slide-up">
         <h3 class="text-xl font-bold mb-3 flex items-center gap-2">
             <span class="material-symbols-outlined text-primary">stars</span>
-            <span data-i18n="expl_conclusion_title">Reaffirmation</span>
+            <span data-i18n="expl_conclusion_title">Conclusion</span>
         </h3>
         <p class="text-slate-300 leading-relaxed" data-i18n="expl_conclusion_text">
-            Understanding Go Green and the realities of global warming empowers us to make positive changes. By embracing sustainable habits, we not only mitigate environmental damage but also build a healthier, more resilient world. Let's commit to the Go Green School initiative today—every small action counts toward a greener tomorrow! 🌍✨
+            By understanding Go Green and the realities of global warming, everyone can take small actions to create a more sustainable future. Every step toward a greener lifestyle contributes to protecting our planet.
         </p>
     </div>
 
