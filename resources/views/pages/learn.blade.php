@@ -1,7 +1,7 @@
 @extends('layouts.app')
 
 @section('title', 'Learn — Go Green School')
-@section('meta_description', 'What is Go Green? An explanation of environmental sustainability and global warming for students and teachers.')
+@section('meta_description', 'The Go Green movement is a practical response to global warming. Learn how sustainable school practices turn awareness into real environmental action.')
 
 @section('content')
 
@@ -116,7 +116,7 @@
                 What is Go Green? An Explanation of Environmental Sustainability and Global Warming
             </h1>
             <p class="text-sm leading-relaxed text-slate-700 dark:text-slate-300 sm:text-base max-w-3xl mx-auto lg:mx-0" data-i18n="expl_intro_text">
-                Provide a clear understanding of the "Go Green" concept and its connection to global warming, especially in the context of school programs. By learning about these topics, we can take informed actions to protect our planet and promote a sustainable future.
+                The "Go Green" movement is much more than a catchy slogan; it is a necessary response to the growing threat of global warming. By integrating sustainable practices into school environments, we can transform awareness into tangible action, ensuring the next generation is equipped to protect our planet.
             </p>
             <div class="flex flex-wrap justify-center lg:justify-start gap-2">
                 <span class="learn-pill" data-i18n="expl_gogreen_title">What is Go Green?</span>
