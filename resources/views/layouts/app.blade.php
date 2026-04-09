@@ -425,7 +425,7 @@
                     </div>
                     <div class="flex items-center gap-3 text-slate-500 dark:text-slate-400 text-sm">
                         <span class="material-symbols-outlined text-lg">call</span>
-                        <span>081255585688</span>
+                        <span>085250341098</span>
                     </div>
                     <div class="flex items-center gap-3 text-slate-500 dark:text-slate-400 text-sm">
                         <span class="material-symbols-outlined text-lg">mail</span>
@@ -440,8 +440,10 @@
                     <a class="w-9 h-9 rounded-full border border-slate-200 dark:border-slate-700 flex items-center justify-center text-slate-500 dark:text-slate-400 hover:bg-primary hover:text-slate-900 hover:border-primary transition-all" href="https://go-green-school-main-en87ct.free.laravel.cloud/" target="_blank" rel="noopener noreferrer" aria-label="Visit Website">
                         <span class="material-symbols-outlined text-lg">public</span>
                     </a>
-                    <a class="w-9 h-9 rounded-full border border-slate-200 dark:border-slate-700 flex items-center justify-center text-slate-500 dark:text-slate-400 hover:bg-primary hover:text-slate-900 hover:border-primary transition-all" href="mailto:gogreenschoolk4@gmail.com" aria-label="Send Email">
-                        <span class="material-symbols-outlined text-lg">alternate_email</span>
+                    <a class="w-9 h-9 rounded-full border border-slate-200 dark:border-slate-700 flex items-center justify-center text-slate-500 dark:text-slate-400 hover:bg-primary hover:text-slate-900 hover:border-primary transition-all" href="https://wa.me/6285250341098" target="_blank" rel="noopener noreferrer" aria-label="Chat on WhatsApp">
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16" class="h-4 w-4 fill-current" aria-hidden="true">
+                            <path d="M13.601 2.326A7.854 7.854 0 0 0 8.016 0C3.648 0 .102 3.547.1 7.916c0 1.39.363 2.747 1.053 3.944L0 16l4.24-1.111a7.91 7.91 0 0 0 3.776.963h.003c4.367 0 7.914-3.547 7.916-7.916a7.863 7.863 0 0 0-2.334-5.61zm-5.585 12.19h-.003a6.57 6.57 0 0 1-3.35-.92l-.24-.142-2.517.66.672-2.454-.157-.252a6.57 6.57 0 0 1-1.009-3.492c.002-3.626 2.953-6.577 6.58-6.577a6.54 6.54 0 0 1 4.65 1.929 6.54 6.54 0 0 1 1.925 4.654c-.002 3.626-2.953 6.577-6.58 6.577zm3.61-4.929c-.198-.099-1.172-.579-1.354-.645-.182-.066-.314-.099-.447.099-.132.198-.512.645-.628.777-.116.132-.231.149-.429.05-.198-.099-.835-.307-1.59-.98-.587-.523-.984-1.168-1.1-1.366-.116-.198-.012-.305.087-.404.089-.088.198-.231.297-.347.099-.116.132-.198.198-.331.066-.132.033-.248-.017-.347-.05-.099-.447-1.079-.612-1.477-.161-.387-.324-.334-.447-.34-.116-.006-.248-.007-.38-.007-.132 0-.347.05-.529.248-.182.198-.694.678-.694 1.653s.711 1.918.81 2.05c.099.132 1.4 2.137 3.393 2.995.474.205.843.327 1.131.418.476.151.909.13 1.252.079.382-.057 1.172-.479 1.337-.942.165-.463.165-.86.116-.942-.05-.083-.182-.132-.38-.231z"/>
+                        </svg>
                     </a>
                     <a class="w-9 h-9 rounded-full border border-slate-200 dark:border-slate-700 flex items-center justify-center text-slate-500 dark:text-slate-400 hover:bg-primary hover:text-slate-900 hover:border-primary transition-all" href="https://www.tiktok.com/@googreen_schoolfour4?_r=1&amp;_t=ZS-95HnxddUVBF" target="_blank" rel="noopener noreferrer" aria-label="Follow us on TikTok">
                         <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16" class="h-4 w-4 fill-current" aria-hidden="true">

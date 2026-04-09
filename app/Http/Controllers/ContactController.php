@@ -76,16 +76,30 @@ class ContactController extends Controller
                 'message' => $payload,
             ]);
 
-            if (! $response->successful()) {
+            $providerPayload = $response->json();
+            $providerStatus = is_array($providerPayload)
+                ? (bool) ($providerPayload['status'] ?? false)
+                : false;
+            $providerReason = is_array($providerPayload)
+                ? (string) ($providerPayload['reason'] ?? $providerPayload['message'] ?? '')
+                : '';
+
+            if (! $response->successful() || ! $providerStatus) {
                 Log::error('Contact WhatsApp send failed.', [
                     'status' => $response->status(),
                     'body' => $response->body(),
+                    'provider_reason' => $providerReason,
                 ]);
+
+                $errorMessage = 'Gagal mengirim WhatsApp. Periksa token/API WhatsApp Anda.';
+                if ($providerReason !== '') {
+                    $errorMessage .= ' Detail: ' . $providerReason;
+                }
 
                 return response()->json([
                     'ok' => false,
-                    'message' => 'Gagal mengirim WhatsApp. Periksa token/API WhatsApp Anda.',
-                ], 500);
+                    'message' => $errorMessage,
+                ], 422);
             }
 
             return response()->json([
