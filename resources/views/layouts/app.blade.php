@@ -421,7 +421,7 @@
                 <div class="flex flex-col gap-3">
                     <div class="flex items-center gap-3 text-slate-500 dark:text-slate-400 text-sm">
                         <span class="material-symbols-outlined text-lg">location_on</span>
-                        <span>Jl. Hijau No. 1, Indonesia</span>
+                        <span>Jl. Sintang - Pontianak (KM. 7), Kelurahan Balai Agung, Kecamatan Sungai Tebelian, Kabupaten Sintang, Kalimantan Barat.</span>
                     </div>
                     <div class="flex items-center gap-3 text-slate-500 dark:text-slate-400 text-sm">
                         <span class="material-symbols-outlined text-lg">call</span>
