@@ -129,6 +129,11 @@ composer run dev
 - app/Http/Controllers/ContactController.php -> logic kirim email/whatsapp
 - routes/web.php -> routing halaman dan endpoint
 
+## Live Demo
+
+- Website Demo:
+	https://go-green-school-main-en87ct.free.laravel.cloud/
+
 ## Link Poster dan Video Promosi
 
 - Google Drive Poster:
@@ -136,9 +141,6 @@ composer run dev
 
 - TikTok Video Promosi:
 	https://vt.tiktok.com/ZSH5YuTQ2/
-
-- LIVE DEMO WEBSITE:
-	https://go-green-school-main-en87ct.free.laravel.cloud/
 
 ## Catatan Deploy
 
