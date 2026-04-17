@@ -15,12 +15,29 @@ Website edukasi lingkungan untuk kampanye sekolah hijau (Go Green School), diban
 
 Kelompok 4 Go Green School (XII RPL - SMK Karya Bangsa Sintang)
 
-### Anggota Kelompok 4
 
-1. Rafa Satria Isyo Pratama (Full Stack Website)
-2. Andrean Milano (Poster Designer dan Pembuatan Vidio)
-3. Patrisia Kristianti Rifa (Pembuatan Vidio Dan Editor vidio)
-4. Ilham (Poster Designer)
+### Anggota & Pembagian Tugas
+
+**1. Rafa Satria Isyo Pratama**  
+- Bertanggung jawab dalam pembuatan website, meliputi perancangan awal tampilan dan pengembangan fitur-fitur web.  
+- Mengembangkan sistem backend menggunakan Laravel serta integrasi frontend dengan Blade, Tailwind, dan Vite.  
+- Mengimplementasikan fitur seperti calculator, multi halaman, serta integrasi API (Email dan WhatsApp).  
+
+**2. Andrean Milano**  
+- Bertanggung jawab dalam pembuatan poster Go Green School untuk kebutuhan promosi.  
+- Turut membantu dalam pembuatan dan pengeditan video promosi.  
+- Melakukan pengujian (testing) terhadap fitur-fitur website untuk memastikan berjalan dengan baik.  
+
+**3. Patrisia Kristianti Rifa**  
+- Bertanggung jawab dalam pembuatan dan pengeditan video promosi Go Green School.  
+- Mengelola akun media sosial untuk keperluan publikasi dan kampanye TikTok.  
+- Membantu dalam penyebaran konten promosi agar menjangkau audiens yang lebih luas.  
+
+**4. Ilham**  
+- Bertanggung jawab dalam pembuatan desain poster Go Green School untuk kebutuhan visual kampanye.  
+- Membantu memastikan desain sesuai dengan tema lingkungan dan branding proyek.  
+- Melakukan pengujian (testing) pada tampilan dan fitur website.  
+
 
 ## Fitur
 
