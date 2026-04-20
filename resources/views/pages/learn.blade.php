@@ -12,10 +12,6 @@
         border-bottom: 1px solid #e2e8f0;
         background: linear-gradient(130deg, #e8fbff 0%, #f3ffe8 45%, #f0f3ff 100%);
     }
-    .dark .learn-hero {
-        border-bottom-color: #1e293b;
-        background: linear-gradient(130deg, #0f172a 0%, #102215 46%, #172554 100%);
-    }
     .learn-hero-grid {
         position: relative;
         z-index: 2;
@@ -43,11 +39,6 @@
         text-transform: uppercase;
         color: #1d4ed8;
     }
-    .dark .learn-hero-badge {
-        border-color: rgba(148, 163, 184, 0.35);
-        background: rgba(15, 23, 42, 0.64);
-        color: #bfdbfe;
-    }
     .learn-pill {
         display: inline-flex;
         align-items: center;
@@ -59,11 +50,6 @@
         font-weight: 700;
         color: #1e3a8a;
     }
-    .dark .learn-pill {
-        border-color: rgba(148, 163, 184, 0.26);
-        background: rgba(15, 23, 42, 0.58);
-        color: #cbd5e1;
-    }
     .learn-hero-panel {
         border: 1px solid rgba(148, 163, 184, 0.35);
         border-radius: 1.1rem;
@@ -71,11 +57,6 @@
         backdrop-filter: blur(8px);
         box-shadow: 0 18px 32px rgba(15, 23, 42, 0.14);
         padding: 1.1rem;
-    }
-    .dark .learn-hero-panel {
-        border-color: rgba(148, 163, 184, 0.28);
-        background: rgba(15, 23, 42, 0.7);
-        box-shadow: 0 20px 36px rgba(2, 6, 23, 0.35);
     }
     .learn-hero-topic {
         display: flex;
@@ -85,10 +66,6 @@
         border-radius: 0.85rem;
         padding: 0.75rem;
         background: rgba(255, 255, 255, 0.7);
-    }
-    .dark .learn-hero-topic {
-        border-color: rgba(148, 163, 184, 0.22);
-        background: rgba(15, 23, 42, 0.54);
     }
     .learn-dot {
         width: 0.55rem;
@@ -112,10 +89,10 @@
                 <span class="material-symbols-outlined text-base">explore</span>
                 <span data-i18n="expl_keys_title">Key Concepts</span>
             </p>
-            <h1 class="text-3xl font-extrabold tracking-tight text-slate-900 dark:text-slate-100 sm:text-4xl lg:text-5xl" data-i18n="expl_title">
+            <h1 class="text-3xl font-extrabold tracking-tight text-slate-900 sm:text-4xl lg:text-5xl" data-i18n="expl_title">
                 What is Go Green? An Explanation of Environmental Sustainability and Global Warming
             </h1>
-            <p class="text-sm leading-relaxed text-slate-700 dark:text-slate-300 sm:text-base max-w-3xl mx-auto lg:mx-0" data-i18n="expl_intro_text">
+            <p class="text-sm leading-relaxed text-slate-700 sm:text-base max-w-3xl mx-auto lg:mx-0" data-i18n="expl_intro_text">
                 The "Go Green" movement is much more than a catchy slogan; it is a necessary response to the growing threat of global warming. By integrating sustainable practices into school environments, we can transform awareness into tangible action, ensuring the next generation is equipped to protect our planet.
             </p>
             <div class="flex flex-wrap justify-center lg:justify-start gap-2">
@@ -126,22 +103,22 @@
         </div>
 
         <aside class="learn-hero-panel">
-            <h2 class="text-base sm:text-lg font-bold text-slate-900 dark:text-slate-100 mb-3 flex items-center gap-2">
+            <h2 class="text-base sm:text-lg font-bold text-slate-900 mb-3 flex items-center gap-2">
                 <span class="material-symbols-outlined text-primary">hub</span>
                 <span data-i18n="expl_keys_title">Key Concepts</span>
             </h2>
             <div class="space-y-3">
                 <div class="learn-hero-topic">
                     <span class="material-symbols-outlined text-primary">eco</span>
-                    <span class="text-sm font-semibold text-slate-800 dark:text-slate-200" data-i18n="expl_gogreen_title">What is Go Green?</span>
+                    <span class="text-sm font-semibold text-slate-800" data-i18n="expl_gogreen_title">What is Go Green?</span>
                 </div>
                 <div class="learn-hero-topic">
                     <span class="material-symbols-outlined text-red-500">thermostat</span>
-                    <span class="text-sm font-semibold text-slate-800 dark:text-slate-200" data-i18n="expl_gw_title">What is Global Warming?</span>
+                    <span class="text-sm font-semibold text-slate-800" data-i18n="expl_gw_title">What is Global Warming?</span>
                 </div>
                 <div class="learn-hero-topic">
                     <span class="material-symbols-outlined text-blue-500">link</span>
-                    <span class="text-sm font-semibold text-slate-800 dark:text-slate-200" data-i18n="expl_link_title">The Link Between Go Green and Global Warming</span>
+                    <span class="text-sm font-semibold text-slate-800" data-i18n="expl_link_title">The Link Between Go Green and Global Warming</span>
                 </div>
             </div>
         </aside>
@@ -151,45 +128,45 @@
 <section class="mx-auto w-full max-w-7xl px-6 py-12 lg:px-10">
 
     {{-- KEY CONCEPTS --}}
-    <h2 class="text-xl font-bold text-slate-900 dark:text-slate-100 mb-6" data-i18n="expl_keys_title">Key Concepts</h2>
+    <h2 class="text-xl font-bold text-slate-900 mb-6" data-i18n="expl_keys_title">Key Concepts</h2>
 
     <div class="grid gap-6 md:grid-cols-2 mb-8 animate-stagger">
         {{-- What is Go Green? --}}
-        <div class="rounded-xl border border-slate-200 dark:border-slate-800 bg-white dark:bg-slate-900 p-8 shadow-sm flex flex-col h-full border-l-4 border-l-primary hover-lift transition-smooth">
-            <h3 class="text-lg font-bold text-slate-900 dark:text-slate-100 mb-3 flex items-center gap-2">
+        <div class="rounded-xl border border-slate-200 bg-white p-8 shadow-sm flex flex-col h-full border-l-4 border-l-primary hover-lift transition-smooth">
+            <h3 class="text-lg font-bold text-slate-900 mb-3 flex items-center gap-2">
                 <span class="material-symbols-outlined text-primary">eco</span>
                 <span data-i18n="expl_gogreen_title">What is Go Green?</span>
             </h3>
-            <p class="text-slate-600 dark:text-slate-400 leading-relaxed" data-i18n="expl_gogreen_text">
+            <p class="text-slate-600 leading-relaxed" data-i18n="expl_gogreen_text">
                 Go Green refers to a global movement and lifestyle that encourages individuals, communities, and organizations to adopt environmentally friendly practices. It involves reducing waste, conserving resources, and minimizing our ecological footprint. In schools, Go Green means integrating sustainability into education through recycling programs, energy-saving initiatives, and nature-based learning. The goal is to create a "green" environment where actions such as planting trees, using renewable energy, and reducing plastic use become everyday habits. These practices not only help preserve natural resources but also educate the younger generation to become responsible stewards of the Earth.
             </p>
         </div>
 
         {{-- What is Global Warming? --}}
-        <div class="rounded-xl border border-slate-200 dark:border-slate-800 bg-white dark:bg-slate-900 p-8 shadow-sm flex flex-col h-full border-l-4 border-l-red-500 hover-lift transition-smooth">
-            <h3 class="text-lg font-bold text-slate-900 dark:text-slate-100 mb-3 flex items-center gap-2">
+        <div class="rounded-xl border border-slate-200 bg-white p-8 shadow-sm flex flex-col h-full border-l-4 border-l-red-500 hover-lift transition-smooth">
+            <h3 class="text-lg font-bold text-slate-900 mb-3 flex items-center gap-2">
                 <span class="material-symbols-outlined text-red-500">thermostat</span>
                 <span data-i18n="expl_gw_title">What is Global Warming?</span>
             </h3>
-            <p class="text-slate-600 dark:text-slate-400 leading-relaxed" data-i18n="expl_gw_text">
+            <p class="text-slate-600 leading-relaxed" data-i18n="expl_gw_text">
                 Global warming is the long-term increase in Earth's average surface temperature due to human activities that release greenhouse gases such as carbon dioxide (CO2), methane (CH4), and nitrous oxide (N2O) into the atmosphere. These gases trap heat from the sun, creating a "greenhouse effect" that leads to climate change. The main causes include burning fossil fuels for energy, deforestation, industrial processes, and excessive production of waste. The effects of global warming are widespread: rising sea levels, extreme weather events (such as floods, droughts, and hurricanes), loss of biodiversity, and health risks like heat-related illnesses. For instance, melting polar ice caps threatens coastal communities, while warmer oceans disrupt marine ecosystems.
             </p>
         </div>
     </div>
 
     {{-- THE LINK --}}
-    <div class="rounded-xl border border-slate-200 dark:border-slate-800 bg-white dark:bg-slate-900 p-8 shadow-sm mb-8 animate-slide-up">
-        <h3 class="text-lg font-bold text-slate-900 dark:text-slate-100 mb-3 flex items-center gap-2">
+    <div class="rounded-xl border border-slate-200 bg-white p-8 shadow-sm mb-8 animate-slide-up">
+        <h3 class="text-lg font-bold text-slate-900 mb-3 flex items-center gap-2">
             <span class="material-symbols-outlined text-primary">link</span>
             <span data-i18n="expl_link_title">The Link Between Go Green and Global Warming</span>
         </h3>
-        <p class="text-slate-600 dark:text-slate-400 leading-relaxed" data-i18n="expl_link_text">
+        <p class="text-slate-600 leading-relaxed" data-i18n="expl_link_text">
             Adopting Go Green practices directly combats global warming by reducing greenhouse gas emissions. Simple actions in schools, such as switching to LED lights, composting organic waste, or promoting cycling instead of car use, can lower carbon footprints. If more schools and communities adopt green practices, we can slow down climate change, preserve habitats, and ensure a livable planet for future generations. Programs like Go Green School help students understand these issues through hands-on activities and build environmental responsibility.
         </p>
     </div>
 
     {{-- CONCLUSION --}}
-    <div class="rounded-xl bg-background-dark dark:bg-slate-950 p-8 text-white animate-slide-up">
+    <div class="rounded-xl bg-background-forest p-8 text-white animate-slide-up">
         <h3 class="text-xl font-bold mb-3 flex items-center gap-2">
             <span class="material-symbols-outlined text-primary">stars</span>
             <span data-i18n="expl_conclusion_title">Conclusion</span>
@@ -201,7 +178,7 @@
 
     {{-- RELATED LINKS --}}
     <div class="mt-10 flex flex-col sm:flex-row gap-4 justify-center">
-        <a href="{{ route('programs') }}" class="flex items-center justify-center gap-2 rounded-lg h-11 px-8 border border-slate-200 dark:border-slate-700 text-slate-700 dark:text-slate-300 hover:border-primary hover:text-primary transition-colors font-medium">
+        <a href="{{ route('programs') }}" class="flex items-center justify-center gap-2 rounded-lg h-11 px-8 border border-slate-200 text-slate-700 hover:border-primary hover:text-primary transition-colors font-medium">
             <span class="material-symbols-outlined text-base">arrow_back</span> Waste Sorting Guide
         </a>
         <a href="{{ route('contact') }}" class="flex items-center justify-center rounded-lg h-11 px-8 bg-primary hover:bg-green-500 transition-colors text-slate-900 font-bold" data-i18n="home_cta_btn">

@@ -661,32 +661,32 @@ if ($article) {
     {{-- ARTICLE CONTENT --}}
     <section class="max-w-5xl mx-auto px-6 py-16 lg:px-10 animate-slide-up">
         {{-- Summary --}}
-        <div class="mb-10 pb-10 border-b border-slate-200 dark:border-slate-800">
-            <p class="text-xl text-slate-600 dark:text-slate-400 leading-relaxed italic" data-i18n="{{ $article['summary'] }}">Article summary goes here</p>
+        <div class="mb-10 pb-10 border-b border-slate-200">
+            <p class="text-xl text-slate-600 leading-relaxed italic" data-i18n="{{ $article['summary'] }}">Article summary goes here</p>
         </div>
 
         {{-- Additional Visual --}}
-        <figure class="mb-12 overflow-hidden rounded-2xl border border-slate-200 dark:border-slate-800 bg-white dark:bg-slate-900 shadow-sm">
+        <figure class="mb-12 overflow-hidden rounded-2xl border border-slate-200 bg-white shadow-sm">
             <img src="{{ $article['detail_image'] }}" alt="Detail News Visual" class="h-72 w-full object-cover md:h-96">
-            <figcaption class="px-5 py-3 text-sm text-slate-600 dark:text-slate-400" data-i18n="newsd_visual_caption">
+            <figcaption class="px-5 py-3 text-sm text-slate-600" data-i18n="newsd_visual_caption">
                 Visual pendukung untuk memperkaya konteks artikel.
             </figcaption>
         </figure>
 
         {{-- Full Content (Single version, translated by existing i18n switch) --}}
         <div class="mb-12">
-            <article class="rounded-2xl border border-slate-200 bg-white p-6 shadow-sm dark:border-slate-800 dark:bg-slate-900 md:p-8">
-                <div class="mb-5 flex flex-col gap-3 border-b border-slate-200 pb-4 dark:border-slate-800">
-                    <h2 class="text-2xl font-bold leading-snug text-slate-900 dark:text-slate-100 md:text-3xl" data-i18n="newsd_headline">
+            <article class="rounded-2xl border border-slate-200 bg-white p-6 shadow-sm md:p-8">
+                <div class="mb-5 flex flex-col gap-3 border-b border-slate-200 pb-4">
+                    <h2 class="text-2xl font-bold leading-snug text-slate-900 md:text-3xl" data-i18n="newsd_headline">
                         {{ $article['id']['headline'] }}
                     </h2>
                 </div>
 
-                <div class="mb-6 rounded-xl bg-slate-50 p-5 dark:bg-slate-800/40">
+                <div class="mb-6 rounded-xl bg-slate-50 p-5">
                     <h3 class="mb-2 text-sm font-bold uppercase tracking-wide text-primary" data-i18n="newsd_lead_title">
                         {{ $article['id']['lead_title'] }}
                     </h3>
-                    <p class="text-base leading-relaxed text-slate-700 dark:text-slate-300" data-i18n="newsd_lead">
+                    <p class="text-base leading-relaxed text-slate-700" data-i18n="newsd_lead">
                         {{ $article['id']['lead'] }}
                     </p>
                 </div>
@@ -697,7 +697,7 @@ if ($article) {
                             $s = $sectionIndex + 1;
                         @endphp
                         <section class="space-y-3">
-                            <h3 class="text-xl font-bold text-slate-900 dark:text-slate-100" data-i18n="newsd_s{{ $s }}_title">
+                            <h3 class="text-xl font-bold text-slate-900" data-i18n="newsd_s{{ $s }}_title">
                                 {{ $section['title'] }}
                             </h3>
 
@@ -705,13 +705,13 @@ if ($article) {
                                 @php
                                     $p = $paragraphIndex + 1;
                                 @endphp
-                                <p class="text-base leading-relaxed text-slate-700 dark:text-slate-300" data-i18n="newsd_s{{ $s }}_p{{ $p }}">
+                                <p class="text-base leading-relaxed text-slate-700" data-i18n="newsd_s{{ $s }}_p{{ $p }}">
                                     {{ $paragraph }}
                                 </p>
                             @endforeach
 
                             @if (!empty($section['points']))
-                                <ul class="list-disc space-y-2 pl-6 text-base leading-relaxed text-slate-700 dark:text-slate-300">
+                                <ul class="list-disc space-y-2 pl-6 text-base leading-relaxed text-slate-700">
                                     @foreach ($section['points'] as $pointIndex => $point)
                                         @php
                                             $pt = $pointIndex + 1;
@@ -724,11 +724,11 @@ if ($article) {
                     @endforeach
                 </div>
 
-                <div class="mt-6 rounded-xl border border-primary/25 bg-primary/5 p-5 dark:bg-primary/10">
-                    <h3 class="mb-2 text-lg font-bold text-slate-900 dark:text-slate-100" data-i18n="newsd_conclusion_title">
+                <div class="mt-6 rounded-xl border border-primary/25 bg-primary/5 p-5">
+                    <h3 class="mb-2 text-lg font-bold text-slate-900" data-i18n="newsd_conclusion_title">
                         {{ $article['id']['conclusion_title'] }}
                     </h3>
-                    <p class="text-base leading-relaxed text-slate-700 dark:text-slate-300" data-i18n="newsd_conclusion">
+                    <p class="text-base leading-relaxed text-slate-700" data-i18n="newsd_conclusion">
                         {{ $article['id']['conclusion'] }}
                     </p>
                 </div>
@@ -736,22 +736,22 @@ if ($article) {
         </div>
 
         {{-- Related Links --}}
-        <div class="bg-primary/5 dark:bg-primary/10 rounded-xl border border-primary/20 p-8 mb-12 animate-slide-up">
-            <h3 class="text-lg font-bold text-slate-900 dark:text-slate-100 mb-4" data-i18n="newsd_related_title">Baca Juga</h3>
+        <div class="bg-primary/5 rounded-xl border border-primary/20 p-8 mb-12 animate-slide-up">
+            <h3 class="text-lg font-bold text-slate-900 mb-4" data-i18n="newsd_related_title">Baca Juga</h3>
             <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
                 <a href="{{ route('news') }}" class="flex items-center gap-3 group">
                     <span class="material-symbols-outlined text-primary group-hover:scale-110 transition-transform">newspaper</span>
-                    <span class="text-slate-600 dark:text-slate-400 group-hover:text-primary transition-colors" data-i18n="newsd_back_news">Kembali ke Berita</span>
+                    <span class="text-slate-600 group-hover:text-primary transition-colors" data-i18n="newsd_back_news">Kembali ke Berita</span>
                 </a>
                 <a href="{{ route('home') }}" class="flex items-center gap-3 group">
                     <span class="material-symbols-outlined text-primary group-hover:scale-110 transition-transform">home</span>
-                    <span class="text-slate-600 dark:text-slate-400 group-hover:text-primary transition-colors" data-i18n="newsd_back_home">Kembali ke Beranda</span>
+                    <span class="text-slate-600 group-hover:text-primary transition-colors" data-i18n="newsd_back_home">Kembali ke Beranda</span>
                 </a>
             </div>
         </div>
 
         {{-- CTA Section --}}
-        <div class="bg-background-dark dark:bg-slate-950 rounded-xl p-10 text-center text-white animate-slide-up">
+        <div class="bg-background-forest rounded-xl p-10 text-center text-white animate-slide-up">
             <h3 class="text-2xl font-bold mb-3" data-i18n="newsd_cta_title">Tertarik untuk bergabung?</h3>
             <p class="text-slate-300 mb-6" data-i18n="newsd_cta_text">Jadilah bagian dari gerakan Go Green School dan buat perbedaan untuk lingkungan kita.</p>
             <a href="{{ route('contact') }}" class="inline-flex items-center justify-center h-12 px-8 bg-primary hover:bg-green-500 transition-colors text-slate-900 font-bold rounded-lg shadow-lg" data-i18n="home_cta_btn">
@@ -765,8 +765,8 @@ if ($article) {
     {{-- Article Not Found --}}
     @section('content')
     <div class="max-w-4xl mx-auto px-6 py-20 text-center">
-        <h1 class="text-3xl font-bold text-slate-900 dark:text-slate-100 mb-4">Berita Tidak Ditemukan</h1>
-        <p class="text-slate-600 dark:text-slate-400 mb-6">Maaf, artikel yang Anda cari tidak tersedia.</p>
+        <h1 class="text-3xl font-bold text-slate-900 mb-4">Berita Tidak Ditemukan</h1>
+        <p class="text-slate-600 mb-6">Maaf, artikel yang Anda cari tidak tersedia.</p>
         <a href="{{ route('news') }}" class="inline-flex items-center gap-2 text-primary font-bold hover:underline">
             <span class="material-symbols-outlined">arrow_back</span>
             Kembali ke Berita

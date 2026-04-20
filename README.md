@@ -15,12 +15,29 @@ Website edukasi lingkungan untuk kampanye sekolah hijau (Go Green School), diban
 
 Kelompok 4 Go Green School (XII RPL - SMK Karya Bangsa Sintang)
 
-### Anggota Kelompok 4
 
-1. Rafa Satria Isyo Pratama (Full Stack Website)
-2. Andrean Milano (Poster Designer dan Pembuatan Vidio)
-3. Patrisia Kristianti Rifa (Pembuatan Vidio Dan Editor vidio)
-4. Ilham (Poster Designer)
+### Anggota & Pembagian Tugas
+
+**1. Rafa Satria Isyo Pratama**  
+- Bertanggung jawab dalam pembuatan website, meliputi perancangan awal tampilan dan pengembangan fitur-fitur web.  
+- Mengembangkan sistem backend menggunakan Laravel serta integrasi frontend dengan Blade, Tailwind, dan Vite.  
+- Mengimplementasikan fitur seperti calculator, multi halaman, serta integrasi API (Email dan WhatsApp).  
+
+**2. Andrean Milano**  
+- Bertanggung jawab dalam pembuatan poster Go Green School untuk kebutuhan promosi.  
+- Turut membantu dalam pembuatan dan pengeditan video promosi.  
+- Melakukan pengujian (testing) terhadap fitur-fitur website untuk memastikan berjalan dengan baik.  
+
+**3. Patrisia Kristianti Rifa**  
+- Bertanggung jawab dalam pembuatan dan pengeditan video promosi Go Green School.  
+- Mengelola akun media sosial untuk keperluan publikasi dan kampanye TikTok.  
+- Membantu dalam penyebaran konten promosi agar menjangkau audiens yang lebih luas.  
+
+**4. Ilham**  
+- Bertanggung jawab dalam pembuatan desain poster Go Green School untuk kebutuhan visual kampanye.  
+- Membantu memastikan desain sesuai dengan tema lingkungan dan branding proyek.  
+- Melakukan pengujian (testing) pada tampilan dan fitur website.  
+
 
 ## Fitur
 
@@ -133,7 +150,28 @@ composer run dev
 - Website Demo:
 	https://go-green-school-main-en87ct.free.laravel.cloud/
 
-## Link Poster dan Video Promosi
+## Poster dan Video Promosi
+
+### Preview Poster (Tampil Langsung di GitHub)
+
+#### Poster Andrean Milano
+
+<p>
+	<img src="public/images/ANDRE%20POSTER/Promosi%20Andre.jpeg" alt="Poster Andrean Milano" width="380" />
+</p>
+
+#### Poster Ilham
+
+<p>
+	<img src="public/images/ILHAM%20POSTER/Poster%201%20Ilham.jpg" alt="Poster Ilham 1" width="260" />
+	<img src="public/images/ILHAM%20POSTER/Poster%202%20Ilham.jpg" alt="Poster Ilham 2" width="260" />
+	<img src="public/images/ILHAM%20POSTER/Poster%203%20Ilham%20.jpg" alt="Poster Ilham 3" width="260" />
+	<img src="public/images/ILHAM%20POSTER/Poster%204%20Ilham.jpg" alt="Poster Ilham 4" width="260" />
+	<img src="public/images/ILHAM%20POSTER/Poster%20Bi%20Ilham.jpg" alt="Poster Ilham BI" width="260" />
+	<img src="public/images/ILHAM%20POSTER/promosi%20web%20Ilham.png" alt="Poster Promosi Web Ilham" width="260" />
+</p>
+
+### Link Eksternal
 
 - Google Drive Poster:
 	https://drive.google.com/drive/folders/139JwDc4bctpxvGRRXvgH933jPkkLPcEK?usp=sharing

@@ -3,12 +3,13 @@
 <meta charset="utf-8"/>
 <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
 <title>Go Green School</title>
+<link rel="icon" type="image/png" href="{{ asset('images/logo.png') }}"/>
+<link rel="shortcut icon" href="{{ asset('images/logo.png') }}"/>
 <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
 <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&amp;display=swap" rel="stylesheet"/>
 <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
 <script>
         tailwind.config = {
-            darkMode: "class",
             theme: {
                 extend: {
                     colors: {
@@ -17,15 +18,12 @@
                         accent: "#C6D870",
                         highlight: "#EFF5D2",
                         paper: "#fdfdfd",
-                        "paper-dark": "#0f172a",
-                        "grid-dark": "#334155",
                     },
                     fontFamily: {
                         sans: ["Montserrat", "sans-serif"],
                     },
                     backgroundImage: {
                         'grid-paper': "linear-gradient(#e5e5e5 1px, transparent 1px), linear-gradient(90deg, #e5e5e5 1px, transparent 1px)",
-                        'grid-paper-dark': "linear-gradient(#334155 1px, transparent 1px), linear-gradient(90deg, #334155 1px, transparent 1px)",
                     },
                     backgroundSize: {
                         'grid-sm': '20px 20px',
@@ -33,44 +31,15 @@
                     boxShadow: {
                         'sketch': '2px 2px 0px 0px #000000',
                         'sketch-hover': '4px 4px 0px 0px #000000',
-                        'sketch-dark': '2px 2px 0px 0px #94a3b8',
-                        'sketch-hover-dark': '4px 4px 0px 0px #94a3b8',
                     }
                 },
             },
         }
     </script>
-<script>
-    // Early Dark Mode Check
-    (function() {
-        const isDarkMode = localStorage.getItem('ggs_dark_mode') === 'true';
-        if (isDarkMode) {
-            document.documentElement.classList.add('dark');
-        }
-    })();
-</script>
 <style>
         .wireframe-border {
             border: 2px solid #000000;
             border-radius: 2px 2px 4px 2px;
-        }
-        .dark .wireframe-border, .dark .border-black {
-            border-color: #94a3b8;
-        }
-        .dark .bg-white {
-            background-color: #1e293b;
-        }
-        .dark .shadow-sketch {
-            box-shadow: 2px 2px 0px 0px #94a3b8;
-        }
-        .dark .hover\:shadow-sketch-hover:hover {
-            box-shadow: 4px 4px 0px 0px #94a3b8;
-        }
-        .dark .text-gray-800, .dark .text-black {
-            color: #f1f5f9;
-        }
-        .dark .text-gray-700 {
-            color: #cbd5e1;
         }
         .wireframe-input {
             border: 2px solid #000000;
@@ -87,9 +56,6 @@
             color: #fff;
             border-color: #8FA31E;
         }
-        .dark .bg-highlight { background-color: #3f6212; }
-        .dark .bg-highlight\/30 { background-color: rgba(63, 98, 18, 0.3); }
-        .dark .bg-accent\/20 { background-color: rgba(77, 124, 15, 0.2); }
 
         /* Scroll Reveal Animations */
         .reveal {
@@ -131,10 +97,10 @@
         document.addEventListener("DOMContentLoaded", reveal);
     </script>
 </head>
-<body class="bg-paper dark:bg-paper-dark bg-grid-paper dark:bg-grid-paper-dark bg-grid-sm font-sans text-gray-800 dark:text-slate-100 antialiased min-h-screen flex flex-col transition-colors duration-300">
+<body class="bg-paper bg-grid-paper bg-grid-sm font-sans text-gray-800 antialiased min-h-screen flex flex-col transition-colors duration-300">
 
 <!-- Floating Background Doodles -->
-<div class="fixed inset-0 pointer-events-none z-40 overflow-hidden opacity-70 dark:opacity-35 mix-blend-normal">
+<div class="fixed inset-0 pointer-events-none z-40 overflow-hidden opacity-70 mix-blend-normal">
     <div class="absolute top-[10%] left-[5%] animate-float" style="animation-duration: 8s;">
         <span class="material-symbols-outlined text-6xl text-primary drop-shadow-lg">eco</span>
     </div>
@@ -161,7 +127,7 @@
     </div>
 </div>
 
-<header class="sticky top-0 z-50 w-full border-b-2 border-black dark:border-slate-500 bg-white/95 dark:bg-slate-900/95 backdrop-blur-md">
+<header class="sticky top-0 z-50 w-full border-b-2 border-black bg-white/95 backdrop-blur-md">
 <div class="mx-auto flex h-20 max-w-7xl items-center justify-between px-6 lg:px-12">
 <a href="{{ route('home') }}" class="flex items-center gap-3">
 <div class="flex h-10 w-10 items-center justify-center rounded-full border-2 border-primary bg-highlight text-primary">
@@ -180,10 +146,6 @@
 <button onclick="switchLang('en')" id="btn-en" class="lang-btn active px-3 py-1 text-xs font-bold border-r-2 border-primary">EN</button>
 <button onclick="switchLang('id')" id="btn-id" class="lang-btn px-3 py-1 text-xs font-bold text-primary">ID</button>
 </div>
-<!-- Dark Mode Toggle -->
-<button onclick="toggleDarkMode()" aria-label="Toggle Dark Mode" class="flex h-8 w-8 items-center justify-center rounded-full border-2 border-primary text-primary hover:bg-primary hover:text-white transition-colors shadow-sketch">
-<span class="material-symbols-outlined text-lg">dark_mode</span>
-</button>
 </nav>
 <div class="flex items-center gap-2 md:hidden">
 <!-- Mobile Language Switcher -->
@@ -191,17 +153,13 @@
 <button onclick="switchLang('en')" id="btn-en-m" class="lang-btn active px-2 py-1 text-xs font-bold border-r-2 border-primary">EN</button>
 <button onclick="switchLang('id')" id="btn-id-m" class="lang-btn px-2 py-1 text-xs font-bold text-primary">ID</button>
 </div>
-<!-- Dark Mode Toggle -->
-<button onclick="toggleDarkMode()" aria-label="Toggle Dark Mode" class="flex h-8 w-8 items-center justify-center rounded-full border-2 border-primary text-primary hover:bg-primary shadow-sketch mr-1">
-<span class="material-symbols-outlined text-lg">dark_mode</span>
-</button>
 <button onclick="document.getElementById('welcome-mobile-menu').classList.toggle('hidden')" aria-expanded="false" aria-label="Toggle Mobile Menu" class="text-primary flex items-center justify-center border-2 border-primary shadow-sketch rounded-md p-1">
 <span class="material-symbols-outlined text-2xl">menu</span>
 </button>
 </div>
 </div>
 <!-- Mobile Menu Container -->
-<div id="welcome-mobile-menu" class="hidden border-t-2 border-black dark:border-slate-500 bg-white dark:bg-slate-900 px-6 py-4 flex-col gap-4 shadow-sketch absolute w-full md:hidden">
+<div id="welcome-mobile-menu" class="hidden border-t-2 border-black bg-white px-6 py-4 flex-col gap-4 shadow-sketch absolute w-full md:hidden">
     <a class="text-base font-bold text-primary hover:text-secondary transition-colors" href="{{ route('home') }}" data-i18n="nav_home">Home</a>
     <a class="text-base font-bold text-primary hover:text-secondary transition-colors" href="{{ route('about') }}" data-i18n="nav_about">About</a>
     <a class="text-base font-bold text-primary hover:text-secondary transition-colors" href="{{ route('programs') }}" data-i18n="nav_programs">Programs</a>
@@ -209,11 +167,11 @@
     <a class="text-base font-bold text-primary hover:text-secondary transition-colors" href="{{ route('contact') }}" data-i18n="nav_contact">Contact</a>
 </div>
 </header>
-<main class="flex-grow">
-<section class="relative w-full border-b-2 border-black dark:border-slate-500 bg-highlight/20 dark:bg-slate-800">
+<main class="grow">
+<section class="relative w-full border-b-2 border-black bg-highlight/20">
 <div class="relative mx-auto flex min-h-[500px] max-w-7xl flex-col items-center justify-center px-6 py-16 text-center lg:px-12 bg-grid-paper bg-grid-sm">
 <div class="absolute inset-0 z-0 opacity-10 bg-pattern-doodle"></div>
-<div class="relative z-10 max-w-4xl rounded-xl border-2 border-black dark:border-slate-500 bg-white/90 dark:bg-slate-900/90 p-8 shadow-sketch backdrop-blur-sm animate-scale-in reveal">
+<div class="relative z-10 max-w-4xl rounded-xl border-2 border-black bg-white/90 p-8 shadow-sketch backdrop-blur-sm animate-scale-in reveal">
 <h2 class="mb-4 text-4xl font-extrabold text-primary md:text-6xl tracking-tight hero-title">
                         Go Green School:<br/><span class="text-3xl md:text-5xl font-bold text-primary" data-i18n="hero_subtitle">Eco-Friendly School</span>
 </h2>
@@ -244,7 +202,7 @@
     <div class="wireframe-border bg-highlight/30 p-8 shadow-sketch flex flex-col h-full hover-lift transition-smooth">
         <h4 class="text-2xl font-bold text-primary mb-4 border-b-2 border-secondary pb-2" data-i18n="desc_campaign_title">What is a Go Green Campaign?</h4>
         <p class="mb-4 text-gray-700 font-medium" data-i18n="desc_campaign_intro">A Go Green campaign in school is a program that encourages students, teachers, and staff to:</p>
-        <ul class="list-disc list-inside space-y-2 text-gray-700 font-medium mb-4 flex-grow">
+        <ul class="list-disc list-inside space-y-2 text-gray-700 font-medium mb-4 grow">
             <li data-i18n="desc_campaign_li1">Reduce waste</li>
             <li data-i18n="desc_campaign_li2">Recycle materials</li>
             <li data-i18n="desc_campaign_li3">Save electricity and water</li>
@@ -259,7 +217,7 @@
     <div class="wireframe-border bg-accent/20 p-8 shadow-sketch flex flex-col h-full hover-lift transition-smooth">
         <h4 class="text-2xl font-bold text-primary mb-4 border-b-2 border-secondary pb-2" data-i18n="desc_sus_title">What is Sustainability?</h4>
         <p class="mb-4 text-gray-700 font-medium" data-i18n="desc_sus_intro">Sustainability means using resources carefully so that future generations can also use them. In a Go Green School, sustainability includes:</p>
-        <ul class="list-disc list-inside space-y-2 text-gray-700 font-medium flex-grow">
+        <ul class="list-disc list-inside space-y-2 text-gray-700 font-medium grow">
             <li data-i18n="desc_sus_li1">Using reusable items instead of disposable ones</li>
             <li data-i18n="desc_sus_li2">Conserving energy</li>
             <li data-i18n="desc_sus_li3">Planting trees</li>
@@ -272,7 +230,7 @@
         <h4 class="text-2xl font-bold text-primary mb-4 border-b-2 border-secondary pb-2" data-i18n="desc_decal_title">What is a Go Green Decal?</h4>
         <p class="mb-4 text-gray-700 font-medium" data-i18n="desc_decal_intro1">A Go Green decal is a sticker or sign displayed around the school to remind people to care for the environment.</p>
         <p class="mb-2 text-gray-700 font-medium" data-i18n="desc_decal_intro2">Examples of messages on decals:</p>
-        <ul class="list-disc list-inside space-y-2 text-gray-700 font-medium mb-4 flex-grow">
+        <ul class="list-disc list-inside space-y-2 text-gray-700 font-medium mb-4 grow">
             <li data-i18n="desc_decal_li1">“Save Water”</li>
             <li data-i18n="desc_decal_li2">“Switch Off Lights”</li>
             <li data-i18n="desc_decal_li3">“Recycle Here”</li>
@@ -284,7 +242,7 @@
     <!-- Why is it Important -->
     <div class="wireframe-border bg-white p-8 shadow-sketch flex flex-col h-full hover-lift transition-smooth">
         <h4 class="text-2xl font-bold text-primary mb-4 border-b-2 border-secondary pb-2" data-i18n="desc_why_title">Why is a Go Green School Important?</h4>
-        <ul class="list-decimal list-inside space-y-4 text-gray-700 font-medium flex-grow">
+        <ul class="list-decimal list-inside space-y-4 text-gray-700 font-medium grow">
             <li data-i18n="desc_why_li1">Teaches students responsibility</li>
             <li data-i18n="desc_why_li2">Reduces environmental damage</li>
             <li data-i18n="desc_why_li3">Creates a healthy and clean learning environment</li>
@@ -385,7 +343,7 @@ By throwing waste according to its type, we help maintain the cleanliness and su
 </section>
 
 <!-- EXPLANATION SECTION -->
-<section class="w-full border-t-2 border-y-2 border-black dark:border-slate-500 bg-white dark:bg-slate-900 px-6 py-20">
+<section class="w-full border-t-2 border-y-2 border-black bg-white px-6 py-20">
     <div class="mx-auto max-w-7xl">
         <div class="mb-12 text-center max-w-4xl mx-auto">
             <span class="material-symbols-outlined mb-4 text-6xl text-secondary">explore</span>
@@ -487,7 +445,7 @@ By throwing waste according to its type, we help maintain the cleanliness and su
 </div>
 </section>
 </main>
-<footer class="border-t-2 border-black dark:border-slate-500 bg-white dark:bg-slate-900 px-6 py-10">
+<footer class="border-t-2 border-black bg-white px-6 py-10">
 <div class="mx-auto flex max-w-7xl flex-col items-center justify-between gap-6 md:flex-row">
 <div class="flex items-center gap-2">
 <span class="material-symbols-outlined text-2xl text-primary">copyright</span>
@@ -692,13 +650,6 @@ function switchLang(lang) {
             btnId.classList.toggle('active', lang === 'id');
         }
     });
-}
-
-// Dark Mode logic
-function toggleDarkMode() {
-    document.documentElement.classList.toggle('dark');
-    const isDark = document.documentElement.classList.contains('dark');
-    localStorage.setItem('ggs_dark_mode', isDark ? 'true' : 'false');
 }
 
 // On load

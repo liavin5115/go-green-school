@@ -4,19 +4,20 @@
 <meta charset="utf-8"/>
 <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
 <title>@yield('title', 'Go Green School')</title>
-<meta name="description" content="@yield('meta_description', 'Go Green School â€” Building an Environmentally Conscious Generation. An environmental education portal for eco-friendly schools in Indonesia.')">
+<meta name="description" content="@yield('meta_description', 'Go Green School — Building an Environmentally Conscious Generation. An environmental education portal for eco-friendly schools in Indonesia.')">
+<link rel="icon" type="image/png" href="{{ asset('images/logo.png') }}"/>
+<link rel="shortcut icon" href="{{ asset('images/logo.png') }}"/>
 <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
 <link href="https://fonts.googleapis.com/css2?family=Lexend:wght@300;400;500;600;700;800&display=swap" rel="stylesheet"/>
 <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet"/>
 <script>
     tailwind.config = {
-        darkMode: "class",
         theme: {
             extend: {
                 colors: {
                     primary: "#11d442",
                     "background-light": "#f6f8f6",
-                    "background-dark": "#102215",
+                    "background-forest": "#102215",
                 },
                 fontFamily: {
                     sans: ["Lexend", "sans-serif"],
@@ -78,11 +79,6 @@
         backdrop-filter: blur(8px);
         box-shadow: 0 10px 25px rgba(15, 23, 42, 0.14);
     }
-    .dark .floating-quick-controls {
-        border-color: #334155;
-        background: rgba(15, 23, 42, 0.9);
-        box-shadow: 0 12px 25px rgba(2, 6, 23, 0.45);
-    }
     .floating-lang-switch {
         display: flex;
         align-items: center;
@@ -91,36 +87,6 @@
         border-radius: 9999px;
         background: #ffffff;
     }
-    .dark .floating-lang-switch {
-        border-color: #334155;
-        background: #0f172a;
-    }
-    .floating-dark-btn {
-        display: inline-flex;
-        height: 2.2rem;
-        width: 2.2rem;
-        align-items: center;
-        justify-content: center;
-        border: 1px solid #cbd5e1;
-        border-radius: 9999px;
-        background: #ffffff;
-        color: #475569;
-        transition: all 0.2s;
-    }
-    .floating-dark-btn:hover {
-        border-color: #11d442;
-        color: #14532d;
-        transform: translateY(-1px);
-    }
-    .dark .floating-dark-btn {
-        border-color: #334155;
-        background: #0f172a;
-        color: #cbd5e1;
-    }
-    .dark .floating-dark-btn:hover {
-        border-color: #11d442;
-        color: #bbf7d0;
-    }
     @media (max-width: 640px) {
         .floating-quick-controls {
             right: 0.65rem;
@@ -128,10 +94,6 @@
             gap: 0.4rem;
             padding: 0.5rem;
             border-radius: 0.85rem;
-        }
-        .floating-dark-btn {
-            width: 2rem;
-            height: 2rem;
         }
         .floating-lang-switch .lang-btn {
             padding: 0.3rem 0.6rem;
@@ -152,11 +114,6 @@
     input:focus, textarea:focus, select:focus {
         border-color: #11d442;
         box-shadow: 0 0 0 3px rgba(17, 212, 66, 0.1);
-    }
-    .dark input, .dark textarea, .dark select {
-        background: #1e293b;
-        border-color: #334155;
-        color: #f1f5f9;
     }
 
     /* Global Animations */
@@ -297,19 +254,12 @@
         from { transform: translate3d(calc(0px - var(--eco-tile-size)), 0, 0); }
         to { transform: translate3d(0, 0, 0); }
     }
-    .dark .site-floating-eco-bg {
-        opacity: 0.18;
-        filter: saturate(0.72) brightness(0.82);
-    }
     @media (max-width: 768px) {
         .site-floating-eco-bg {
             --eco-tile-size: 200px;
         }
         .site-floating-eco-bg {
             opacity: 0.22;
-        }
-        .dark .site-floating-eco-bg {
-            opacity: 0.14;
         }
     }
     @media (prefers-reduced-motion: reduce) {
@@ -319,49 +269,49 @@
     }
 </style>
 </head>
-<body class="bg-background-light dark:bg-background-dark font-sans text-slate-900 dark:text-slate-100 antialiased min-h-screen flex flex-col relative overflow-x-hidden">
+<body class="bg-background-light font-sans text-slate-900 antialiased min-h-screen flex flex-col relative overflow-x-hidden">
 
 {{-- HEADER --}}
-<header class="sticky top-0 z-50 w-full border-b border-slate-200 dark:border-slate-800 bg-background-light/95 dark:bg-background-dark/95 backdrop-blur-md">
+<header class="sticky top-0 z-50 w-full border-b border-slate-200 bg-background-light/95 backdrop-blur-md">
     <div class="mx-auto flex h-16 max-w-7xl items-center justify-between px-6 lg:px-10">
         <a href="{{ route('home') }}" class="flex items-center gap-2.5 shrink-0">
             <div class="flex h-8 w-8 items-center justify-center text-primary">
                 <span class="material-symbols-outlined text-3xl">eco</span>
             </div>
-            <span class="text-sm sm:text-lg font-bold text-slate-900 dark:text-slate-100 tracking-tight whitespace-nowrap">Go Green School</span>
+            <span class="text-sm sm:text-lg font-bold text-slate-900 tracking-tight whitespace-nowrap">Go Green School</span>
         </a>
 
         {{-- Desktop Nav --}}
         <nav class="hidden lg:flex items-center gap-6 xl:gap-8">
-            <a class="text-sm font-medium {{ request()->routeIs('home') ? 'text-primary' : 'text-slate-700 dark:text-slate-300 hover:text-primary dark:hover:text-primary' }} transition-colors" href="{{ route('home') }}" data-i18n="nav_home">Home</a>
-            <a class="text-sm font-medium {{ request()->routeIs('about') ? 'text-primary' : 'text-slate-700 dark:text-slate-300 hover:text-primary dark:hover:text-primary' }} transition-colors" href="{{ route('about') }}" data-i18n="nav_about">About</a>
-            <a class="text-sm font-medium {{ request()->routeIs('developers') ? 'text-primary' : 'text-slate-700 dark:text-slate-300 hover:text-primary dark:hover:text-primary' }} transition-colors" href="{{ route('developers') }}" data-i18n="nav_developers">Developers</a>
-            <a class="text-sm font-medium {{ request()->routeIs('learn') ? 'text-primary' : 'text-slate-700 dark:text-slate-300 hover:text-primary dark:hover:text-primary' }} transition-colors" href="{{ route('learn') }}" data-i18n="nav_learn">Learn</a>
-            <a class="text-sm font-medium {{ request()->routeIs('programs') ? 'text-primary' : 'text-slate-700 dark:text-slate-300 hover:text-primary dark:hover:text-primary' }} transition-colors" href="{{ route('programs') }}" data-i18n="nav_programs">Programs</a>
-            <a class="text-sm font-medium {{ request()->routeIs('gallery') ? 'text-primary' : 'text-slate-700 dark:text-slate-300 hover:text-primary dark:hover:text-primary' }} transition-colors" href="{{ route('gallery') }}" data-i18n="nav_gallery">Gallery</a>
-            <a class="text-sm font-medium {{ request()->routeIs('news') ? 'text-primary' : 'text-slate-700 dark:text-slate-300 hover:text-primary dark:hover:text-primary' }} transition-colors" href="{{ route('news') }}" data-i18n="nav_news">News</a>
-            <a class="text-sm font-medium {{ request()->routeIs('calculator') ? 'text-primary' : 'text-slate-700 dark:text-slate-300 hover:text-primary dark:hover:text-primary' }} transition-colors" href="{{ route('calculator') }}" data-i18n="nav_calculator">Calculator</a>
+            <a class="text-sm font-medium {{ request()->routeIs('home') ? 'text-primary' : 'text-slate-700 hover:text-primary' }} transition-colors" href="{{ route('home') }}" data-i18n="nav_home">Home</a>
+            <a class="text-sm font-medium {{ request()->routeIs('about') ? 'text-primary' : 'text-slate-700 hover:text-primary' }} transition-colors" href="{{ route('about') }}" data-i18n="nav_about">About</a>
+            <a class="text-sm font-medium {{ request()->routeIs('developers') ? 'text-primary' : 'text-slate-700 hover:text-primary' }} transition-colors" href="{{ route('developers') }}" data-i18n="nav_developers">Developers</a>
+            <a class="text-sm font-medium {{ request()->routeIs('learn') ? 'text-primary' : 'text-slate-700 hover:text-primary' }} transition-colors" href="{{ route('learn') }}" data-i18n="nav_learn">Learn</a>
+            <a class="text-sm font-medium {{ request()->routeIs('programs') ? 'text-primary' : 'text-slate-700 hover:text-primary' }} transition-colors" href="{{ route('programs') }}" data-i18n="nav_programs">Programs</a>
+            <a class="text-sm font-medium {{ request()->routeIs('gallery') ? 'text-primary' : 'text-slate-700 hover:text-primary' }} transition-colors" href="{{ route('gallery') }}" data-i18n="nav_gallery">Gallery</a>
+            <a class="text-sm font-medium {{ request()->routeIs('news') ? 'text-primary' : 'text-slate-700 hover:text-primary' }} transition-colors" href="{{ route('news') }}" data-i18n="nav_news">News</a>
+            <a class="text-sm font-medium {{ request()->routeIs('calculator') ? 'text-primary' : 'text-slate-700 hover:text-primary' }} transition-colors" href="{{ route('calculator') }}" data-i18n="nav_calculator">Calculator</a>
             <a class="flex items-center justify-center rounded-lg h-9 px-5 bg-primary hover:bg-green-500 transition-colors text-slate-900 text-sm font-bold shadow-sm" href="{{ route('contact') }}" data-i18n="nav_join">Contact Us</a>
         </nav>
 
         {{-- Mobile Controls --}}
         <div class="flex items-center lg:hidden">
-            <button onclick="document.getElementById('mobile-menu').classList.toggle('open')" aria-expanded="false" aria-label="Toggle Mobile Menu" class="text-slate-700 dark:text-slate-300">
+            <button onclick="document.getElementById('mobile-menu').classList.toggle('open')" aria-expanded="false" aria-label="Toggle Mobile Menu" class="text-slate-700">
                 <span class="material-symbols-outlined text-3xl">menu</span>
             </button>
         </div>
     </div>
 
     {{-- Mobile Menu --}}
-    <div id="mobile-menu" class="mobile-menu flex-col border-t border-slate-200 dark:border-slate-800 bg-background-light dark:bg-background-dark px-6 py-4 lg:hidden">
-        <a class="block py-3 text-sm font-medium text-slate-700 dark:text-slate-300 border-b border-slate-100 dark:border-slate-800" href="{{ route('home') }}" data-i18n="nav_home">Home</a>
-        <a class="block py-3 text-sm font-medium text-slate-700 dark:text-slate-300 border-b border-slate-100 dark:border-slate-800" href="{{ route('about') }}" data-i18n="nav_about">About</a>
-        <a class="block py-3 text-sm font-medium text-slate-700 dark:text-slate-300 border-b border-slate-100 dark:border-slate-800" href="{{ route('developers') }}" data-i18n="nav_developers">Developers</a>
-        <a class="block py-3 text-sm font-medium text-slate-700 dark:text-slate-300 border-b border-slate-100 dark:border-slate-800" href="{{ route('learn') }}" data-i18n="nav_learn">Learn</a>
-        <a class="block py-3 text-sm font-medium text-slate-700 dark:text-slate-300 border-b border-slate-100 dark:border-slate-800" href="{{ route('programs') }}" data-i18n="nav_programs">Programs</a>
-        <a class="block py-3 text-sm font-medium text-slate-700 dark:text-slate-300 border-b border-slate-100 dark:border-slate-800" href="{{ route('gallery') }}" data-i18n="nav_gallery">Gallery</a>
-        <a class="block py-3 text-sm font-medium text-slate-700 dark:text-slate-300 border-b border-slate-100 dark:border-slate-800" href="{{ route('news') }}" data-i18n="nav_news">News</a>
-        <a class="block py-3 text-sm font-medium text-slate-700 dark:text-slate-300 border-b border-slate-100 dark:border-slate-800" href="{{ route('calculator') }}" data-i18n="nav_calculator">Calculator</a>
+    <div id="mobile-menu" class="mobile-menu flex-col border-t border-slate-200 bg-background-light px-6 py-4 lg:hidden">
+        <a class="block py-3 text-sm font-medium text-slate-700 border-b border-slate-100" href="{{ route('home') }}" data-i18n="nav_home">Home</a>
+        <a class="block py-3 text-sm font-medium text-slate-700 border-b border-slate-100" href="{{ route('about') }}" data-i18n="nav_about">About</a>
+        <a class="block py-3 text-sm font-medium text-slate-700 border-b border-slate-100" href="{{ route('developers') }}" data-i18n="nav_developers">Developers</a>
+        <a class="block py-3 text-sm font-medium text-slate-700 border-b border-slate-100" href="{{ route('learn') }}" data-i18n="nav_learn">Learn</a>
+        <a class="block py-3 text-sm font-medium text-slate-700 border-b border-slate-100" href="{{ route('programs') }}" data-i18n="nav_programs">Programs</a>
+        <a class="block py-3 text-sm font-medium text-slate-700 border-b border-slate-100" href="{{ route('gallery') }}" data-i18n="nav_gallery">Gallery</a>
+        <a class="block py-3 text-sm font-medium text-slate-700 border-b border-slate-100" href="{{ route('news') }}" data-i18n="nav_news">News</a>
+        <a class="block py-3 text-sm font-medium text-slate-700 border-b border-slate-100" href="{{ route('calculator') }}" data-i18n="nav_calculator">Calculator</a>
         <a class="mt-4 flex items-center justify-center rounded-lg h-10 bg-primary text-slate-900 text-sm font-bold shadow-sm" href="{{ route('contact') }}" data-i18n="nav_join">Contact Us</a>
     </div>
 </header>
@@ -388,46 +338,46 @@
 </main>
 
 {{-- FOOTER --}}
-<footer class="border-t border-slate-200 dark:border-slate-800 bg-white dark:bg-slate-900">
+<footer class="border-t border-slate-200 bg-white">
     <div class="mx-auto max-w-7xl px-6 py-12 lg:px-10 lg:py-16">
         <div class="grid grid-cols-1 md:grid-cols-4 gap-10 mb-10">
             {{-- Brand --}}
             <div class="md:col-span-1 flex flex-col gap-4">
-                <div class="flex items-center gap-2 text-slate-900 dark:text-slate-100">
+                <div class="flex items-center gap-2 text-slate-900">
                     <span class="material-symbols-outlined text-3xl text-primary">eco</span>
                     <span class="text-lg font-bold">Go Green School</span>
                 </div>
-                <p class="text-slate-500 dark:text-slate-400 text-sm leading-relaxed" data-i18n="footer_tagline">
+                <p class="text-slate-500 text-sm leading-relaxed" data-i18n="footer_tagline">
                     Empowering the next generation to build a sustainable world through education and action.
                 </p>
             </div>
             {{-- Quick Links --}}
             <div class="flex flex-col gap-4">
-                <h4 class="text-slate-900 dark:text-slate-100 font-bold text-sm uppercase tracking-wider">Quick Links</h4>
+                <h4 class="text-slate-900 font-bold text-sm uppercase tracking-wider">Quick Links</h4>
                 <nav class="flex flex-col gap-2">
-                    <a href="{{ route('home') }}" class="text-slate-500 dark:text-slate-400 hover:text-primary dark:hover:text-primary text-sm transition-colors" data-i18n="nav_home">Home</a>
-                    <a href="{{ route('about') }}" class="text-slate-500 dark:text-slate-400 hover:text-primary dark:hover:text-primary text-sm transition-colors" data-i18n="nav_about">About</a>
-                    <a href="{{ route('developers') }}" class="text-slate-500 dark:text-slate-400 hover:text-primary dark:hover:text-primary text-sm transition-colors" data-i18n="nav_developers">Developers</a>
-                    <a href="{{ route('learn') }}" class="text-slate-500 dark:text-slate-400 hover:text-primary dark:hover:text-primary text-sm transition-colors" data-i18n="nav_learn">Learn</a>
-                    <a href="{{ route('programs') }}" class="text-slate-500 dark:text-slate-400 hover:text-primary dark:hover:text-primary text-sm transition-colors" data-i18n="nav_programs">Programs</a>
-                    <a href="{{ route('gallery') }}" class="text-slate-500 dark:text-slate-400 hover:text-primary dark:hover:text-primary text-sm transition-colors" data-i18n="nav_gallery">Gallery</a>
-                    <a href="{{ route('news') }}" class="text-slate-500 dark:text-slate-400 hover:text-primary dark:hover:text-primary text-sm transition-colors" data-i18n="nav_news">News</a>
-                    <a href="{{ route('calculator') }}" class="text-slate-500 dark:text-slate-400 hover:text-primary dark:hover:text-primary text-sm transition-colors" data-i18n="nav_calculator">Calculator</a>
+                    <a href="{{ route('home') }}" class="text-slate-500 hover:text-primary text-sm transition-colors" data-i18n="nav_home">Home</a>
+                    <a href="{{ route('about') }}" class="text-slate-500 hover:text-primary text-sm transition-colors" data-i18n="nav_about">About</a>
+                    <a href="{{ route('developers') }}" class="text-slate-500 hover:text-primary text-sm transition-colors" data-i18n="nav_developers">Developers</a>
+                    <a href="{{ route('learn') }}" class="text-slate-500 hover:text-primary text-sm transition-colors" data-i18n="nav_learn">Learn</a>
+                    <a href="{{ route('programs') }}" class="text-slate-500 hover:text-primary text-sm transition-colors" data-i18n="nav_programs">Programs</a>
+                    <a href="{{ route('gallery') }}" class="text-slate-500 hover:text-primary text-sm transition-colors" data-i18n="nav_gallery">Gallery</a>
+                    <a href="{{ route('news') }}" class="text-slate-500 hover:text-primary text-sm transition-colors" data-i18n="nav_news">News</a>
+                    <a href="{{ route('calculator') }}" class="text-slate-500 hover:text-primary text-sm transition-colors" data-i18n="nav_calculator">Calculator</a>
                 </nav>
             </div>
             {{-- Contact --}}
             <div class="flex flex-col gap-4">
-                <h4 class="text-slate-900 dark:text-slate-100 font-bold text-sm uppercase tracking-wider" data-i18n="nav_contact">Contact</h4>
+                <h4 class="text-slate-900 font-bold text-sm uppercase tracking-wider" data-i18n="nav_contact">Contact</h4>
                 <div class="flex flex-col gap-3">
-                    <div class="flex items-center gap-3 text-slate-500 dark:text-slate-400 text-sm">
+                    <div class="flex items-center gap-3 text-slate-500 text-sm">
                         <span class="material-symbols-outlined text-lg">location_on</span>
                         <span>Jl. Sintang - Pontianak (KM. 7), Kelurahan Balai Agung, Kecamatan Sungai Tebelian, Kabupaten Sintang, Kalimantan Barat.</span>
                     </div>
-                    <div class="flex items-center gap-3 text-slate-500 dark:text-slate-400 text-sm">
+                    <div class="flex items-center gap-3 text-slate-500 text-sm">
                         <span class="material-symbols-outlined text-lg">call</span>
                         <span>085250341098</span>
                     </div>
-                    <div class="flex items-center gap-3 text-slate-500 dark:text-slate-400 text-sm">
+                    <div class="flex items-center gap-3 text-slate-500 text-sm">
                         <span class="material-symbols-outlined text-lg">mail</span>
                         <span>gogreenschoolk4@gmail.com</span>
                     </div>
@@ -435,58 +385,47 @@
             </div>
             {{-- Social --}}
             <div class="flex flex-col gap-4">
-                <h4 class="text-slate-900 dark:text-slate-100 font-bold text-sm uppercase tracking-wider">Follow Us</h4>
+                <h4 class="text-slate-900 font-bold text-sm uppercase tracking-wider">Follow Us</h4>
                 <div class="flex gap-3">
-                    <a class="w-9 h-9 rounded-full border border-slate-200 dark:border-slate-700 flex items-center justify-center text-slate-500 dark:text-slate-400 hover:bg-primary hover:text-slate-900 hover:border-primary transition-all" href="https://go-green-school-main-en87ct.free.laravel.cloud/" target="_blank" rel="noopener noreferrer" aria-label="Visit Website">
+                    <a class="w-9 h-9 rounded-full border border-slate-200 flex items-center justify-center text-slate-500 hover:bg-primary hover:text-slate-900 hover:border-primary transition-all" href="https://go-green-school-main-en87ct.free.laravel.cloud/" target="_blank" rel="noopener noreferrer" aria-label="Visit Website">
                         <span class="material-symbols-outlined text-lg">public</span>
                     </a>
-                    <a class="w-9 h-9 rounded-full border border-slate-200 dark:border-slate-700 flex items-center justify-center text-slate-500 dark:text-slate-400 hover:bg-primary hover:text-slate-900 hover:border-primary transition-all" href="https://wa.me/6285250341098" target="_blank" rel="noopener noreferrer" aria-label="Chat on WhatsApp">
+                    <a class="w-9 h-9 rounded-full border border-slate-200 flex items-center justify-center text-slate-500 hover:bg-primary hover:text-slate-900 hover:border-primary transition-all" href="https://wa.me/6285250341098" target="_blank" rel="noopener noreferrer" aria-label="Chat on WhatsApp">
                         <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16" class="h-4 w-4 fill-current" aria-hidden="true">
                             <path d="M13.601 2.326A7.854 7.854 0 0 0 8.016 0C3.648 0 .102 3.547.1 7.916c0 1.39.363 2.747 1.053 3.944L0 16l4.24-1.111a7.91 7.91 0 0 0 3.776.963h.003c4.367 0 7.914-3.547 7.916-7.916a7.863 7.863 0 0 0-2.334-5.61zm-5.585 12.19h-.003a6.57 6.57 0 0 1-3.35-.92l-.24-.142-2.517.66.672-2.454-.157-.252a6.57 6.57 0 0 1-1.009-3.492c.002-3.626 2.953-6.577 6.58-6.577a6.54 6.54 0 0 1 4.65 1.929 6.54 6.54 0 0 1 1.925 4.654c-.002 3.626-2.953 6.577-6.58 6.577zm3.61-4.929c-.198-.099-1.172-.579-1.354-.645-.182-.066-.314-.099-.447.099-.132.198-.512.645-.628.777-.116.132-.231.149-.429.05-.198-.099-.835-.307-1.59-.98-.587-.523-.984-1.168-1.1-1.366-.116-.198-.012-.305.087-.404.089-.088.198-.231.297-.347.099-.116.132-.198.198-.331.066-.132.033-.248-.017-.347-.05-.099-.447-1.079-.612-1.477-.161-.387-.324-.334-.447-.34-.116-.006-.248-.007-.38-.007-.132 0-.347.05-.529.248-.182.198-.694.678-.694 1.653s.711 1.918.81 2.05c.099.132 1.4 2.137 3.393 2.995.474.205.843.327 1.131.418.476.151.909.13 1.252.079.382-.057 1.172-.479 1.337-.942.165-.463.165-.86.116-.942-.05-.083-.182-.132-.38-.231z"/>
                         </svg>
                     </a>
-                    <a class="w-9 h-9 rounded-full border border-slate-200 dark:border-slate-700 flex items-center justify-center text-slate-500 dark:text-slate-400 hover:bg-primary hover:text-slate-900 hover:border-primary transition-all" href="https://www.tiktok.com/@googreen_schoolfour4?_r=1&amp;_t=ZS-95HnxddUVBF" target="_blank" rel="noopener noreferrer" aria-label="Follow us on TikTok">
+                    <a class="w-9 h-9 rounded-full border border-slate-200 flex items-center justify-center text-slate-500 hover:bg-primary hover:text-slate-900 hover:border-primary transition-all" href="https://www.tiktok.com/@googreen_schoolfour4?_r=1&amp;_t=ZS-95HnxddUVBF" target="_blank" rel="noopener noreferrer" aria-label="Follow us on TikTok">
                         <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16" class="h-4 w-4 fill-current" aria-hidden="true">
                             <path d="M9.995 0h2.717c.164 1.514 1.01 2.74 2.288 2.913v2.464a4.887 4.887 0 0 1-2.279-.548v4.623A5.44 5.44 0 1 1 7.3 4.01v2.57a2.87 2.87 0 1 0 2.694 2.869V0Z"/>
                         </svg>
                     </a>
-                    <a class="w-9 h-9 rounded-full border border-slate-200 dark:border-slate-700 flex items-center justify-center text-slate-500 dark:text-slate-400 hover:bg-primary hover:text-slate-900 hover:border-primary transition-all" href="#" aria-label="Watch our Videos">
+                    <a class="w-9 h-9 rounded-full border border-slate-200 flex items-center justify-center text-slate-500 hover:bg-primary hover:text-slate-900 hover:border-primary transition-all" href="#" aria-label="Watch our Videos">
                         <span class="material-symbols-outlined text-lg">smart_display</span>
                     </a>
                 </div>
             </div>
         </div>
-        <div class="flex flex-col md:flex-row items-center justify-between border-t border-slate-200 dark:border-slate-800 pt-8 gap-4">
-            <p class="text-slate-500 dark:text-slate-500 text-sm">&copy; 2026 Go Green School. All rights reserved.</p>
+        <div class="flex flex-col md:flex-row items-center justify-between border-t border-slate-200 pt-8 gap-4">
+            <p class="text-slate-500 text-sm">&copy; 2026 Go Green School. All rights reserved.</p>
             <div class="flex gap-6">
-                <a class="text-slate-500 dark:text-slate-500 hover:text-primary text-sm transition-colors" href="#">Privacy Policy</a>
-                <a class="text-slate-500 dark:text-slate-500 hover:text-primary text-sm transition-colors" href="#">Terms of Service</a>
+                <a class="text-slate-500 hover:text-primary text-sm transition-colors" href="#">Privacy Policy</a>
+                <a class="text-slate-500 hover:text-primary text-sm transition-colors" href="#">Terms of Service</a>
             </div>
         </div>
     </div>
 </footer>
 
-<div class="floating-quick-controls" aria-label="Quick Language and Theme Controls">
+<div class="floating-quick-controls" aria-label="Quick Language Controls">
     <div class="floating-lang-switch">
-        <button onclick="switchLang('en')" id="btn-en" class="lang-btn active px-3 py-1 text-xs font-bold border-r border-slate-200 dark:border-slate-700">EN</button>
-        <button onclick="switchLang('id')" id="btn-id" class="lang-btn px-3 py-1 text-xs font-bold text-slate-600 dark:text-slate-400">ID</button>
+        <button onclick="switchLang('en')" id="btn-en" class="lang-btn active px-3 py-1 text-xs font-bold border-r border-slate-200">EN</button>
+        <button onclick="switchLang('id')" id="btn-id" class="lang-btn px-3 py-1 text-xs font-bold text-slate-600">ID</button>
     </div>
-    <button onclick="toggleDarkMode()" aria-label="Toggle Dark Mode" class="floating-dark-btn">
-        <span class="material-symbols-outlined text-lg">dark_mode</span>
-    </button>
 </div>
 
 {{-- TRANSLATIONS & LANGUAGE SWITCHER --}}
 <script src="{{ asset('js/translations.js') }}"></script>
 <script>
-// Initialize dark mode as early as possible to prevent flash
-(function() {
-    const isDarkMode = localStorage.getItem('ggs_dark_mode') === 'true';
-    if (isDarkMode) {
-        document.documentElement.classList.add('dark');
-    }
-})();
-
 const translations = window.ggsTranslations || { en: {}, id: {} };
 const pageTranslations = window.ggsPageTranslations || {};
 
@@ -501,23 +440,6 @@ const pageTranslations = window.ggsPageTranslations || {};
 
 let currentLang = localStorage.getItem('ggs_lang') || 'en';
 let i18nObserver = null;
-
-// Dark mode toggle function with localStorage persistence
-function toggleDarkMode() {
-    document.documentElement.classList.toggle('dark');
-    const isDark = document.documentElement.classList.contains('dark');
-    localStorage.setItem('ggs_dark_mode', isDark ? 'true' : 'false');
-}
-
-// Restore dark mode preference on page load
-function initializeDarkMode() {
-    const isDarkMode = localStorage.getItem('ggs_dark_mode') === 'true';
-    if (isDarkMode) {
-        document.documentElement.classList.add('dark');
-    } else {
-        document.documentElement.classList.remove('dark');
-    }
-}
 
 function applyTranslations(root = document) {
     const dict = translations[currentLang] || {};
@@ -597,7 +519,6 @@ function switchLang(lang) {
 }
 
 document.addEventListener('DOMContentLoaded', () => {
-    initializeDarkMode();
     initializeI18nObserver();
     switchLang(currentLang);
 });

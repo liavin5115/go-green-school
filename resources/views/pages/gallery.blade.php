@@ -12,10 +12,6 @@
         border-bottom: 1px solid #e2e8f0;
         background: linear-gradient(130deg, #eef8ff 0%, #f3ffe9 46%, #fff6e8 100%);
     }
-    .dark .gallery-hero {
-        border-bottom-color: #1e293b;
-        background: linear-gradient(130deg, #0f172a 0%, #102215 45%, #172554 100%);
-    }
     .gallery-hero-grid {
         position: relative;
         z-index: 2;
@@ -43,11 +39,6 @@
         text-transform: uppercase;
         color: #1d4ed8;
     }
-    .dark .gallery-hero-badge {
-        border-color: rgba(148, 163, 184, 0.32);
-        background: rgba(15, 23, 42, 0.62);
-        color: #bfdbfe;
-    }
     .gallery-pill {
         display: inline-flex;
         align-items: center;
@@ -58,11 +49,6 @@
         font-size: 0.72rem;
         font-weight: 700;
         color: #1e3a8a;
-    }
-    .dark .gallery-pill {
-        border-color: rgba(148, 163, 184, 0.26);
-        background: rgba(15, 23, 42, 0.58);
-        color: #cbd5e1;
     }
     .gallery-hero-mosaic {
         display: grid;
@@ -124,8 +110,8 @@
                 <span class="material-symbols-outlined text-base">photo_library</span>
                 <span data-i18n="gallery_title">Gallery</span>
             </p>
-            <h1 class="text-3xl font-extrabold tracking-tight text-slate-900 dark:text-slate-100 sm:text-4xl lg:text-5xl" data-i18n="gallery_title">Gallery</h1>
-            <p class="text-sm leading-relaxed text-slate-700 dark:text-slate-300 sm:text-base lg:text-lg max-w-3xl mx-auto lg:mx-0" data-i18n="gallery_subtitle">Photos and moments from Go Green School activities across Indonesia.</p>
+            <h1 class="text-3xl font-extrabold tracking-tight text-slate-900 sm:text-4xl lg:text-5xl" data-i18n="gallery_title">Gallery</h1>
+            <p class="text-sm leading-relaxed text-slate-700 sm:text-base lg:text-lg max-w-3xl mx-auto lg:mx-0" data-i18n="gallery_subtitle">Photos and moments from Go Green School activities across Indonesia.</p>
             <div class="flex flex-wrap justify-center lg:justify-start gap-2">
                 <span class="gallery-pill" data-i18n="gallery_photo1_title">Students Planting Trees</span>
                 <span class="gallery-pill" data-i18n="gallery_photo3_title">Composting Program</span>
@@ -155,56 +141,56 @@
     <div class="grid gap-6 sm:grid-cols-2 lg:grid-cols-3 animate-stagger">
 
         {{-- Photo 1: Eco (Students planting trees) --}}
-        <a href="https://ssww-blog.s3.amazonaws.com/blog/wp-content/uploads/earth-day-plant-a-tree1.jpg" target="_blank" class="rounded-xl border border-slate-200 dark:border-slate-800 overflow-hidden bg-white dark:bg-slate-900 shadow-sm hover:shadow-md hover:border-primary/50 transition-all group hover-lift">
+        <a href="https://ssww-blog.s3.amazonaws.com/blog/wp-content/uploads/earth-day-plant-a-tree1.jpg" target="_blank" class="rounded-xl border border-slate-200 overflow-hidden bg-white shadow-sm hover:shadow-md hover:border-primary/50 transition-all group hover-lift">
             <img src="https://ssww-blog.s3.amazonaws.com/blog/wp-content/uploads/earth-day-plant-a-tree1.jpg" alt="Student planting trees" class="w-full h-56 object-cover group-hover:scale-105 transition-transform">
             <div class="p-4">
-                <h3 class="font-bold text-slate-900 dark:text-slate-100 text-sm" data-i18n="gallery_photo1_title">Students Planting Trees</h3>
-                <p class="text-xs text-slate-600 dark:text-slate-400 mt-1" data-i18n="gallery_photo1_desc">Eco-friendly activity</p>
+                <h3 class="font-bold text-slate-900 text-sm" data-i18n="gallery_photo1_title">Students Planting Trees</h3>
+                <p class="text-xs text-slate-600 mt-1" data-i18n="gallery_photo1_desc">Eco-friendly activity</p>
             </div>
         </a>
 
         {{-- Photo 2: Park (School garden) --}}
-        <a href="https://www.plt.org/wp-content/uploads/2016/11/students-adults-working-to-create-outdoor-classroom-500x333.jpg" target="_blank" class="rounded-xl border border-slate-200 dark:border-slate-800 overflow-hidden bg-white dark:bg-slate-900 shadow-sm hover:shadow-md hover:border-primary/50 transition-all group hover-lift">
+        <a href="https://www.plt.org/wp-content/uploads/2016/11/students-adults-working-to-create-outdoor-classroom-500x333.jpg" target="_blank" class="rounded-xl border border-slate-200 overflow-hidden bg-white shadow-sm hover:shadow-md hover:border-primary/50 transition-all group hover-lift">
             <img src="https://www.plt.org/wp-content/uploads/2016/11/students-adults-working-to-create-outdoor-classroom-500x333.jpg" alt="School garden outdoor learning" class="w-full h-56 object-cover group-hover:scale-105 transition-transform">
             <div class="p-4">
-                <h3 class="font-bold text-slate-900 dark:text-slate-100 text-sm" data-i18n="gallery_photo2_title">School Garden</h3>
-                <p class="text-xs text-slate-600 dark:text-slate-400 mt-1" data-i18n="gallery_photo2_desc">Outdoor learning space</p>
+                <h3 class="font-bold text-slate-900 text-sm" data-i18n="gallery_photo2_title">School Garden</h3>
+                <p class="text-xs text-slate-600 mt-1" data-i18n="gallery_photo2_desc">Outdoor learning space</p>
             </div>
         </a>
 
         {{-- Photo 3: Compost (Waste management) --}}
-        <a href="https://cleanriver.com/wp-content/uploads/2023/09/kidsandbin2.jpg" target="_blank" class="rounded-xl border border-slate-200 dark:border-slate-800 overflow-hidden bg-white dark:bg-slate-900 shadow-sm hover:shadow-md hover:border-primary/50 transition-all group hover-lift">
+        <a href="https://cleanriver.com/wp-content/uploads/2023/09/kidsandbin2.jpg" target="_blank" class="rounded-xl border border-slate-200 overflow-hidden bg-white shadow-sm hover:shadow-md hover:border-primary/50 transition-all group hover-lift">
             <img src="https://cleanriver.com/wp-content/uploads/2023/09/kidsandbin2.jpg" alt="Composting program kids" class="w-full h-56 object-cover group-hover:scale-105 transition-transform">
             <div class="p-4">
-                <h3 class="font-bold text-slate-900 dark:text-slate-100 text-sm" data-i18n="gallery_photo3_title">Composting Program</h3>
-                <p class="text-xs text-slate-600 dark:text-slate-400 mt-1" data-i18n="gallery_photo3_desc">Waste management</p>
+                <h3 class="font-bold text-slate-900 text-sm" data-i18n="gallery_photo3_title">Composting Program</h3>
+                <p class="text-xs text-slate-600 mt-1" data-i18n="gallery_photo3_desc">Waste management</p>
             </div>
         </a>
 
         {{-- Photo 4: Recycling (Students sorting) --}}
-        <a href="https://media.istockphoto.com/id/1991886236/id/foto/kelompok-amal-sukarela-sekolah-anak-anak-dengan-kantong-sampah-membersihkan-di-pantai.jpg?s=612x612&w=0&k=20&c=aCv6eTAORHXHCsmxUfJy9CkoGSfq_Gj3KLfSBAqpXJ4=" target="_blank" class="rounded-xl border border-slate-200 dark:border-slate-800 overflow-hidden bg-white dark:bg-slate-900 shadow-sm hover:shadow-md hover:border-primary/50 transition-all group hover-lift">
+        <a href="https://media.istockphoto.com/id/1991886236/id/foto/kelompok-amal-sukarela-sekolah-anak-anak-dengan-kantong-sampah-membersihkan-di-pantai.jpg?s=612x612&w=0&k=20&c=aCv6eTAORHXHCsmxUfJy9CkoGSfq_Gj3KLfSBAqpXJ4=" target="_blank" class="rounded-xl border border-slate-200 overflow-hidden bg-white shadow-sm hover:shadow-md hover:border-primary/50 transition-all group hover-lift">
             <img src="https://media.istockphoto.com/id/1991886236/id/foto/kelompok-amal-sukarela-sekolah-anak-anak-dengan-kantong-sampah-membersihkan-di-pantai.jpg?s=612x612&w=0&k=20&c=aCv6eTAORHXHCsmxUfJy9CkoGSfq_Gj3KLfSBAqpXJ4=" alt="Students sorting recycling materials" class="w-full h-56 object-cover group-hover:scale-105 transition-transform">
             <div class="p-4">
-                <h3 class="font-bold text-slate-900 dark:text-slate-100 text-sm" data-i18n="gallery_photo4_title">Recycling Activities</h3>
-                <p class="text-xs text-slate-600 dark:text-slate-400 mt-1" data-i18n="gallery_photo4_desc">Sorting materials</p>
+                <h3 class="font-bold text-slate-900 text-sm" data-i18n="gallery_photo4_title">Recycling Activities</h3>
+                <p class="text-xs text-slate-600 mt-1" data-i18n="gallery_photo4_desc">Sorting materials</p>
             </div>
         </a>
 
         {{-- Photo 5: Water Conservation --}}
-        <a href="https://i4di.org/wp-content/uploads/2025/02/vecteezy_little-asian-girl-wash-her-hands-before-eating-at-school_2966655-1024x620.jpg" target="_blank" class="rounded-xl border border-slate-200 dark:border-slate-800 overflow-hidden bg-white dark:bg-slate-900 shadow-sm hover:shadow-md hover:border-primary/50 transition-all group hover-lift">
+        <a href="https://i4di.org/wp-content/uploads/2025/02/vecteezy_little-asian-girl-wash-her-hands-before-eating-at-school_2966655-1024x620.jpg" target="_blank" class="rounded-xl border border-slate-200 overflow-hidden bg-white shadow-sm hover:shadow-md hover:border-primary/50 transition-all group hover-lift">
             <img src="https://i4di.org/wp-content/uploads/2025/02/vecteezy_little-asian-girl-wash-her-hands-before-eating-at-school_2966655-1024x620.jpg" alt="Water conservation at school" class="w-full h-56 object-cover group-hover:scale-105 transition-transform">
             <div class="p-4">
-                <h3 class="font-bold text-slate-900 dark:text-slate-100 text-sm" data-i18n="gallery_photo5_title">Water Conservation</h3>
-                <p class="text-xs text-slate-600 dark:text-slate-400 mt-1" data-i18n="gallery_photo5_desc">Sustainable practices</p>
+                <h3 class="font-bold text-slate-900 text-sm" data-i18n="gallery_photo5_title">Water Conservation</h3>
+                <p class="text-xs text-slate-600 mt-1" data-i18n="gallery_photo5_desc">Sustainable practices</p>
             </div>
         </a>
 
         {{-- Photo 6: Solar Panels & Energy --}}
-        <a href="https://www.nyc.gov/assets/dcas/images/press-releases/newly-installed-solar-panels-on-school-roof-drone-photo.jpg" target="_blank" class="rounded-xl border border-slate-200 dark:border-slate-800 overflow-hidden bg-white dark:bg-slate-900 shadow-sm hover:shadow-md hover:border-primary/50 transition-all group hover-lift">
+        <a href="https://www.nyc.gov/assets/dcas/images/press-releases/newly-installed-solar-panels-on-school-roof-drone-photo.jpg" target="_blank" class="rounded-xl border border-slate-200 overflow-hidden bg-white shadow-sm hover:shadow-md hover:border-primary/50 transition-all group hover-lift">
             <img src="https://www.nyc.gov/assets/dcas/images/press-releases/newly-installed-solar-panels-on-school-roof-drone-photo.jpg" alt="Solar panels on school roof" class="w-full h-56 object-cover group-hover:scale-105 transition-transform">
             <div class="p-4">
-                <h3 class="font-bold text-slate-900 dark:text-slate-100 text-sm" data-i18n="gallery_photo6_title">Renewable Energy</h3>
-                <p class="text-xs text-slate-600 dark:text-slate-400 mt-1" data-i18n="gallery_photo6_desc">Solar panels & green power</p>
+                <h3 class="font-bold text-slate-900 text-sm" data-i18n="gallery_photo6_title">Renewable Energy</h3>
+                <p class="text-xs text-slate-600 mt-1" data-i18n="gallery_photo6_desc">Solar panels & green power</p>
             </div>
         </a>
 

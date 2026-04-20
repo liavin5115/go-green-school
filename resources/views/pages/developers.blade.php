@@ -16,11 +16,6 @@
         background: linear-gradient(135deg, #fffaf0 0%, #f7f4e8 100%);
         box-shadow: 4px 4px 0 #1f2937;
     }
-    .dark .eco-dev-header-card {
-        border-color: #94a3b8;
-        background: linear-gradient(135deg, #1e293b 0%, #0f172a 100%);
-        box-shadow: 4px 4px 0 #94a3b8;
-    }
     .eco-dev-grid {
         display: grid;
         grid-template-columns: repeat(1, minmax(0, 1fr));
@@ -54,24 +49,12 @@
     .eco-dev-card:nth-child(even):hover {
         transform: translateY(-8px) rotate(-0.55deg);
     }
-    .dark .eco-dev-card {
-        border-color: #94a3b8;
-        background: #0f172a;
-        box-shadow: 3px 3px 0 #94a3b8;
-    }
-    .dark .eco-dev-card:hover {
-        box-shadow: 8px 10px 0 #94a3b8;
-    }
     .eco-dev-photo-wrap {
         position: relative;
         aspect-ratio: 4/5;
         overflow: hidden;
         border-bottom: 2px solid #1f2937;
         background: #f1f5e8;
-    }
-    .dark .eco-dev-photo-wrap {
-        border-bottom-color: #94a3b8;
-        background: #1e293b;
     }
     .eco-dev-photo {
         width: 100%;
@@ -92,11 +75,6 @@
         font-weight: 700;
         letter-spacing: 0.02em;
     }
-    .dark .eco-role-chip {
-        border-color: #94a3b8;
-        background: rgba(15, 23, 42, 0.9);
-        color: #cbd5e1;
-    }
     .eco-badge {
         display: inline-flex;
         align-items: center;
@@ -108,11 +86,6 @@
         border-radius: 9999px;
         color: #556b2f;
     }
-    .dark .eco-badge {
-        border-color: #94a3b8;
-        background: rgba(143, 163, 30, 0.2);
-        color: #cde87f;
-    }
     .eco-quote {
         border-left: 2px dashed #8fa31e;
         padding-left: 0.65rem;
@@ -120,19 +93,11 @@
         font-style: italic;
         line-height: 1.4;
     }
-    .dark .eco-quote {
-        color: #cde87f;
-    }
     .eco-cta-panel {
         border: 2px solid #1f2937;
         border-radius: 22px 22px 30px 22px;
         background: linear-gradient(135deg, #fffaf0 0%, #eaf6d0 100%);
         box-shadow: 4px 4px 0 #1f2937;
-    }
-    .dark .eco-cta-panel {
-        border-color: #94a3b8;
-        background: linear-gradient(135deg, #1e293b 0%, #14532d 100%);
-        box-shadow: 4px 4px 0 #94a3b8;
     }
     .eco-float-deco {
         position: absolute;
@@ -144,10 +109,6 @@
     .eco-float-deco.alt {
         color: rgba(143, 163, 30, 0.16);
         animation-duration: 12s;
-    }
-    .dark .eco-float-deco,
-    .dark .eco-float-deco.alt {
-        color: rgba(148, 163, 184, 0.16);
     }
     @keyframes ecoDevFloat {
         0% { transform: translate3d(0, 0, 0); }
@@ -188,10 +149,10 @@
                 <span class="material-symbols-outlined text-base">forest</span>
                 <span data-i18n="dev_badge">Young Eco Heroes</span>
             </p>
-            <h1 class="text-3xl font-extrabold tracking-tight text-slate-900 dark:text-slate-100 sm:text-4xl lg:text-5xl" data-i18n="dev_title">
+            <h1 class="text-3xl font-extrabold tracking-tight text-slate-900 sm:text-4xl lg:text-5xl" data-i18n="dev_title">
                 Meet Our Young Eco Web Developers
             </h1>
-            <p class="mx-auto mt-4 max-w-4xl text-sm leading-relaxed text-slate-700 dark:text-slate-300 sm:text-base lg:text-lg" data-i18n="dev_subtitle">
+            <p class="mx-auto mt-4 max-w-4xl text-sm leading-relaxed text-slate-700 sm:text-base lg:text-lg" data-i18n="dev_subtitle">
                 Siswa SMK Karya Bangsa Sintang yang menciptakan website Go Green School ini dengan penuh semangat lingkungan 🌱
             </p>
         </div>
@@ -206,12 +167,12 @@
                 </div>
                 <div class="p-4 sm:p-5">
                     <div class="mb-2 flex items-start justify-between gap-3">
-                        <h2 class="text-sm font-bold text-slate-900 dark:text-slate-100 sm:text-base">Rafa Satria Isyo Pratama</h2>
+                        <h2 class="text-sm font-bold text-slate-900 sm:text-base">Rafa Satria Isyo Pratama</h2>
                         <span class="eco-badge"><span class="material-symbols-outlined text-base">code</span></span>
                     </div>
                     <p class="text-xs font-semibold uppercase tracking-wide text-[#556B2F]" data-i18n="dev_raka_meta">XII RPL - 18 Years</p>
                     <p class="mt-2 text-xs font-semibold text-[#8FA31E] sm:text-sm" data-i18n="dev_raka_role">Full Stack Developer</p>
-                    <p class="mt-3 text-xs leading-relaxed text-slate-700 dark:text-slate-300 sm:text-sm" data-i18n="dev_raka_bio">
+                    <p class="mt-3 text-xs leading-relaxed text-slate-700 sm:text-sm" data-i18n="dev_raka_bio">
                         Ensures the website runs smoothly and all information about waste sorting and Go Green is accurate.
                     </p>
                     <p class="eco-quote mt-3 text-xs sm:text-sm" data-i18n="dev_raka_quote">
@@ -227,12 +188,12 @@
                 </div>
                 <div class="p-4 sm:p-5">
                     <div class="mb-2 flex items-start justify-between gap-3">
-                        <h2 class="text-sm font-bold text-slate-900 dark:text-slate-100 sm:text-base">Andrean Milano</h2>
+                        <h2 class="text-sm font-bold text-slate-900 sm:text-base">Andrean Milano</h2>
                         <span class="eco-badge"><span class="material-symbols-outlined text-base">edit_note</span></span>
                     </div>
                     <p class="text-xs font-semibold uppercase tracking-wide text-[#556B2F]" data-i18n="dev_sinta_meta">XII RPL - 18 Years</p>
                     <p class="mt-2 text-xs font-semibold text-[#8FA31E] sm:text-sm" data-i18n="dev_sinta_role">Video Developer</p>
-                    <p class="mt-3 text-xs leading-relaxed text-slate-700 dark:text-slate-300 sm:text-sm" data-i18n="dev_sinta_bio">
+                    <p class="mt-3 text-xs leading-relaxed text-slate-700 sm:text-sm" data-i18n="dev_sinta_bio">
                         A creative and passionate video developer with a strong interest in video editing and animation, focused on creating innovative and meaningful content.
                     </p>
                     <p class="eco-quote mt-3 text-xs sm:text-sm" data-i18n="dev_sinta_quote">
@@ -248,12 +209,12 @@
                 </div>
                 <div class="p-4 sm:p-5">
                     <div class="mb-2 flex items-start justify-between gap-3">
-                        <h2 class="text-sm font-bold text-slate-900 dark:text-slate-100 sm:text-base">Patrisia Kristianti Rifa</h2>
+                        <h2 class="text-sm font-bold text-slate-900 sm:text-base">Patrisia Kristianti Rifa</h2>
                         <span class="eco-badge"><span class="material-symbols-outlined text-base">palette</span></span>
                     </div>
                     <p class="text-xs font-semibold uppercase tracking-wide text-[#556B2F]" data-i18n="dev_andi_meta">XII RPL - 18 Years</p>
                     <p class="mt-2 text-xs font-semibold text-[#8FA31E] sm:text-sm" data-i18n="dev_andi_role">Student Developer</p>
-                    <p class="mt-3 text-xs leading-relaxed text-slate-700 dark:text-slate-300 sm:text-sm" data-i18n="dev_andi_bio">
+                    <p class="mt-3 text-xs leading-relaxed text-slate-700 sm:text-sm" data-i18n="dev_andi_bio">
                         A passionate RPL student who enjoys learning coding and building simple web applications.
                     </p>
                     <p class="eco-quote mt-3 text-xs sm:text-sm" data-i18n="dev_andi_quote">
@@ -269,12 +230,12 @@
                 </div>
                 <div class="p-4 sm:p-5">
                     <div class="mb-2 flex items-start justify-between gap-3">
-                        <h2 class="text-sm font-bold text-slate-900 dark:text-slate-100 sm:text-base">Ilham</h2>
+                        <h2 class="text-sm font-bold text-slate-900 sm:text-base">Ilham</h2>
                         <span class="eco-badge"><span class="material-symbols-outlined text-base">database</span></span>
                     </div>
                     <p class="text-xs font-semibold uppercase tracking-wide text-[#556B2F]" data-i18n="dev_nadia_meta">XII RPL - 18 Years</p>
                     <p class="mt-2 text-xs font-semibold text-[#8FA31E] sm:text-sm" data-i18n="dev_nadia_role">Poster Designer</p>
-                    <p class="mt-3 text-xs leading-relaxed text-slate-700 dark:text-slate-300 sm:text-sm" data-i18n="dev_nadia_bio">
+                    <p class="mt-3 text-xs leading-relaxed text-slate-700 sm:text-sm" data-i18n="dev_nadia_bio">
                         A passionate poster designer who blends programming skills with visual creativity. He creates beautiful posters that tell stories and touch the heart through composition, color, and typography without many words.
                     </p>
                     <p class="eco-quote mt-3 text-xs sm:text-sm" data-i18n="dev_nadia_quote">
@@ -287,10 +248,10 @@
 
     <section class="relative z-10 mx-auto mt-10 w-full max-w-5xl">
         <div class="eco-cta-panel p-6 text-center sm:p-8">
-            <h3 class="text-xl font-bold tracking-tight text-slate-900 dark:text-slate-100 sm:text-2xl" data-i18n="dev_closing_title">
+            <h3 class="text-xl font-bold tracking-tight text-slate-900 sm:text-2xl" data-i18n="dev_closing_title">
                 Mereka adalah bukti bahwa siswa SMK Karya Bangsa Sintang mampu menciptakan teknologi ramah lingkungan.
             </h3>
-            <p class="mt-3 text-sm text-slate-700 dark:text-slate-300 sm:text-base" data-i18n="dev_closing_subtitle">
+            <p class="mt-3 text-sm text-slate-700 sm:text-base" data-i18n="dev_closing_subtitle">
                 Dibuat pada tahun 2026 sebagai proyek akhir kelas RPL.
             </p>
             <a href="{{ route('contact') }}" class="mt-6 inline-flex items-center justify-center gap-2 rounded-xl border-2 border-[#1f2937] bg-[#8FA31E] px-6 py-3 text-sm font-bold text-white shadow-[3px_3px_0_#1f2937] transition-all hover:-translate-y-1 hover:bg-[#556B2F] hover:shadow-[6px_6px_0_#1f2937]">

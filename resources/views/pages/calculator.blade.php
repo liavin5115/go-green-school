@@ -29,10 +29,10 @@
             <div class="inline-flex items-center justify-center w-16 h-16 rounded-full bg-primary/10 text-primary mb-6">
                 <span class="material-symbols-outlined text-4xl">recycling</span>
             </div>
-            <h1 class="text-4xl sm:text-5xl lg:text-6xl font-black tracking-tight text-slate-900 dark:text-slate-100 leading-tight mb-4">
+            <h1 class="text-4xl sm:text-5xl lg:text-6xl font-black tracking-tight text-slate-900 leading-tight mb-4">
                 <span data-i18n="calc_hero_title">Class Waste</span> <span class="text-primary" data-i18n="calc_hero_title_highlight">Calculator</span>
             </h1>
-            <p class="text-slate-600 dark:text-slate-400 text-lg max-w-2xl font-light" data-i18n="calc_hero_desc">
+            <p class="text-slate-600 text-lg max-w-2xl font-light" data-i18n="calc_hero_desc">
                 Track, analyze, and optimize your classroom's environmental footprint. Measure your impact to create a more sustainable learning environment for everyone.
             </p>
         </div>
@@ -46,8 +46,8 @@
 
             {{-- LEFT: INPUT FORM --}}
             <div class="lg:col-span-5">
-                <div class="rounded-2xl border border-slate-200 dark:border-slate-800 bg-white dark:bg-slate-900 p-8 shadow-sm lg:sticky lg:top-28">
-                    <h2 class="text-2xl font-bold text-slate-900 dark:text-slate-100 mb-8 flex items-center gap-2">
+                <div class="rounded-2xl border border-slate-200 bg-white p-8 shadow-sm lg:sticky lg:top-28">
+                    <h2 class="text-2xl font-bold text-slate-900 mb-8 flex items-center gap-2">
                         <span class="material-symbols-outlined text-primary">edit_note</span>
                         <span data-i18n="calc_input_title">Input Data</span>
                     </h2>
@@ -55,8 +55,8 @@
                     <form class="space-y-6">
                         {{-- Class Name --}}
                         <div>
-                            <label class="block text-sm font-bold text-slate-700 dark:text-slate-300 mb-2 uppercase tracking-wider" data-i18n="calc_label_class">Class Name</label>
-                            <select id="calc-class" class="w-full bg-slate-50 dark:bg-slate-800 border border-slate-200 dark:border-slate-700 rounded-lg focus:ring-2 focus:ring-primary focus:border-transparent py-3 px-4 text-slate-900 dark:text-slate-100">
+                            <label class="block text-sm font-bold text-slate-700 mb-2 uppercase tracking-wider" data-i18n="calc_label_class">Class Name</label>
+                            <select id="calc-class" class="w-full bg-slate-50 border border-slate-200 rounded-lg focus:ring-2 focus:ring-primary focus:border-transparent py-3 px-4 text-slate-900">
                                 <option value="XI RPL 1" selected>X RPL </option>
                                 <option value="XI RPL 2">XI RPL </option>
                                 <option value="XI RPL 3">XII RPL </option>
@@ -70,37 +70,37 @@
 
                         {{-- Observation Days --}}
                         <div>
-                            <label class="block text-sm font-bold text-slate-700 dark:text-slate-300 mb-2 uppercase tracking-wider" data-i18n="calc_label_days">Observation Days</label>
-                            <input type="number" id="calc-days" value="5" min="5" class="w-full bg-slate-50 dark:bg-slate-800 border border-slate-200 dark:border-slate-700 rounded-lg focus:ring-2 focus:ring-primary focus:border-transparent py-3 px-4 text-slate-900 dark:text-slate-100">
+                            <label class="block text-sm font-bold text-slate-700 mb-2 uppercase tracking-wider" data-i18n="calc_label_days">Observation Days</label>
+                            <input type="number" id="calc-days" value="5" min="5" class="w-full bg-slate-50 border border-slate-200 rounded-lg focus:ring-2 focus:ring-primary focus:border-transparent py-3 px-4 text-slate-900">
                         </div>
 
                         {{-- Waste Types --}}
                         <div class="space-y-4">
                             {{-- Organic --}}
                             <div>
-                                <label class="text-sm font-bold text-slate-700 dark:text-slate-300 mb-2 uppercase tracking-wider flex items-center gap-2">
+                                <label class="text-sm font-bold text-slate-700 mb-2 uppercase tracking-wider flex items-center gap-2">
                                     <span class="w-3 h-3 rounded-full bg-green-500"></span>
                                     <span data-i18n="calc_label_organic">Organic Waste (kg)</span>
                                 </label>
-                                <input type="number" id="calc-organic" value="12" min="0" step="0.1" class="w-full bg-slate-50 dark:bg-slate-800 border border-slate-200 dark:border-slate-700 rounded-lg focus:ring-2 focus:ring-primary focus:border-transparent py-3 px-4 text-slate-900 dark:text-slate-100">
+                                <input type="number" id="calc-organic" value="12" min="0" step="0.1" class="w-full bg-slate-50 border border-slate-200 rounded-lg focus:ring-2 focus:ring-primary focus:border-transparent py-3 px-4 text-slate-900">
                             </div>
 
                             {{-- Inorganic --}}
                             <div>
-                                <label class="text-sm font-bold text-slate-700 dark:text-slate-300 mb-2 uppercase tracking-wider flex items-center gap-2">
+                                <label class="text-sm font-bold text-slate-700 mb-2 uppercase tracking-wider flex items-center gap-2">
                                     <span class="w-3 h-3 rounded-full bg-blue-500"></span>
                                     <span data-i18n="calc_label_inorganic">Inorganic Waste (kg)</span>
                                 </label>
-                                <input type="number" id="calc-inorganic" value="8" min="0" step="0.1" class="w-full bg-slate-50 dark:bg-slate-800 border border-slate-200 dark:border-slate-700 rounded-lg focus:ring-2 focus:ring-primary focus:border-transparent py-3 px-4 text-slate-900 dark:text-slate-100">
+                                <input type="number" id="calc-inorganic" value="8" min="0" step="0.1" class="w-full bg-slate-50 border border-slate-200 rounded-lg focus:ring-2 focus:ring-primary focus:border-transparent py-3 px-4 text-slate-900">
                             </div>
 
                             {{-- Plastic --}}
                             <div>
-                                <label class="text-sm font-bold text-slate-700 dark:text-slate-300 mb-2 uppercase tracking-wider flex items-center gap-2">
+                                <label class="text-sm font-bold text-slate-700 mb-2 uppercase tracking-wider flex items-center gap-2">
                                     <span class="w-3 h-3 rounded-full bg-amber-500"></span>
                                     <span data-i18n="calc_label_plastic">Plastic Waste (kg)</span>
                                 </label>
-                                <input type="number" id="calc-plastic" value="5" min="0" step="0.1" class="w-full bg-slate-50 dark:bg-slate-800 border border-slate-200 dark:border-slate-700 rounded-lg focus:ring-2 focus:ring-primary focus:border-transparent py-3 px-4 text-slate-900 dark:text-slate-100">
+                                <input type="number" id="calc-plastic" value="5" min="0" step="0.1" class="w-full bg-slate-50 border border-slate-200 rounded-lg focus:ring-2 focus:ring-primary focus:border-transparent py-3 px-4 text-slate-900">
                             </div>
                         </div>
 
@@ -111,7 +111,7 @@
                                 <span class="material-symbols-outlined text-lg">save</span>
                                 <span data-i18n="calc_btn_save">Save Data</span>
                             </button>
-                            <button type="button" onclick="clearAllData()" class="w-full bg-slate-300 dark:bg-slate-700 hover:bg-slate-400 dark:hover:bg-slate-600 transition-colors text-slate-900 dark:text-white font-bold py-2 rounded-lg flex items-center justify-center gap-2 btn-animated">
+                            <button type="button" onclick="clearAllData()" class="w-full bg-slate-300 hover:bg-slate-400 transition-colors text-slate-900 font-bold py-2 rounded-lg flex items-center justify-center gap-2 btn-animated">
                                 <span class="material-symbols-outlined text-lg">delete_sweep</span>
                                 <span data-i18n="calc_btn_clear">Clear All</span>
                             </button>
@@ -124,22 +124,22 @@
             <div class="lg:col-span-7 space-y-8">
                 {{-- Summary Cards --}}
                 <div class="grid grid-cols-1 md:grid-cols-2 gap-4 animate-stagger">
-                    <div class="bg-primary/10 dark:bg-primary/5 border border-primary/20 p-6 rounded-2xl hover-lift transition-smooth">
-                        <p class="text-sm font-bold uppercase tracking-widest text-slate-600 dark:text-slate-400 mb-2" data-i18n="calc_total">Total Waste</p>
+                    <div class="bg-primary/10 border border-primary/20 p-6 rounded-2xl hover-lift transition-smooth">
+                        <p class="text-sm font-bold uppercase tracking-widest text-slate-600 mb-2" data-i18n="calc_total">Total Waste</p>
                         <div class="text-4xl font-black text-primary" id="res-total">25 <span class="text-xl font-normal">kg</span></div>
-                        <p class="text-xs mt-2 text-slate-600 dark:text-slate-400" data-i18n="calc_accumulated">Accumulated during observation</p>
+                        <p class="text-xs mt-2 text-slate-600" data-i18n="calc_accumulated">Accumulated during observation</p>
                     </div>
-                    <div class="bg-slate-100 dark:bg-slate-800 border border-slate-200 dark:border-slate-700 p-6 rounded-2xl hover-lift transition-smooth">
-                        <p class="text-sm font-bold uppercase tracking-widest text-slate-600 dark:text-slate-400 mb-2" data-i18n="calc_predict">30-Day Prediction</p>
-                        <div class="text-4xl font-black text-slate-900 dark:text-slate-100" id="res-predict">150 <span class="text-xl font-normal">kg</span></div>
-                        <p class="text-xs mt-2 text-slate-600 dark:text-slate-400" data-i18n="calc_estimated">Estimated monthly footprint</p>
+                    <div class="bg-slate-100 border border-slate-200 p-6 rounded-2xl hover-lift transition-smooth">
+                        <p class="text-sm font-bold uppercase tracking-widest text-slate-600 mb-2" data-i18n="calc_predict">30-Day Prediction</p>
+                        <div class="text-4xl font-black text-slate-900" id="res-predict">150 <span class="text-xl font-normal">kg</span></div>
+                        <p class="text-xs mt-2 text-slate-600" data-i18n="calc_estimated">Estimated monthly footprint</p>
                     </div>
                 </div>
 
                 {{-- Visualization --}}
-                <div class="bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 p-8 rounded-2xl shadow-sm">
+                <div class="bg-white border border-slate-200 p-8 rounded-2xl shadow-sm">
                     <div class="flex items-center justify-between mb-8">
-                        <h3 class="font-bold text-xl text-slate-900 dark:text-slate-100" data-i18n="calc_distribution">Waste Distribution</h3>
+                        <h3 class="font-bold text-xl text-slate-900" data-i18n="calc_distribution">Waste Distribution</h3>
                     </div>
                     <div class="grid grid-cols-1 md:grid-cols-2 gap-10">
                         {{-- Pie Chart --}}
@@ -151,29 +151,29 @@
                         {{-- Bar Chart --}}
                         <div class="flex flex-col space-y-6">
                             <div>
-                                <div class="flex justify-between text-sm font-bold text-slate-600 dark:text-slate-400 mb-2">
+                                <div class="flex justify-between text-sm font-bold text-slate-600 mb-2">
                                     <span class="flex items-center gap-2"><span class="w-2 h-2 rounded-full bg-green-500"></span>Organic</span>
                                     <span id="res-pct-organic">48%</span>
                                 </div>
-                                <div class="h-3 w-full bg-slate-200 dark:bg-slate-700 rounded-full overflow-hidden">
+                                <div class="h-3 w-full bg-slate-200 rounded-full overflow-hidden">
                                     <div class="h-full bg-green-500 rounded-full" style="width: 48%;" id="bar-organic"></div>
                                 </div>
                             </div>
                             <div>
-                                <div class="flex justify-between text-sm font-bold text-slate-600 dark:text-slate-400 mb-2">
+                                <div class="flex justify-between text-sm font-bold text-slate-600 mb-2">
                                     <span class="flex items-center gap-2"><span class="w-2 h-2 rounded-full bg-blue-500"></span>Inorganic</span>
                                     <span id="res-pct-inorganic">32%</span>
                                 </div>
-                                <div class="h-3 w-full bg-slate-200 dark:bg-slate-700 rounded-full overflow-hidden">
+                                <div class="h-3 w-full bg-slate-200 rounded-full overflow-hidden">
                                     <div class="h-full bg-blue-500 rounded-full" style="width: 32%;" id="bar-inorganic"></div>
                                 </div>
                             </div>
                             <div>
-                                <div class="flex justify-between text-sm font-bold text-slate-600 dark:text-slate-400 mb-2">
+                                <div class="flex justify-between text-sm font-bold text-slate-600 mb-2">
                                     <span class="flex items-center gap-2"><span class="w-2 h-2 rounded-full bg-amber-500"></span>Plastic</span>
                                     <span id="res-pct-plastic">20%</span>
                                 </div>
-                                <div class="h-3 w-full bg-slate-200 dark:bg-slate-700 rounded-full overflow-hidden">
+                                <div class="h-3 w-full bg-slate-200 rounded-full overflow-hidden">
                                     <div class="h-full bg-amber-500 rounded-full" style="width: 20%;" id="bar-plastic"></div>
                                 </div>
                             </div>
@@ -190,8 +190,8 @@
     <div class="mx-auto max-w-7xl">
         <div class="flex flex-col gap-3 sm:flex-row sm:items-center justify-between mb-8">
             <div class="flex items-center gap-3">
-                <h2 class="text-3xl font-black tracking-tight text-slate-900 dark:text-slate-100" data-i18n="calc_saved_title">Saved Calculations</h2>
-                <span class="text-sm font-normal text-slate-500 dark:text-slate-400" id="saved-count">(0 entries)</span>
+                <h2 class="text-3xl font-black tracking-tight text-slate-900" data-i18n="calc_saved_title">Saved Calculations</h2>
+                <span class="text-sm font-normal text-slate-500" id="saved-count">(0 entries)</span>
             </div>
             <button onclick="exportCSV()" class="inline-flex items-center gap-2 text-primary font-bold hover:text-green-600 transition-colors">
                 <span class="material-symbols-outlined">download</span>
@@ -200,21 +200,21 @@
         </div>
 
         {{-- Table --}}
-        <div class="overflow-hidden rounded-2xl shadow-lg bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800">
+        <div class="overflow-hidden rounded-2xl shadow-lg bg-white border border-slate-200">
             <div class="overflow-x-auto">
                 <table class="w-full text-left">
                     <thead>
-                        <tr class="bg-slate-100 dark:bg-slate-800 border-b border-slate-200 dark:border-slate-700">
-                            <th class="px-8 py-5 text-sm font-bold text-slate-700 dark:text-slate-300 uppercase tracking-wider" data-i18n="calc_table_no">#</th>
-                            <th class="px-6 py-5 text-sm font-bold text-slate-700 dark:text-slate-300 uppercase tracking-wider" data-i18n="calc_table_class">Class</th>
-                            <th class="px-6 py-5 text-sm font-bold text-slate-700 dark:text-slate-300 uppercase tracking-wider text-center" data-i18n="calc_waste_type_days">Days</th>
-                            <th class="px-6 py-5 text-sm font-bold text-slate-700 dark:text-slate-300 uppercase tracking-wider" data-i18n="calc_table_composition">Composition</th>
-                            <th class="px-6 py-5 text-sm font-bold text-slate-700 dark:text-slate-300 uppercase tracking-wider text-right" data-i18n="calc_table_total_weight">Total</th>
-                            <th class="px-6 py-5 text-sm font-bold text-slate-700 dark:text-slate-300 uppercase tracking-wider text-right" data-i18n="calc_table_date">Date</th>
-                            <th class="px-8 py-5 text-sm font-bold text-slate-700 dark:text-slate-300 uppercase tracking-wider text-right" data-i18n="calc_table_action">Action</th>
+                        <tr class="bg-slate-100 border-b border-slate-200">
+                            <th class="px-8 py-5 text-sm font-bold text-slate-700 uppercase tracking-wider" data-i18n="calc_table_no">#</th>
+                            <th class="px-6 py-5 text-sm font-bold text-slate-700 uppercase tracking-wider" data-i18n="calc_table_class">Class</th>
+                            <th class="px-6 py-5 text-sm font-bold text-slate-700 uppercase tracking-wider text-center" data-i18n="calc_waste_type_days">Days</th>
+                            <th class="px-6 py-5 text-sm font-bold text-slate-700 uppercase tracking-wider" data-i18n="calc_table_composition">Composition</th>
+                            <th class="px-6 py-5 text-sm font-bold text-slate-700 uppercase tracking-wider text-right" data-i18n="calc_table_total_weight">Total</th>
+                            <th class="px-6 py-5 text-sm font-bold text-slate-700 uppercase tracking-wider text-right" data-i18n="calc_table_date">Date</th>
+                            <th class="px-8 py-5 text-sm font-bold text-slate-700 uppercase tracking-wider text-right" data-i18n="calc_table_action">Action</th>
                         </tr>
                     </thead>
-                    <tbody id="table-body" class="divide-y divide-slate-200 dark:divide-slate-700">
+                    <tbody id="table-body" class="divide-y divide-slate-200">
                         <tr class="text-center text-slate-500 h-16" id="empty-row">
                             <td colspan="7" class="py-8" data-i18n="calc_saved_empty">No saved data yet. Calculate and save to see entries here!</td>
                         </tr>
@@ -335,23 +335,23 @@ function renderTable() {
 
     // Clear and render data rows
     tbody.innerHTML = data.map((entry, index) => `
-        <tr class="hover:bg-slate-50 dark:hover:bg-slate-800 transition-colors border-b border-slate-200 dark:border-slate-700 animate-result">
-            <td class="px-8 py-4 font-semibold text-slate-700 dark:text-slate-300">${index + 1}</td>
-            <td class="px-6 py-4 font-bold text-slate-900 dark:text-slate-100">${entry.class}</td>
-            <td class="px-6 py-4 text-center text-slate-700 dark:text-slate-300">${entry.days}</td>
+        <tr class="hover:bg-slate-50 transition-colors border-b border-slate-200 animate-result">
+            <td class="px-8 py-4 font-semibold text-slate-700">${index + 1}</td>
+            <td class="px-6 py-4 font-bold text-slate-900">${entry.class}</td>
+            <td class="px-6 py-4 text-center text-slate-700">${entry.days}</td>
             <td class="px-6 py-4">
                 <div class="flex items-center gap-4">
                     <div class="flex items-center gap-1.5">
                         <div class="w-2 h-2 rounded-full bg-green-500"></div>
-                        <span class="text-xs font-semibold text-slate-700 dark:text-slate-300">${entry.organic.toFixed(1)}kg</span>
+                        <span class="text-xs font-semibold text-slate-700">${entry.organic.toFixed(1)}kg</span>
                     </div>
                     <div class="flex items-center gap-1.5">
                         <div class="w-2 h-2 rounded-full bg-blue-500"></div>
-                        <span class="text-xs font-semibold text-slate-700 dark:text-slate-300">${entry.inorganic.toFixed(1)}kg</span>
+                        <span class="text-xs font-semibold text-slate-700">${entry.inorganic.toFixed(1)}kg</span>
                     </div>
                     <div class="flex items-center gap-1.5">
                         <div class="w-2 h-2 rounded-full bg-amber-500"></div>
-                        <span class="text-xs font-semibold text-slate-700 dark:text-slate-300">${entry.plastic.toFixed(1)}kg</span>
+                        <span class="text-xs font-semibold text-slate-700">${entry.plastic.toFixed(1)}kg</span>
                     </div>
                 </div>
             </td>
@@ -359,10 +359,10 @@ function renderTable() {
             <td class="px-6 py-4 text-right text-xs text-slate-500">${entry.date}</td>
             <td class="px-8 py-4 text-right">
                 <div class="flex items-center justify-end gap-2">
-                    <button onclick="loadEntry(${entry.id})" class="inline-flex items-center justify-center w-8 h-8 rounded-lg text-blue-600 hover:bg-blue-50 dark:hover:bg-blue-950 transition-colors" title="Load">
+                    <button onclick="loadEntry(${entry.id})" class="inline-flex items-center justify-center w-8 h-8 rounded-lg text-blue-600 hover:bg-blue-50 transition-colors" title="Load">
                         <span class="material-symbols-outlined text-lg">upload</span>
                     </button>
-                    <button onclick="deleteEntry(${entry.id})" class="inline-flex items-center justify-center w-8 h-8 rounded-lg text-red-600 hover:bg-red-50 dark:hover:bg-red-950 transition-colors" title="Delete">
+                    <button onclick="deleteEntry(${entry.id})" class="inline-flex items-center justify-center w-8 h-8 rounded-lg text-red-600 hover:bg-red-50 transition-colors" title="Delete">
                         <span class="material-symbols-outlined text-lg">delete</span>
                     </button>
                 </div>
