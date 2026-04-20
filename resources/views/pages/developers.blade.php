@@ -163,7 +163,7 @@
             <article class="eco-dev-card eco-stagger">
                 <div class="eco-dev-photo-wrap">
                     <img src="{{ asset('images/Rafa.jpg') }}" alt="Rafa Satria Isyo Pratama portrait" class="eco-dev-photo" />
-                    <span class="eco-role-chip" data-i18n="dev_raka_chip">Full-stack + System</span>
+                    <span class="eco-role-chip" data-i18n="dev_raka_chip">Lead Web Development</span>
                 </div>
                 <div class="p-4 sm:p-5">
                     <div class="mb-2 flex items-start justify-between gap-3">
@@ -171,9 +171,9 @@
                         <span class="eco-badge"><span class="material-symbols-outlined text-base">code</span></span>
                     </div>
                     <p class="text-xs font-semibold uppercase tracking-wide text-[#556B2F]" data-i18n="dev_raka_meta">XII RPL - 18 Years</p>
-                    <p class="mt-2 text-xs font-semibold text-[#8FA31E] sm:text-sm" data-i18n="dev_raka_role">Full Stack Developer</p>
+                    <p class="mt-2 text-xs font-semibold text-[#8FA31E] sm:text-sm" data-i18n="dev_raka_role">Lead Web Developer</p>
                     <p class="mt-3 text-xs leading-relaxed text-slate-700 sm:text-sm" data-i18n="dev_raka_bio">
-                        Ensures the website runs smoothly and all information about waste sorting and Go Green is accurate.
+                        Built the core website architecture, developed Laravel backend features, and integrated Blade, Tailwind, Vite, calculator, multi-page flow, plus Email and WhatsApp APIs.
                     </p>
                     <p class="eco-quote mt-3 text-xs sm:text-sm" data-i18n="dev_raka_quote">
                         "Teknologi harus membantu, bukan merusak lingkungan."
@@ -184,7 +184,7 @@
             <article class="eco-dev-card eco-stagger">
                 <div class="eco-dev-photo-wrap">
                     <img src="{{ asset('images/andre.jpeg') }}" alt="Andrean Milano portrait" class="eco-dev-photo" />
-                    <span class="eco-role-chip" data-i18n="dev_sinta_chip">Motion Web Content</span>
+                    <span class="eco-role-chip" data-i18n="dev_sinta_chip">Poster + QA Support</span>
                 </div>
                 <div class="p-4 sm:p-5">
                     <div class="mb-2 flex items-start justify-between gap-3">
@@ -192,9 +192,9 @@
                         <span class="eco-badge"><span class="material-symbols-outlined text-base">edit_note</span></span>
                     </div>
                     <p class="text-xs font-semibold uppercase tracking-wide text-[#556B2F]" data-i18n="dev_sinta_meta">XII RPL - 18 Years</p>
-                    <p class="mt-2 text-xs font-semibold text-[#8FA31E] sm:text-sm" data-i18n="dev_sinta_role">Video Developer</p>
+                    <p class="mt-2 text-xs font-semibold text-[#8FA31E] sm:text-sm" data-i18n="dev_sinta_role">Poster Designer & QA Tester</p>
                     <p class="mt-3 text-xs leading-relaxed text-slate-700 sm:text-sm" data-i18n="dev_sinta_bio">
-                        A creative and passionate video developer with a strong interest in video editing and animation, focused on creating innovative and meaningful content.
+                        Designed Go Green promotional posters, supported promotion video editing, and tested website features to ensure they run properly.
                     </p>
                     <p class="eco-quote mt-3 text-xs sm:text-sm" data-i18n="dev_sinta_quote">
                         "teknologi hanya alat"
@@ -205,7 +205,7 @@
             <article class="eco-dev-card eco-stagger">
                 <div class="eco-dev-photo-wrap">
                     <img src="{{ asset('images/rifa.jpeg') }}" alt="Patrisia Kristianti Rifa portrait" class="eco-dev-photo" />
-                    <span class="eco-role-chip" data-i18n="dev_andi_chip">UI QA + Testing</span>
+                    <span class="eco-role-chip" data-i18n="dev_andi_chip">Video + Social Media</span>
                 </div>
                 <div class="p-4 sm:p-5">
                     <div class="mb-2 flex items-start justify-between gap-3">
@@ -213,9 +213,9 @@
                         <span class="eco-badge"><span class="material-symbols-outlined text-base">palette</span></span>
                     </div>
                     <p class="text-xs font-semibold uppercase tracking-wide text-[#556B2F]" data-i18n="dev_andi_meta">XII RPL - 18 Years</p>
-                    <p class="mt-2 text-xs font-semibold text-[#8FA31E] sm:text-sm" data-i18n="dev_andi_role">Student Developer</p>
+                    <p class="mt-2 text-xs font-semibold text-[#8FA31E] sm:text-sm" data-i18n="dev_andi_role">Video Editor & Social Campaign</p>
                     <p class="mt-3 text-xs leading-relaxed text-slate-700 sm:text-sm" data-i18n="dev_andi_bio">
-                        A passionate RPL student who enjoys learning coding and building simple web applications.
+                        Produced and edited Go Green promotional videos, managed TikTok publication for the campaign, and helped distribute promo content to a wider audience.
                     </p>
                     <p class="eco-quote mt-3 text-xs sm:text-sm" data-i18n="dev_andi_quote">
                         "Small progress every day leads to big success."
@@ -226,7 +226,7 @@
             <article class="eco-dev-card eco-stagger">
                 <div class="eco-dev-photo-wrap">
                     <img src="{{ asset('images/Ilham.jpeg') }}" alt="Ilham portrait" class="eco-dev-photo" />
-                    <span class="eco-role-chip" data-i18n="dev_nadia_chip">Web Visual Assets</span>
+                    <span class="eco-role-chip" data-i18n="dev_nadia_chip">Poster Design + UI QA</span>
                 </div>
                 <div class="p-4 sm:p-5">
                     <div class="mb-2 flex items-start justify-between gap-3">
@@ -234,9 +234,9 @@
                         <span class="eco-badge"><span class="material-symbols-outlined text-base">database</span></span>
                     </div>
                     <p class="text-xs font-semibold uppercase tracking-wide text-[#556B2F]" data-i18n="dev_nadia_meta">XII RPL - 18 Years</p>
-                    <p class="mt-2 text-xs font-semibold text-[#8FA31E] sm:text-sm" data-i18n="dev_nadia_role">Poster Designer</p>
+                    <p class="mt-2 text-xs font-semibold text-[#8FA31E] sm:text-sm" data-i18n="dev_nadia_role">Visual Campaign Designer</p>
                     <p class="mt-3 text-xs leading-relaxed text-slate-700 sm:text-sm" data-i18n="dev_nadia_bio">
-                        A passionate poster designer who blends programming skills with visual creativity. He creates beautiful posters that tell stories and touch the heart through composition, color, and typography without many words.
+                        Designed Go Green visual campaign posters, ensured visuals stayed aligned with environmental theme and project branding, and tested website interface and features.
                     </p>
                     <p class="eco-quote mt-3 text-xs sm:text-sm" data-i18n="dev_nadia_quote">
                         "Teruslah optimistis dan berpikir positif dalam hidupmu".
