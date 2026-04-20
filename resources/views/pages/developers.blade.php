@@ -162,7 +162,7 @@
         <div class="eco-dev-grid">
             <article class="eco-dev-card eco-stagger">
                 <div class="eco-dev-photo-wrap">
-                    <img src="{{ asset('images/Rafa.jpg') }}" alt="Rafa Satria Isyo Pratama portrait" class="eco-dev-photo" />
+                    <img src="{{ asset('images/rafa.jpg') }}" alt="Rafa Satria Isyo Pratama portrait" class="eco-dev-photo" />
                     <span class="eco-role-chip" data-i18n="dev_raka_chip">Lead Web Development</span>
                 </div>
                 <div class="p-4 sm:p-5">
@@ -183,7 +183,7 @@
 
             <article class="eco-dev-card eco-stagger">
                 <div class="eco-dev-photo-wrap">
-                    <img src="{{ asset('images/andre.jpeg') }}" alt="Andrean Milano portrait" class="eco-dev-photo" />
+                    <img src="{{ asset('images/andre.jpg') }}" alt="Andrean Milano portrait" class="eco-dev-photo" />
                     <span class="eco-role-chip" data-i18n="dev_sinta_chip">Poster + QA Support</span>
                 </div>
                 <div class="p-4 sm:p-5">
@@ -204,7 +204,7 @@
 
             <article class="eco-dev-card eco-stagger">
                 <div class="eco-dev-photo-wrap">
-                    <img src="{{ asset('images/rifa.jpeg') }}" alt="Patrisia Kristianti Rifa portrait" class="eco-dev-photo" />
+                    <img src="{{ asset('images/rifa.jpg') }}" alt="Patrisia Kristianti Rifa portrait" class="eco-dev-photo" />
                     <span class="eco-role-chip" data-i18n="dev_andi_chip">Video + Social Media</span>
                 </div>
                 <div class="p-4 sm:p-5">
@@ -225,7 +225,7 @@
 
             <article class="eco-dev-card eco-stagger">
                 <div class="eco-dev-photo-wrap">
-                    <img src="{{ asset('images/Ilham.jpeg') }}" alt="Ilham portrait" class="eco-dev-photo" />
+                    <img src="{{ asset('images/ilham.jpg') }}" alt="Ilham portrait" class="eco-dev-photo" />
                     <span class="eco-role-chip" data-i18n="dev_nadia_chip">Poster Design + UI QA</span>
                 </div>
                 <div class="p-4 sm:p-5">
