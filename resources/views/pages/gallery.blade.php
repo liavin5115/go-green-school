@@ -111,26 +111,27 @@
                 <span data-i18n="gallery_title">Gallery</span>
             </p>
             <h1 class="text-3xl font-extrabold tracking-tight text-slate-900 sm:text-4xl lg:text-5xl" data-i18n="gallery_title">Gallery</h1>
-            <p class="text-sm leading-relaxed text-slate-700 sm:text-base lg:text-lg max-w-3xl mx-auto lg:mx-0" data-i18n="gallery_subtitle">Photos and moments from Go Green School activities across Indonesia.</p>
+            <p class="text-sm leading-relaxed text-slate-700 sm:text-base lg:text-lg max-w-3xl mx-auto lg:mx-0" data-i18n="gallery_subtitle">Documentation of student environmental cadres, sanitation and water conservation facilities, school flora diversity, and green open space arrangement.</p>
             <div class="flex flex-wrap justify-center lg:justify-start gap-2">
-                <span class="gallery-pill" data-i18n="gallery_photo1_title">Students Planting Trees</span>
-                <span class="gallery-pill" data-i18n="gallery_photo3_title">Composting Program</span>
-                <span class="gallery-pill" data-i18n="gallery_photo6_title">Renewable Energy</span>
+                <span class="gallery-pill" data-i18n="gallery_topic_participation">Active Student Participation (Environmental Cadres)</span>
+                <span class="gallery-pill" data-i18n="gallery_topic_sanitation">Sanitation Facilities & Water Conservation</span>
+                <span class="gallery-pill" data-i18n="gallery_topic_flora">School Flora Diversity</span>
+                <span class="gallery-pill" data-i18n="gallery_topic_rth">Green Open Space & Environmental Layout</span>
             </div>
         </div>
 
         <div class="gallery-hero-mosaic">
             <div class="gallery-mosaic-item">
-                <img src="https://ssww-blog.s3.amazonaws.com/blog/wp-content/uploads/earth-day-plant-a-tree1.jpg" alt="Students planting trees" />
-                <span class="gallery-mosaic-label" data-i18n="gallery_photo1_title">Students Planting Trees</span>
+                <img src="{{ asset('images/galerry/WhatsApp%20Image%202026-04-20%20at%2009.06.50%20%281%29.jpeg') }}" alt="Active student participation in environmental activities" />
+                <span class="gallery-mosaic-label" data-i18n="gallery_topic_participation">Active Student Participation (Environmental Cadres)</span>
             </div>
             <div class="gallery-mosaic-item">
-                <img src="https://cleanriver.com/wp-content/uploads/2023/09/kidsandbin2.jpg" alt="Composting program" />
-                <span class="gallery-mosaic-label" data-i18n="gallery_photo3_title">Composting Program</span>
+                <img src="{{ asset('images/galerry/WhatsApp%20Image%202026-04-20%20at%2009.06.50%20%282%29.jpeg') }}" alt="Sanitation and water conservation facilities" />
+                <span class="gallery-mosaic-label" data-i18n="gallery_topic_sanitation">Sanitation Facilities & Water Conservation</span>
             </div>
             <div class="gallery-mosaic-item wide">
-                <img src="https://www.nyc.gov/assets/dcas/images/press-releases/newly-installed-solar-panels-on-school-roof-drone-photo.jpg" alt="Renewable energy at school" />
-                <span class="gallery-mosaic-label" data-i18n="gallery_photo6_title">Renewable Energy</span>
+                <img src="{{ asset('images/galerry/WhatsApp%20Image%202026-04-20%20at%2009.06.49.jpeg') }}" alt="Green open space and school environmental layout" />
+                <span class="gallery-mosaic-label" data-i18n="gallery_topic_rth">Green Open Space & Environmental Layout</span>
             </div>
         </div>
     </div>
@@ -140,57 +141,57 @@
 <section id="gallery-grid" class="mx-auto w-full max-w-7xl px-6 py-16 lg:px-10">
     <div class="grid gap-6 sm:grid-cols-2 lg:grid-cols-3 animate-stagger">
 
-        {{-- Photo 1: Eco (Students planting trees) --}}
-        <a href="https://ssww-blog.s3.amazonaws.com/blog/wp-content/uploads/earth-day-plant-a-tree1.jpg" target="_blank" class="rounded-xl border border-slate-200 overflow-hidden bg-white shadow-sm hover:shadow-md hover:border-primary/50 transition-all group hover-lift">
-            <img src="https://ssww-blog.s3.amazonaws.com/blog/wp-content/uploads/earth-day-plant-a-tree1.jpg" alt="Student planting trees" class="w-full h-56 object-cover group-hover:scale-105 transition-transform">
+        {{-- Photo 1: Active Student Participation (Environmental Cadres) --}}
+        <a href="{{ asset('images/galerry/WhatsApp%20Image%202026-04-20%20at%2009.06.50%20%281%29.jpeg') }}" target="_blank" rel="noopener noreferrer" class="rounded-xl border border-slate-200 overflow-hidden bg-white shadow-sm hover:shadow-md hover:border-primary/50 transition-all group hover-lift">
+            <img src="{{ asset('images/galerry/WhatsApp%20Image%202026-04-20%20at%2009.06.50%20%281%29.jpeg') }}" alt="Active student participation in environmental activities" class="w-full h-56 object-cover group-hover:scale-105 transition-transform">
             <div class="p-4">
-                <h3 class="font-bold text-slate-900 text-sm" data-i18n="gallery_photo1_title">Students Planting Trees</h3>
-                <p class="text-xs text-slate-600 mt-1" data-i18n="gallery_photo1_desc">Eco-friendly activity</p>
+                <h3 class="font-bold text-slate-900 text-sm" data-i18n="gallery_photo1_title">Active Student Participation (Environmental Cadres)</h3>
+                <p class="text-xs text-slate-600 mt-1" data-i18n="gallery_photo1_desc">Students actively care for plants and school environment.</p>
             </div>
         </a>
 
-        {{-- Photo 2: Park (School garden) --}}
-        <a href="https://www.plt.org/wp-content/uploads/2016/11/students-adults-working-to-create-outdoor-classroom-500x333.jpg" target="_blank" class="rounded-xl border border-slate-200 overflow-hidden bg-white shadow-sm hover:shadow-md hover:border-primary/50 transition-all group hover-lift">
-            <img src="https://www.plt.org/wp-content/uploads/2016/11/students-adults-working-to-create-outdoor-classroom-500x333.jpg" alt="School garden outdoor learning" class="w-full h-56 object-cover group-hover:scale-105 transition-transform">
+        {{-- Photo 2: Sanitation Facilities & Water Conservation --}}
+        <a href="{{ asset('images/galerry/WhatsApp%20Image%202026-04-20%20at%2009.06.50%20%282%29.jpeg') }}" target="_blank" rel="noopener noreferrer" class="rounded-xl border border-slate-200 overflow-hidden bg-white shadow-sm hover:shadow-md hover:border-primary/50 transition-all group hover-lift">
+            <img src="{{ asset('images/galerry/WhatsApp%20Image%202026-04-20%20at%2009.06.50%20%282%29.jpeg') }}" alt="Sanitation facilities and water conservation at school" class="w-full h-56 object-cover group-hover:scale-105 transition-transform">
             <div class="p-4">
-                <h3 class="font-bold text-slate-900 text-sm" data-i18n="gallery_photo2_title">School Garden</h3>
-                <p class="text-xs text-slate-600 mt-1" data-i18n="gallery_photo2_desc">Outdoor learning space</p>
+                <h3 class="font-bold text-slate-900 text-sm" data-i18n="gallery_photo2_title">Sanitation Facilities & Water Conservation</h3>
+                <p class="text-xs text-slate-600 mt-1" data-i18n="gallery_photo2_desc">Handwashing facilities and water-use awareness in school.</p>
             </div>
         </a>
 
-        {{-- Photo 3: Compost (Waste management) --}}
-        <a href="https://cleanriver.com/wp-content/uploads/2023/09/kidsandbin2.jpg" target="_blank" class="rounded-xl border border-slate-200 overflow-hidden bg-white shadow-sm hover:shadow-md hover:border-primary/50 transition-all group hover-lift">
-            <img src="https://cleanriver.com/wp-content/uploads/2023/09/kidsandbin2.jpg" alt="Composting program kids" class="w-full h-56 object-cover group-hover:scale-105 transition-transform">
+        {{-- Photo 3: School Flora Diversity (1) --}}
+        <a href="{{ asset('images/galerry/WhatsApp%20Image%202026-04-20%20at%2009.06.50.jpeg') }}" target="_blank" rel="noopener noreferrer" class="rounded-xl border border-slate-200 overflow-hidden bg-white shadow-sm hover:shadow-md hover:border-primary/50 transition-all group hover-lift">
+            <img src="{{ asset('images/galerry/WhatsApp%20Image%202026-04-20%20at%2009.06.50.jpeg') }}" alt="School flora diversity area one" class="w-full h-56 object-cover group-hover:scale-105 transition-transform">
             <div class="p-4">
-                <h3 class="font-bold text-slate-900 text-sm" data-i18n="gallery_photo3_title">Composting Program</h3>
-                <p class="text-xs text-slate-600 mt-1" data-i18n="gallery_photo3_desc">Waste management</p>
+                <h3 class="font-bold text-slate-900 text-sm" data-i18n="gallery_photo3_title">School Flora Diversity (Area 1)</h3>
+                <p class="text-xs text-slate-600 mt-1" data-i18n="gallery_photo3_desc">Varied vegetation supports school biodiversity.</p>
             </div>
         </a>
 
-        {{-- Photo 4: Recycling (Students sorting) --}}
-        <a href="https://media.istockphoto.com/id/1991886236/id/foto/kelompok-amal-sukarela-sekolah-anak-anak-dengan-kantong-sampah-membersihkan-di-pantai.jpg?s=612x612&w=0&k=20&c=aCv6eTAORHXHCsmxUfJy9CkoGSfq_Gj3KLfSBAqpXJ4=" target="_blank" class="rounded-xl border border-slate-200 overflow-hidden bg-white shadow-sm hover:shadow-md hover:border-primary/50 transition-all group hover-lift">
-            <img src="https://media.istockphoto.com/id/1991886236/id/foto/kelompok-amal-sukarela-sekolah-anak-anak-dengan-kantong-sampah-membersihkan-di-pantai.jpg?s=612x612&w=0&k=20&c=aCv6eTAORHXHCsmxUfJy9CkoGSfq_Gj3KLfSBAqpXJ4=" alt="Students sorting recycling materials" class="w-full h-56 object-cover group-hover:scale-105 transition-transform">
+        {{-- Photo 4: School Flora Diversity (2) --}}
+        <a href="{{ asset('images/galerry/WhatsApp%20Image%202026-04-20%20at%2009.06.51.jpeg') }}" target="_blank" rel="noopener noreferrer" class="rounded-xl border border-slate-200 overflow-hidden bg-white shadow-sm hover:shadow-md hover:border-primary/50 transition-all group hover-lift">
+            <img src="{{ asset('images/galerry/WhatsApp%20Image%202026-04-20%20at%2009.06.51.jpeg') }}" alt="School flora diversity area two" class="w-full h-56 object-cover group-hover:scale-105 transition-transform">
             <div class="p-4">
-                <h3 class="font-bold text-slate-900 text-sm" data-i18n="gallery_photo4_title">Recycling Activities</h3>
-                <p class="text-xs text-slate-600 mt-1" data-i18n="gallery_photo4_desc">Sorting materials</p>
+                <h3 class="font-bold text-slate-900 text-sm" data-i18n="gallery_photo4_title">School Flora Diversity (Area 2)</h3>
+                <p class="text-xs text-slate-600 mt-1" data-i18n="gallery_photo4_desc">Trees and plants enrich the green school ecosystem.</p>
             </div>
         </a>
 
-        {{-- Photo 5: Water Conservation --}}
-        <a href="https://i4di.org/wp-content/uploads/2025/02/vecteezy_little-asian-girl-wash-her-hands-before-eating-at-school_2966655-1024x620.jpg" target="_blank" class="rounded-xl border border-slate-200 overflow-hidden bg-white shadow-sm hover:shadow-md hover:border-primary/50 transition-all group hover-lift">
-            <img src="https://i4di.org/wp-content/uploads/2025/02/vecteezy_little-asian-girl-wash-her-hands-before-eating-at-school_2966655-1024x620.jpg" alt="Water conservation at school" class="w-full h-56 object-cover group-hover:scale-105 transition-transform">
+        {{-- Photo 5: Green Open Space & Environmental Layout (1) --}}
+        <a href="{{ asset('images/galerry/WhatsApp%20Image%202026-04-20%20at%2009.06.49.jpeg') }}" target="_blank" rel="noopener noreferrer" class="rounded-xl border border-slate-200 overflow-hidden bg-white shadow-sm hover:shadow-md hover:border-primary/50 transition-all group hover-lift">
+            <img src="{{ asset('images/galerry/WhatsApp%20Image%202026-04-20%20at%2009.06.49.jpeg') }}" alt="Green open space and environmental layout area one" class="w-full h-56 object-cover group-hover:scale-105 transition-transform">
             <div class="p-4">
-                <h3 class="font-bold text-slate-900 text-sm" data-i18n="gallery_photo5_title">Water Conservation</h3>
-                <p class="text-xs text-slate-600 mt-1" data-i18n="gallery_photo5_desc">Sustainable practices</p>
+                <h3 class="font-bold text-slate-900 text-sm" data-i18n="gallery_photo5_title">Green Open Space & Environmental Layout (Area 1)</h3>
+                <p class="text-xs text-slate-600 mt-1" data-i18n="gallery_photo5_desc">Open green area with organized and clean school landscape.</p>
             </div>
         </a>
 
-        {{-- Photo 6: Solar Panels & Energy --}}
-        <a href="https://www.nyc.gov/assets/dcas/images/press-releases/newly-installed-solar-panels-on-school-roof-drone-photo.jpg" target="_blank" class="rounded-xl border border-slate-200 overflow-hidden bg-white shadow-sm hover:shadow-md hover:border-primary/50 transition-all group hover-lift">
-            <img src="https://www.nyc.gov/assets/dcas/images/press-releases/newly-installed-solar-panels-on-school-roof-drone-photo.jpg" alt="Solar panels on school roof" class="w-full h-56 object-cover group-hover:scale-105 transition-transform">
+        {{-- Photo 6: Green Open Space & Environmental Layout (2) --}}
+        <a href="{{ asset('images/galerry/WhatsApp%20Image%202026-04-20%20at%2009.27.58.jpeg') }}" target="_blank" rel="noopener noreferrer" class="rounded-xl border border-slate-200 overflow-hidden bg-white shadow-sm hover:shadow-md hover:border-primary/50 transition-all group hover-lift">
+            <img src="{{ asset('images/galerry/WhatsApp%20Image%202026-04-20%20at%2009.27.58.jpeg') }}" alt="Green open space and environmental layout area two" class="w-full h-56 object-cover group-hover:scale-105 transition-transform">
             <div class="p-4">
-                <h3 class="font-bold text-slate-900 text-sm" data-i18n="gallery_photo6_title">Renewable Energy</h3>
-                <p class="text-xs text-slate-600 mt-1" data-i18n="gallery_photo6_desc">Solar panels & green power</p>
+                <h3 class="font-bold text-slate-900 text-sm" data-i18n="gallery_photo6_title">Green Open Space & Environmental Layout (Area 2)</h3>
+                <p class="text-xs text-slate-600 mt-1" data-i18n="gallery_photo6_desc">School grounds arranged to support comfortable green activities.</p>
             </div>
         </a>
 

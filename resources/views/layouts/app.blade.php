@@ -424,7 +424,10 @@
 </div>
 
 {{-- TRANSLATIONS & LANGUAGE SWITCHER --}}
-<script src="{{ asset('js/translations.js') }}"></script>
+@php
+    $translationsVersion = @filemtime(public_path('js/translations.js')) ?: now()->timestamp;
+@endphp
+<script src="{{ asset('js/translations.js') }}?v={{ $translationsVersion }}"></script>
 <script>
 const translations = window.ggsTranslations || { en: {}, id: {} };
 const pageTranslations = window.ggsPageTranslations || {};
@@ -518,9 +521,18 @@ function switchLang(lang) {
     });
 }
 
+function syncLanguageFromStorage() {
+    const savedLang = localStorage.getItem('ggs_lang') || 'en';
+    switchLang(savedLang);
+}
+
 document.addEventListener('DOMContentLoaded', () => {
     initializeI18nObserver();
-    switchLang(currentLang);
+    syncLanguageFromStorage();
+});
+
+window.addEventListener('pageshow', () => {
+    syncLanguageFromStorage();
 });
 </script>
 
